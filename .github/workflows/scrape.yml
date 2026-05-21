@@ -1,0 +1,51 @@
+name: ECN Pulse scrape
+
+# Runs the ECN scraper every weekday at 04:30 UTC and commits the JSON
+# back to the repo as `data/ecn_pulse.json`. From there the Cowork
+# artifact fetches it via the raw.githubusercontent.com URL.
+#
+# Setup:
+#   1. Push this repo (the ecn-scraper/ folder) to a public GitHub repo.
+#   2. Enable Actions; ensure the workflow has write permissions
+#      (Settings → Actions → General → Workflow permissions → read & write).
+#   3. The artifact's ECN tab points at the raw JSON URL — update it once.
+#
+# Cost: zero (free for public repos, generous free tier for private).
+
+on:
+  schedule:
+    - cron: "30 4 * * 1-5"   # Mon–Fri 04:30 UTC
+  workflow_dispatch:          # manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        run: |
+          mkdir -p data
+          python ecn_scraper.py --output data/ecn_pulse.json --max 10
+
+      - name: Commit result
+        run: |
+          git config user.name  "ecn-pulse-bot"
+          git config user.email "bot@example.com"
+          git add data/ecn_pulse.json
+          git diff --cached --quiet || \
+            git commit -m "chore: refresh ECN pulse $(date -u +%FT%TZ)"
+          git push
