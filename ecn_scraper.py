@@ -57,8 +57,8 @@ from bs4 import BeautifulSoup
 from dateutil import parser as dateparser
 
 USER_AGENT = (
-    "ECN-Pulse/0.1 (+https://github.com/your-org/ecn-pulse) "
-    "Mozilla/5.0 (research; contact: you@example.com)"
+    "ECN-Pulse/0.1 (+https://github.com/christophecarugati-dc/ecn-pulse) "
+    "Mozilla/5.0 (research; contact: christophe.carugati@digital-competition.com)"
 )
 REQUEST_TIMEOUT = 20
 RATE_LIMIT_SECONDS = 1.0
