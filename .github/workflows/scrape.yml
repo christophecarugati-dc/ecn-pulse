@@ -26,6 +26,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so the commit step can rebase before pushing
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -44,8 +46,26 @@ jobs:
       - name: Commit result
         run: |
           git config user.name  "ecn-pulse-bot"
-          git config user.email "bot@example.com"
+          git config user.email "ecn-pulse-bot@users.noreply.github.com"
           git add data/ecn_pulse.json
-          git diff --cached --quiet || \
-            git commit -m "chore: refresh ECN pulse $(date -u +%FT%TZ)"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: refresh ECN pulse $(date -u +%FT%TZ)"
+          # Land the freshly generated data on top of the latest main, retrying
+          # on push races (a manual push or another run can move the ref between
+          # our checkout and our push). On the rare data-file conflict, keep our
+          # just-generated version (--strategy-option=theirs favours the commit
+          # being replayed during the rebase).
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected; syncing with remote (attempt $attempt)..."
+            git pull --rebase --strategy-option=theirs origin main || git rebase --abort
+            sleep 2
+          done
+          echo "Could not push after 5 attempts." >&2
+          exit 1

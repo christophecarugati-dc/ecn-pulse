@@ -4,8 +4,9 @@ __pycache__/
 .venv/
 venv/
 
-# Local scraper output (the Action writes data/ecn_pulse.json; local test runs)
-ecn_pulse.json
+# Local scraper output only (root-level). The Action's data/ecn_pulse.json is
+# tracked and must NOT be ignored — hence the leading slash to anchor to root.
+/ecn_pulse.json
 /test_*.json
 
 # OS
