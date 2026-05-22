@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local scraper output (the Action writes data/ecn_pulse.json; local test runs)
+ecn_pulse.json
+/test_*.json
+
+# OS
+.DS_Store

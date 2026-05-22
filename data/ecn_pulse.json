@@ -1,0 +1,8 @@
+{
+  "generated_at": "1970-01-01T00:00:00+00:00",
+  "total_items": 0,
+  "total_errors": 0,
+  "items": [],
+  "errors": [],
+  "note": "Seed placeholder. Replaced with live data on the first scraper run (GitHub Action: ECN Pulse scrape, or run ecn_scraper.py locally)."
+}

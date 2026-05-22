@@ -47,6 +47,7 @@ import logging
 import re
 import sys
 import time
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field, asdict
 from datetime import datetime, timezone
 from typing import Callable, Optional
@@ -56,10 +57,22 @@ import requests
 from bs4 import BeautifulSoup
 from dateutil import parser as dateparser
 
+try:  # silence the warning we trigger when retrying a TLS-broken host without verification
+    import urllib3
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+except Exception:
+    pass
+
+# A browser-like User-Agent: many NCA web servers return 403 to obvious bots.
+# We still identify ourselves and our contact in the trailing comment.
 USER_AGENT = (
-    "ECN-Pulse/0.1 (+https://github.com/christophecarugati-dc/ecn-pulse) "
-    "Mozilla/5.0 (research; contact: christophe.carugati@digital-competition.com)"
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 "
+    "ECN-Pulse/0.2 (+https://github.com/christophecarugati-dc/ecn-pulse; "
+    "contact: christophe.carugati@digital-competition.com)"
 )
+FEED_ACCEPT = ("application/rss+xml, application/atom+xml, application/xml;q=0.9, "
+               "text/xml;q=0.8, */*;q=0.5")
 REQUEST_TIMEOUT = 20
 RATE_LIMIT_SECONDS = 1.0
 DEFAULT_MAX_ITEMS = 12
@@ -438,7 +451,13 @@ def fetch(url: str, accept: str = "text/html,application/xhtml+xml") -> str:
     log.debug("GET %s", url)
     headers = {"User-Agent": USER_AGENT, "Accept": accept,
                "Accept-Language": "en-GB,en;q=0.8"}
-    r = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+    try:
+        r = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+    except requests.exceptions.SSLError:
+        # Some NCAs (e.g. LT) have an incomplete certificate chain. Retry once
+        # without verification rather than losing the source entirely.
+        log.debug("  SSL verify failed for %s — retrying without verification", url)
+        r = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT, verify=False)
     r.raise_for_status()
     return r.text
 
@@ -481,12 +500,10 @@ def parse_gov_uk_json(auth: Authority, max_items: int) -> list[dict]:
     return items
 
 
-def parse_html_list(auth: Authority, max_items: int) -> list[dict]:
-    html = fetch(auth.url)
+def _parse_with_selectors(html: str, auth: Authority, max_items: int) -> list[dict]:
     soup = BeautifulSoup(html, "html.parser")
     sel = auth.selectors
     item_sel = sel.get("item") or "article"
-    # Try each item-selector candidate until we get a non-empty list
     nodes = []
     for candidate in [s.strip() for s in item_sel.split(",")]:
         try:
@@ -496,9 +513,6 @@ def parse_html_list(auth: Authority, max_items: int) -> list[dict]:
         if found:
             nodes = found
             break
-    if not nodes:
-        raise RuntimeError(f"no items found with selector {item_sel!r}")
-
     items = []
     for node in nodes[:max_items]:
         title_el = first(node, sel.get("title")) or node
@@ -519,9 +533,168 @@ def parse_html_list(auth: Authority, max_items: int) -> list[dict]:
     return items
 
 
+def parse_html_list(auth: Authority, max_items: int) -> list[dict]:
+    """Try CSS-selector parsing; if the page 404s/403s or the selectors find
+    nothing, fall back to RSS/Atom feed autodiscovery before giving up."""
+    html = None
+    fetch_error: Optional[Exception] = None
+    try:
+        html = fetch(auth.url)
+    except requests.RequestException as e:
+        fetch_error = e
+
+    if html:
+        items = _parse_with_selectors(html, auth, max_items)
+        if items:
+            return items
+
+    # Selectors found nothing (or the page failed) — try to recover via a feed.
+    feed_items = _recover_via_feed(auth, max_items, page_html=html)
+    if feed_items:
+        return feed_items
+
+    if fetch_error is not None:
+        raise fetch_error
+    raise RuntimeError(
+        f"no items found with selector {auth.selectors.get('item')!r} and no feed discovered"
+    )
+
+
+# ---------------------------------------------------------------------------
+# RSS / Atom support
+# ---------------------------------------------------------------------------
+
+_NS = re.compile(r"^\{[^}]*\}")
+_TAG_RE = re.compile(r"<[^>]+>")
+
+
+def _local(tag: str) -> str:
+    return _NS.sub("", tag or "")
+
+
+def _clean_html(s: Optional[str]) -> str:
+    if not s:
+        return ""
+    return re.sub(r"\s+", " ", _TAG_RE.sub(" ", s)).strip()
+
+
+def parse_feed_xml(xml_text: str, auth: Authority, max_items: int) -> list[dict]:
+    """Parse an RSS 2.0 or Atom feed into items. Uses the stdlib XML parser so
+    no extra dependency is required."""
+    xml_text = (xml_text or "").lstrip("﻿").strip()
+    root = ET.fromstring(xml_text)  # raises on non-XML (e.g. an HTML error page)
+    entries = [e for e in root.iter() if _local(e.tag) in ("item", "entry")]
+    items: list[dict] = []
+    for e in entries[:max_items]:
+        children: dict[str, ET.Element] = {}
+        for c in e:
+            children.setdefault(_local(c.tag), c)
+
+        title = _clean_html(children["title"].text if "title" in children else "")
+
+        # link: RSS uses <link>text</link>; Atom uses <link href=".." rel="..">
+        link = ""
+        for c in e:
+            if _local(c.tag) != "link":
+                continue
+            href = c.get("href")
+            if href:
+                if c.get("rel") in (None, "alternate"):
+                    link = href
+                    break
+                link = link or href
+            elif (c.text or "").strip():
+                link = c.text.strip()
+
+        date_raw = None
+        for dk in ("pubDate", "published", "updated", "date"):
+            if dk in children and (children[dk].text or "").strip():
+                date_raw = children[dk].text
+                break
+
+        snippet = ""
+        for sk in ("description", "summary", "content"):
+            if sk in children and (children[sk].text or "").strip():
+                snippet = children[sk].text
+                break
+
+        if not title:
+            continue
+        items.append(make_item(
+            auth, title,
+            auth.absolute_url(link) if link else link,
+            parse_date_safe(date_raw),
+            _clean_html(snippet),
+        ))
+    return items
+
+
+def parse_rss(auth: Authority, max_items: int) -> list[dict]:
+    xml_text = fetch(auth.url, accept=FEED_ACCEPT)
+    return parse_feed_xml(xml_text, auth, max_items)
+
+
+_FEED_LINK_RE = re.compile(
+    r'<link\b[^>]*type=["\']application/(?:rss|atom)\+xml["\'][^>]*>', re.I)
+_HREF_RE = re.compile(r'href=["\']([^"\']+)["\']', re.I)
+_COMMON_FEED_PATHS = ("rss", "feed", "rss.xml", "feed.xml", "atom.xml",
+                      "en/rss", "news/rss", "?format=feed&type=rss")
+
+
+def discover_feed(html: str, base: str) -> Optional[str]:
+    """Find a feed URL advertised via <link rel=alternate type=...rss/atom>."""
+    if not html:
+        return None
+    for m in _FEED_LINK_RE.finditer(html):
+        href = _HREF_RE.search(m.group(0))
+        if href:
+            return urljoin(base, href.group(1))
+    return None
+
+
+def _recover_via_feed(auth: Authority, max_items: int,
+                      page_html: Optional[str] = None) -> list[dict]:
+    """Attempt RSS/Atom recovery: feed advertised on the news page, then on the
+    homepage, then a few conventional feed paths. Returns [] if nothing works."""
+    candidates: list[str] = []
+    base = auth.base_url or auth.url
+
+    if page_html:
+        f = discover_feed(page_html, auth.url)
+        if f:
+            candidates.append(f)
+
+    try:
+        home = fetch(base)
+        f = discover_feed(home, base)
+        if f and f not in candidates:
+            candidates.append(f)
+    except requests.RequestException:
+        pass
+
+    for path in _COMMON_FEED_PATHS:
+        c = urljoin(base, path)
+        if c not in candidates:
+            candidates.append(c)
+
+    for c in candidates:
+        try:
+            xml_text = fetch(c, accept=FEED_ACCEPT)
+            items = parse_feed_xml(xml_text, auth, max_items)
+            if items:
+                log.info("  recovered %d items via feed %s", len(items), c)
+                return items
+        except Exception:
+            continue
+        finally:
+            time.sleep(0.3)
+    return []
+
+
 PARSERS: dict[str, Callable[[Authority, int], list[dict]]] = {
     "gov_uk_json": parse_gov_uk_json,
     "html_list": parse_html_list,
+    "rss": parse_rss,
 }
 
 
