@@ -398,6 +398,35 @@ AUTHORITIES: list[Authority] = [
                    "title": "h2, h3, a", "link": "a",
                    "date": "time, .date", "snippet": "p, .excerpt"},
     ),
+
+    # ---- Think tanks & academic research (RSS-first) ----
+    # Best-effort feed URLs; the RSS/Atom parser handles both formats and
+    # falls back gracefully. If any 404 on the first run, swap the URL for
+    # the one found at the org's homepage <link rel="alternate"> tag.
+    Authority(
+        code="BRGL", name="Bruegel",
+        url="https://www.bruegel.org/rss.xml",
+        base_url="https://www.bruegel.org/",
+        parser="rss",
+    ),
+    Authority(
+        code="CERRE", name="CERRE — Centre on Regulation in Europe",
+        url="https://cerre.eu/feed/",
+        base_url="https://cerre.eu/",
+        parser="rss",
+    ),
+    Authority(
+        code="CEPR", name="CEPR · VoxEU",
+        url="https://cepr.org/voxeu/rss.xml",
+        base_url="https://cepr.org/",
+        parser="rss",
+    ),
+    Authority(
+        code="UEA", name="Centre for Competition Policy (UEA)",
+        url="https://ideas.repec.org/r/uea/ueaccp/rss",
+        base_url="https://ideas.repec.org/",
+        parser="rss",
+    ),
 ]
 
 
