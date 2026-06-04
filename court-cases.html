@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DG COMP × CJEU — Competition Case Tracker | ECN Pulse</title>
+<meta name="description" content="DG COMP decisions linked with their follow-up appeal cases at the EU General Court and Court of Justice — updated daily.">
+<style>
+:root{
+  --bg:#F5F0EA;
+  --surface:#FBF7F2;
+  --surface-2:#FFFFFF;
+  --ink:#1A1814;
+  --ink-2:#4A4742;
+  --ink-3:#8C857B;
+  --border:#E6DED2;
+  --border-strong:#D2C8B9;
+  --accent:#C8553D;
+  --accent-hover:#B0462F;
+  --accent-soft:#F5DCD0;
+  --authority:#1F3556;
+  --authority-soft:#DDE3ED;
+  --success:#5B7240;
+  --success-soft:#DCE5C7;
+  --highlight:#C58A3A;
+  --highlight-soft:#F4E4C9;
+  --purple:#6E4A7A;
+  --purple-soft:#E5D9EA;
+  /* Court-specific */
+  --dgcomp:#1F3556;
+  --dgcomp-soft:#DDE3ED;
+  --gc:#5B4020;
+  --gc-soft:#EFE3CB;
+  --cj:#2D4A30;
+  --cj-soft:#D3E8D5;
+  /* Outcomes */
+  --dismissed:#2D6A40;
+  --dismissed-soft:#D0EDDA;
+  --annulled:#8B2020;
+  --annulled-soft:#F5D6D6;
+  --partial:#7A5000;
+  --partial-soft:#F5E8CB;
+  --pending:#4A4742;
+  --pending-soft:#E6DED2;
+  --referred:#5A3080;
+  --referred-soft:#E8DCF0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:light}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.5;min-height:100vh}
+.serif{font-family:'Source Serif 4','Charter',Georgia,serif}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+.shell{max-width:1240px;margin:0 auto;padding:24px 28px 60px}
+
+/* HEADER */
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:12px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#A0432F);color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.brand-name{font-family:'Source Serif 4',Charter,Georgia,serif;font-weight:600;font-size:17px}
+.brand-name small{display:block;color:var(--ink-3);font-size:11.5px;font-weight:400;letter-spacing:.02em;margin-top:1px;font-family:Inter,sans-serif}
+.actions{display:flex;gap:8px;align-items:center}
+.btn{background:var(--surface-2);border:1px solid var(--border-strong);color:var(--ink);padding:7px 13px;border-radius:7px;font-size:12.5px;font-weight:500;display:inline-flex;align-items:center;gap:6px;transition:all .12s}
+.btn:hover{background:var(--surface)}
+.btn-ghost{background:transparent;border-color:transparent;color:var(--ink-2)}
+.btn-ghost:hover{background:var(--surface)}
+.nav-link{font-size:12.5px;color:var(--ink-3);font-weight:500;padding:6px 10px;border-radius:6px;transition:all .12s}
+.nav-link:hover{color:var(--ink);background:var(--surface)}
+
+.hero{margin:28px 0 20px}
+.hero-title{font-family:'Source Serif 4',Charter,Georgia,serif;font-size:32px;font-weight:600;line-height:1.15;letter-spacing:-.01em;max-width:720px}
+.hero-sub{color:var(--ink-2);font-size:14.5px;margin-top:8px;max-width:720px;line-height:1.55}
+.hero-sub strong{color:var(--ink);font-weight:600}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 20px}
+.stat{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.stat-label{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);font-weight:600;margin-bottom:5px}
+.stat-value{font-family:'Source Serif 4',Charter,Georgia,serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1}
+.stat-meta{font-size:11.5px;color:var(--ink-3);margin-top:4px}
+
+/* CONTROLS */
+.controls{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px}
+.control-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.control-label{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);font-weight:600;min-width:90px}
+.pills{display:flex;gap:5px;flex-wrap:wrap;flex:1}
+.pill{padding:4px 10px;border:1px solid var(--border-strong);background:var(--bg);border-radius:13px;font-size:11.5px;color:var(--ink-2);font-weight:500;display:inline-flex;align-items:center;gap:5px;transition:all .12s}
+.pill:hover{background:var(--surface)}
+.pill.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.search-input{flex:1;min-width:220px;padding:7px 11px;border:1px solid var(--border);border-radius:7px;background:var(--bg);font-size:12.5px;color:var(--ink);font-family:inherit}
+.search-input:focus{outline:none;border-color:var(--accent);background:var(--surface-2)}
+
+/* CASE CHAIN CARDS */
+.case-list{display:flex;flex-direction:column;gap:12px}
+
+.chain-card{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:box-shadow .15s}
+.chain-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.06)}
+
+.chain-header{padding:14px 16px 12px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.chain-header-left{flex:1;min-width:200px}
+.chain-case-number{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--authority);background:var(--authority-soft);padding:2px 8px;border-radius:8px;display:inline-block;margin-bottom:5px}
+.chain-case-name{font-family:'Source Serif 4',Charter,Georgia,serif;font-size:17px;font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:5px}
+.chain-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.badge{font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:8px}
+.badge-merger{background:var(--authority-soft);color:var(--authority)}
+.badge-antitrust{background:var(--accent-soft);color:var(--accent)}
+.badge-cartel{background:var(--purple-soft);color:var(--purple)}
+.badge-state_aid{background:var(--highlight-soft);color:var(--highlight)}
+.badge-digital{background:var(--success-soft);color:var(--success)}
+.badge-other{background:var(--bg);color:var(--ink-2);border:1px solid var(--border)}
+.chain-date{font-size:11.5px;color:var(--ink-3);font-weight:500}
+.chain-fine{font-size:11.5px;font-weight:600;color:var(--success)}
+.chain-summary{font-size:12px;color:var(--ink-2);line-height:1.55;max-width:700px;margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* Pipeline */
+.chain-pipeline{padding:14px 16px;display:flex;align-items:stretch;gap:0;overflow-x:auto}
+.pipeline-stage{flex:1;min-width:180px;position:relative}
+.pipeline-stage + .pipeline-stage{margin-left:0}
+.pipeline-connector{width:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--border-strong);font-size:18px;padding-top:28px}
+.stage-inner{border:1px solid var(--border);border-radius:10px;padding:11px 13px;height:100%;display:flex;flex-direction:column;gap:5px;background:var(--bg)}
+.stage-label{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:3px}
+.stage-case-num{font-size:13px;font-weight:700;color:var(--ink);font-family:'SF Mono','Menlo',monospace;margin-bottom:2px}
+.stage-title{font-size:11px;color:var(--ink-2);line-height:1.4;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.stage-date{font-size:10.5px;color:var(--ink-3)}
+.stage-detail{font-size:10.5px;color:var(--ink-2);line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px}
+.stage-links{margin-top:auto;padding-top:7px;display:flex;gap:8px;flex-wrap:wrap}
+.stage-link{font-size:10px;color:var(--accent);font-weight:600;padding:2px 7px;border:1px solid var(--accent-soft);border-radius:6px;background:var(--accent-soft);transition:all .1s}
+.stage-link:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* Outcome badges */
+.outcome{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:8px;margin-bottom:4px}
+.outcome-dismissed{background:var(--dismissed-soft);color:var(--dismissed)}
+.outcome-annulled{background:var(--annulled-soft);color:var(--annulled)}
+.outcome-partially_annulled{background:var(--partial-soft);color:var(--partial)}
+.outcome-pending{background:var(--pending-soft);color:var(--pending)}
+.outcome-referred{background:var(--referred-soft);color:var(--referred)}
+.outcome-settled{background:var(--pending-soft);color:var(--pending)}
+.outcome-unknown{background:var(--bg);color:var(--ink-3);border:1px solid var(--border)}
+
+/* DG COMP stage */
+.stage-dgcomp .stage-inner{background:var(--dgcomp-soft);border-color:#B8C9D9}
+.stage-dgcomp .stage-label{color:var(--dgcomp)}
+.stage-dgcomp .stage-case-num{color:var(--dgcomp)}
+
+/* No-appeal state */
+.no-appeals{font-size:11.5px;color:var(--ink-3);font-style:italic;padding:12px 16px;border-top:1px solid var(--border)}
+
+/* Empty / error states */
+.state-msg{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:36px 24px;text-align:center;color:var(--ink-2);font-size:14px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.state-msg.error{border-color:#E0A99B;background:#FBEEE9;color:#7A2E1C}
+.spinner{width:30px;height:30px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Results count */
+.results-meta{font-size:12px;color:var(--ink-3);padding:6px 2px;margin-bottom:4px}
+.results-meta strong{color:var(--ink-2);font-weight:600}
+
+/* FOOTER */
+.footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--border);font-size:11.5px;color:var(--ink-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer a{color:var(--accent);font-weight:500}
+
+/* Legend */
+.legend{display:flex;gap:12px;flex-wrap:wrap;padding:8px 0 2px}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--ink-3)}
+.legend-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+
+@media (max-width:720px){
+  .shell{padding:18px}
+  .hero-title{font-size:24px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .chain-pipeline{flex-direction:column;gap:10px}
+  .pipeline-connector{width:auto;height:28px;padding:0;transform:rotate(90deg)}
+}
+
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:5px;border:2px solid var(--bg)}
+::-webkit-scrollbar-thumb:hover{background:var(--ink-3)}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-name">Competition Policy Pulse<small>DG COMP decisions × CJEU appeals</small></div>
+    </div>
+    <div class="actions">
+      <a class="nav-link" href="index.html">← ECN Monitor</a>
+      <button class="btn" id="refresh-btn" title="Reload data">↻ Reload</button>
+      <a class="btn btn-ghost" href="https://github.com/christophecarugati-dc/ecn-pulse" target="_blank" rel="noopener">Source</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero-title serif">DG COMP decisions and their judicial journey.</h1>
+    <p class="hero-sub">Commission competition decisions linked with follow-up appeal cases before the <strong>EU General Court</strong> and the <strong>Court of Justice of the EU</strong> — the full enforcement pipeline in one view.</p>
+  </section>
+
+  <section class="stats" id="stats">
+    <div class="stat"><div class="stat-label">DG COMP cases</div><div class="stat-value" id="stat-cases">—</div><div class="stat-meta">tracked decisions</div></div>
+    <div class="stat"><div class="stat-label">Court appeals</div><div class="stat-value" id="stat-appeals">—</div><div class="stat-meta">GC + CJ proceedings</div></div>
+    <div class="stat"><div class="stat-label">Uphold rate</div><div class="stat-value" id="stat-uphold">—</div><div class="stat-meta" id="stat-uphold-meta">of decided cases</div></div>
+    <div class="stat"><div class="stat-label">Pending</div><div class="stat-value" id="stat-pending">—</div><div class="stat-meta">appeals awaiting judgment</div></div>
+  </section>
+
+  <div class="controls">
+    <div class="control-row">
+      <span class="control-label">Search</span>
+      <input class="search-input" id="search" placeholder="Company name, case number, sector…" autocomplete="off" />
+    </div>
+    <div class="control-row">
+      <span class="control-label">Case type</span>
+      <div class="pills" id="type-pills"></div>
+    </div>
+    <div class="control-row">
+      <span class="control-label">Outcome</span>
+      <div class="pills" id="outcome-pills"></div>
+    </div>
+    <div class="legend">
+      <span class="legend-item"><span class="legend-dot" style="background:var(--dismissed-soft);outline:1px solid var(--dismissed)"></span>Fine/decision upheld</span>
+      <span class="legend-item"><span class="legend-dot" style="background:var(--annulled-soft);outline:1px solid var(--annulled)"></span>Annulled</span>
+      <span class="legend-item"><span class="legend-dot" style="background:var(--partial-soft);outline:1px solid var(--partial)"></span>Partially annulled</span>
+      <span class="legend-item"><span class="legend-dot" style="background:var(--referred-soft);outline:1px solid var(--referred)"></span>Referred back</span>
+      <span class="legend-item"><span class="legend-dot" style="background:var(--pending-soft);outline:1px solid var(--pending)"></span>Pending</span>
+    </div>
+  </div>
+
+  <div class="results-meta" id="results-meta"></div>
+  <div id="content"></div>
+
+  <footer class="footer">
+    <span>Case data sourced from Commission press releases, EUR-Lex, and CURIA. For research purposes only. Source: <a href="https://github.com/christophecarugati-dc/ecn-pulse" target="_blank" rel="noopener">github.com/christophecarugati-dc/ecn-pulse</a></span>
+    <span id="last-updated"></span>
+  </footer>
+</div>
+
+<script>
+const DATA_URL = 'data/court_links.json';
+
+const CASE_TYPES = [
+  {key:'all',     label:'All types'},
+  {key:'antitrust',label:'Antitrust'},
+  {key:'merger',  label:'Merger control'},
+  {key:'cartel',  label:'Cartels'},
+  {key:'state_aid',label:'State aid'},
+  {key:'digital', label:'Digital'},
+];
+
+const OUTCOMES = [
+  {key:'all',               label:'All outcomes'},
+  {key:'dismissed',         label:'Upheld'},
+  {key:'annulled',          label:'Annulled'},
+  {key:'partially_annulled',label:'Partially annulled'},
+  {key:'pending',           label:'Pending'},
+  {key:'referred',          label:'Referred back'},
+];
+
+const OUTCOME_LABELS = {
+  dismissed:          'Upheld',
+  annulled:           'Annulled',
+  partially_annulled: 'Partially annulled',
+  pending:            'Pending',
+  referred:           'Referred back',
+  settled:            'Settled / removed',
+  unknown:            'Unknown',
+};
+
+const state = {
+  data: null,
+  error: null,
+  loading: true,
+  type: ls('cjeu:type') || 'all',
+  outcome: ls('cjeu:outcome') || 'all',
+  search: '',
+};
+
+function ls(k) { try { return localStorage.getItem(k); } catch(e) { return null; } }
+function lsSet(k, v) { try { localStorage.setItem(k, v); } catch(e) {} }
+
+function esc(s) {
+  if (s == null) return '';
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function fmtDate(d) {
+  if (!d) return '';
+  try {
+    const dt = new Date(d);
+    if (isNaN(dt)) return d;
+    return dt.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'});
+  } catch(e) { return d; }
+}
+
+function fmtFine(n) {
+  if (!n) return '';
+  if (n >= 1e9) return '€' + (n / 1e9).toFixed(2).replace(/\.?0+$/, '') + 'B';
+  if (n >= 1e6) return '€' + (n / 1e6).toFixed(0) + 'M';
+  return '€' + n.toLocaleString();
+}
+
+function fmtFineShort(n) {
+  if (!n) return '';
+  if (n >= 1e9) return '€' + (n / 1e9).toFixed(2).replace(/\.?0+$/, '') + 'B fine';
+  if (n >= 1e6) return '€' + (n / 1e6).toFixed(0) + 'M fine';
+  return '';
+}
+
+async function load() {
+  state.loading = true; render();
+  try {
+    const r = await fetch(DATA_URL, {cache:'no-store'});
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    state.data = await r.json();
+    state.error = null;
+  } catch(e) {
+    state.error = e.message;
+    state.data = null;
+  }
+  state.loading = false;
+  render();
+}
+
+function passesFilters(entry) {
+  const d = entry.dgcomp;
+  if (state.type !== 'all' && d.case_type !== state.type) return false;
+  if (state.outcome !== 'all') {
+    const matchedAppeal = (entry.appeals || []).some(a => a.outcome === state.outcome);
+    if (!matchedAppeal) return false;
+  }
+  if (state.search) {
+    const q = state.search.toLowerCase();
+    const haystack = [
+      d.case_number, d.case_name, d.sector, d.summary,
+      ...(d.parties || []),
+      ...(entry.appeals || []).map(a => a.case_number + ' ' + a.title),
+    ].join(' ').toLowerCase();
+    if (!haystack.includes(q)) return false;
+  }
+  return true;
+}
+
+function renderStats() {
+  if (!state.data) return;
+  const s = state.data.stats || {};
+  document.getElementById('stat-cases').textContent = s.total_dgcomp_cases ?? '—';
+  document.getElementById('stat-appeals').textContent = s.total_appeals ?? '—';
+  const ur = s.uphold_rate_pct;
+  document.getElementById('stat-uphold').textContent = ur != null ? ur + '%' : '—';
+  const pending = (s.outcomes || {}).pending || 0;
+  document.getElementById('stat-pending').textContent = pending;
+  const ts = state.data.generated_at;
+  if (ts) {
+    document.getElementById('last-updated').textContent =
+      'Data as of ' + new Date(ts).toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'});
+  }
+}
+
+function renderControls() {
+  // Type pills
+  const tp = document.getElementById('type-pills');
+  tp.innerHTML = CASE_TYPES.map(t => `
+    <button class="pill${state.type===t.key?' active':''}" data-type="${esc(t.key)}">${esc(t.label)}</button>
+  `).join('');
+  tp.querySelectorAll('.pill').forEach(b => {
+    b.addEventListener('click', () => {
+      state.type = b.dataset.type;
+      lsSet('cjeu:type', state.type);
+      renderControls(); renderContent();
+    });
+  });
+
+  // Outcome pills
+  const op = document.getElementById('outcome-pills');
+  op.innerHTML = OUTCOMES.map(o => `
+    <button class="pill${state.outcome===o.key?' active':''}" data-outcome="${esc(o.key)}">${esc(o.label)}</button>
+  `).join('');
+  op.querySelectorAll('.pill').forEach(b => {
+    b.addEventListener('click', () => {
+      state.outcome = b.dataset.outcome;
+      lsSet('cjeu:outcome', state.outcome);
+      renderControls(); renderContent();
+    });
+  });
+}
+
+function outcomeClass(outcome) {
+  return 'outcome outcome-' + (outcome || 'unknown');
+}
+
+function renderStage(label, cls, content) {
+  return `<div class="pipeline-stage ${esc(cls)}"><div class="stage-inner">
+    <div class="stage-label">${esc(label)}</div>
+    ${content}
+  </div></div>`;
+}
+
+function renderDGCOMPStage(d) {
+  const fine = fmtFineShort(d.fine_eur);
+  return renderStage('DG COMP Decision', 'stage-dgcomp', `
+    <div class="stage-case-num">${esc(d.case_number)}</div>
+    <div class="stage-date">${esc(fmtDate(d.decision_date))}${d.decision_type ? ' · ' + esc(d.decision_type) : ''}</div>
+    ${fine ? `<div class="stage-date" style="color:var(--success);font-weight:600">${esc(fine)}</div>` : ''}
+    ${d.url ? `<div class="stage-links"><a class="stage-link" href="${esc(d.url)}" target="_blank" rel="noopener">Commission ↗</a></div>` : ''}
+  `);
+}
+
+function renderAppealStage(appeal) {
+  const outcome = appeal.outcome || 'unknown';
+  const label = appeal.court || 'Court';
+  return renderStage(label, 'stage-appeal', `
+    <div class="stage-case-num">${esc(appeal.case_number)}</div>
+    <div class="${outcomeClass(outcome)}">${esc(OUTCOME_LABELS[outcome] || outcome)}</div>
+    ${appeal.judgment_date
+      ? `<div class="stage-date">Judgment: ${esc(fmtDate(appeal.judgment_date))}</div>`
+      : appeal.filing_date
+        ? `<div class="stage-date">Filed: ${esc(fmtDate(appeal.filing_date))}</div>`
+        : ''}
+    ${appeal.outcome_detail ? `<div class="stage-detail">${esc(appeal.outcome_detail)}</div>` : ''}
+    <div class="stage-links">
+      ${appeal.curia_url ? `<a class="stage-link" href="${esc(appeal.curia_url)}" target="_blank" rel="noopener">CURIA ↗</a>` : ''}
+      ${appeal.eurlex_url ? `<a class="stage-link" href="${esc(appeal.eurlex_url)}" target="_blank" rel="noopener">EUR-Lex ↗</a>` : ''}
+    </div>
+  `);
+}
+
+function renderCard(entry) {
+  const d = entry.dgcomp;
+  const appeals = entry.appeals || [];
+  const typeClass = 'badge-' + (d.case_type || 'other');
+  const typeLabel = (d.case_type || 'other').replace('_', ' ');
+  const parties = (d.parties || []).slice(0, 3).join(', ');
+
+  let pipelineHtml = renderDGCOMPStage(d);
+  if (appeals.length === 0) {
+    pipelineHtml += `<div class="pipeline-connector">—</div>
+      <div class="pipeline-stage"><div class="stage-inner" style="background:var(--bg);justify-content:center;align-items:center;min-height:80px">
+        <div style="font-size:11px;color:var(--ink-3);font-style:italic;text-align:center">No judicial appeal<br>on record</div>
+      </div></div>`;
+  } else {
+    for (const a of appeals) {
+      pipelineHtml += `<div class="pipeline-connector">›</div>` + renderAppealStage(a);
+    }
+  }
+
+  return `
+  <div class="chain-card">
+    <div class="chain-header">
+      <div class="chain-header-left">
+        <div class="chain-case-number">${esc(d.case_number)}</div>
+        <div class="chain-case-name">${esc(d.case_name)}</div>
+        <div class="chain-meta">
+          <span class="badge ${esc(typeClass)}">${esc(typeLabel)}</span>
+          ${d.sector ? `<span class="chain-date">${esc(d.sector)}</span>` : ''}
+          ${d.decision_date ? `<span class="chain-date">· ${esc(fmtDate(d.decision_date))}</span>` : ''}
+          ${d.fine_eur ? `<span class="chain-fine">· ${esc(fmtFineShort(d.fine_eur))}</span>` : ''}
+        </div>
+        ${parties ? `<div class="chain-meta" style="margin-top:4px"><span class="chain-date">${esc(parties)}${(d.parties||[]).length > 3 ? ' +' + ((d.parties||[]).length - 3) + ' more' : ''}</span></div>` : ''}
+        ${d.summary ? `<div class="chain-summary">${esc(d.summary)}</div>` : ''}
+      </div>
+    </div>
+    <div class="chain-pipeline">${pipelineHtml}</div>
+  </div>`;
+}
+
+function renderContent() {
+  const el = document.getElementById('content');
+  const meta = document.getElementById('results-meta');
+
+  if (state.loading) {
+    el.innerHTML = `<div class="state-msg"><div class="spinner"></div><span>Loading case data…</span></div>`;
+    meta.textContent = '';
+    return;
+  }
+  if (state.error) {
+    el.innerHTML = `<div class="state-msg error">
+      <strong>Could not load case data</strong>
+      <span>${esc(state.error)}</span>
+      <span style="font-size:12px">Run <code>python cjeu_scraper.py --output data/court_links.json</code> to generate the dataset.</span>
+    </div>`;
+    meta.textContent = '';
+    return;
+  }
+  if (!state.data || !state.data.cases) {
+    el.innerHTML = `<div class="state-msg">No data available.</div>`;
+    meta.textContent = '';
+    return;
+  }
+
+  const filtered = state.data.cases.filter(passesFilters);
+  meta.innerHTML = filtered.length === state.data.cases.length
+    ? `Showing all <strong>${filtered.length}</strong> cases`
+    : `Showing <strong>${filtered.length}</strong> of ${state.data.cases.length} cases`;
+
+  if (filtered.length === 0) {
+    el.innerHTML = `<div class="state-msg">No cases match your filters.</div>`;
+    return;
+  }
+
+  el.innerHTML = `<div class="case-list">${filtered.map(renderCard).join('')}</div>`;
+}
+
+function render() {
+  renderStats();
+  renderControls();
+  renderContent();
+}
+
+// Search input
+document.getElementById('search').addEventListener('input', e => {
+  state.search = e.target.value.trim();
+  renderContent();
+  document.getElementById('results-meta').style.opacity = '1';
+});
+
+// Reload button
+document.getElementById('refresh-btn').addEventListener('click', () => load());
+
+// Boot
+load();
+</script>
+</body>
+</html>

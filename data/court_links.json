@@ -1,0 +1,623 @@
+{
+  "generated_at": "2026-06-04T15:33:06.871732+00:00",
+  "stats": {
+    "total_dgcomp_cases": 15,
+    "total_appeals": 22,
+    "cases_with_appeals": 13,
+    "outcomes": {
+      "dismissed": 8,
+      "pending": 2,
+      "partially_annulled": 5,
+      "annulled": 5,
+      "referred": 2
+    },
+    "uphold_rate_pct": 44,
+    "total_fines_eur": 24785824000
+  },
+  "cases": [
+    {
+      "dgcomp": {
+        "case_number": "M.8084",
+        "case_name": "Bayer / Monsanto",
+        "case_type": "merger",
+        "decision_date": "2018-03-21",
+        "decision_type": "Phase II Clearance with conditions",
+        "fine_eur": null,
+        "parties": [
+          "Bayer AG",
+          "Monsanto Company"
+        ],
+        "sector": "Seeds / Agrochemicals",
+        "url": "https://competition-cases.ec.europa.eu/cases/M.8084",
+        "summary": "The Commission cleared Bayer's acquisition of Monsanto subject to the largest-ever divestment package in EU merger control history (≈ €6.4 billion), covering seeds, traits, herbicides and digital farming assets."
+      },
+      "appeals": []
+    },
+    {
+      "dgcomp": {
+        "case_number": "M.7337",
+        "case_name": "Facebook / WhatsApp",
+        "case_type": "merger",
+        "decision_date": "2014-10-03",
+        "decision_type": "Phase I Clearance",
+        "fine_eur": null,
+        "parties": [
+          "Facebook Inc.",
+          "WhatsApp Inc."
+        ],
+        "sector": "Social networks / Messaging",
+        "url": "https://competition-cases.ec.europa.eu/cases/M.7337",
+        "summary": "The Commission unconditionally cleared Facebook's acquisition of WhatsApp at Phase I, finding no competition concerns. Facebook was later fined €110 million for providing incorrect information during the review about the ability to link WhatsApp and Facebook accounts."
+      },
+      "appeals": []
+    },
+    {
+      "dgcomp": {
+        "case_number": "M.10188",
+        "case_name": "Illumina / GRAIL",
+        "case_type": "merger",
+        "decision_date": "2022-09-06",
+        "decision_type": "Prohibition",
+        "fine_eur": null,
+        "parties": [
+          "Illumina Inc.",
+          "GRAIL Inc."
+        ],
+        "sector": "Life sciences / Cancer detection",
+        "url": "https://competition-cases.ec.europa.eu/cases/M.10188",
+        "summary": "The Commission prohibited Illumina's acquisition of GRAIL, finding it would harm innovation in the nascent market for early cancer detection tests. The case was notable as the first referral under Article 22 of the Merger Regulation accepted from member states that lacked domestic jurisdiction."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-709/22",
+          "title": "Illumina Inc. v Commission",
+          "filing_date": "2022-11-17",
+          "judgment_date": "2023-07-13",
+          "outcome": "annulled",
+          "outcome_detail": "General Court annulled the Commission's decision to accept the Article 22 referral, ruling the Commission lacked jurisdiction because the transaction did not meet EU or national thresholds. Commission's prohibition decision subsequently fell.",
+          "applicants": [
+            "Illumina Inc."
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-709/22",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62022TJ0709"
+        },
+        {
+          "court": "Court of Justice",
+          "case_number": "C-611/23 P",
+          "title": "Commission v Illumina Inc.",
+          "filing_date": "2023-10-09",
+          "judgment_date": null,
+          "outcome": "pending",
+          "outcome_detail": null,
+          "applicants": [
+            "Commission"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=C-611/23",
+          "eurlex_url": null
+        }
+      ]
+    },
+    {
+      "dgcomp": {
+        "case_number": "AT.40411",
+        "case_name": "Google Search (AdSense)",
+        "case_type": "antitrust",
+        "decision_date": "2019-03-20",
+        "decision_type": "Article 102 TFEU",
+        "fine_eur": 1494459000,
+        "parties": [
+          "Google LLC",
+          "Alphabet Inc."
+        ],
+        "sector": "Online advertising",
+        "url": "https://competition-cases.ec.europa.eu/cases/AT.40411",
+        "summary": "Google abused its dominant position in online search advertising by inserting restrictive clauses in contracts with third-party websites that prevented rivals from placing their search ads on those sites."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-334/19",
+          "title": "Google LLC and Alphabet Inc. v Commission",
+          "filing_date": "2019-05-22",
+          "judgment_date": "2023-01-18",
+          "outcome": "dismissed",
+          "outcome_detail": "Action dismissed in full. The €1.49 billion fine and the infringement finding were upheld.",
+          "applicants": [
+            "Google LLC",
+            "Alphabet Inc."
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-334/19",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62019TJ0334"
+        }
+      ]
+    },
+    {
+      "dgcomp": {
+        "case_number": "AT.40049",
+        "case_name": "MasterCard II (Inter-regional Interchange Fees)",
+        "case_type": "antitrust",
+        "decision_date": "2019-01-22",
+        "decision_type": "Article 101 TFEU",
+        "fine_eur": 570600000,
+        "parties": [
+          "Mastercard Inc."
+        ],
+        "sector": "Financial services / Payment cards",
+        "url": "https://competition-cases.ec.europa.eu/cases/AT.40049",
+        "summary": "The Commission found that MasterCard's inter-regional interchange fees for card payments in the EEA — applied when a consumer from outside the EEA pays at a European merchant — restricted competition and raised costs for retailers and ultimately consumers."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-180/19",
+          "title": "Mastercard Inc. and Others v Commission",
+          "filing_date": "2019-03-22",
+          "judgment_date": "2024-01-24",
+          "outcome": "dismissed",
+          "outcome_detail": "Action dismissed. The General Court upheld the Commission's finding that MasterCard's inter-regional interchange fees restricted competition and that MasterCard failed to demonstrate the conditions for an Article 101(3) exemption.",
+          "applicants": [
+            "Mastercard Inc."
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-180/19",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62019TJ0180"
+        }
+      ]
+    },
+    {
+      "dgcomp": {
+        "case_number": "AT.40153",
+        "case_name": "Google Android",
+        "case_type": "antitrust",
+        "decision_date": "2018-07-18",
+        "decision_type": "Article 102 TFEU",
+        "fine_eur": 4342865000,
+        "parties": [
+          "Google LLC",
+          "Alphabet Inc."
+        ],
+        "sector": "Mobile operating systems",
+        "url": "https://competition-cases.ec.europa.eu/cases/AT.40153",
+        "summary": "Google abused its dominant position in licensable smart mobile operating systems by requiring OEMs to pre-install Google Search and Chrome as a condition for licensing the Play Store, and by making payments to OEMs and operators conditional on exclusive pre-installation of Google Search."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-604/18",
+          "title": "Google LLC and Alphabet Inc. v Commission",
+          "filing_date": "2018-10-09",
+          "judgment_date": "2022-09-14",
+          "outcome": "partially_annulled",
+          "outcome_detail": "Decision largely upheld. The fine was reduced from €4.34 billion to €4.125 billion following reappraisal of specific multipliers applied by the Commission.",
+          "applicants": [
+            "Google LLC",
+            "Alphabet Inc."
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-604/18",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62018TJ0604"
+        }
+      ]
+    },
+    {
+      "dgcomp": {
+        "case_number": "M.7993",
+        "case_name": "Altice / PT Portugal (gun-jumping)",
+        "case_type": "merger",
+        "decision_date": "2018-04-24",
+        "decision_type": "Gun-jumping fine",
+        "fine_eur": 124500000,
+        "parties": [
+          "Altice N.V.",
+          "PT Portugal"
+        ],
+        "sector": "Telecommunications",
+        "url": "https://competition-cases.ec.europa.eu/cases/M.7993",
+        "summary": "The Commission fined Altice €124.5 million for implementing its acquisition of PT Portugal before notifying and obtaining clearance ('gun-jumping'), finding Altice exercised decisive influence over PT Portugal prior to Commission approval — the largest gun-jumping fine at that time."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-425/18",
+          "title": "Altice Group Lux v Commission",
+          "filing_date": "2018-07-09",
+          "judgment_date": "2021-09-22",
+          "outcome": "partially_annulled",
+          "outcome_detail": "General Court partially upheld the challenge, reducing the fine from €124.5 million to €56.1 million, while confirming the finding of gun-jumping as a matter of principle.",
+          "applicants": [
+            "Altice Group Lux"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-425/18",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62018TJ0425"
+        }
+      ]
+    },
+    {
+      "dgcomp": {
+        "case_number": "AT.40220",
+        "case_name": "Qualcomm (Exclusivity Payments)",
+        "case_type": "antitrust",
+        "decision_date": "2018-01-24",
+        "decision_type": "Article 102 TFEU",
+        "fine_eur": 997439000,
+        "parties": [
+          "Qualcomm Inc."
+        ],
+        "sector": "Chipsets / Mobile",
+        "url": "https://competition-cases.ec.europa.eu/cases/AT.40220",
+        "summary": "Qualcomm paid Apple to exclusively use Qualcomm LTE baseband chipsets in all iPhone and iPad models, illegally foreclosing rival chipmakers from a strategically important market segment."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-235/18",
+          "title": "Qualcomm Inc. v Commission",
+          "filing_date": "2018-04-06",
+          "judgment_date": "2022-06-15",
+          "outcome": "annulled",
+          "outcome_detail": "Commission decision annulled in its entirety. The General Court found that the Commission made procedural errors (failing to take notes of key interviews) and substantive errors in its competitive analysis that vitiated the assessment as a whole.",
+          "applicants": [
+            "Qualcomm Inc."
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-235/18",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62018TJ0235"
+        }
+      ]
+    },
+    {
+      "dgcomp": {
+        "case_number": "SA.38944",
+        "case_name": "Amazon — Luxembourg",
+        "case_type": "state_aid",
+        "decision_date": "2017-10-04",
+        "decision_type": "State Aid Recovery Order",
+        "fine_eur": 250000000,
+        "parties": [
+          "Amazon",
+          "Luxembourg"
+        ],
+        "sector": "E-commerce / Tax rulings",
+        "url": "https://competition-cases.ec.europa.eu/cases/SA.38944",
+        "summary": "The Commission found that Luxembourg granted unlawful state aid to Amazon through a tax ruling that allowed Amazon to pay substantially less tax than other companies, and ordered recovery of approximately €250 million plus interest."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-816/17",
+          "title": "Amazon.com Inc. and Others v Commission",
+          "filing_date": "2017-12-14",
+          "judgment_date": "2021-05-12",
+          "outcome": "annulled",
+          "outcome_detail": "Commission decision annulled. The General Court found that the Commission had not demonstrated that the Luxembourg tax ruling conferred a selective advantage on Amazon.",
+          "applicants": [
+            "Amazon.com Inc.",
+            "Amazon EU Sàrl"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-816/17",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62017TJ0816"
+        },
+        {
+          "court": "Court of Justice",
+          "case_number": "C-457/21 P",
+          "title": "Commission v Amazon.com Inc.",
+          "filing_date": "2021-07-23",
+          "judgment_date": "2023-11-14",
+          "outcome": "dismissed",
+          "outcome_detail": "Commission appeal dismissed. The Court of Justice confirmed the General Court's finding that the Commission failed to prove the existence of a selective advantage, definitively clearing Amazon.",
+          "applicants": [
+            "Commission"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=C-457/21",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62021CJ0457"
+        }
+      ]
+    },
+    {
+      "dgcomp": {
+        "case_number": "AT.40099",
+        "case_name": "Google Shopping",
+        "case_type": "antitrust",
+        "decision_date": "2017-06-27",
+        "decision_type": "Article 102 TFEU",
+        "fine_eur": 2424495000,
+        "parties": [
+          "Google LLC",
+          "Alphabet Inc."
+        ],
+        "sector": "Online search / Comparison shopping",
+        "url": "https://competition-cases.ec.europa.eu/cases/AT.40099",
+        "summary": "Google abused its dominant position in general internet search by systematically giving prominent placement to its own comparison shopping service and demoting rivals, in breach of Article 102 TFEU."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-612/17",
+          "title": "Google LLC and Alphabet Inc. v Commission",
+          "filing_date": "2017-09-11",
+          "judgment_date": "2021-11-10",
+          "outcome": "dismissed",
+          "outcome_detail": "Action dismissed in full. The €2.42 billion fine and the finding of infringement were upheld.",
+          "applicants": [
+            "Google LLC",
+            "Alphabet Inc."
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-612/17",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62017TJ0612"
+        },
+        {
+          "court": "Court of Justice",
+          "case_number": "C-48/22 P",
+          "title": "Alphabet Inc. and Google LLC v Commission",
+          "filing_date": "2022-01-24",
+          "judgment_date": null,
+          "outcome": "pending",
+          "outcome_detail": null,
+          "applicants": [
+            "Alphabet Inc.",
+            "Google LLC"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=C-48/22",
+          "eurlex_url": null
+        }
+      ]
+    },
+    {
+      "dgcomp": {
+        "case_number": "SA.38373",
+        "case_name": "Apple — Ireland",
+        "case_type": "state_aid",
+        "decision_date": "2016-08-30",
+        "decision_type": "State Aid Recovery Order",
+        "fine_eur": 13000000000,
+        "parties": [
+          "Apple Inc.",
+          "Ireland"
+        ],
+        "sector": "Technology / Tax rulings",
+        "url": "https://competition-cases.ec.europa.eu/cases/SA.38373",
+        "summary": "The Commission found that Ireland granted unlawful state aid to Apple through two tax rulings that artificially lowered Apple's tax burden in Europe for over two decades, and ordered recovery of up to €13 billion plus interest."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-778/16",
+          "title": "Ireland v Commission",
+          "filing_date": "2016-11-09",
+          "judgment_date": "2020-07-15",
+          "outcome": "annulled",
+          "outcome_detail": "Commission decision annulled. The General Court found that the Commission had not established to the required legal standard the existence of a selective economic advantage for Apple.",
+          "applicants": [
+            "Ireland",
+            "Apple Inc.",
+            "Apple Sales International"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-778/16",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62016TJ0778"
+        },
+        {
+          "court": "Court of Justice",
+          "case_number": "C-465/20 P",
+          "title": "Commission v Ireland and Apple",
+          "filing_date": "2020-10-13",
+          "judgment_date": "2024-09-10",
+          "outcome": "dismissed",
+          "outcome_detail": "The Court of Justice (Grand Chamber) set aside the General Court judgment and upheld the Commission's original decision in full, requiring Apple to repay approximately €13.1 billion in unlawful state aid to Ireland.",
+          "applicants": [
+            "Commission"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=C-465/20",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62020CJ0465"
+        }
+      ]
+    },
+    {
+      "dgcomp": {
+        "case_number": "M.6992",
+        "case_name": "Hutchison 3G UK / Telefónica UK",
+        "case_type": "merger",
+        "decision_date": "2016-05-11",
+        "decision_type": "Prohibition",
+        "fine_eur": null,
+        "parties": [
+          "Hutchison 3G UK (Three)",
+          "Telefónica UK (O2)"
+        ],
+        "sector": "Telecommunications",
+        "url": "https://competition-cases.ec.europa.eu/cases/M.6992",
+        "summary": "The Commission prohibited the proposed merger between Three and O2 in the UK, finding it would reduce the number of UK mobile operators from four to three and significantly impede effective competition."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-399/16",
+          "title": "CK Telecoms UK Investments v Commission",
+          "filing_date": "2016-07-28",
+          "judgment_date": "2020-05-28",
+          "outcome": "annulled",
+          "outcome_detail": "Prohibition decision annulled. The General Court found the Commission applied too strict a standard of proof and made errors in its economic analysis, particularly on closeness of competition and network-sharing.",
+          "applicants": [
+            "CK Telecoms UK Investments"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-399/16",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62016TJ0399"
+        },
+        {
+          "court": "Court of Justice",
+          "case_number": "C-376/20 P",
+          "title": "Commission v CK Telecoms UK Investments",
+          "filing_date": "2020-08-07",
+          "judgment_date": "2023-07-13",
+          "outcome": "referred",
+          "outcome_detail": "The Court of Justice set aside the General Court judgment and referred the case back to the General Court, clarifying the standard of proof applicable in merger review and the concept of 'important competitive force'.",
+          "applicants": [
+            "Commission"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=C-376/20",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62020CJ0376"
+        }
+      ]
+    },
+    {
+      "dgcomp": {
+        "case_number": "AT.39612",
+        "case_name": "Perindopril (Servier)",
+        "case_type": "antitrust",
+        "decision_date": "2014-07-09",
+        "decision_type": "Articles 101 & 102 TFEU",
+        "fine_eur": 427700000,
+        "parties": [
+          "Servier SAS",
+          "Biogaran",
+          "Niche",
+          "Matrix",
+          "Teva",
+          "Krka",
+          "Lupin"
+        ],
+        "sector": "Pharmaceuticals",
+        "url": "https://competition-cases.ec.europa.eu/cases/AT.39612",
+        "summary": "Servier entered into pay-for-delay patent settlements to delay generic entry for perindopril (blood-pressure drug), and acquired the only competing molecule technology. The Commission found both Article 101 and Article 102 infringements."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-691/14",
+          "title": "Servier SAS and Others v Commission",
+          "filing_date": "2014-09-22",
+          "judgment_date": "2018-12-12",
+          "outcome": "partially_annulled",
+          "outcome_detail": "Article 102 infringement annulled (market definition disputed); several Article 101 settlements upheld but others annulled; fine significantly reduced from €331M to €208M for Servier.",
+          "applicants": [
+            "Servier SAS"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-691/14",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62014TJ0691"
+        },
+        {
+          "court": "Court of Justice",
+          "case_number": "C-176/19 P",
+          "title": "Commission v Servier SAS and Others",
+          "filing_date": "2019-02-28",
+          "judgment_date": "2023-10-26",
+          "outcome": "partially_annulled",
+          "outcome_detail": "The Court of Justice partly upheld the Commission's cross-appeal, restoring some elements of the Article 102 analysis and confirming the relevant market definition. Fine partly restored.",
+          "applicants": [
+            "Commission",
+            "Servier SAS"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=C-176/19",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62019CJ0176"
+        }
+      ]
+    },
+    {
+      "dgcomp": {
+        "case_number": "AT.39226",
+        "case_name": "Lundbeck",
+        "case_type": "antitrust",
+        "decision_date": "2013-06-19",
+        "decision_type": "Article 101 TFEU",
+        "fine_eur": 93766000,
+        "parties": [
+          "H. Lundbeck A/S",
+          "Generics UK",
+          "Arrow",
+          "Alpharma",
+          "Ranbaxy"
+        ],
+        "sector": "Pharmaceuticals",
+        "url": "https://competition-cases.ec.europa.eu/cases/AT.39226",
+        "summary": "Lundbeck entered into patent settlement agreements with generic pharmaceutical companies that delayed their market entry for generic citalopram in exchange for value transfers — the first EU 'pay-for-delay' enforcement action."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-472/13",
+          "title": "H. Lundbeck A/S v Commission",
+          "filing_date": "2013-09-04",
+          "judgment_date": "2016-09-08",
+          "outcome": "dismissed",
+          "outcome_detail": "Action dismissed; pay-for-delay agreements held to be restrictions by object.",
+          "applicants": [
+            "H. Lundbeck A/S"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-472/13",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62013TJ0472"
+        },
+        {
+          "court": "Court of Justice",
+          "case_number": "C-591/16 P",
+          "title": "H. Lundbeck A/S v Commission",
+          "filing_date": "2016-11-18",
+          "judgment_date": "2021-03-25",
+          "outcome": "dismissed",
+          "outcome_detail": "Appeal dismissed. The Court of Justice confirmed that pay-for-delay patent settlements constituting 'reverse payments' are restrictions of competition by object under Article 101 TFEU.",
+          "applicants": [
+            "H. Lundbeck A/S"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=C-591/16",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62016CJ0591"
+        }
+      ]
+    },
+    {
+      "dgcomp": {
+        "case_number": "COMP/C-3/37.990",
+        "case_name": "Intel",
+        "case_type": "antitrust",
+        "decision_date": "2009-05-13",
+        "decision_type": "Article 102 TFEU",
+        "fine_eur": 1060000000,
+        "parties": [
+          "Intel Corporation"
+        ],
+        "sector": "Microprocessors",
+        "url": "https://competition-cases.ec.europa.eu/cases/AT.37990",
+        "summary": "Intel abused its dominant position in the x86 CPU market by granting conditional rebates to key computer manufacturers and making payments to a major retailer on condition they would not sell computers with rival AMD processors."
+      },
+      "appeals": [
+        {
+          "court": "General Court",
+          "case_number": "T-286/09",
+          "title": "Intel Corporation v Commission",
+          "filing_date": "2009-07-22",
+          "judgment_date": "2014-06-12",
+          "outcome": "dismissed",
+          "outcome_detail": "Action dismissed; €1.06 billion fine upheld.",
+          "applicants": [
+            "Intel Corporation"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-286/09",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62009TJ0286"
+        },
+        {
+          "court": "Court of Justice",
+          "case_number": "C-413/14 P",
+          "title": "Intel Corporation v Commission",
+          "filing_date": "2014-08-26",
+          "judgment_date": "2017-09-06",
+          "outcome": "referred",
+          "outcome_detail": "The Court of Justice set aside the General Court judgment and referred the case back for re-examination under the as-efficient-competitor test, establishing that exclusivity rebates are not automatically abusive.",
+          "applicants": [
+            "Intel Corporation"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=C-413/14",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62014CJ0413"
+        },
+        {
+          "court": "General Court (remand)",
+          "case_number": "T-286/09 RENV",
+          "title": "Intel Corporation v Commission (remand)",
+          "filing_date": "2017-09-06",
+          "judgment_date": "2022-01-26",
+          "outcome": "partially_annulled",
+          "outcome_detail": "On remand, the General Court partially annulled the decision and significantly reduced the fine, finding that the Commission had not demonstrated anticompetitive effects for the HP and Lenovo conditional rebates.",
+          "applicants": [
+            "Intel Corporation"
+          ],
+          "curia_url": "https://curia.europa.eu/juris/liste.jsf?num=T-286/09+RENV",
+          "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:62009TJ0286RENV"
+        }
+      ]
+    }
+  ]
+}
