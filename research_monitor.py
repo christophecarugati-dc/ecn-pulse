@@ -79,40 +79,33 @@ DIGITAL_COMPETITION_KEYWORDS = [
 #                       • Recommendation algorithms driving platform lock-in
 #                       • Foundation models as new market infrastructure
 
-ARXIV_QUERY_COMPETITION = (
-    "(cat:econ.IO OR cat:econ.GN OR cat:econ.TH OR cat:econ.GN) AND ("
-    'ti:"digital market" OR ti:"platform competition" OR ti:antitrust OR '
-    'ti:"competition policy" OR ti:gatekeeper OR ti:DMA OR ti:DSA OR '
-    'ti:"market power" OR ti:"two-sided market" OR ti:"network effects" OR '
-    'ti:"self-preferencing" OR ti:"algorithmic pricing" OR ti:"data market" OR '
-    'ti:"platform economics" OR ti:"online platform" OR ti:"tech regulation" OR '
-    'ti:"app store" OR ti:"digital economy" OR ti:"merger control" OR '
-    'ti:"killer acquisition" OR ti:"conglomerate effect"'
-    ")"
-)
+# Fetch ALL recent econ.IO / econ.GN / econ.TH papers — these categories are
+# Industrial Organization and General Economics, so every paper is potentially
+# relevant. A title-only filter discards too many relevant submissions.
+ARXIV_QUERY_COMPETITION = "cat:econ.IO OR cat:econ.GN OR cat:econ.TH"
 
 ARXIV_QUERY_MARKET_TECH = (
     "(cat:cs.AI OR cat:cs.IR OR cat:cs.CY OR cat:cs.NI OR cat:cs.LG OR cat:cs.GT) AND ("
     # AI agents & autonomous systems reshaping markets
-    'ti:"AI agent" OR ti:"autonomous agent" OR ti:"agentic" OR '
-    'ti:"AI assistant" OR ti:"virtual assistant" OR '
+    'abs:"AI agent" OR abs:"autonomous agent" OR abs:"agentic" OR '
+    'abs:"AI assistant" OR abs:"virtual assistant" OR '
     # LLMs / foundation models entering markets
-    'ti:"large language model" OR ti:LLM OR ti:"foundation model" OR '
-    'ti:"generative AI" OR ti:"ChatGPT" OR ti:"GPT-4" OR '
+    'abs:"large language model" OR abs:LLM OR abs:"foundation model" OR '
+    'abs:"generative AI" OR abs:"ChatGPT" OR abs:"GPT" OR '
     # Search & information retrieval disruption
-    'ti:"web search" OR ti:"search engine" OR ti:"information retrieval" OR '
-    'ti:"retrieval-augmented" OR ti:RAG OR '
+    'abs:"web search" OR abs:"search engine" OR abs:"information retrieval" OR '
+    'abs:"retrieval-augmented" OR abs:RAG OR '
     # Advertising & content monetisation
-    'ti:"online advertising" OR ti:"digital advertising" OR '
-    'ti:"programmatic" OR ti:"ad auction" OR ti:"content recommendation" OR '
+    'abs:"online advertising" OR abs:"digital advertising" OR '
+    'abs:"ad auction" OR abs:"content recommendation" OR '
     # Recommendation & ranking systems (platform lock-in)
-    'ti:"recommendation system" OR ti:"recommender system" OR '
-    'ti:"ranking algorithm" OR ti:"personalization" OR '
+    'abs:"recommendation system" OR abs:"recommender system" OR '
+    'abs:"ranking algorithm" OR abs:"personalization" OR '
     # Cloud & infrastructure markets
-    'ti:"cloud computing" OR ti:"cloud market" OR ti:"API economy" OR '
+    'abs:"cloud computing" OR abs:"API economy" OR '
     # Data and AI market structure
-    'ti:"data market" OR ti:"data monetization" OR ti:"AI market" OR '
-    'ti:"platform market" OR ti:"marketplace"'
+    'abs:"data market" OR abs:"AI market" OR '
+    'abs:"platform market" OR abs:"digital market" OR abs:"market power"'
     ")"
 )
 
@@ -276,22 +269,25 @@ def fetch_arxiv(session: requests.Session, lookback_days: int) -> list[ResearchI
     """
     seen: set[str] = set()
     items: list[ResearchItem] = []
+    # arXiv papers are processed with delays; use at least 14 days so we don't
+    # miss submissions that appeared in the index after our regular lookback.
+    arxiv_lookback = max(lookback_days, 14)
 
-    log.info("arXiv query 1 — competition economics")
+    log.info("arXiv query 1 — competition economics (lookback %d days)", arxiv_lookback)
     items += _arxiv_query(
         session, ARXIV_QUERY_COMPETITION,
-        max_results=50, lookback_days=lookback_days,
+        max_results=60, lookback_days=arxiv_lookback,
         seen=seen, label="competition-economics",
     )
 
-    log.info("arXiv query 2 — AI/tech market disruption")
+    log.info("arXiv query 2 — AI/tech market disruption (lookback %d days)", arxiv_lookback)
     items += _arxiv_query(
         session, ARXIV_QUERY_MARKET_TECH,
-        max_results=80, lookback_days=lookback_days,
+        max_results=100, lookback_days=arxiv_lookback,
         seen=seen, label="market-tech",
     )
 
-    log.info("arXiv total: %d items (lookback %d days)", len(items), lookback_days)
+    log.info("arXiv total: %d items (lookback %d days)", len(items), arxiv_lookback)
     return items
 
 
