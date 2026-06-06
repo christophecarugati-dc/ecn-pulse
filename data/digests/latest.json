@@ -1,243 +1,145 @@
 {
   "week": "2026-W23",
-  "generated_at": "2026-06-02T06:15:00Z",
-  "total_items": 12,
-  "high_relevance_items": 9,
-  "is_sample": true,
+  "generated_at": "2026-06-06T08:25:46.260784+00:00",
+  "total_items": 10,
   "items": [
     {
-      "source": "arxiv",
-      "source_label": "Academic (arXiv)",
-      "item_type": "academic",
-      "title": "Self-Preferencing in Algorithmic Search: Evidence from DMA Compliance Audits",
-      "url": "https://arxiv.org/abs/2406.01234",
-      "date": "2026-05-29",
-      "authors": ["M. Bergemann", "T. Valletti", "G. Crawford"],
-      "abstract": "We study self-preferencing behaviour by general search gatekeepers following DMA Article 6(5) compliance obligations. Using a novel dataset of 18 months of search result rankings before and after compliance remedies, we find that while explicit self-preferencing fell by 34%, algorithmic self-preferencing through ranking signal weighting persisted. We propose a structural test for detecting implicit preferencing that regulators can operationalise without full algorithmic disclosure.",
-      "categories": ["econ.IO", "cs.AI"],
-      "_analysis": {
-        "summary": "This paper provides empirical evidence that DMA self-preferencing rules eliminated explicit bias but left algorithmic bias intact. The authors develop a new econometric test to detect implicit ranking manipulation without requiring full algorithmic transparency — directly useful for DMA enforcement proceedings. Finding published just as the Commission begins Phase 2 audits of gatekeeper compliance.",
-        "relevance_score": 5,
-        "relevance_explanation": "Directly informs ongoing DMA Article 6(5) enforcement and provides a ready-made methodological toolkit for detecting evasion of self-preferencing rules.",
-        "key_entities": ["DMA", "Google Search", "Bing", "European Commission", "DG COMP"],
-        "themes": ["self-preferencing", "DMA/DSA", "algorithmic pricing", "antitrust enforcement"]
-      }
-    },
-    {
-      "source": "arxiv",
-      "source_label": "Academic (arXiv)",
-      "item_type": "academic",
-      "title": "Conglomerate Effects in AI Foundation Model Markets",
-      "url": "https://arxiv.org/abs/2406.05678",
-      "date": "2026-05-28",
-      "authors": ["F. Scott Morton", "D. Rubinfeld"],
-      "abstract": "We analyse whether large technology firms' simultaneous presence across foundation model training (data, compute), deployment (cloud, APIs), and downstream applications creates conglomerate effects that harm competition. Our model shows that vertical integration of data pipelines with cloud infrastructure creates a cost asymmetry that forecloses independent AI developers regardless of per-market dominance. Policy implications for the AI Act and DMA gatekeeper designation criteria are discussed.",
-      "categories": ["econ.GN", "cs.AI"],
-      "_analysis": {
-        "summary": "Morton and Rubinfeld model how Big Tech's control of data, compute, and cloud together creates a structural foreclosure effect for independent AI developers — even when no single layer is monopolised. The paper challenges existing merger frameworks by showing that conglomerate AI positions can harm competition without triggering traditional dominance thresholds. Directly relevant to designating AI foundation model providers under the DMA.",
-        "relevance_score": 5,
-        "relevance_explanation": "Provides the theoretical and empirical basis for extending DMA gatekeeper designation to AI foundation model providers, a live regulatory debate at the Commission.",
-        "key_entities": ["Microsoft", "Google", "Amazon AWS", "DMA", "AI Act"],
-        "themes": ["DMA/DSA", "AI regulation", "platform economics", "gatekeeper obligations"]
-      }
-    },
-    {
-      "source": "arxiv",
-      "source_label": "Academic (arXiv)",
-      "item_type": "academic",
-      "title": "Interoperability Mandates and Platform Competition: A Dynamic Analysis",
-      "url": "https://arxiv.org/abs/2406.09101",
-      "date": "2026-05-27",
-      "authors": ["J. Farrell", "C. Shapiro", "A. Acquisti"],
-      "abstract": "We build a dynamic model of platform competition under mandatory interoperability (DMA Article 7). We find that interoperability raises consumer surplus in the short run through reduced switching costs, but may reduce long-run innovation incentives if network effects are the primary driver of R&D. The welfare trade-off depends critically on whether incumbents' innovation is primarily defensive (maintaining lock-in) or productive. Empirical tests using EU messaging platform data are proposed.",
-      "categories": ["econ.GN", "econ.TH"],
-      "_analysis": {
-        "summary": "Farrell, Shapiro and Acquisti model the long-run innovation trade-off of DMA interoperability mandates. Short-run consumer benefits (lower switching costs) may come at the cost of reduced R&D if incumbents' innovation was primarily lock-in-driven. The paper provides a welfare framework regulators need to set the scope and conditions of DMA Article 7 compliance.",
-        "relevance_score": 4,
-        "relevance_explanation": "Directly informs DMA Article 7 implementation debates around WhatsApp/iMessage interoperability, currently under active Commission scrutiny.",
-        "key_entities": ["DMA Article 7", "Meta/WhatsApp", "Apple iMessage", "European Commission"],
-        "themes": ["interoperability", "DMA/DSA", "platform economics", "gatekeeper obligations"]
-      }
-    },
-    {
-      "source": "eurlex",
-      "source_label": "EU Regulation (EUR-Lex)",
-      "item_type": "decision",
-      "title": "Commission Decision of 28 May 2026 — Preliminary Findings: Apple App Store DMA Article 5(4)",
-      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:2026D0528",
-      "date": "2026-05-28",
-      "abstract": "The European Commission has issued preliminary findings that Apple's Core Technology Fee constitutes a circumvention of DMA Article 5(4) obligations on third-party app distribution. The Commission finds that the fee structure replicates the economic effect of the pre-DMA 30% commission in a way that makes alternative app distribution economically unviable for most developers.",
+      "source": "UK",
+      "source_label": "Competition and Markets Authority",
+      "item_type": "other",
+      "title": "CMA secures fairer deal for publishers and improves Google search services in UK",
+      "url": "https://www.gov.uk/government/news/cma-secures-fairer-deal-for-publishers-and-improves-google-search-services-in-uk",
+      "date": "2026-06-03",
+      "abstract": "Conduct requirement introduced today gives publishers more control and stronger bargaining power over the use of their content.",
       "authors": [],
-      "categories": ["DMA/DSA"],
-      "_analysis": {
-        "summary": "The Commission's preliminary finding strikes at Apple's Core Technology Fee, concluding it effectively reinstates the 30% commission the DMA was designed to eliminate. If confirmed, Apple faces daily fines of up to 5% of global daily turnover. This is the first Commission finding to directly characterise an economic fee structure as a DMA circumvention — a significant enforcement escalation.",
-        "relevance_score": 5,
-        "relevance_explanation": "Sets a precedent for how the Commission will treat 'economic circumvention' of DMA obligations — affecting all gatekeepers' fee redesigns following DMA compliance.",
-        "key_entities": ["Apple", "App Store", "DMA Article 5(4)", "European Commission", "Core Technology Fee"],
-        "themes": ["DMA/DSA", "antitrust enforcement", "gatekeeper obligations", "self-preferencing"]
-      }
-    },
-    {
-      "source": "eurlex",
-      "source_label": "EU Regulation (EUR-Lex)",
-      "item_type": "regulation",
-      "title": "Delegated Regulation (EU) 2026/847 — Technical Specifications for DMA Article 7 Interoperability APIs",
-      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:2026R0847",
-      "date": "2026-05-26",
-      "abstract": "This delegated regulation specifies the technical standards and API protocols that number-independent interpersonal communication services must implement to comply with DMA Article 7 interoperability obligations. It establishes minimum message format standards, latency requirements, and security protocols that all gatekeepers must support by Q4 2026.",
-      "authors": [],
-      "categories": ["DMA/DSA"],
-      "_analysis": {
-        "summary": "The Commission specifies the exact technical standards for messaging interoperability under DMA Article 7, including API specs, message format standards and a Q4 2026 deadline. This moves interoperability from a principle to an enforceable technical obligation — gatekeepers can no longer argue implementation complexity as a compliance shield.",
-        "relevance_score": 4,
-        "relevance_explanation": "Operationalises DMA Article 7 interoperability for messaging gatekeepers, directly affecting Meta, Apple and Google compliance planning.",
-        "key_entities": ["DMA Article 7", "Meta", "Apple", "Google", "Signal Protocol"],
-        "themes": ["DMA/DSA", "interoperability", "gatekeeper obligations"]
-      }
-    },
-    {
-      "source": "DE",
-      "source_label": "Bundeskartellamt",
-      "item_type": "digital",
-      "title": "Bundeskartellamt opens proceedings against Amazon for algorithmic pricing coordination",
-      "url": "https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2026/31_05_2026_Amazon.html",
-      "date": "2026-05-31",
-      "abstract": "The German Federal Cartel Office has opened formal proceedings against Amazon under Section 19a GWB, alleging that Amazon's Buy Box algorithm actively encourages third-party sellers to align prices across the platform, constituting algorithmic facilitation of coordinated pricing behaviour.",
-      "authors": [],
-      "categories": ["digital"],
-      "_analysis": {
-        "summary": "Germany's Bundeskartellamt opens a Section 19a case on Amazon's Buy Box algorithm — alleging it functions as a pricing coordination hub by penalising sellers who undercut Amazon's own prices or who price differently on competing platforms. This is the first major NCA case to directly characterise a recommendation algorithm as a coordination facilitator under the new digital-market specific powers.",
-        "relevance_score": 5,
-        "relevance_explanation": "First major NCA application of digital-market specific powers to algorithmic pricing coordination — directly signals the enforcement direction for platform pricing algorithms across Europe.",
-        "key_entities": ["Amazon", "Bundeskartellamt", "GWB Section 19a", "Buy Box"],
-        "themes": ["algorithmic pricing", "antitrust enforcement", "platform economics"]
-      }
+      "categories": [
+        "other"
+      ]
     },
     {
       "source": "EU",
-      "source_label": "European Commission (DG COMP)",
-      "item_type": "policy",
-      "title": "DG COMP Staff Working Document: Preliminary Framework for AI Foundation Model Merger Assessment",
-      "url": "https://competition-policy.ec.europa.eu/document/ai-foundation-model-merger-framework_en",
-      "date": "2026-05-30",
-      "abstract": "This staff working document sets out DG COMP's preliminary thinking on how to assess mergers involving AI foundation models, addressing the identification of relevant product markets, the assessment of conglomerate and portfolio effects, and the adequacy of behavioural versus structural remedies in dynamic AI markets.",
-      "authors": [],
-      "categories": ["policy"],
-      "_analysis": {
-        "summary": "DG COMP signals that existing merger frameworks struggle with AI foundation model acquisitions, where competitive harm is diffuse and dynamic. The document previews new analytical tools for conglomerate effects and signals preference for structural over behavioural remedies in AI mergers — representing a significant shift in Commission merger policy for tech markets.",
-        "relevance_score": 5,
-        "relevance_explanation": "Directly shapes how the Commission will review AI mergers going forward — affects every deal involving foundation models, AI infrastructure, or data pipeline acquisitions.",
-        "key_entities": ["DG COMP", "European Commission", "Microsoft", "Google DeepMind", "AI Act"],
-        "themes": ["merger control", "AI regulation", "market definition", "antitrust enforcement"]
-      }
-    },
-    {
-      "source": "cjeu",
-      "source_label": "Court (CJEU)",
-      "item_type": "judgment",
-      "title": "Case T-1204/24 — Google LLC v Commission (Google Shopping II) — Judgment",
-      "url": "https://curia.europa.eu/juris/document/document.jsf?docid=290123",
-      "date": "2026-05-27",
-      "abstract": "The General Court dismissed Google's appeal against the Commission's 2023 supplementary Google Shopping decision, confirming that the Commission's revised remedy framework — including mandatory equal treatment of rival comparison shopping services in the Shopping Unit — is proportionate and legally sound. The Court rejected Google's argument that equal treatment would constitute compulsory licensing.",
-      "authors": [],
-      "categories": ["Competition Judgment"],
-      "_analysis": {
-        "summary": "The General Court upholds the Commission's Google Shopping remedy framework in full, confirming that equal treatment of rival comparison services does not constitute unlawful compulsory licensing. The judgment strengthens the Commission's hand in designing access and equal treatment remedies — relevant beyond Google to all DMA self-preferencing cases.",
-        "relevance_score": 5,
-        "relevance_explanation": "Establishes that equal treatment remedies for self-preferencing are legally sound under EU competition law, directly supporting the DMA's Article 6(5) enforcement framework.",
-        "key_entities": ["Google", "European Commission", "General Court", "Google Shopping", "DMA Article 6(5)"],
-        "themes": ["court proceedings", "antitrust enforcement", "self-preferencing", "DMA/DSA"]
-      }
-    },
-    {
-      "source": "FR",
-      "source_label": "Autorité de la concurrence (France)",
+      "source_label": "European Commission · DG COMP",
       "item_type": "merger",
-      "title": "Autorité clears Mistral AI acquisition of Nabla with conditions requiring API openness",
-      "url": "https://www.autoritedelaconcurrence.fr/en/press-release/mistral-nabla-2026",
-      "date": "2026-05-29",
-      "abstract": "The French competition authority cleared Mistral AI's acquisition of Nabla, a health AI platform, subject to conditions requiring Mistral to maintain open API access for competing health AI developers and prohibiting exclusive data arrangements with Nabla's hospital network partners for three years.",
+      "title": "Commission approves Carlyle's acquisition of BASF Coatings, subject to conditions",
+      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1221",
+      "date": "2026-06-02",
+      "abstract": "The European Commission has approved, under the EU Merger Regulation, the proposed acquisition of BASF's coatings division ('BASF Coatings') by The Carlyle Group Inc. ('Carlyle').",
       "authors": [],
-      "categories": ["merger"],
-      "_analysis": {
-        "summary": "France's Autorité clears a generative AI health market merger with API openness and data exclusivity conditions — the first NCA merger clearance to impose structural open-access remedies on an AI acquisition. The conditions signal how NCAs are beginning to apply interoperability principles to AI market consolidation.",
-        "relevance_score": 4,
-        "relevance_explanation": "Establishes a precedent for AI merger remedies focusing on API access and data exclusivity — likely to be followed by other NCAs reviewing AI consolidation.",
-        "key_entities": ["Mistral AI", "Nabla", "Autorité de la concurrence", "health AI"],
-        "themes": ["merger control", "AI regulation", "interoperability", "data markets"]
-      }
+      "categories": [
+        "merger"
+      ]
+    },
+    {
+      "source": "EU",
+      "source_label": "European Commission · DG COMP",
+      "item_type": "merger",
+      "title": "Commission opens in-depth foreign subsidies investigation into JD.com's proposed acquisition of CECONOMY",
+      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1164",
+      "date": "2026-05-28",
+      "abstract": "The European Commission has opened an in-depth investigation to assess, under the Foreign Subsidies Regulation ('FSR'), the proposed acquisition by JD.com, Inc. ('JD.com') of CECONOMY AG ('CECONOMY').",
+      "authors": [],
+      "categories": [
+        "merger"
+      ]
+    },
+    {
+      "source": "EU",
+      "source_label": "European Commission · DG COMP",
+      "item_type": "merger",
+      "title": "Commission unconditionally approves Arla's acquisition of DMK and DOC",
+      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1165",
+      "date": "2026-05-28",
+      "abstract": "The European Commission has unconditionally approved, under the EU Merger Regulation, the proposed acquisition by Arla Foods amba ('Arla') of Deutsches Milchkontor eG ('DMK') and Drents Overijsselse Coöperatie Kaas U.A.('DOC').",
+      "authors": [],
+      "categories": [
+        "merger"
+      ]
+    },
+    {
+      "source": "EU",
+      "source_label": "European Commission · DG COMP",
+      "item_type": "cartel",
+      "title": "Commission sends Statements of Objections to several companies concerning synthetic turf cartels",
+      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1123",
+      "date": "2026-05-21",
+      "abstract": "The European Commission has informed several companies active in the synthetic turf sector of its preliminary view that they have breached EU antitrust rules by colluding to distort competition in synthetic turf for sports pitches in the Netherlands and Germany.",
+      "authors": [],
+      "categories": [
+        "cartel"
+      ]
+    },
+    {
+      "source": "HR",
+      "source_label": "Croatian Competition Agency (AZTN)",
+      "item_type": "policy",
+      "title": "Održana konferencija o tržišnom natjecanju „Meet to Compete-Repeat Competition Law and Policy Conference“",
+      "url": "https://www.aztn.hr/odrzana-konferencija-o-trzisnom-natjecanju-meet-to-compete-competition-law-and-policy-conference-tools-for-the-new-rules-2/",
+      "date": "2026-05-18",
+      "abstract": "Konferencija „Meet to Compete Competition Law and Policy Conference – Tools for the New Rules“ održana je 14. i 15. svibnja 2026. u Opatiji, u organizaciji Međunarodne trgovačke komore – ICC Croatia i Hrvatske gospodarske komore, uz podršku Agencije za zaštitu tržišnog natjecanja (AZTN). Konferencija je i ove godine okupila vodeće europske i međunarodne stručnjake [&#8230;] Objava Održana konferencija o tržišnom natjecanju „Meet to Compete-Repeat Competition Law and Policy Conference“ pojavila se prvi puta na AZTN .",
+      "authors": [],
+      "categories": [
+        "policy"
+      ]
+    },
+    {
+      "source": "UK",
+      "source_label": "Competition and Markets Authority",
+      "item_type": "merger",
+      "title": "CMA conditionally clears Getty merger with Shutterstock",
+      "url": "https://www.gov.uk/government/news/cma-conditionally-clears-getty-merger-with-shutterstock",
+      "date": "2026-05-15",
+      "abstract": "CMA independent inquiry group concludes deal can proceed if Shutterstock sells its editorial business",
+      "authors": [],
+      "categories": [
+        "merger"
+      ]
+    },
+    {
+      "source": "UK",
+      "source_label": "Competition and Markets Authority",
+      "item_type": "other",
+      "title": "CMA launches strategic market status investigation into Microsoft’s business software ecosystem",
+      "url": "https://www.gov.uk/government/news/cma-launches-strategic-market-status-investigation-into-microsofts-business-software-ecosystem",
+      "date": "2026-05-14",
+      "abstract": "CMA sets out scope of its investigation to determine whether Microsoft should be designated with strategic market status for its business software ecosystem.",
+      "authors": [],
+      "categories": [
+        "other"
+      ]
+    },
+    {
+      "source": "MT",
+      "source_label": "MCCAA · Office for Competition",
+      "item_type": "merger",
+      "title": "Office for Competition | Decision",
+      "url": "https://mccaa.org.mt/office-for-competition-decision/",
+      "date": "2026-05-12",
+      "abstract": "The Office for Competition approves the acquisition by H.I.G. Capital LLC through IAC Malta Limited of the Business and assets...",
+      "authors": [],
+      "categories": [
+        "merger"
+      ]
+    },
+    {
+      "source": "MT",
+      "source_label": "MCCAA · Office for Competition",
+      "item_type": "policy",
+      "title": "User Guidelines",
+      "url": "https://mccaa.org.mt/user-guidelines/",
+      "date": "2026-05-12",
+      "abstract": "Consumer Rights (Amendment) Regulations, 2026 The Office for Consumer Affairs within the MCCAA will transpose Directive (EU) 2023/2673 of the...",
+      "authors": [],
+      "categories": [
+        "policy"
+      ]
     }
   ],
   "synthesis": {
-    "ai_enabled": true,
-    "headline": "DMA Enforcement Escalates as AI Merger Frameworks Take Shape — Week 23, 2026",
-    "executive_summary": "This week marks a significant escalation in DMA enforcement, with the Commission issuing preliminary findings against Apple's Core Technology Fee as economic circumvention and publishing delegated regulations for mandatory messaging interoperability. Simultaneously, DG COMP's new AI merger framework signals that conglomerate and portfolio effects in AI markets will receive heightened scrutiny — a position directly supported by two high-profile academic papers showing how Big Tech's multi-layer AI presence forecloses independent developers. Germany's Bundeskartellamt added to the week's momentum by opening the first NCA case framing a marketplace algorithm as a pricing coordination facilitator.",
-    "key_themes": [
-      {
-        "theme": "DMA Enforcement Intensifies",
-        "description": "The Commission moved from monitoring to concrete enforcement action this week, with preliminary findings against Apple and new technical regulations specifying interoperability standards. The Apple CTF finding is particularly significant because it characterises an economic fee structure — not just a technical restriction — as DMA circumvention, opening a new enforcement dimension for all gatekeepers' pricing architecture.",
-        "item_indices": [4, 5, 8]
-      },
-      {
-        "theme": "AI Competition: Markets, Mergers & Frameworks",
-        "description": "Two academic papers and one DG COMP policy document converged on the same problem: existing competition frameworks are not well-equipped to assess competitive harm from AI conglomerate positions. DG COMP's preliminary framework and the Morton/Rubinfeld paper both point toward structural remedies and possible DMA designation criteria extensions for AI foundation model providers.",
-        "item_indices": [2, 7]
-      },
-      {
-        "theme": "Algorithmic Accountability in Platform Markets",
-        "description": "The Bundeskartellamt's Amazon Buy Box investigation and the Bergemann et al. paper on implicit search self-preferencing both illustrate a shift: enforcement is moving from visible market manipulation to the hidden logic of recommendation and ranking algorithms. NCAs now need methodological tools — like those proposed in the Bergemann paper — to detect and prove algorithmic harm.",
-        "item_indices": [1, 6]
-      },
-      {
-        "theme": "Interoperability: From Principle to Engineering",
-        "description": "The DMA Article 7 technical specifications regulation moves interoperability from a regulatory aspiration to a hard engineering obligation with a Q4 2026 deadline. The Farrell/Shapiro paper on dynamic welfare effects provides the theoretical backdrop, showing that short-run consumer benefits are likely to dominate unless incumbent R&D is primarily lock-in-driven.",
-        "item_indices": [3, 5]
-      }
-    ],
-    "connections": [
-      {
-        "description": "The Bergemann et al. paper on implicit search self-preferencing provides the exact methodological toolkit DG COMP needs to evaluate compliance with the Apple CTF preliminary finding — both address how to detect economic circumvention of self-preferencing rules without full algorithmic disclosure.",
-        "item_indices": [1, 4],
-        "connection_type": "academic_supports_regulation"
-      },
-      {
-        "description": "The Morton/Rubinfeld conglomerate AI paper directly underpins DG COMP's new AI merger framework staff document — both frame conglomerate effects across data/compute/cloud layers as the key competitive harm in AI markets, and both prefer structural over behavioural remedies.",
-        "item_indices": [2, 7],
-        "connection_type": "academic_supports_regulation"
-      },
-      {
-        "description": "The General Court's Google Shopping II judgment confirming equal treatment remedies as legally sound directly reinforces the Commission's legal basis for the Apple CTF preliminary finding — both proceed on the principle that equal treatment obligations do not constitute compulsory licensing.",
-        "item_indices": [4, 8],
-        "connection_type": "case_follows_theory"
-      },
-      {
-        "description": "Germany's Amazon algorithmic pricing case and the Bergemann self-preferencing paper both identify the same enforcement gap: current tools detect explicit rule violations but cannot easily detect harm embedded in algorithmic weighting — suggesting a shared methodological need across NCAs and DG COMP.",
-        "item_indices": [1, 6],
-        "connection_type": "enforcement_trend"
-      },
-      {
-        "description": "France's Mistral/Nabla clearance with API-openness conditions and the Farrell/Shapiro interoperability paper represent parallel but potentially conflicting approaches: Farrell argues welfare depends on whether incumbents' innovation is defensive, but the Autorité did not require an innovation impact assessment before imposing interoperability conditions.",
-        "item_indices": [3, 9],
-        "connection_type": "conflicting_approaches"
-      }
-    ],
-    "policy_implications": [
-      {
-        "implication": "The Apple CTF preliminary finding expands 'circumvention' to economic equivalence — any DMA-designated gatekeeper whose revised fee structure replicates the economic effect of a pre-DMA restriction is now at risk of non-compliance findings. Practitioners should audit clients' DMA compliance redesigns against this standard immediately.",
-        "urgency": "immediate"
-      },
-      {
-        "implication": "DG COMP's AI merger framework signals that acquisitions in the AI value chain — data infrastructure, cloud, model weights, applications — will face conglomerate-effects analysis even when no single market is dominated. M&A advisers should build multi-market portfolio analysis into AI deal planning.",
-        "urgency": "immediate"
-      },
-      {
-        "implication": "NCAs are converging on algorithmic accountability as the next enforcement frontier, but lack standardised methodologies. The Bergemann et al. paper's structural test for implicit preferencing is likely to feature in future DG COMP guidance and NCA investigations — early familiarity is an advantage for practitioners.",
-        "urgency": "medium_term"
-      },
-      {
-        "implication": "The Q4 2026 DMA Article 7 interoperability deadline is now technically specified and legally actionable. Gatekeepers who miss the deadline face daily fines; smaller messaging platforms covered by Article 7 should begin API compliance engineering now.",
-        "urgency": "immediate"
-      }
-    ]
+    "headline": "Digital Competition Digest — 2026-W23",
+    "executive_summary": "AI analysis is disabled (--no-ai mode). This digest aggregates 10 items from ECN, arXiv, EUR-Lex, and CJEU published in the last 30 days. Add ANTHROPIC_API_KEY and remove --no-ai to enable summaries and thematic analysis.",
+    "key_themes": [],
+    "connections": [],
+    "policy_implications": [],
+    "ai_enabled": false
   }
 }
