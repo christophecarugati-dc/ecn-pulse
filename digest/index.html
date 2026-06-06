@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECN Pulse — Weekly Digest</title>
+  <style>
+    :root {
+      --bg: #f8f9fb;
+      --surface: #ffffff;
+      --border: #e2e5eb;
+      --text: #1a1d23;
+      --text-muted: #6b7280;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --accent-border: #bfdbfe;
+
+      --score-5: #dc2626; --score-5-bg: #fef2f2;
+      --score-4: #d97706; --score-4-bg: #fffbeb;
+      --score-3: #2563eb; --score-3-bg: #eff6ff;
+      --score-2: #6b7280; --score-2-bg: #f9fafb;
+      --score-1: #9ca3af; --score-1-bg: #f9fafb;
+
+      --source-arxiv: #7c3aed;
+      --source-eurlex: #0369a1;
+      --source-cjeu: #065f46;
+      --source-ecn: #b45309;
+      --source-other: #374151;
+
+      --conn-academic: #7c3aed;
+      --conn-regulatory: #0369a1;
+      --conn-court: #065f46;
+      --conn-trend: #b45309;
+      --conn-conflict: #dc2626;
+
+      --radius: 10px;
+      --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,.07), 0 2px 4px -1px rgba(0,0,0,.04);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117; --surface: #1a1d25; --border: #2a2f3e;
+        --text: #e8eaf0; --text-muted: #8b92a5;
+        --accent: #3b82f6; --accent-light: #1e3a5f; --accent-border: #2563eb;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+           background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; }
+
+    /* ── Layout ──────────────────────────────────────────────── */
+    .header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex; align-items: center; gap: 16px;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-logo { font-size: 18px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+    .header-sep { color: var(--border); }
+    .header-title { font-size: 15px; color: var(--text-muted); }
+    .header-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+
+    .week-nav { display: flex; align-items: center; gap: 8px; }
+    .week-label { font-size: 13px; font-weight: 600; color: var(--text); }
+    .week-btn { background: none; border: 1px solid var(--border); color: var(--text);
+                padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+    .week-btn:hover { background: var(--accent-light); border-color: var(--accent-border); }
+    .week-btn:disabled { opacity: 0.35; cursor: default; }
+
+    .main { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+
+    /* ── Cards ───────────────────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .card-title { font-size: 13px; font-weight: 700; text-transform: uppercase;
+                  letter-spacing: .6px; color: var(--text-muted); margin-bottom: 14px; }
+
+    /* ── Headline / executive summary ───────────────────────── */
+    .headline-card { border-left: 4px solid var(--accent); }
+    .headline-text { font-size: 20px; font-weight: 700; line-height: 1.35;
+                     color: var(--text); margin-bottom: 12px; }
+    .exec-summary { color: var(--text); line-height: 1.7; }
+    .meta-row { display: flex; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+    .meta-badge { display: inline-flex; align-items: center; gap: 5px;
+                  font-size: 12px; color: var(--text-muted);
+                  background: var(--bg); border: 1px solid var(--border);
+                  border-radius: 20px; padding: 3px 10px; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+    .dot-green { background: #16a34a; }
+    .dot-orange { background: #d97706; }
+    .dot-blue { background: var(--accent); }
+    .ai-badge { background: var(--accent-light); border-color: var(--accent-border);
+                color: var(--accent); font-weight: 500; }
+    .no-ai-badge { background: #fffbeb; border-color: #fde68a; color: #92400e; font-weight: 500; }
+
+    /* ── Themes grid ─────────────────────────────────────────── */
+    .themes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+    .theme-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .theme-name { font-weight: 600; margin-bottom: 6px; font-size: 14px; }
+    .theme-desc { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+    .theme-items { margin-top: 8px; display: flex; gap: 4px; flex-wrap: wrap; }
+    .item-ref { font-size: 11px; background: var(--accent-light); color: var(--accent);
+                border: 1px solid var(--accent-border); border-radius: 4px;
+                padding: 1px 6px; cursor: pointer; }
+    .item-ref:hover { background: var(--accent); color: #fff; }
+
+    /* ── Connections ─────────────────────────────────────────── */
+    .connection {
+      border-left: 3px solid var(--conn-academic);
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      background: var(--bg);
+      margin-bottom: 10px;
+    }
+    .connection.case_follows_theory { border-left-color: var(--conn-regulatory); }
+    .connection.enforcement_trend { border-left-color: var(--conn-trend); }
+    .connection.conflicting_approaches { border-left-color: var(--conn-conflict); }
+    .connection.regulatory_gap { border-left-color: var(--conn-court); }
+    .connection-type { font-size: 11px; font-weight: 600; text-transform: uppercase;
+                       letter-spacing: .5px; margin-bottom: 5px; color: var(--text-muted); }
+    .connection-desc { font-size: 13px; line-height: 1.55; }
+    .connection-refs { margin-top: 6px; display: flex; gap: 4px; }
+
+    /* ── Policy implications ─────────────────────────────────── */
+    .implication {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 12px 0; border-bottom: 1px solid var(--border);
+    }
+    .implication:last-child { border-bottom: none; }
+    .urgency-badge { flex-shrink: 0; font-size: 11px; font-weight: 600;
+                     border-radius: 4px; padding: 2px 8px; text-transform: uppercase; }
+    .urgency-immediate { background: #fef2f2; color: #dc2626; }
+    .urgency-medium_term { background: #fffbeb; color: #d97706; }
+    .urgency-watch { background: #f0fdf4; color: #16a34a; }
+    .implication-text { font-size: 13px; line-height: 1.6; }
+
+    /* ── Filter bar ──────────────────────────────────────────── */
+    .filter-bar { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+    .filter-btn { background: var(--surface); border: 1px solid var(--border);
+                  color: var(--text-muted); padding: 5px 12px; border-radius: 20px;
+                  cursor: pointer; font-size: 12px; font-weight: 500; transition: all .15s; }
+    .filter-btn.active { color: var(--accent); background: var(--accent-light);
+                         border-color: var(--accent-border); }
+    .filter-btn:hover:not(.active) { border-color: var(--text-muted); color: var(--text); }
+    .items-count { margin-left: auto; font-size: 12px; color: var(--text-muted); }
+
+    /* ── Item cards ──────────────────────────────────────────── */
+    .item-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      transition: box-shadow .15s;
+    }
+    .item-card:hover { box-shadow: var(--shadow-md); }
+    .item-card.hidden { display: none; }
+    .item-header { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
+    .source-tag {
+      flex-shrink: 0; font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .5px; border-radius: 4px; padding: 2px 7px; margin-top: 2px;
+    }
+    .source-arxiv { background: #f3e8ff; color: var(--source-arxiv); }
+    .source-eurlex { background: #e0f2fe; color: var(--source-eurlex); }
+    .source-cjeu, .source-cjeu_linker { background: #d1fae5; color: var(--source-cjeu); }
+    .source-ecn { background: #fef9c3; color: var(--source-ecn); }
+    .source-default { background: var(--bg); color: var(--source-other); }
+    .item-title { font-size: 14px; font-weight: 600; line-height: 1.4; }
+    .item-title a { color: var(--text); text-decoration: none; }
+    .item-title a:hover { color: var(--accent); text-decoration: underline; }
+    .item-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
+    .item-summary { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px; }
+    .item-footer { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .score-badge { font-size: 11px; font-weight: 600; border-radius: 4px; padding: 1px 7px; }
+    .score-5 { background: var(--score-5-bg); color: var(--score-5); }
+    .score-4 { background: var(--score-4-bg); color: var(--score-4); }
+    .score-3 { background: var(--score-3-bg); color: var(--score-3); }
+    .score-2, .score-1 { background: var(--score-2-bg); color: var(--score-2); }
+    .theme-tag { font-size: 11px; background: var(--bg); border: 1px solid var(--border);
+                 color: var(--text-muted); border-radius: 4px; padding: 1px 6px; }
+    .entity-tag { font-size: 11px; background: var(--accent-light); color: var(--accent);
+                  border: 1px solid var(--accent-border); border-radius: 4px; padding: 1px 6px; }
+    .item-relevance { font-size: 12px; color: var(--text-muted); font-style: italic;
+                      margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border); }
+
+    /* ── Abstract expand ─────────────────────────────────────── */
+    .expand-btn { background: none; border: none; color: var(--accent);
+                  font-size: 12px; cursor: pointer; padding: 0; }
+    .item-abstract { font-size: 13px; color: var(--text-muted); line-height: 1.6;
+                     margin-top: 6px; display: none; }
+    .item-abstract.visible { display: block; }
+
+    /* ── Sections ────────────────────────────────────────────── */
+    .section-header {
+      font-size: 16px; font-weight: 700; margin: 28px 0 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .count-badge { font-size: 12px; font-weight: 500; background: var(--bg);
+                   border: 1px solid var(--border); border-radius: 20px;
+                   padding: 1px 8px; color: var(--text-muted); }
+
+    /* ── Loading / empty states ──────────────────────────────── */
+    .loading { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 15px; }
+    .empty { text-align: center; padding: 30px; color: var(--text-muted); font-size: 13px; }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .header { padding: 12px 16px; flex-wrap: wrap; }
+      .header-right { width: 100%; justify-content: flex-end; }
+      .main { padding: 16px 12px; }
+      .card { padding: 16px; }
+      .themes-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <span class="header-logo">ECN Pulse</span>
+  <span class="header-sep">›</span>
+  <span class="header-title">Weekly Digest</span>
+  <div class="header-right">
+    <div class="week-nav">
+      <button class="week-btn" id="prevWeek" onclick="changeWeek(-1)" disabled>‹ Prev</button>
+      <span class="week-label" id="weekLabel">Loading…</span>
+      <button class="week-btn" id="nextWeek" onclick="changeWeek(+1)" disabled>Next ›</button>
+    </div>
+    <a href="../" style="font-size:12px; color: var(--text-muted); text-decoration:none;">
+      ← Enforcement feed
+    </a>
+  </div>
+</header>
+
+<main class="main" id="main">
+  <div class="loading">Loading digest…</div>
+</main>
+
+<script>
+// ── State ─────────────────────────────────────────────────────────────────────
+const DATA_BASE = "../data/digests/";
+let currentDigest = null;
+let availableWeeks = [];
+let currentWeekIdx = 0;
+let activeFilter = "all";
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+async function init() {
+  // Load manifest of available weeks, then latest digest
+  await loadDigest(DATA_BASE + "latest.json");
+}
+
+async function loadDigest(url) {
+  try {
+    const resp = await fetch(url + "?t=" + Date.now());
+    if (!resp.ok) throw new Error(resp.statusText);
+    currentDigest = await resp.json();
+    render();
+  } catch (e) {
+    document.getElementById("main").innerHTML =
+      `<div class="loading">Could not load digest: ${e.message}</div>`;
+  }
+}
+
+function changeWeek(delta) {
+  // placeholder: with multiple weeks stored, navigate between them
+}
+
+// ── Render ────────────────────────────────────────────────────────────────────
+function render() {
+  if (!currentDigest) return;
+  const d = currentDigest;
+  const syn = d.synthesis || {};
+  const items = d.items || [];
+
+  document.getElementById("weekLabel").textContent = d.week || "—";
+
+  const isSample = d.is_sample;
+  const aiEnabled = syn.ai_enabled;
+
+  let html = "";
+
+  // Sample banner
+  if (isSample) {
+    html += `<div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;
+      padding:10px 16px;margin-bottom:16px;font-size:13px;color:#92400e;">
+      <strong>Demo mode:</strong> This digest was pre-generated to show you what the tool looks like.
+      Once the GitHub Actions workflow runs on Monday, it will be replaced with real data.
+    </div>`;
+  }
+
+  // Headline + executive summary
+  html += `<div class="card headline-card">
+    <div class="headline-text">${esc(syn.headline || d.week + " — Competition Policy Digest")}</div>
+    <div class="exec-summary">${esc(syn.executive_summary || "")}</div>
+    <div class="meta-row">
+      <span class="meta-badge"><span class="dot dot-blue"></span>${items.length} items monitored</span>
+      ${d.high_relevance_items ? `<span class="meta-badge"><span class="dot dot-orange"></span>${d.high_relevance_items} high relevance</span>` : ""}
+      <span class="meta-badge"><span class="dot dot-green"></span>${formatDate(d.generated_at)}</span>
+      ${aiEnabled
+        ? `<span class="meta-badge ai-badge">✦ AI analysis enabled</span>`
+        : `<span class="meta-badge no-ai-badge">⚠ AI analysis disabled</span>`}
+    </div>
+  </div>`;
+
+  // Key themes
+  const themes = syn.key_themes || [];
+  if (themes.length) {
+    html += `<div class="card">
+      <div class="card-title">Key themes this week</div>
+      <div class="themes-grid">`;
+    themes.forEach(t => {
+      const refs = (t.item_indices || []).map(i =>
+        `<span class="item-ref" onclick="scrollToItem(${i})">#${i}</span>`
+      ).join("");
+      html += `<div class="theme-card">
+        <div class="theme-name">${esc(t.theme)}</div>
+        <div class="theme-desc">${esc(t.description)}</div>
+        ${refs ? `<div class="theme-items">${refs}</div>` : ""}
+      </div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  // Connections
+  const connections = syn.connections || [];
+  if (connections.length) {
+    html += `<div class="card">
+      <div class="card-title">Cross-publication connections</div>`;
+    connections.forEach(c => {
+      const typeLabel = (c.connection_type || "").replace(/_/g, " ");
+      const refs = (c.item_indices || []).map(i =>
+        `<span class="item-ref" onclick="scrollToItem(${i})">#${i}</span>`
+      ).join("");
+      html += `<div class="connection ${esc(c.connection_type || "")}">
+        <div class="connection-type">${esc(typeLabel)}</div>
+        <div class="connection-desc">${esc(c.description)}</div>
+        ${refs ? `<div class="connection-refs">${refs}</div>` : ""}
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  // Policy implications
+  const implications = syn.policy_implications || [];
+  if (implications.length) {
+    html += `<div class="card">
+      <div class="card-title">Policy implications for practitioners</div>`;
+    implications.forEach(imp => {
+      html += `<div class="implication">
+        <span class="urgency-badge urgency-${esc(imp.urgency || 'watch')}">${esc(imp.urgency || 'watch').replace('_', ' ')}</span>
+        <span class="implication-text">${esc(imp.implication)}</span>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  // Items section
+  html += renderItemsSection(items);
+
+  document.getElementById("main").innerHTML = html;
+}
+
+function renderItemsSection(items) {
+  if (!items.length) return `<div class="empty">No items found for this period.</div>`;
+
+  const sourceCounts = {};
+  items.forEach(it => {
+    const src = normaliseSource(it.source);
+    sourceCounts[src] = (sourceCounts[src] || 0) + 1;
+  });
+
+  const sourceGroups = [
+    { key: "academic", label: "Academic Research", color: "#7c3aed", icon: "📄" },
+    { key: "regulatory", label: "EU Regulation & Policy", color: "#0369a1", icon: "📋" },
+    { key: "court", label: "Court Decisions", color: "#065f46", icon: "⚖️" },
+    { key: "enforcement", label: "NCA Enforcement", color: "#b45309", icon: "🔎" },
+  ];
+
+  // Filter bar
+  let html = `<div class="section-header" style="margin-top:24px">
+    Publications <span class="count-badge">${items.length}</span>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="setFilter('all', this)">All</button>`;
+  sourceGroups.forEach(g => {
+    const cnt = countByGroup(items, g.key);
+    if (cnt > 0) {
+      html += `<button class="filter-btn" onclick="setFilter('${g.key}', this)">${g.icon} ${g.label} <span style="opacity:.6">${cnt}</span></button>`;
+    }
+  });
+  html += `<span class="items-count" id="itemsCount">${items.length} items</span></div>`;
+
+  // Items list (numbered for cross-references)
+  html += `<div id="itemsList">`;
+  items.forEach((it, idx) => {
+    html += renderItem(it, idx + 1);
+  });
+  html += `</div>`;
+  return html;
+}
+
+function renderItem(it, idx) {
+  const analysis = it._analysis || {};
+  const src = normaliseSource(it.source);
+  const srcClass = `source-${src}`;
+  const srcLabel = it.source_label || it.source || "";
+  const score = analysis.relevance_score;
+  const themes = analysis.themes || [];
+  const entities = analysis.key_entities || [];
+  const summary = analysis.summary || "";
+  const relevanceExp = analysis.relevance_explanation || "";
+  const abstract = it.abstract || "";
+  const authors = (it.authors || []).slice(0, 3).join(", ");
+  const dataGroup = src;
+
+  let html = `<div class="item-card" id="item-${idx}" data-group="${dataGroup}">
+    <div class="item-header">
+      <span class="source-tag ${srcClass}">${esc(srcLabel)}</span>
+      <div class="item-title">
+        <span style="color:var(--text-muted);font-size:12px;font-weight:400;margin-right:4px">#${idx}</span>
+        ${it.url
+          ? `<a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>`
+          : esc(it.title)}
+      </div>
+    </div>
+    <div class="item-meta">
+      ${it.date ? `<span>${it.date}</span>` : ""}
+      ${authors ? ` · <span>${esc(authors)}${(it.authors || []).length > 3 ? " et al." : ""}</span>` : ""}
+      ${it.item_type ? ` · <span style="text-transform:capitalize">${esc(it.item_type)}</span>` : ""}
+    </div>`;
+
+  if (summary) {
+    html += `<div class="item-summary">${esc(summary)}</div>`;
+  }
+
+  html += `<div class="item-footer">
+    ${score ? `<span class="score-badge score-${score}">Relevance ${score}/5</span>` : ""}
+    ${themes.slice(0, 3).map(t => `<span class="theme-tag">${esc(t)}</span>`).join("")}
+    ${entities.slice(0, 3).map(e => `<span class="entity-tag">${esc(e)}</span>`).join("")}
+  </div>`;
+
+  if (relevanceExp) {
+    html += `<div class="item-relevance">${esc(relevanceExp)}</div>`;
+  }
+
+  if (abstract && !summary) {
+    const short = abstract.slice(0, 220);
+    const rest = abstract.slice(220);
+    if (rest) {
+      html += `<div class="item-summary">${esc(short)}<span id="short-${idx}">… <button class="expand-btn" onclick="expandAbstract(${idx})">Read more</button></span><span id="full-${idx}" class="item-abstract">${esc(rest)}</span></div>`;
+    } else {
+      html += `<div class="item-summary">${esc(abstract)}</div>`;
+    }
+  }
+
+  html += `</div>`;
+  return html;
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function normaliseSource(src) {
+  if (!src) return "default";
+  const s = src.toLowerCase();
+  if (s === "arxiv") return "academic";
+  if (s === "eurlex") return "regulatory";
+  if (s === "cjeu" || s === "cjeu_linker") return "court";
+  // ECN authority codes are 2-char uppercase
+  if (/^[a-z]{2}$/i.test(s) || s === "eu" || s === "ecn") return "enforcement";
+  return "default";
+}
+
+function countByGroup(items, group) {
+  return items.filter(it => normaliseSource(it.source) === group).length;
+}
+
+function setFilter(group, btn) {
+  activeFilter = group;
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  const cards = document.querySelectorAll(".item-card");
+  let visible = 0;
+  cards.forEach(card => {
+    const match = group === "all" || card.dataset.group === group;
+    card.classList.toggle("hidden", !match);
+    if (match) visible++;
+  });
+  const counter = document.getElementById("itemsCount");
+  if (counter) counter.textContent = visible + " items";
+}
+
+function scrollToItem(idx) {
+  const el = document.getElementById("item-" + idx);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    el.style.outline = "2px solid var(--accent)";
+    setTimeout(() => { el.style.outline = ""; }, 1800);
+    // Show if hidden by filter
+    el.classList.remove("hidden");
+  }
+}
+
+function expandAbstract(idx) {
+  const full = document.getElementById("full-" + idx);
+  const short = document.getElementById("short-" + idx);
+  if (full) full.classList.add("visible");
+  if (short) short.style.display = "none";
+}
+
+function esc(str) {
+  if (str == null) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function formatDate(iso) {
+  if (!iso) return "—";
+  try {
+    return new Date(iso).toLocaleString("en-GB", {
+      day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit"
+    });
+  } catch { return iso.slice(0, 10); }
+}
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>
