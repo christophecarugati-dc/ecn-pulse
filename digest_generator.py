@@ -229,22 +229,24 @@ class _AIClient:
 
     def _call_gemini(self, prompt: str) -> str:
         if self._quota_zero:
-            raise RuntimeError("Gemini free-tier quota is 0 — skipping")
+            raise RuntimeError("Gemini quota exhausted — skipping")
         self._rate_limit()
         try:
-            resp = self._client.generate_content(prompt)
+            # New google-genai SDK: client.models.generate_content(model=..., contents=...)
+            resp = self._client.models.generate_content(
+                model=MODEL_GEMINI,
+                contents=prompt,
+            )
             return resp.text.strip()
         except Exception as exc:
             err = str(exc)
-            if "limit: 0" in err or "limit:0" in err:
+            if "limit: 0" in err or "limit:0" in err or "RESOURCE_EXHAUSTED" in err:
                 if not self._quota_zero:
                     self._quota_zero = True
                     log.error(
-                        "Gemini free-tier quota is set to 0 for this project. "
-                        "This usually means your key was created in a Google Cloud project "
-                        "with billing enabled, which disables the free tier.\n"
-                        "Fix: go to https://aistudio.google.com/apikey, create a new API key "
-                        "in a project WITHOUT billing, and update the GOOGLE_API_KEY secret."
+                        "Gemini quota exhausted. If you are on the free tier, "
+                        "check your daily limit at https://aistudio.google.com/apikey. "
+                        "Remaining items will be processed without AI."
                     )
             raise
 
@@ -380,11 +382,9 @@ def _synthesize(client: _AIClient, items: list[dict], week_id: str) -> dict:
         return {
             "headline": f"Digital Competition Digest — {week_id}",
             "executive_summary": (
-                f"AI synthesis unavailable: your GOOGLE_API_KEY project has the free-tier "
-                f"quota set to 0 (billing-enabled projects disable the free tier). "
-                f"To fix this, go to https://aistudio.google.com/apikey, create a new key "
-                f"in a project without billing, and update the GOOGLE_API_KEY secret. "
-                f"This digest contains {len(items)} items collected without AI analysis."
+                f"AI synthesis unavailable: Gemini API quota was exhausted after processing "
+                f"some items. The digest contains {len(items)} items. "
+                f"Check your daily quota at https://aistudio.google.com/apikey."
             ),
             "key_themes": [],
             "connections": [],
@@ -423,13 +423,12 @@ def _build_ai_client() -> "_AIClient | None":
 
     if google_key:
         try:
-            import google.generativeai as genai
-            genai.configure(api_key=google_key)
-            model = genai.GenerativeModel(MODEL_GEMINI)
+            from google import genai as google_genai
+            client = google_genai.Client(api_key=google_key)
             log.info("Using Google Gemini API (%s) — free tier", MODEL_GEMINI)
-            return _AIClient("gemini", model)
+            return _AIClient("gemini", client)
         except ImportError:
-            log.error("google-generativeai package not installed. Run: pip install google-generativeai")
+            log.error("google-genai package not installed. Run: pip install google-genai")
             return None
 
     return None
