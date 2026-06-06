@@ -76,10 +76,38 @@ def _collect_items(ecn_path: str, research_path: str, court_path: str, lookback_
     """Load and normalise items from all data sources."""
     items: list[dict] = []
 
-    # ECN press releases
+    # ECN press releases — only competition-relevant items
+    # Category whitelist: always include these
+    _ECN_CATEGORY_WHITELIST = {"digital", "antitrust", "merger", "cartel", "policy"}
+    # Whole-word English keyword patterns for "other" category items
+    import re as _re
+    _ECN_KW_PATTERNS = _re.compile(
+        r'\b('
+        r'digital market|platform|app store|search engine|e-commerce|'
+        r'artificial intelligence|machine learning|algorithm|'
+        r'DMA|DSA|gatekeeper|self-preferencing|interoperability|'
+        r'big tech|Google|Amazon|Apple|Microsoft|Meta(?!\w)|TikTok|'
+        r'market power|dominant position|abuse of dominance|'
+        r'merger control|gun-jumping|killer acquisition|'
+        r'data portability|online marketplace|cloud computing'
+        r')\b',
+        _re.IGNORECASE,
+    )
+
+    def _ecn_is_relevant(it: dict) -> bool:
+        if it.get("category") in _ECN_CATEGORY_WHITELIST:
+            return True
+        # For "other" / unlabelled items, require an explicit keyword hit in the English title
+        if it.get("language", "en") != "en":
+            return False
+        title = it.get("title", "")
+        return bool(_ECN_KW_PATTERNS.search(title))
+
     ecn = _load(ecn_path)
     for it in ecn.get("items", []):
         if not _is_recent(it.get("date", ""), lookback_days):
+            continue
+        if not _ecn_is_relevant(it):
             continue
         items.append({
             "source": it.get("authority_code", "ECN"),
@@ -111,26 +139,36 @@ def _collect_items(ecn_path: str, research_path: str, court_path: str, lookback_
             "categories": it.get("categories", []),
         })
 
-    # CJEU case linker
+    # CJEU case linker — cases are nested under a "dgcomp" key
     court = _load(court_path)
     for case in court.get("cases", []):
-        date = case.get("decision_date", "")
+        dgcomp = case.get("dgcomp") or case  # support both flat and nested layouts
+        date = dgcomp.get("decision_date", "")
+        case_number = dgcomp.get("case_number", "")
+        name = dgcomp.get("case_name", "") or dgcomp.get("name", "")
+        url = dgcomp.get("url", "") or dgcomp.get("commission_url", "")
+        if not case_number and not name:
+            continue
         if not _is_recent(date, lookback_days):
             continue
+        fine = dgcomp.get("fine_eur")
+        fine_str = f"€{fine:,}" if isinstance(fine, (int, float)) else (str(fine) if fine else "N/A")
+        appeals = case.get("appeals", [])
+        appeal_str = f" {len(appeals)} appeal(s) pending." if appeals else ""
         items.append({
             "source": "cjeu_linker",
             "source_label": "Court (CJEU Case Linker)",
             "item_type": "court_case",
-            "title": f"{case.get('case_number', '')} — {case.get('name', '')}",
-            "url": case.get("commission_url", ""),
+            "title": f"{case_number} — {name}".strip(" —"),
+            "url": url,
             "date": date,
             "abstract": (
-                f"Fine: {case.get('fine_eur', 'N/A')}. "
-                f"Status: {case.get('overall_status', '')}. "
-                f"Category: {case.get('category', '')}."
-            ),
+                f"{dgcomp.get('decision_type', '')}. Fine: {fine_str}."
+                f" Sector: {dgcomp.get('sector', '')}."
+                f"{appeal_str}"
+            ).strip(),
             "authors": [],
-            "categories": [case.get("category", "")],
+            "categories": [dgcomp.get("case_type", "")],
         })
 
     # Sort by date descending, unknowns last
