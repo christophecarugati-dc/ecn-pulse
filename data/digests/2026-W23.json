@@ -1,7 +1,8 @@
 {
   "week": "2026-W23",
-  "generated_at": "2026-06-06T08:25:46.260784+00:00",
-  "total_items": 10,
+  "generated_at": "2026-06-06T21:25:29.489287+00:00",
+  "total_items": 1,
+  "high_relevance_items": 1,
   "items": [
     {
       "source": "UK",
@@ -14,132 +15,24 @@
       "authors": [],
       "categories": [
         "other"
-      ]
-    },
-    {
-      "source": "EU",
-      "source_label": "European Commission · DG COMP",
-      "item_type": "merger",
-      "title": "Commission approves Carlyle's acquisition of BASF Coatings, subject to conditions",
-      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1221",
-      "date": "2026-06-02",
-      "abstract": "The European Commission has approved, under the EU Merger Regulation, the proposed acquisition of BASF's coatings division ('BASF Coatings') by The Carlyle Group Inc. ('Carlyle').",
-      "authors": [],
-      "categories": [
-        "merger"
-      ]
-    },
-    {
-      "source": "EU",
-      "source_label": "European Commission · DG COMP",
-      "item_type": "merger",
-      "title": "Commission opens in-depth foreign subsidies investigation into JD.com's proposed acquisition of CECONOMY",
-      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1164",
-      "date": "2026-05-28",
-      "abstract": "The European Commission has opened an in-depth investigation to assess, under the Foreign Subsidies Regulation ('FSR'), the proposed acquisition by JD.com, Inc. ('JD.com') of CECONOMY AG ('CECONOMY').",
-      "authors": [],
-      "categories": [
-        "merger"
-      ]
-    },
-    {
-      "source": "EU",
-      "source_label": "European Commission · DG COMP",
-      "item_type": "merger",
-      "title": "Commission unconditionally approves Arla's acquisition of DMK and DOC",
-      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1165",
-      "date": "2026-05-28",
-      "abstract": "The European Commission has unconditionally approved, under the EU Merger Regulation, the proposed acquisition by Arla Foods amba ('Arla') of Deutsches Milchkontor eG ('DMK') and Drents Overijsselse Coöperatie Kaas U.A.('DOC').",
-      "authors": [],
-      "categories": [
-        "merger"
-      ]
-    },
-    {
-      "source": "EU",
-      "source_label": "European Commission · DG COMP",
-      "item_type": "cartel",
-      "title": "Commission sends Statements of Objections to several companies concerning synthetic turf cartels",
-      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1123",
-      "date": "2026-05-21",
-      "abstract": "The European Commission has informed several companies active in the synthetic turf sector of its preliminary view that they have breached EU antitrust rules by colluding to distort competition in synthetic turf for sports pitches in the Netherlands and Germany.",
-      "authors": [],
-      "categories": [
-        "cartel"
-      ]
-    },
-    {
-      "source": "HR",
-      "source_label": "Croatian Competition Agency (AZTN)",
-      "item_type": "policy",
-      "title": "Održana konferencija o tržišnom natjecanju „Meet to Compete-Repeat Competition Law and Policy Conference“",
-      "url": "https://www.aztn.hr/odrzana-konferencija-o-trzisnom-natjecanju-meet-to-compete-competition-law-and-policy-conference-tools-for-the-new-rules-2/",
-      "date": "2026-05-18",
-      "abstract": "Konferencija „Meet to Compete Competition Law and Policy Conference – Tools for the New Rules“ održana je 14. i 15. svibnja 2026. u Opatiji, u organizaciji Međunarodne trgovačke komore – ICC Croatia i Hrvatske gospodarske komore, uz podršku Agencije za zaštitu tržišnog natjecanja (AZTN). Konferencija je i ove godine okupila vodeće europske i međunarodne stručnjake [&#8230;] Objava Održana konferencija o tržišnom natjecanju „Meet to Compete-Repeat Competition Law and Policy Conference“ pojavila se prvi puta na AZTN .",
-      "authors": [],
-      "categories": [
-        "policy"
-      ]
-    },
-    {
-      "source": "UK",
-      "source_label": "Competition and Markets Authority",
-      "item_type": "merger",
-      "title": "CMA conditionally clears Getty merger with Shutterstock",
-      "url": "https://www.gov.uk/government/news/cma-conditionally-clears-getty-merger-with-shutterstock",
-      "date": "2026-05-15",
-      "abstract": "CMA independent inquiry group concludes deal can proceed if Shutterstock sells its editorial business",
-      "authors": [],
-      "categories": [
-        "merger"
-      ]
-    },
-    {
-      "source": "UK",
-      "source_label": "Competition and Markets Authority",
-      "item_type": "other",
-      "title": "CMA launches strategic market status investigation into Microsoft’s business software ecosystem",
-      "url": "https://www.gov.uk/government/news/cma-launches-strategic-market-status-investigation-into-microsofts-business-software-ecosystem",
-      "date": "2026-05-14",
-      "abstract": "CMA sets out scope of its investigation to determine whether Microsoft should be designated with strategic market status for its business software ecosystem.",
-      "authors": [],
-      "categories": [
-        "other"
-      ]
-    },
-    {
-      "source": "MT",
-      "source_label": "MCCAA · Office for Competition",
-      "item_type": "merger",
-      "title": "Office for Competition | Decision",
-      "url": "https://mccaa.org.mt/office-for-competition-decision/",
-      "date": "2026-05-12",
-      "abstract": "The Office for Competition approves the acquisition by H.I.G. Capital LLC through IAC Malta Limited of the Business and assets...",
-      "authors": [],
-      "categories": [
-        "merger"
-      ]
-    },
-    {
-      "source": "MT",
-      "source_label": "MCCAA · Office for Competition",
-      "item_type": "policy",
-      "title": "User Guidelines",
-      "url": "https://mccaa.org.mt/user-guidelines/",
-      "date": "2026-05-12",
-      "abstract": "Consumer Rights (Amendment) Regulations, 2026 The Office for Consumer Affairs within the MCCAA will transpose Directive (EU) 2023/2673 of the...",
-      "authors": [],
-      "categories": [
-        "policy"
-      ]
+      ],
+      "_analysis": {
+        "summary": "Conduct requirement introduced today gives publishers more control and stronger bargaining power over the use of their content.",
+        "relevance_score": 3,
+        "relevance_explanation": "Relates to digital competition policy.",
+        "market_signal": "",
+        "key_entities": [],
+        "themes": []
+      }
     }
   ],
   "synthesis": {
     "headline": "Digital Competition Digest — 2026-W23",
-    "executive_summary": "AI analysis is disabled (--no-ai mode). This digest aggregates 10 items from ECN, arXiv, EUR-Lex, and CJEU published in the last 30 days. Add ANTHROPIC_API_KEY and remove --no-ai to enable summaries and thematic analysis.",
+    "executive_summary": "AI synthesis unavailable: your GOOGLE_API_KEY project has the free-tier quota set to 0 (billing-enabled projects disable the free tier). To fix this, go to https://aistudio.google.com/apikey, create a new key in a project without billing, and update the GOOGLE_API_KEY secret. This digest contains 1 items collected without AI analysis.",
     "key_themes": [],
     "connections": [],
     "policy_implications": [],
-    "ai_enabled": false
+    "ai_enabled": true,
+    "ai_provider": "gemini"
   }
 }
