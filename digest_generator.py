@@ -33,6 +33,7 @@ import json
 import logging
 import os
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 from typing import Any
 
@@ -208,9 +209,44 @@ def _collect_items(ecn_path: str, research_path: str, court_path: str, lookback_
 class _AIClient:
     """Thin wrapper so the rest of the code is provider-agnostic."""
 
+    # Gemini free tier: 15 requests/minute → 4-second minimum gap between calls.
+    _GEMINI_MIN_INTERVAL = 4.0
+
     def __init__(self, provider: str, client: Any):
         self.provider = provider   # "anthropic" | "gemini"
         self._client = client
+        self._quota_zero = False   # True when free-tier quota is hard-capped at 0
+        self._last_call: float = 0.0
+
+    def _rate_limit(self) -> None:
+        """Enforce minimum interval between Gemini calls."""
+        if self.provider != "gemini":
+            return
+        gap = self._GEMINI_MIN_INTERVAL - (time.time() - self._last_call)
+        if gap > 0:
+            time.sleep(gap)
+        self._last_call = time.time()
+
+    def _call_gemini(self, prompt: str) -> str:
+        if self._quota_zero:
+            raise RuntimeError("Gemini free-tier quota is 0 — skipping")
+        self._rate_limit()
+        try:
+            resp = self._client.generate_content(prompt)
+            return resp.text.strip()
+        except Exception as exc:
+            err = str(exc)
+            if "limit: 0" in err or "limit:0" in err:
+                if not self._quota_zero:
+                    self._quota_zero = True
+                    log.error(
+                        "Gemini free-tier quota is set to 0 for this project. "
+                        "This usually means your key was created in a Google Cloud project "
+                        "with billing enabled, which disables the free tier.\n"
+                        "Fix: go to https://aistudio.google.com/apikey, create a new API key "
+                        "in a project WITHOUT billing, and update the GOOGLE_API_KEY secret."
+                    )
+            raise
 
     def complete(self, prompt: str, max_tokens: int = 1024) -> str:
         if self.provider == "anthropic":
@@ -221,8 +257,7 @@ class _AIClient:
             )
             return resp.content[0].text.strip()
         else:  # gemini
-            resp = self._client.generate_content(prompt)
-            return resp.text.strip()
+            return self._call_gemini(prompt)
 
     def complete_synthesis(self, prompt: str, max_tokens: int = 2000) -> str:
         if self.provider == "anthropic":
@@ -233,8 +268,7 @@ class _AIClient:
             )
             return resp.content[0].text.strip()
         else:  # gemini uses same model for both
-            resp = self._client.generate_content(prompt)
-            return resp.text.strip()
+            return self._call_gemini(prompt)
 
 
 def _parse_json_response(text: str) -> dict | list:
@@ -319,25 +353,43 @@ def _build_synthesis_prompt(items: list[dict], week_id: str) -> str:
 
 
 def _summarize_item(client: _AIClient, item: dict) -> dict:
+    abstract = item.get("abstract", "")
+    _fallback = {
+        "summary": abstract[:200] if abstract else item.get("title", ""),
+        "relevance_score": 3,
+        "relevance_explanation": "Relates to digital competition policy.",
+        "market_signal": "",
+        "key_entities": [],
+        "themes": [],
+    }
+    if client._quota_zero:
+        return _fallback
     try:
         text = client.complete(_build_item_prompt(item), max_tokens=600)
         result = _parse_json_response(text)
         assert isinstance(result, dict)
         return result
     except Exception as exc:
-        log.debug("Summarise error for '%s': %s", item.get("title", "")[:60], exc)
-        abstract = item.get("abstract", "")
-        return {
-            "summary": abstract[:200] if abstract else item.get("title", ""),
-            "relevance_score": 3,
-            "relevance_explanation": "Relates to digital competition policy.",
-            "market_signal": "",
-            "key_entities": [],
-            "themes": [],
-        }
+        if not client._quota_zero:
+            log.debug("Summarise error for '%s': %s", item.get("title", "")[:60], exc)
+        return _fallback
 
 
 def _synthesize(client: _AIClient, items: list[dict], week_id: str) -> dict:
+    if client._quota_zero:
+        return {
+            "headline": f"Digital Competition Digest — {week_id}",
+            "executive_summary": (
+                f"AI synthesis unavailable: your GOOGLE_API_KEY project has the free-tier "
+                f"quota set to 0 (billing-enabled projects disable the free tier). "
+                f"To fix this, go to https://aistudio.google.com/apikey, create a new key "
+                f"in a project without billing, and update the GOOGLE_API_KEY secret. "
+                f"This digest contains {len(items)} items collected without AI analysis."
+            ),
+            "key_themes": [],
+            "connections": [],
+            "policy_implications": [],
+        }
     try:
         text = client.complete_synthesis(_build_synthesis_prompt(items, week_id), max_tokens=2000)
         result = _parse_json_response(text)
