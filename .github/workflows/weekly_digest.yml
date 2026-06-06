@@ -1,0 +1,113 @@
+name: Weekly Digest
+
+# Runs every Monday at 06:00 UTC: fetches academic papers (arXiv) and regulatory
+# documents (EUR-Lex, CJEU), then generates the weekly digest.
+#
+# Required secrets (Settings → Secrets and variables → Actions):
+#   ANTHROPIC_API_KEY   — Anthropic API key. Omit to run in free/no-AI mode.
+#
+# Optional secrets (email notification — all four required together):
+#   SMTP_HOST           — e.g. smtp.gmail.com
+#   SMTP_PORT           — e.g. 587
+#   SMTP_USER           — sender address / login
+#   SMTP_PASSWORD       — app password or API key
+#   RECIPIENT_EMAIL     — defaults to christophe.carugati@digital-competition.com
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"    # Every Monday 06:00 UTC
+  workflow_dispatch:        # Manual trigger from Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch academic papers and regulatory documents
+        run: |
+          mkdir -p data
+          python research_monitor.py \
+            --output data/research_items.json \
+            --lookback 7 \
+            --verbose
+
+      - name: Generate weekly digest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          mkdir -p data/digests
+          if [ -n "$ANTHROPIC_API_KEY" ]; then
+            echo "AI analysis enabled (Claude API)"
+            python digest_generator.py \
+              --ecn-data data/ecn_pulse.json \
+              --research-data data/research_items.json \
+              --court-data court-cases/data/court_links.json \
+              --output-dir data/digests \
+              --lookback 7 \
+              --verbose
+          else
+            echo "No ANTHROPIC_API_KEY found — running in free/no-AI mode"
+            python digest_generator.py \
+              --ecn-data data/ecn_pulse.json \
+              --research-data data/research_items.json \
+              --court-data court-cases/data/court_links.json \
+              --output-dir data/digests \
+              --lookback 7 \
+              --no-ai \
+              --verbose
+          fi
+
+      - name: Send email notification
+        if: >
+          env.SMTP_HOST != '' &&
+          env.SMTP_USER != '' &&
+          env.SMTP_PASSWORD != ''
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+        run: |
+          python notify_digest.py \
+            --digest data/digests/latest.json \
+            --dashboard-url "https://christophecarugati-dc.github.io/ecn-pulse/digest/"
+
+      - name: Commit results
+        run: |
+          git config user.name  "ecn-pulse-bot"
+          git config user.email "ecn-pulse-bot@users.noreply.github.com"
+          git add data/research_items.json data/digests/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: weekly digest $(date -u +%G-W%V)"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected; syncing (attempt $attempt)..."
+            git pull --rebase --strategy-option=theirs origin main || git rebase --abort
+            sleep $((attempt * 2))
+          done
+          echo "Could not push after 5 attempts." >&2
+          exit 1
