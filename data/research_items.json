@@ -1,6 +1,987 @@
 {
-  "generated_at": "2026-06-06T08:06:27.203310+00:00",
+  "generated_at": "2026-06-06T08:35:03.201622+00:00",
   "lookback_days": 7,
-  "total_items": 0,
-  "items": []
+  "total_items": 70,
+  "items": [
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780734884610&rid=1",
+      "title": "PART 2/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780734884610&rid=1",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "digital markets act gatekeeper"
+      ],
+      "fetched_at": "2026-06-06T08:34:47.034591+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780734884610&rid=2",
+      "title": "PART 1/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780734884610&rid=2",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "digital markets act gatekeeper"
+      ],
+      "fetched_at": "2026-06-06T08:34:47.035449+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780734884610&rid=3",
+      "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780734884610&rid=3",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "digital markets act gatekeeper"
+      ],
+      "fetched_at": "2026-06-06T08:34:47.036220+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780734884610&rid=4",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Austria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Austria",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780734884610&rid=4",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "digital markets act gatekeeper"
+      ],
+      "fetched_at": "2026-06-06T08:34:47.037075+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0502&qid=1780734884610&rid=5",
+      "title": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe’s cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0502&qid=1780734884610&rid=5",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "digital markets act gatekeeper"
+      ],
+      "fetched_at": "2026-06-06T08:34:47.037933+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780734884610&rid=6",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - the Netherlands Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary polices of the Netherlands",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780734884610&rid=6",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "digital markets act gatekeeper"
+      ],
+      "fetched_at": "2026-06-06T08:34:47.038775+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0502&qid=1780734884610&rid=7",
+      "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe’s cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0502&qid=1780734884610&rid=7",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "digital markets act gatekeeper"
+      ],
+      "fetched_at": "2026-06-06T08:34:47.039607+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:62023TJ1078&qid=1780734884610&rid=8",
+      "title": "Judgment of the General Court (Eighth Chamber, Extended Composition) of 3 June 2026.Meta Platforms, Inc. v European Commission.Digitalservices – Regulation EU 2022/1925 – Designation ofgatekeepers– Concept of ‘core platform service’ – Online social networking service – Number-independent interpersonal communications service – Online",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:62023TJ1078&qid=1780734884610&rid=8",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "digital markets act gatekeeper"
+      ],
+      "fetched_at": "2026-06-06T08:34:47.040426+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0203&qid=1780734884610&rid=9",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Czechia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Czechia",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0203&qid=1780734884610&rid=9",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "digital markets act gatekeeper"
+      ],
+      "fetched_at": "2026-06-06T08:34:47.041268+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "directive",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9833_2026_ADD_1&qid=1780734884610&rid=10",
+      "title": ", (EC) No 1394/2007, (EU) No 536/2014, (EU) 2019/6, (EU) 2024/795 and (EU) 2024/1938 (European BiotechAct) and Proposal for a Directive of the European Parliament and of the Council amending Directives 2001/18/EC and 2010/53/EU as regards the placing on themarketof genetically modified micro-organisms and the processing of organs",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9833_2026_ADD_1&qid=1780734884610&rid=10",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "digital markets act gatekeeper"
+      ],
+      "fetched_at": "2026-06-06T08:34:47.042026+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780734887115&rid=1",
+      "title": "Verbatim report of proceedings of 9 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780734887115&rid=1",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "competition digital platform abuse dominant"
+      ],
+      "fetched_at": "2026-06-06T08:34:49.681659+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780734887115&rid=2",
+      "title": "Verbatim report of proceedings of 10 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780734887115&rid=2",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "competition digital platform abuse dominant"
+      ],
+      "fetched_at": "2026-06-06T08:34:49.682553+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780734887115&rid=3",
+      "title": "Verbatim report of proceedings of 8 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780734887115&rid=3",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "competition digital platform abuse dominant"
+      ],
+      "fetched_at": "2026-06-06T08:34:49.683430+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780734887115&rid=4",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Belgium Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Belgium",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780734887115&rid=4",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "competition digital platform abuse dominant"
+      ],
+      "fetched_at": "2026-06-06T08:34:49.684266+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780734887115&rid=5",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Bulgaria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Bulgaria",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780734887115&rid=5",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "competition digital platform abuse dominant"
+      ],
+      "fetched_at": "2026-06-06T08:34:49.685116+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780734887115&rid=6",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Austria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Austria",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780734887115&rid=6",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "competition digital platform abuse dominant"
+      ],
+      "fetched_at": "2026-06-06T08:34:49.685965+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780734887115&rid=7",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Slovenia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Slovenia",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780734887115&rid=7",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "competition digital platform abuse dominant"
+      ],
+      "fetched_at": "2026-06-06T08:34:49.687014+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780734887115&rid=8",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Italy Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Italy",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780734887115&rid=8",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "competition digital platform abuse dominant"
+      ],
+      "fetched_at": "2026-06-06T08:34:49.688058+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780734887115&rid=9",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - the Netherlands Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary polices of the Netherlands",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780734887115&rid=9",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "competition digital platform abuse dominant"
+      ],
+      "fetched_at": "2026-06-06T08:34:49.688982+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780734887115&rid=10",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Portugal Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Portugal",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780734887115&rid=10",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "competition digital platform abuse dominant"
+      ],
+      "fetched_at": "2026-06-06T08:34:49.689855+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780734889763&rid=1",
+      "title": "PART 1/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780734889763&rid=1",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "DMA DSA enforcement"
+      ],
+      "fetched_at": "2026-06-06T08:34:51.955650+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780734889763&rid=2",
+      "title": "Verbatim report of proceedings of 10 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780734889763&rid=2",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "DMA DSA enforcement"
+      ],
+      "fetched_at": "2026-06-06T08:34:51.956545+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "communication",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0503&qid=1780734889763&rid=3",
+      "title": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS on European Tech Sovereignty, accompanied by an EU Open Source Strategy",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0503&qid=1780734889763&rid=3",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "DMA DSA enforcement"
+      ],
+      "fetched_at": "2026-06-06T08:34:51.957381+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9348_2026_INIT&qid=1780734889763&rid=4",
+      "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9348_2026_INIT&qid=1780734889763&rid=4",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "DMA DSA enforcement"
+      ],
+      "fetched_at": "2026-06-06T08:34:51.958111+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_INIT&qid=1780734889763&rid=5",
+      "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_INIT&qid=1780734889763&rid=5",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "DMA DSA enforcement"
+      ],
+      "fetched_at": "2026-06-06T08:34:51.958850+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_ADD_3&qid=1780734889763&rid=6",
+      "title": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the documents Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009 Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_ADD_3&qid=1780734889763&rid=6",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "DMA DSA enforcement"
+      ],
+      "fetched_at": "2026-06-06T08:34:51.959560+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:SEC(2026)300&qid=1780734889763&rid=7",
+      "title": "This document does not exist in English.",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:SEC(2026)300&qid=1780734889763&rid=7",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "DMA DSA enforcement"
+      ],
+      "fetched_at": "2026-06-06T08:34:51.960277+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0232&qid=1780734889763&rid=8",
+      "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0232&qid=1780734889763&rid=8",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "DMA DSA enforcement"
+      ],
+      "fetched_at": "2026-06-06T08:34:51.961099+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0231&qid=1780734889763&rid=9",
+      "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0231&qid=1780734889763&rid=9",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "DMA DSA enforcement"
+      ],
+      "fetched_at": "2026-06-06T08:34:51.961930+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0300&qid=1780734889763&rid=10",
+      "title": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the documents Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009 Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0300&qid=1780734889763&rid=10",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "DMA DSA enforcement"
+      ],
+      "fetched_at": "2026-06-06T08:34:51.962759+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780734892035&rid=1",
+      "title": "PART 2/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aREGULATIONOF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780734892035&rid=1",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "artificial intelligence competition regulation"
+      ],
+      "fetched_at": "2026-06-06T08:34:54.454639+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_5&qid=1780734892035&rid=2",
+      "title": "PART 3/3 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aRegulationof the European Parliament and of the Council on a framework of measures for strengthening Europe's semiconductor ecosystem repealingRegulation(EU) 2023/1782 (Chips Act 2.0)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_5&qid=1780734892035&rid=2",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "artificial intelligence competition regulation"
+      ],
+      "fetched_at": "2026-06-06T08:34:54.455447+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9834_2026_INIT&qid=1780734892035&rid=3",
+      "title": "Omnibus simplification legislative packages - Progress report",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9834_2026_INIT&qid=1780734892035&rid=3",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "artificial intelligence competition regulation"
+      ],
+      "fetched_at": "2026-06-06T08:34:54.456188+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_4&qid=1780734892035&rid=4",
+      "title": "PART 2/3 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aRegulationof the European Parliament and of the Council on a framework of measures for strengthening Europe's semiconductor ecosystem repealingRegulation(EU) 2023/1782 (Chips Act 2.0)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_4&qid=1780734892035&rid=4",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "artificial intelligence competition regulation"
+      ],
+      "fetched_at": "2026-06-06T08:34:54.456943+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9801_2026_INIT&qid=1780734892035&rid=5",
+      "title": "Regulationto simplify rules on medical and in vitro diagnostic devices - Progress report",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9801_2026_INIT&qid=1780734892035&rid=5",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "artificial intelligence competition regulation"
+      ],
+      "fetched_at": "2026-06-06T08:34:54.457691+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "regulation",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780734892035&rid=6",
+      "title": "PART 1/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aREGULATIONOF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780734892035&rid=6",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "artificial intelligence competition regulation"
+      ],
+      "fetched_at": "2026-06-06T08:34:54.458457+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780734892035&rid=7",
+      "title": "Verbatim report of proceedings of 9 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780734892035&rid=7",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "artificial intelligence competition regulation"
+      ],
+      "fetched_at": "2026-06-06T08:34:54.459346+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "communication",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:268:FIN&qid=1780734892035&rid=8",
+      "title": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT AND THE COUNCIL OceanEye: An EU ocean observation initiative",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:268:FIN&qid=1780734892035&rid=8",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "artificial intelligence competition regulation"
+      ],
+      "fetched_at": "2026-06-06T08:34:54.460170+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780734892035&rid=9",
+      "title": "Verbatim report of proceedings of 10 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780734892035&rid=9",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "artificial intelligence competition regulation"
+      ],
+      "fetched_at": "2026-06-06T08:34:54.461060+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "communication",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780734892035&rid=10",
+      "title": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN CENTRAL BANK, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS   2026 EU Justice Scoreboard",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780734892035&rid=10",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "artificial intelligence competition regulation"
+      ],
+      "fetched_at": "2026-06-06T08:34:54.461890+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780734894536&rid=1",
+      "title": "Verbatim report of proceedings of 10 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780734894536&rid=1",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:57.117860+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780734894536&rid=2",
+      "title": "Verbatim report of proceedings of 9 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780734894536&rid=2",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:57.118752+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780734894536&rid=3",
+      "title": "Verbatim report of proceedings of 8 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780734894536&rid=3",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:57.119611+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780734894536&rid=4",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Belgium Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Belgium",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780734894536&rid=4",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:57.120445+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780734894536&rid=5",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Bulgaria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Bulgaria",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780734894536&rid=5",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:57.121275+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780734894536&rid=6",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Austria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Austria",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780734894536&rid=6",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:57.122099+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780734894536&rid=7",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Slovenia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Slovenia",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780734894536&rid=7",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:57.122928+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780734894536&rid=8",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Italy Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Italy",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780734894536&rid=8",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:57.123739+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780734894536&rid=9",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - the Netherlands Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary polices of the Netherlands",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780734894536&rid=9",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:57.124539+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780734894536&rid=10",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Portugal Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Portugal",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780734894536&rid=10",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:57.125355+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:32026D1204&qid=1780734897202&rid=1",
+      "title": "Council Implementing Decision (EU) 2026/1204 of 28 May 2026 establishing the satisfactory fulfilment of the conditions for the partial payment of the seventh instalment under the Ukraine Plan of the Ukraine Facility and amending Implementing Decision (EU) 2024/1447",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:32026D1204&qid=1780734897202&rid=1",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:59.677964+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780734897202&rid=2",
+      "title": "Verbatim report of proceedings of 9 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780734897202&rid=2",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:59.678855+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026M12487&qid=1780734897202&rid=3",
+      "title": "Prior notification of a concentration (Case M.12487 – GM INFRASTRUCTURE / GIM / SAAVI / CIEM) – Candidate case for simplified procedure",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026M12487&qid=1780734897202&rid=3",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:59.679741+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780734897202&rid=4",
+      "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780734897202&rid=4",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:59.680506+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0215&qid=1780734897202&rid=5",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Lithuania Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Lithuania",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0215&qid=1780734897202&rid=5",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:59.681369+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0504&qid=1780734897202&rid=6",
+      "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on a framework of measures for strengthening the Union’s semiconductor ecosystem, repealing Regulation (EU) 2023/1781 (Chips Act 2.0)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0504&qid=1780734897202&rid=6",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:59.682200+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0208&qid=1780734897202&rid=7",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report – Greece Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Greece",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0208&qid=1780734897202&rid=7",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:59.682958+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0225&qid=1780734897202&rid=8",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Slovakia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Slovakia",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0225&qid=1780734897202&rid=8",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:59.683789+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0216&qid=1780734897202&rid=9",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report – Luxembourg Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Luxembourg",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0216&qid=1780734897202&rid=9",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:59.684589+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780734897202&rid=10",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Italy Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Italy",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780734897202&rid=10",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:34:59.685409+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780734899760&rid=1",
+      "title": "Verbatim report of proceedings of 9 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780734899760&rid=1",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:35:02.087323+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780734899760&rid=2",
+      "title": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN CENTRAL BANK, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS   2026 EU Justice Scoreboard",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780734899760&rid=2",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:35:02.088161+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02984&qid=1780734899760&rid=3",
+      "title": "Verbatim report of proceedings of 11 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02984&qid=1780734899760&rid=3",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:35:02.089022+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0205&qid=1780734899760&rid=4",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Germany Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Germany",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0205&qid=1780734899760&rid=4",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:35:02.089856+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0180&qid=1780734899760&rid=5",
+      "title": "REPORT FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS Report on Competition Policy 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0180&qid=1780734899760&rid=5",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:35:02.090659+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0125&qid=1780734899760&rid=6",
+      "title": "COMMISSION STAFF WORKING DOCUMENT Accompanying the document REPORT FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS Report on Competition Policy 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0125&qid=1780734899760&rid=6",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:35:02.091492+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026XC02323&qid=1780734899760&rid=7",
+      "title": "Communication from the Commission – Guidelines on the application of Article 101 of the Treaty on the Functioning of the European Union totechnologytransfer agreements",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026XC02323&qid=1780734899760&rid=7",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:35:02.092391+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:C(2026)2482&qid=1780734899760&rid=8",
+      "title": "COMMUNICATION FROM THE COMMISSION Guidelines on the application of Article 101 of the Treaty on the Functioning of the European Union totechnologytransfer agreements (Text with EEA relevance)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:C(2026)2482&qid=1780734899760&rid=8",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:35:02.093206+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0114&qid=1780734899760&rid=9",
+      "title": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the documents Commission Regulation (EU) .../... on the application of Article 101(3) of the Treaty on the Functioning of the European Union to categories oftechnologytransfer agreements and Communication from the Commission Guidelines on the application of Article 101 of the Treaty on the Functioning of the European Union totechnologytransfer agreements",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0114&qid=1780734899760&rid=9",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:35:02.094053+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52025AE2299&qid=1780734899760&rid=10",
+      "title": "Opinion of the European Economic and Social Committee – Report from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions – Report on Competition Policy 2024 (COM(2025) 181 final)",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52025AE2299&qid=1780734899760&rid=10",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-06T08:35:02.094935+00:00"
+    }
+  ]
 }
