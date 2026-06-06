@@ -65,17 +65,56 @@ DIGITAL_COMPETITION_KEYWORDS = [
     "marketplace", "price algorithm", "recommendation system",
 ]
 
-# arXiv categories relevant for digital competition
-ARXIV_CATEGORIES = ["econ.GN", "cs.AI", "cs.GT", "econ.TH", "econ.IO"]
+# ── arXiv search configuration ────────────────────────────────────────────────
+# Two complementary queries:
+#
+#  QUERY_COMPETITION  — economics/policy papers that explicitly address
+#                       digital competition, platforms, antitrust.
+#
+#  QUERY_MARKET_TECH  — technology papers (cs.AI, cs.IR …) about AI/ML
+#                       systems that will reshape digital markets even when
+#                       they don't use the word "competition":
+#                       • AI agents displacing traditional search
+#                       • LLMs entering advertising, content, e-commerce
+#                       • Recommendation algorithms driving platform lock-in
+#                       • Foundation models as new market infrastructure
 
-# arXiv title/abstract keywords to search
-ARXIV_TITLE_TERMS = [
-    "antitrust", "competition policy", "digital market", "platform competition",
-    "market power", "gatekeeper", "DMA", "DSA", "merger control", "self-preferencing",
-    "algorithmic pricing", "platform economics", "big tech", "tech regulation",
-    "digital competition", "online marketplace", "app store competition",
-    "artificial intelligence regulation", "AI competition",
-]
+ARXIV_QUERY_COMPETITION = (
+    "(cat:econ.IO OR cat:econ.GN OR cat:econ.TH OR cat:econ.GN) AND ("
+    'ti:"digital market" OR ti:"platform competition" OR ti:antitrust OR '
+    'ti:"competition policy" OR ti:gatekeeper OR ti:DMA OR ti:DSA OR '
+    'ti:"market power" OR ti:"two-sided market" OR ti:"network effects" OR '
+    'ti:"self-preferencing" OR ti:"algorithmic pricing" OR ti:"data market" OR '
+    'ti:"platform economics" OR ti:"online platform" OR ti:"tech regulation" OR '
+    'ti:"app store" OR ti:"digital economy" OR ti:"merger control" OR '
+    'ti:"killer acquisition" OR ti:"conglomerate effect"'
+    ")"
+)
+
+ARXIV_QUERY_MARKET_TECH = (
+    "(cat:cs.AI OR cat:cs.IR OR cat:cs.CY OR cat:cs.NI OR cat:cs.LG OR cat:cs.GT) AND ("
+    # AI agents & autonomous systems reshaping markets
+    'ti:"AI agent" OR ti:"autonomous agent" OR ti:"agentic" OR '
+    'ti:"AI assistant" OR ti:"virtual assistant" OR '
+    # LLMs / foundation models entering markets
+    'ti:"large language model" OR ti:LLM OR ti:"foundation model" OR '
+    'ti:"generative AI" OR ti:"ChatGPT" OR ti:"GPT-4" OR '
+    # Search & information retrieval disruption
+    'ti:"web search" OR ti:"search engine" OR ti:"information retrieval" OR '
+    'ti:"retrieval-augmented" OR ti:RAG OR '
+    # Advertising & content monetisation
+    'ti:"online advertising" OR ti:"digital advertising" OR '
+    'ti:"programmatic" OR ti:"ad auction" OR ti:"content recommendation" OR '
+    # Recommendation & ranking systems (platform lock-in)
+    'ti:"recommendation system" OR ti:"recommender system" OR '
+    'ti:"ranking algorithm" OR ti:"personalization" OR '
+    # Cloud & infrastructure markets
+    'ti:"cloud computing" OR ti:"cloud market" OR ti:"API economy" OR '
+    # Data and AI market structure
+    'ti:"data market" OR ti:"data monetization" OR ti:"AI market" OR '
+    'ti:"platform market" OR ti:"marketplace"'
+    ")"
+)
 
 
 @dataclass
@@ -139,14 +178,15 @@ def _has_competition_keyword(text: str) -> bool:
 
 # ── arXiv ─────────────────────────────────────────────────────────────────────
 
-def fetch_arxiv(session: requests.Session, lookback_days: int) -> list[ResearchItem]:
-    """Academic papers from arXiv Atom API."""
-    cat_filter = " OR ".join(f"cat:{c}" for c in ARXIV_CATEGORIES)
-    ti_filter = " OR ".join(
-        f'ti:"{t}"' if " " in t else f"ti:{t}" for t in ARXIV_TITLE_TERMS
-    )
-    query = f"({cat_filter}) AND ({ti_filter})"
-
+def _arxiv_query(
+    session: requests.Session,
+    query: str,
+    max_results: int,
+    lookback_days: int,
+    seen: set[str],
+    label: str,
+) -> list[ResearchItem]:
+    """Run a single arXiv API query and return ResearchItems not in seen."""
     try:
         resp = _get(
             session,
@@ -154,28 +194,24 @@ def fetch_arxiv(session: requests.Session, lookback_days: int) -> list[ResearchI
             params={
                 "search_query": query,
                 "start": 0,
-                "max_results": 50,
+                "max_results": max_results,
                 "sortBy": "submittedDate",
                 "sortOrder": "descending",
             },
         )
         resp.raise_for_status()
     except Exception as exc:
-        log.warning("arXiv API request failed: %s", exc)
+        log.warning("arXiv %s query failed: %s", label, exc)
         return []
 
-    ns = {
-        "a": "http://www.w3.org/2005/Atom",
-        "arxiv": "http://arxiv.org/schemas/atom",
-    }
+    ns = {"a": "http://www.w3.org/2005/Atom"}
     try:
         root = ET.fromstring(resp.text)
     except ET.ParseError as exc:
-        log.warning("arXiv XML parse error: %s", exc)
+        log.warning("arXiv %s XML parse error: %s", label, exc)
         return []
 
     items: list[ResearchItem] = []
-    seen: set[str] = set()
 
     for entry in root.findall("a:entry", ns):
         try:
@@ -224,7 +260,38 @@ def fetch_arxiv(session: requests.Session, lookback_days: int) -> list[ResearchI
         except Exception as exc:
             log.debug("arXiv entry skipped: %s", exc)
 
-    log.info("arXiv: %d items (lookback %d days)", len(items), lookback_days)
+    log.info("arXiv %s: %d items", label, len(items))
+    return items
+
+
+def fetch_arxiv(session: requests.Session, lookback_days: int) -> list[ResearchItem]:
+    """Run two complementary arXiv queries and merge results.
+
+    Query 1 — competition economics: papers in econ.IO/econ.GN that explicitly
+               address digital markets, platforms, antitrust.
+    Query 2 — market-disrupting technology: papers in cs.AI/cs.IR/cs.CY about
+               AI agents, LLMs, search, recommendation, advertising.  These
+               papers signal how markets will evolve even when they do not use
+               the word "antitrust".
+    """
+    seen: set[str] = set()
+    items: list[ResearchItem] = []
+
+    log.info("arXiv query 1 — competition economics")
+    items += _arxiv_query(
+        session, ARXIV_QUERY_COMPETITION,
+        max_results=50, lookback_days=lookback_days,
+        seen=seen, label="competition-economics",
+    )
+
+    log.info("arXiv query 2 — AI/tech market disruption")
+    items += _arxiv_query(
+        session, ARXIV_QUERY_MARKET_TECH,
+        max_results=80, lookback_days=lookback_days,
+        seen=seen, label="market-tech",
+    )
+
+    log.info("arXiv total: %d items (lookback %d days)", len(items), lookback_days)
     return items
 
 

@@ -2,9 +2,13 @@
 Weekly Digest Generator — synthesizes competition policy developments from all
 data sources into a structured weekly briefing.
 
-In --no-ai mode (free): aggregates and organises data without any API calls.
-In AI mode:             uses Claude Haiku for per-item analysis and Claude
-                        Sonnet for the weekly narrative.
+In --no-ai mode (free):    aggregates and structures data with no API calls.
+With ANTHROPIC_API_KEY:    uses Claude Haiku (summaries) + Sonnet (synthesis).
+With GOOGLE_API_KEY:       uses Gemini 2.0 Flash for everything — FREE tier
+                           available at aistudio.google.com, no credit card needed
+                           for typical weekly usage (~30–50 items/week).
+
+Priority: ANTHROPIC_API_KEY > GOOGLE_API_KEY > --no-ai
 
 Reads:
   data/ecn_pulse.json              ECN enforcement press releases
@@ -17,7 +21,8 @@ Output:
 
 Usage:
   python digest_generator.py --no-ai
-  python digest_generator.py                  # requires ANTHROPIC_API_KEY env var
+  GOOGLE_API_KEY=... python digest_generator.py      # free via Gemini
+  ANTHROPIC_API_KEY=... python digest_generator.py   # via Claude
   python digest_generator.py --lookback 7 --verbose
 """
 
@@ -33,8 +38,12 @@ from typing import Any
 
 log = logging.getLogger("digest-generator")
 
-MODEL_SUMMARY = "claude-haiku-4-5-20251001"   # fast, cheap — one call per item
-MODEL_SYNTHESIS = "claude-sonnet-4-6"          # quality — one call for the week
+# Anthropic models
+MODEL_CLAUDE_SUMMARY   = "claude-haiku-4-5-20251001"
+MODEL_CLAUDE_SYNTHESIS = "claude-sonnet-4-6"
+
+# Google Gemini models (free tier available)
+MODEL_GEMINI = "gemini-2.0-flash"
 
 THEME_TAGS = [
     "antitrust enforcement", "merger control", "DMA/DSA", "AI regulation",
@@ -76,32 +85,50 @@ def _collect_items(ecn_path: str, research_path: str, court_path: str, lookback_
     """Load and normalise items from all data sources."""
     items: list[dict] = []
 
-    # ECN press releases — only competition-relevant items
-    # Category whitelist: always include these
-    _ECN_CATEGORY_WHITELIST = {"digital", "antitrust", "merger", "cartel", "policy"}
-    # Whole-word English keyword patterns for "other" category items
+    # ECN press releases — only digital/tech competition items
     import re as _re
-    _ECN_KW_PATTERNS = _re.compile(
+
+    # Digital/tech companies and markets — any of these in title/snippet = include
+    _DIGITAL_TECH_RE = _re.compile(
         r'\b('
-        r'digital market|platform|app store|search engine|e-commerce|'
-        r'artificial intelligence|machine learning|algorithm|'
+        r'Google|Alphabet|Apple|Amazon|Meta(?!\w)|Microsoft|TikTok|ByteDance|'
+        r'Samsung|Qualcomm|Intel|NVIDIA|Broadcom|ARM|'
+        r'Booking|Airbnb|Uber|Lyft|Deliveroo|Just Eat|'
+        r'Spotify|Netflix|Disney\+|YouTube|'
+        r'digital market|online platform|app store|search engine|'
+        r'e-commerce|online marketplace|cloud computing|cloud service|'
+        r'social media|social network|online advertising|digital advertising|'
+        r'artificial intelligence|machine learning|generative AI|'
         r'DMA|DSA|gatekeeper|self-preferencing|interoperability|'
-        r'big tech|Google|Amazon|Apple|Microsoft|Meta(?!\w)|TikTok|'
-        r'market power|dominant position|abuse of dominance|'
-        r'merger control|gun-jumping|killer acquisition|'
-        r'data portability|online marketplace|cloud computing'
+        r'market power.*digital|dominant.*platform|platform.*dominant|'
+        r'data portability|algorithmic|fintech|edtech|adtech'
         r')\b',
         _re.IGNORECASE,
     )
 
+    # Antitrust/digital enforcement — always include (already filtered by ECN scraper category)
+    _ALWAYS_INCLUDE = {"digital", "antitrust"}
+
+    # Mergers/cartels/policy: only if digital/tech sector involved
+    _CONDITIONAL_INCLUDE = {"merger", "cartel", "policy"}
+
     def _ecn_is_relevant(it: dict) -> bool:
-        if it.get("category") in _ECN_CATEGORY_WHITELIST:
-            return True
-        # For "other" / unlabelled items, require an explicit keyword hit in the English title
-        if it.get("language", "en") != "en":
+        # Skip state aid — almost never digital competition relevant
+        if it.get("category") == "state_aid":
             return False
-        title = it.get("title", "")
-        return bool(_ECN_KW_PATTERNS.search(title))
+        # Skip non-English items without a clearly recognisable company/topic
+        lang = it.get("language", "en")
+        cat = it.get("category", "other")
+        txt = it.get("title", "") + " " + it.get("snippet", "")
+
+        if cat in _ALWAYS_INCLUDE:
+            return True
+        if cat in _CONDITIONAL_INCLUDE:
+            return bool(_DIGITAL_TECH_RE.search(txt))
+        # "other" category: require explicit digital keyword, English only
+        if lang != "en":
+            return False
+        return bool(_DIGITAL_TECH_RE.search(txt))
 
     ecn = _load(ecn_path)
     for it in ecn.get("items", []):
@@ -176,105 +203,143 @@ def _collect_items(ecn_path: str, research_path: str, court_path: str, lookback_
     return items
 
 
-# ── Claude API helpers ────────────────────────────────────────────────────────
+# ── Provider-agnostic AI client ───────────────────────────────────────────────
 
-def _call_claude(client: Any, model: str, prompt: str, max_tokens: int) -> str:
-    resp = client.messages.create(
-        model=model,
-        max_tokens=max_tokens,
-        messages=[{"role": "user", "content": prompt}],
-    )
-    return resp.content[0].text.strip()
+class _AIClient:
+    """Thin wrapper so the rest of the code is provider-agnostic."""
+
+    def __init__(self, provider: str, client: Any):
+        self.provider = provider   # "anthropic" | "gemini"
+        self._client = client
+
+    def complete(self, prompt: str, max_tokens: int = 1024) -> str:
+        if self.provider == "anthropic":
+            resp = self._client.messages.create(
+                model=MODEL_CLAUDE_SUMMARY,
+                max_tokens=max_tokens,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            return resp.content[0].text.strip()
+        else:  # gemini
+            resp = self._client.generate_content(prompt)
+            return resp.text.strip()
+
+    def complete_synthesis(self, prompt: str, max_tokens: int = 2000) -> str:
+        if self.provider == "anthropic":
+            resp = self._client.messages.create(
+                model=MODEL_CLAUDE_SYNTHESIS,
+                max_tokens=max_tokens,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            return resp.content[0].text.strip()
+        else:  # gemini uses same model for both
+            resp = self._client.generate_content(prompt)
+            return resp.text.strip()
 
 
 def _parse_json_response(text: str) -> dict | list:
-    """Strip markdown fences and parse JSON from a Claude response."""
+    """Strip markdown fences and parse JSON from an LLM response."""
     text = text.strip()
     if text.startswith("```"):
         parts = text.split("```")
-        # parts[1] is the block content (possibly starting with 'json\n')
         text = parts[1]
         if text.startswith("json"):
             text = text[4:]
     return json.loads(text.strip())
 
 
-def _summarize_item(client: Any, item: dict) -> dict:
-    """Per-item analysis with Claude Haiku."""
+def _build_item_prompt(item: dict) -> str:
     title = item.get("title", "")
     abstract = item.get("abstract", "")
     src = item.get("source_label", item.get("source", ""))
     item_type = item.get("item_type", "publication")
-
-    prompt = (
+    return (
         "You are a competition policy expert specialising in digital markets and AI regulation. "
         f"Analyse this {item_type} from {src} for its relevance to digital competition policy.\n\n"
         f"Title: {title}\n"
         f"{'Content: ' + abstract[:600] if abstract else ''}\n\n"
+        "IMPORTANT: for technology papers (AI agents, LLMs, recommendation systems, etc.), "
+        "assess how they signal changes in market structure or competitive dynamics, "
+        "even if they do not use the word 'competition' or 'antitrust'.\n\n"
         "Return a JSON object with exactly these keys:\n"
-        '  "summary": 2-3 sentence plain-language summary of the key points\n'
-        '  "relevance_score": integer 1-5 (5=critical for digital competition, 1=tangential)\n'
-        '  "relevance_explanation": one sentence explaining WHY this matters for digital competition policy\n'
-        '  "key_entities": list of up to 5 companies, laws, or markets mentioned\n'
+        '  "summary": 2-3 sentence plain-language summary of the key findings\n'
+        '  "relevance_score": integer 1-5\n'
+        '    5 = directly shapes digital competition policy (enforcement, regulation, market power)\n'
+        '    4 = strong market signal (technology disrupting a digital market, revealing competitive dynamics)\n'
+        '    3 = useful context (platform economics, industry structure, related market)\n'
+        '    2 = tangential\n'
+        '    1 = not relevant\n'
+        '  "relevance_explanation": one sentence on WHY this matters for digital competition '
+        '(e.g. "Shows AI agents can bypass Google Search, threatening its advertising monopoly")\n'
+        '  "market_signal": one sentence on what market development this publication signals '
+        '(e.g. "AI-powered search agents may erode the search advertising duopoly within 2-3 years")\n'
+        '  "key_entities": list of up to 5 companies, laws, markets, or technologies mentioned\n'
         f'  "themes": list of 1-3 tags chosen from: {THEME_TAGS}\n\n'
         "Return ONLY valid JSON, no prose."
     )
 
+
+def _build_synthesis_prompt(items: list[dict], week_id: str) -> str:
+    lines: list[str] = []
+    for i, it in enumerate(items[:60], 1):
+        a = it.get("_analysis", {})
+        lines.append(
+            f"{i}. [{it.get('source', '?').upper()}] {it.get('title', '')}\n"
+            f"   Date: {it.get('date', '?')} | Score: {a.get('relevance_score', '?')}/5\n"
+            f"   Summary: {a.get('summary', '')}\n"
+            f"   Market signal: {a.get('market_signal', '')}\n"
+            f"   Themes: {', '.join(a.get('themes', []))}\n"
+            f"   Entities: {', '.join(a.get('key_entities', []))}"
+        )
+    return (
+        f"You are a senior competition policy expert specialising in digital markets (week {week_id}).\n"
+        f"You have reviewed {len(items)} recent publications (academic papers, regulatory decisions, "
+        "enforcement actions, court judgments).\n\n"
+        "Publications:\n" + "\n\n".join(lines) + "\n\n"
+        "Generate a JSON digest with these keys:\n\n"
+        '"headline": punchy 10-15 word newsletter subject line capturing the most important story\n\n'
+        '"executive_summary": 3-4 sentence narrative covering both enforcement developments AND '
+        "emerging market/technology trends that competition practitioners should track.\n\n"
+        '"key_themes": array of up to 5 objects, each with:\n'
+        '  "theme": theme name\n'
+        '  "description": 2-3 sentences on what is happening and why it matters for competition\n'
+        '  "item_indices": array of 1-based item numbers belonging to this theme\n\n'
+        '"connections": array of up to 5 objects describing how publications connect:\n'
+        '  "description": 1-2 sentences (e.g. "This arXiv paper on AI agents in search '
+        'corroborates the Commission\'s theory of harm in the Google DMA investigation")\n'
+        '  "item_indices": array of 2-4 item numbers\n'
+        '  "connection_type": one of [academic_supports_regulation, case_follows_theory, '
+        "regulatory_gap, conflicting_approaches, enforcement_trend, "
+        "academic_challenges_regulation, tech_signals_market_shift]\n\n"
+        '"policy_implications": array of up to 4 objects:\n'
+        '  "implication": 1-2 sentences for practitioners/policymakers\n'
+        '  "urgency": "immediate" | "medium_term" | "watch"\n\n'
+        "Return ONLY valid JSON, no prose."
+    )
+
+
+def _summarize_item(client: _AIClient, item: dict) -> dict:
     try:
-        text = _call_claude(client, MODEL_SUMMARY, prompt, 512)
+        text = client.complete(_build_item_prompt(item), max_tokens=600)
         result = _parse_json_response(text)
         assert isinstance(result, dict)
         return result
     except Exception as exc:
-        log.debug("Summarise error for '%s': %s", title[:60], exc)
+        log.debug("Summarise error for '%s': %s", item.get("title", "")[:60], exc)
+        abstract = item.get("abstract", "")
         return {
-            "summary": abstract[:200] if abstract else title,
+            "summary": abstract[:200] if abstract else item.get("title", ""),
             "relevance_score": 3,
             "relevance_explanation": "Relates to digital competition policy.",
+            "market_signal": "",
             "key_entities": [],
             "themes": [],
         }
 
 
-def _synthesize(client: Any, items: list[dict], week_id: str) -> dict:
-    """Weekly narrative synthesis with Claude Sonnet."""
-    lines: list[str] = []
-    for i, it in enumerate(items[:60], 1):
-        analysis = it.get("_analysis", {})
-        lines.append(
-            f"{i}. [{it.get('source', '?').upper()}] {it.get('title', '')}\n"
-            f"   Date: {it.get('date', '?')} | Score: {analysis.get('relevance_score', '?')}/5\n"
-            f"   Summary: {analysis.get('summary', '')}\n"
-            f"   Themes: {', '.join(analysis.get('themes', []))}\n"
-            f"   Entities: {', '.join(analysis.get('key_entities', []))}"
-        )
-
-    prompt = (
-        f"You are a senior competition policy expert specialising in digital markets (week {week_id}).\n"
-        f"You have reviewed {len(items)} recent publications.\n\n"
-        "Publications:\n" + "\n\n".join(lines) + "\n\n"
-        "Generate a JSON digest with these keys:\n\n"
-        '"headline": punchy 10-15 word newsletter subject line for the week\n\n'
-        '"executive_summary": 3-4 sentence narrative of the most important digital competition '
-        "policy developments this week.\n\n"
-        '"key_themes": array of up to 5 objects, each with:\n'
-        '  "theme": theme name\n'
-        '  "description": 2-3 sentences on what is happening in this area\n'
-        '  "item_indices": array of 1-based item numbers belonging to this theme\n\n'
-        '"connections": array of up to 5 objects describing cross-cutting relationships:\n'
-        '  "description": 1-2 sentences on how the publications connect\n'
-        '  "item_indices": array of 2-4 item numbers\n'
-        '  "connection_type": one of [academic_supports_regulation, case_follows_theory, '
-        "regulatory_gap, conflicting_approaches, enforcement_trend, "
-        "academic_challenges_regulation]\n\n"
-        '"policy_implications": array of up to 4 objects:\n'
-        '  "implication": 1-2 sentences on what this means for practitioners/policymakers\n'
-        '  "urgency": "immediate" | "medium_term" | "watch"\n\n'
-        "Return ONLY valid JSON, no prose."
-    )
-
+def _synthesize(client: _AIClient, items: list[dict], week_id: str) -> dict:
     try:
-        text = _call_claude(client, MODEL_SYNTHESIS, prompt, 2000)
+        text = client.complete_synthesis(_build_synthesis_prompt(items, week_id), max_tokens=2000)
         result = _parse_json_response(text)
         assert isinstance(result, dict)
         return result
@@ -287,6 +352,35 @@ def _synthesize(client: Any, items: list[dict], week_id: str) -> dict:
             "connections": [],
             "policy_implications": [],
         }
+
+
+def _build_ai_client() -> "_AIClient | None":
+    """Detect available API key and return the right client, or None."""
+    anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
+    google_key = os.environ.get("GOOGLE_API_KEY")
+
+    if anthropic_key:
+        try:
+            import anthropic
+            client = anthropic.Anthropic(api_key=anthropic_key)
+            log.info("Using Anthropic API (Claude %s / %s)", MODEL_CLAUDE_SUMMARY, MODEL_CLAUDE_SYNTHESIS)
+            return _AIClient("anthropic", client)
+        except ImportError:
+            log.error("anthropic package not installed. Run: pip install anthropic")
+            return None
+
+    if google_key:
+        try:
+            import google.generativeai as genai
+            genai.configure(api_key=google_key)
+            model = genai.GenerativeModel(MODEL_GEMINI)
+            log.info("Using Google Gemini API (%s) — free tier", MODEL_GEMINI)
+            return _AIClient("gemini", model)
+        except ImportError:
+            log.error("google-generativeai package not installed. Run: pip install google-generativeai")
+            return None
+
+    return None
 
 
 # ── Week ID ───────────────────────────────────────────────────────────────────
@@ -325,13 +419,15 @@ def main() -> None:
     os.makedirs(args.output_dir, exist_ok=True)
 
     if args.no_ai:
+        provider_note = (
+            "Set GOOGLE_API_KEY (free — aistudio.google.com) or ANTHROPIC_API_KEY "
+            "to enable AI summaries and thematic analysis."
+        )
         synthesis = {
             "headline": f"Digital Competition Digest — {week}",
             "executive_summary": (
-                "AI analysis is disabled (--no-ai mode). "
-                f"This digest aggregates {len(items)} items from ECN, arXiv, EUR-Lex, and CJEU "
-                f"published in the last {args.lookback} days. "
-                "Add ANTHROPIC_API_KEY and remove --no-ai to enable summaries and thematic analysis."
+                f"Free mode: {len(items)} items aggregated from ECN enforcement, arXiv, "
+                f"EUR-Lex, and CJEU for the past {args.lookback} days. {provider_note}"
             ),
             "key_themes": [],
             "connections": [],
@@ -346,34 +442,27 @@ def main() -> None:
             "synthesis": synthesis,
         }
     else:
-        api_key = os.environ.get("ANTHROPIC_API_KEY")
-        if not api_key:
+        ai_client = _build_ai_client()
+        if ai_client is None:
             log.error(
-                "ANTHROPIC_API_KEY environment variable is not set.\n"
-                "Run with --no-ai for free mode, or set the variable and re-run."
+                "No AI API key found. Set GOOGLE_API_KEY (free) or ANTHROPIC_API_KEY, "
+                "or run with --no-ai."
             )
             sys.exit(1)
 
-        try:
-            import anthropic
-        except ImportError:
-            log.error("anthropic package not installed. Run: pip install anthropic")
-            sys.exit(1)
-
-        client = anthropic.Anthropic(api_key=api_key)
-
-        log.info("Analysing %d items with %s …", len(items), MODEL_SUMMARY)
+        log.info("Analysing %d items …", len(items))
         for idx, item in enumerate(items, 1):
             log.debug("  [%d/%d] %s", idx, len(items), item.get("title", "")[:70])
-            item["_analysis"] = _summarize_item(client, item)
+            item["_analysis"] = _summarize_item(ai_client, item)
 
         # Only send high-relevance items to the synthesis call
         high = [it for it in items if it.get("_analysis", {}).get("relevance_score", 0) >= 3]
         log.info("High-relevance items: %d / %d", len(high), len(items))
 
-        log.info("Generating weekly synthesis with %s …", MODEL_SYNTHESIS)
-        synthesis = _synthesize(client, high, week)
+        log.info("Generating weekly synthesis …")
+        synthesis = _synthesize(ai_client, high, week)
         synthesis["ai_enabled"] = True
+        synthesis["ai_provider"] = ai_client.provider
 
         digest = {
             "week": week,
