@@ -495,9 +495,10 @@ function formatDate(iso) {
 function normaliseSource(src) {
   if (!src) return "default";
   const s = src.toLowerCase();
-  if (s === "arxiv") return "academic";
+  if (["arxiv","nber","ssrn","bruegel","cerre","cpi"].includes(s)) return "academic";
   if (s === "eurlex") return "regulatory";
   if (s === "cjeu" || s === "cjeu_linker") return "court";
+  if (s === "dgcomp" || s === "dma_acquisitions") return "enforcement";
   if (/^[a-z]{2}$/i.test(s) || s === "eu" || s === "ecn") return "enforcement";
   return "default";
 }
@@ -643,6 +644,85 @@ function toggleFaqItem(idx) {
   q.classList.toggle("open", isOpen);
 }
 
+// ── Theme network ─────────────────────────────────────────────────────────────
+function buildThemeNetwork(themes, connections) {
+  if (!themes || themes.length === 0) {
+    return '<div style="font-size:13px;color:var(--text-muted);text-align:center;padding:20px">No theme data — AI analysis needed.</div>';
+  }
+  const W = 560, H = 224;
+  const cx = W / 2, cy = H / 2;
+  const COLORS = ["#2563eb","#7c3aed","#065f46","#d97706","#dc2626"];
+  const n = Math.min(themes.length, 5);
+  const R = n <= 2 ? 0 : (n <= 3 ? 74 : 90);
+
+  const nodes = themes.slice(0, n).map((t, i) => {
+    const angle = n <= 1 ? 0 : (i / n) * 2 * Math.PI - Math.PI / 2;
+    return {
+      x: cx + R * Math.cos(angle),
+      y: cy + R * Math.sin(angle),
+      label: (t.theme || '').replace(/\//g, '/​'),
+      count: (t.item_indices || []).length,
+      color: COLORS[i % COLORS.length],
+      indices: t.item_indices || [],
+    };
+  });
+
+  // Build edge weights from synthesis connections
+  const edgeW = {};
+  (connections || []).forEach(conn => {
+    const hit = new Set();
+    (conn.item_indices || []).forEach(idx => {
+      nodes.forEach((nd, ni) => { if (nd.indices.includes(idx)) hit.add(ni); });
+    });
+    const arr = [...hit].sort((a, b) => a - b);
+    for (let a = 0; a < arr.length; a++)
+      for (let b = a + 1; b < arr.length; b++) {
+        const k = `${arr[a]}_${arr[b]}`;
+        edgeW[k] = (edgeW[k] || 0) + 1;
+      }
+  });
+
+  let out = '';
+
+  // Edges first (behind nodes)
+  Object.entries(edgeW).forEach(([key, w]) => {
+    const [ai, bi] = key.split('_').map(Number);
+    const na = nodes[ai], nb = nodes[bi];
+    if (!na || !nb) return;
+    const sw = Math.min(3, 1 + w * 0.5).toFixed(1);
+    out += `<line x1="${na.x.toFixed(1)}" y1="${na.y.toFixed(1)}" x2="${nb.x.toFixed(1)}" y2="${nb.y.toFixed(1)}" stroke="${na.color}" stroke-width="${sw}" stroke-dasharray="5,3" opacity="0.38"/>`;
+  });
+
+  // Nodes
+  nodes.forEach(nd => {
+    const r = Math.max(28, Math.min(42, 28 + (nd.count || 0) * 2));
+    const x = nd.x.toFixed(1), y = nd.y.toFixed(1);
+    out += `<circle cx="${x}" cy="${y}" r="${r}" fill="${nd.color}14" stroke="${nd.color}" stroke-width="1.5"/>`;
+    // Text wrap
+    const words = nd.label.split(/\s+/);
+    const lns = []; let cur = '';
+    words.forEach(w => {
+      const test = cur ? `${cur} ${w}` : w;
+      if (test.length <= 12) cur = test;
+      else { if (cur) lns.push(cur); cur = w; }
+    });
+    if (cur) lns.push(cur);
+    const lh = 11;
+    const topY = nd.y - ((lns.length - 1) * lh) / 2;
+    lns.forEach((ln, li) => {
+      out += `<text x="${x}" y="${(topY + li * lh).toFixed(1)}" text-anchor="middle" dominant-baseline="middle" fill="${nd.color}" font-size="8.5" font-weight="700" font-family="system-ui,sans-serif">${esc(ln)}</text>`;
+    });
+    if (nd.count > 0) {
+      const cy2 = (nd.y + ((lns.length - 1) * lh) / 2 + 14).toFixed(1);
+      out += `<text x="${x}" y="${cy2}" text-anchor="middle" dominant-baseline="middle" fill="${nd.color}" font-size="7" opacity="0.6" font-family="system-ui,sans-serif">${nd.count} item${nd.count !== 1 ? 's' : ''}</text>`;
+    }
+  });
+
+  const noEdges = Object.keys(edgeW).length === 0;
+  const footer = noEdges ? `<text x="${cx}" y="${H - 10}" text-anchor="middle" fill="var(--text-light)" font-size="8" font-family="system-ui,sans-serif">No cross-theme connections found this week</text>` : '';
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block;max-height:224px;overflow:visible" xmlns="http://www.w3.org/2000/svg">${out}${footer}</svg>`;
+}
+
 // ── Charts ────────────────────────────────────────────────────────────────────
 function buildDonut(academic, regulatory, court, enforcement, total) {
   // Build a CSS conic-gradient donut
@@ -755,7 +835,7 @@ function render() {
           ${countAcademic   ? `<div class="legend-item"><span class="legend-dot" style="background:#7c3aed"></span>Academic<span class="legend-count">${countAcademic}</span></div>` : ""}
           ${countRegulatory ? `<div class="legend-item"><span class="legend-dot" style="background:#0369a1"></span>EU Docs<span class="legend-count">${countRegulatory}</span></div>` : ""}
           ${countCourt      ? `<div class="legend-item"><span class="legend-dot" style="background:#065f46"></span>Court<span class="legend-count">${countCourt}</span></div>` : ""}
-          ${countEnforce    ? `<div class="legend-item"><span class="legend-dot" style="background:#b45309"></span>NCA<span class="legend-count">${countEnforce}</span></div>` : ""}
+          ${countEnforce    ? `<div class="legend-item"><span class="legend-dot" style="background:#b45309"></span>Enforcement<span class="legend-count">${countEnforce}</span></div>` : ""}
         </div>
       </div>
     </div>
@@ -794,6 +874,26 @@ function render() {
       </div>
     </div>
   </div>`;
+
+  // ── Theme connections map ──
+  if (themes.length > 0) {
+    html += `<div class="card" style="margin-bottom:18px">
+      <div class="card-title">Theme connections</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px">
+        Node size reflects item count. Dashed lines show cross-theme connections identified by AI analysis.
+      </div>
+      ${buildThemeNetwork(themes, syn.connections || [])}
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border)">
+        ${themes.slice(0, 5).map((t, i) => `
+          <div style="display:flex;align-items:center;gap:5px">
+            <span style="width:9px;height:9px;border-radius:50%;background:${themeColors[i % themeColors.length]};flex-shrink:0;display:inline-block"></span>
+            <span style="font-size:12px;color:var(--text-muted)">${esc(t.theme || '')}
+              ${(t.item_indices || []).length ? `<strong style="color:var(--text);margin-left:3px">(${(t.item_indices || []).length})</strong>` : ''}
+            </span>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  }
 
   // ── Top picks ──
   html += `<div class="section-header">
@@ -869,7 +969,7 @@ function render() {
       ${countAcademic   ? `<button class="filter-btn" onclick="setFilter('academic', this)">📄 Academic <span style="opacity:.6">${countAcademic}</span></button>` : ""}
       ${countRegulatory ? `<button class="filter-btn" onclick="setFilter('regulatory', this)">📋 EU Docs <span style="opacity:.6">${countRegulatory}</span></button>` : ""}
       ${countCourt      ? `<button class="filter-btn" onclick="setFilter('court', this)">⚖️ Court <span style="opacity:.6">${countCourt}</span></button>` : ""}
-      ${countEnforce    ? `<button class="filter-btn" onclick="setFilter('enforcement', this)">🔎 NCA <span style="opacity:.6">${countEnforce}</span></button>` : ""}
+      ${countEnforce    ? `<button class="filter-btn" onclick="setFilter('enforcement', this)">🔎 Enforcement <span style="opacity:.6">${countEnforce}</span></button>` : ""}
       <div class="search-wrap">
         <span class="search-icon">🔍</span>
         <input class="search-input" id="searchInput" placeholder="Search…" oninput="applySearch(this.value)">

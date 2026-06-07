@@ -586,7 +586,7 @@ def main() -> None:
 
     if args.no_ai:
         provider_note = (
-            "Set GOOGLE_API_KEY (free — aistudio.google.com) or ANTHROPIC_API_KEY "
+            "Set MISTRAL_API_KEY (free — console.mistral.ai) or ANTHROPIC_API_KEY "
             "to enable AI summaries and thematic analysis."
         )
         synthesis = {
