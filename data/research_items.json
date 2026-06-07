@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T07:25:22.873252+00:00",
+  "generated_at": "2026-06-07T12:39:38.128184+00:00",
   "lookback_days": 7,
   "total_items": 230,
   "items": [
@@ -19,7 +19,7 @@
         "econ.EM",
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.142567+00:00"
+      "fetched_at": "2026-06-07T12:39:02.300996+00:00"
     },
     {
       "source": "arxiv",
@@ -41,7 +41,7 @@
         "econ.GN",
         "q-fin.RM"
       ],
-      "fetched_at": "2026-06-07T07:25:00.142781+00:00"
+      "fetched_at": "2026-06-07T12:39:02.301183+00:00"
     },
     {
       "source": "arxiv",
@@ -58,7 +58,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.142910+00:00"
+      "fetched_at": "2026-06-07T12:39:02.301281+00:00"
     },
     {
       "source": "arxiv",
@@ -75,7 +75,7 @@
         "econ.TH",
         "cs.GT"
       ],
-      "fetched_at": "2026-06-07T07:25:00.143021+00:00"
+      "fetched_at": "2026-06-07T12:39:02.301370+00:00"
     },
     {
       "source": "arxiv",
@@ -96,7 +96,7 @@
         "q-fin.MF",
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.143197+00:00"
+      "fetched_at": "2026-06-07T12:39:02.301473+00:00"
     },
     {
       "source": "arxiv",
@@ -113,7 +113,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.143307+00:00"
+      "fetched_at": "2026-06-07T12:39:02.301595+00:00"
     },
     {
       "source": "arxiv",
@@ -130,7 +130,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.143404+00:00"
+      "fetched_at": "2026-06-07T12:39:02.301685+00:00"
     },
     {
       "source": "arxiv",
@@ -155,7 +155,7 @@
         "cs.AI",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.088360+00:00"
+      "fetched_at": "2026-06-07T12:39:03.701126+00:00"
     },
     {
       "source": "arxiv",
@@ -176,7 +176,7 @@
         "cs.AI",
         "cs.CL"
       ],
-      "fetched_at": "2026-06-07T07:25:02.088516+00:00"
+      "fetched_at": "2026-06-07T12:39:03.701249+00:00"
     },
     {
       "source": "arxiv",
@@ -205,7 +205,7 @@
         "cs.AI",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.088687+00:00"
+      "fetched_at": "2026-06-07T12:39:03.701379+00:00"
     },
     {
       "source": "arxiv",
@@ -225,7 +225,7 @@
         "cs.GT",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.088805+00:00"
+      "fetched_at": "2026-06-07T12:39:03.701473+00:00"
     },
     {
       "source": "arxiv",
@@ -247,7 +247,7 @@
         "cs.AI",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.088923+00:00"
+      "fetched_at": "2026-06-07T12:39:03.701578+00:00"
     },
     {
       "source": "arxiv",
@@ -277,7 +277,7 @@
         "cs.AI",
         "cs.CL"
       ],
-      "fetched_at": "2026-06-07T07:25:02.089107+00:00"
+      "fetched_at": "2026-06-07T12:39:03.701705+00:00"
     },
     {
       "source": "arxiv",
@@ -300,7 +300,7 @@
         "cs.LG",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.089239+00:00"
+      "fetched_at": "2026-06-07T12:39:03.701799+00:00"
     },
     {
       "source": "arxiv",
@@ -332,7 +332,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.089406+00:00"
+      "fetched_at": "2026-06-07T12:39:03.701927+00:00"
     },
     {
       "source": "arxiv",
@@ -354,7 +354,7 @@
         "cs.AI",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.089519+00:00"
+      "fetched_at": "2026-06-07T12:39:03.702014+00:00"
     },
     {
       "source": "arxiv",
@@ -377,7 +377,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.089645+00:00"
+      "fetched_at": "2026-06-07T12:39:03.702109+00:00"
     },
     {
       "source": "arxiv",
@@ -394,7 +394,7 @@
         "cs.CR",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.089749+00:00"
+      "fetched_at": "2026-06-07T12:39:03.702185+00:00"
     },
     {
       "source": "arxiv",
@@ -417,7 +417,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.089872+00:00"
+      "fetched_at": "2026-06-07T12:39:03.702283+00:00"
     },
     {
       "source": "arxiv",
@@ -434,7 +434,7 @@
       "categories": [
         "cs.GT"
       ],
-      "fetched_at": "2026-06-07T07:25:02.089971+00:00"
+      "fetched_at": "2026-06-07T12:39:03.702358+00:00"
     },
     {
       "source": "arxiv",
@@ -458,7 +458,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.090107+00:00"
+      "fetched_at": "2026-06-07T12:39:03.702451+00:00"
     },
     {
       "source": "arxiv",
@@ -482,7 +482,7 @@
         "cs.CL",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.090238+00:00"
+      "fetched_at": "2026-06-07T12:39:03.702567+00:00"
     },
     {
       "source": "arxiv",
@@ -505,7 +505,7 @@
         "cs.RO",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.090359+00:00"
+      "fetched_at": "2026-06-07T12:39:03.702665+00:00"
     },
     {
       "source": "arxiv",
@@ -526,7 +526,7 @@
         "cs.CY",
         "cs.HC"
       ],
-      "fetched_at": "2026-06-07T07:25:02.090469+00:00"
+      "fetched_at": "2026-06-07T12:39:03.702751+00:00"
     },
     {
       "source": "arxiv",
@@ -551,7 +551,7 @@
         "cs.LG",
         "cs.MA"
       ],
-      "fetched_at": "2026-06-07T07:25:02.090590+00:00"
+      "fetched_at": "2026-06-07T12:39:03.702844+00:00"
     },
     {
       "source": "arxiv",
@@ -578,7 +578,7 @@
       "categories": [
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.090735+00:00"
+      "fetched_at": "2026-06-07T12:39:03.702952+00:00"
     },
     {
       "source": "arxiv",
@@ -595,7 +595,7 @@
         "stat.ML",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.090822+00:00"
+      "fetched_at": "2026-06-07T12:39:03.703018+00:00"
     },
     {
       "source": "arxiv",
@@ -616,7 +616,7 @@
         "cs.CV",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.090932+00:00"
+      "fetched_at": "2026-06-07T12:39:03.703108+00:00"
     },
     {
       "source": "arxiv",
@@ -645,7 +645,7 @@
         "cs.AI",
         "cs.CL"
       ],
-      "fetched_at": "2026-06-07T07:25:02.091089+00:00"
+      "fetched_at": "2026-06-07T12:39:03.703216+00:00"
     },
     {
       "source": "arxiv",
@@ -665,7 +665,7 @@
         "cs.MA",
         "cs.NE"
       ],
-      "fetched_at": "2026-06-07T07:25:02.091186+00:00"
+      "fetched_at": "2026-06-07T12:39:03.703286+00:00"
     },
     {
       "source": "arxiv",
@@ -684,7 +684,7 @@
         "eess.SP",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.091280+00:00"
+      "fetched_at": "2026-06-07T12:39:03.703359+00:00"
     },
     {
       "source": "arxiv",
@@ -708,7 +708,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.091406+00:00"
+      "fetched_at": "2026-06-07T12:39:03.703456+00:00"
     },
     {
       "source": "arxiv",
@@ -731,7 +731,7 @@
         "cs.AI",
         "eess.AS"
       ],
-      "fetched_at": "2026-06-07T07:25:02.091516+00:00"
+      "fetched_at": "2026-06-07T12:39:03.703552+00:00"
     },
     {
       "source": "arxiv",
@@ -750,7 +750,7 @@
         "eess.SY",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.091619+00:00"
+      "fetched_at": "2026-06-07T12:39:03.703637+00:00"
     },
     {
       "source": "arxiv",
@@ -769,7 +769,7 @@
         "cs.LG",
         "cs.SC"
       ],
-      "fetched_at": "2026-06-07T07:25:02.091713+00:00"
+      "fetched_at": "2026-06-07T12:39:03.703715+00:00"
     },
     {
       "source": "arxiv",
@@ -787,7 +787,7 @@
         "stat.ML",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.091808+00:00"
+      "fetched_at": "2026-06-07T12:39:03.703791+00:00"
     },
     {
       "source": "arxiv",
@@ -803,7 +803,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.091896+00:00"
+      "fetched_at": "2026-06-07T12:39:03.703867+00:00"
     },
     {
       "source": "arxiv",
@@ -823,7 +823,7 @@
         "cs.LG",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.091993+00:00"
+      "fetched_at": "2026-06-07T12:39:03.703949+00:00"
     },
     {
       "source": "arxiv",
@@ -841,7 +841,7 @@
         "cs.LG",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.092102+00:00"
+      "fetched_at": "2026-06-07T12:39:03.704030+00:00"
     },
     {
       "source": "arxiv",
@@ -859,7 +859,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.092201+00:00"
+      "fetched_at": "2026-06-07T12:39:03.704104+00:00"
     },
     {
       "source": "arxiv",
@@ -877,7 +877,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.092293+00:00"
+      "fetched_at": "2026-06-07T12:39:03.704183+00:00"
     },
     {
       "source": "arxiv",
@@ -897,7 +897,7 @@
         "cs.LG",
         "cs.SE"
       ],
-      "fetched_at": "2026-06-07T07:25:02.092397+00:00"
+      "fetched_at": "2026-06-07T12:39:03.704269+00:00"
     },
     {
       "source": "arxiv",
@@ -916,7 +916,7 @@
         "cs.CL",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.092493+00:00"
+      "fetched_at": "2026-06-07T12:39:03.704345+00:00"
     },
     {
       "source": "arxiv",
@@ -941,7 +941,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.092621+00:00"
+      "fetched_at": "2026-06-07T12:39:03.704443+00:00"
     },
     {
       "source": "arxiv",
@@ -958,7 +958,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.092712+00:00"
+      "fetched_at": "2026-06-07T12:39:03.704514+00:00"
     },
     {
       "source": "arxiv",
@@ -981,7 +981,7 @@
         "cs.ET",
         "cs.MA"
       ],
-      "fetched_at": "2026-06-07T07:25:02.092821+00:00"
+      "fetched_at": "2026-06-07T12:39:03.704613+00:00"
     },
     {
       "source": "arxiv",
@@ -1082,7 +1082,7 @@
         "cs.AI",
         "cs.CL"
       ],
-      "fetched_at": "2026-06-07T07:25:02.093300+00:00"
+      "fetched_at": "2026-06-07T12:39:03.704969+00:00"
     },
     {
       "source": "arxiv",
@@ -1105,7 +1105,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.093436+00:00"
+      "fetched_at": "2026-06-07T12:39:03.705068+00:00"
     },
     {
       "source": "arxiv",
@@ -1122,7 +1122,7 @@
         "cs.DB",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.093531+00:00"
+      "fetched_at": "2026-06-07T12:39:03.705144+00:00"
     },
     {
       "source": "arxiv",
@@ -1143,7 +1143,7 @@
         "cond-mat.stat-mech",
         "hep-lat"
       ],
-      "fetched_at": "2026-06-07T07:25:02.093629+00:00"
+      "fetched_at": "2026-06-07T12:39:03.705221+00:00"
     },
     {
       "source": "arxiv",
@@ -1160,7 +1160,7 @@
         "cs.LG",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.093710+00:00"
+      "fetched_at": "2026-06-07T12:39:03.705286+00:00"
     },
     {
       "source": "arxiv",
@@ -1179,7 +1179,7 @@
         "physics.flu-dyn",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.093800+00:00"
+      "fetched_at": "2026-06-07T12:39:03.705357+00:00"
     },
     {
       "source": "arxiv",
@@ -1196,7 +1196,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.093888+00:00"
+      "fetched_at": "2026-06-07T12:39:03.705429+00:00"
     },
     {
       "source": "arxiv",
@@ -1218,7 +1218,7 @@
         "cs.CV",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.093996+00:00"
+      "fetched_at": "2026-06-07T12:39:03.705514+00:00"
     },
     {
       "source": "arxiv",
@@ -1241,7 +1241,7 @@
         "cs.SE",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.094121+00:00"
+      "fetched_at": "2026-06-07T12:39:03.705616+00:00"
     },
     {
       "source": "arxiv",
@@ -1260,7 +1260,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.094227+00:00"
+      "fetched_at": "2026-06-07T12:39:03.705692+00:00"
     },
     {
       "source": "arxiv",
@@ -1281,7 +1281,7 @@
         "cs.CL",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.094331+00:00"
+      "fetched_at": "2026-06-07T12:39:03.705773+00:00"
     },
     {
       "source": "arxiv",
@@ -1300,7 +1300,7 @@
         "cs.CL",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.094432+00:00"
+      "fetched_at": "2026-06-07T12:39:03.705852+00:00"
     },
     {
       "source": "arxiv",
@@ -1320,7 +1320,7 @@
       "categories": [
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.094538+00:00"
+      "fetched_at": "2026-06-07T12:39:03.705935+00:00"
     },
     {
       "source": "arxiv",
@@ -1340,7 +1340,7 @@
         "cs.AI",
         "cs.CL"
       ],
-      "fetched_at": "2026-06-07T07:25:02.094629+00:00"
+      "fetched_at": "2026-06-07T12:39:03.706007+00:00"
     },
     {
       "source": "arxiv",
@@ -1357,7 +1357,7 @@
         "cs.MA",
         "cs.GT"
       ],
-      "fetched_at": "2026-06-07T07:25:02.094735+00:00"
+      "fetched_at": "2026-06-07T12:39:03.706089+00:00"
     },
     {
       "source": "arxiv",
@@ -1375,7 +1375,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.094832+00:00"
+      "fetched_at": "2026-06-07T12:39:03.706164+00:00"
     },
     {
       "source": "arxiv",
@@ -1393,7 +1393,7 @@
       "categories": [
         "cs.GT"
       ],
-      "fetched_at": "2026-06-07T07:25:02.094928+00:00"
+      "fetched_at": "2026-06-07T12:39:03.706235+00:00"
     },
     {
       "source": "arxiv",
@@ -1416,7 +1416,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.095041+00:00"
+      "fetched_at": "2026-06-07T12:39:03.706329+00:00"
     },
     {
       "source": "arxiv",
@@ -1436,7 +1436,7 @@
         "cs.SC",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.095157+00:00"
+      "fetched_at": "2026-06-07T12:39:03.706407+00:00"
     },
     {
       "source": "arxiv",
@@ -1462,7 +1462,7 @@
         "cs.LG",
         "cs.LO"
       ],
-      "fetched_at": "2026-06-07T07:25:02.095277+00:00"
+      "fetched_at": "2026-06-07T12:39:03.706501+00:00"
     },
     {
       "source": "arxiv",
@@ -1480,7 +1480,7 @@
       "categories": [
         "cs.GT"
       ],
-      "fetched_at": "2026-06-07T07:25:02.095380+00:00"
+      "fetched_at": "2026-06-07T12:39:03.706603+00:00"
     },
     {
       "source": "arxiv",
@@ -1500,7 +1500,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.095487+00:00"
+      "fetched_at": "2026-06-07T12:39:03.706689+00:00"
     },
     {
       "source": "arxiv",
@@ -1520,7 +1520,7 @@
         "cs.CL",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.095590+00:00"
+      "fetched_at": "2026-06-07T12:39:03.706774+00:00"
     },
     {
       "source": "arxiv",
@@ -1538,7 +1538,7 @@
       "categories": [
         "cs.IR"
       ],
-      "fetched_at": "2026-06-07T07:25:02.095706+00:00"
+      "fetched_at": "2026-06-07T12:39:03.706855+00:00"
     },
     {
       "source": "arxiv",
@@ -1561,7 +1561,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.095826+00:00"
+      "fetched_at": "2026-06-07T12:39:03.706946+00:00"
     },
     {
       "source": "arxiv",
@@ -1579,7 +1579,7 @@
         "cs.CL",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.095920+00:00"
+      "fetched_at": "2026-06-07T12:39:03.707017+00:00"
     },
     {
       "source": "arxiv",
@@ -1604,7 +1604,7 @@
         "cs.AI",
         "cs.CL"
       ],
-      "fetched_at": "2026-06-07T07:25:02.096037+00:00"
+      "fetched_at": "2026-06-07T12:39:03.707113+00:00"
     },
     {
       "source": "arxiv",
@@ -1625,7 +1625,7 @@
         "math.DS",
         "physics.med-ph"
       ],
-      "fetched_at": "2026-06-07T07:25:02.096155+00:00"
+      "fetched_at": "2026-06-07T12:39:03.707196+00:00"
     },
     {
       "source": "arxiv",
@@ -1655,7 +1655,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.096304+00:00"
+      "fetched_at": "2026-06-07T12:39:03.707312+00:00"
     },
     {
       "source": "arxiv",
@@ -1682,7 +1682,7 @@
         "cs.CL",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.096433+00:00"
+      "fetched_at": "2026-06-07T12:39:03.707415+00:00"
     },
     {
       "source": "arxiv",
@@ -1698,7 +1698,7 @@
       "categories": [
         "cs.CY"
       ],
-      "fetched_at": "2026-06-07T07:25:02.096528+00:00"
+      "fetched_at": "2026-06-07T12:39:03.707489+00:00"
     },
     {
       "source": "arxiv",
@@ -1724,7 +1724,7 @@
         "cs.AI",
         "cs.CL"
       ],
-      "fetched_at": "2026-06-07T07:25:02.096648+00:00"
+      "fetched_at": "2026-06-07T12:39:03.707599+00:00"
     },
     {
       "source": "arxiv",
@@ -1745,7 +1745,7 @@
       "categories": [
         "cs.IR"
       ],
-      "fetched_at": "2026-06-07T07:25:02.096759+00:00"
+      "fetched_at": "2026-06-07T12:39:03.707688+00:00"
     },
     {
       "source": "arxiv",
@@ -1765,7 +1765,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.096863+00:00"
+      "fetched_at": "2026-06-07T12:39:03.707769+00:00"
     },
     {
       "source": "arxiv",
@@ -1790,7 +1790,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.097037+00:00"
+      "fetched_at": "2026-06-07T12:39:03.707870+00:00"
     },
     {
       "source": "arxiv",
@@ -1809,7 +1809,7 @@
         "cs.AI",
         "cs.IR"
       ],
-      "fetched_at": "2026-06-07T07:25:02.097217+00:00"
+      "fetched_at": "2026-06-07T12:39:03.707942+00:00"
     },
     {
       "source": "arxiv",
@@ -1830,7 +1830,7 @@
         "cs.CL",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.097330+00:00"
+      "fetched_at": "2026-06-07T12:39:03.708022+00:00"
     },
     {
       "source": "arxiv",
@@ -1850,7 +1850,7 @@
         "cs.LG",
         "cs.MA"
       ],
-      "fetched_at": "2026-06-07T07:25:02.097441+00:00"
+      "fetched_at": "2026-06-07T12:39:03.708098+00:00"
     },
     {
       "source": "arxiv",
@@ -1866,7 +1866,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.097533+00:00"
+      "fetched_at": "2026-06-07T12:39:03.708164+00:00"
     },
     {
       "source": "arxiv",
@@ -1885,7 +1885,7 @@
         "cs.LG",
         "cs.CL"
       ],
-      "fetched_at": "2026-06-07T07:25:02.097631+00:00"
+      "fetched_at": "2026-06-07T12:39:03.708242+00:00"
     },
     {
       "source": "arxiv",
@@ -1906,7 +1906,7 @@
         "cs.CL",
         "cs.CY"
       ],
-      "fetched_at": "2026-06-07T07:25:02.097739+00:00"
+      "fetched_at": "2026-06-07T12:39:03.708327+00:00"
     },
     {
       "source": "arxiv",
@@ -1924,7 +1924,7 @@
         "cs.AI",
         "cs.CL"
       ],
-      "fetched_at": "2026-06-07T07:25:02.097832+00:00"
+      "fetched_at": "2026-06-07T12:39:03.708399+00:00"
     },
     {
       "source": "arxiv",
@@ -1941,7 +1941,7 @@
         "cs.CV",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.097928+00:00"
+      "fetched_at": "2026-06-07T12:39:03.708477+00:00"
     },
     {
       "source": "arxiv",
@@ -1969,7 +1969,7 @@
         "cs.RO",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.098067+00:00"
+      "fetched_at": "2026-06-07T12:39:03.708603+00:00"
     },
     {
       "source": "arxiv",
@@ -1988,7 +1988,7 @@
         "cs.AI",
         "cs.CL"
       ],
-      "fetched_at": "2026-06-07T07:25:02.098223+00:00"
+      "fetched_at": "2026-06-07T12:39:03.708686+00:00"
     },
     {
       "source": "arxiv",
@@ -2007,7 +2007,7 @@
       "categories": [
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.098339+00:00"
+      "fetched_at": "2026-06-07T12:39:03.708773+00:00"
     },
     {
       "source": "arxiv",
@@ -2025,7 +2025,7 @@
         "cs.AI",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.098443+00:00"
+      "fetched_at": "2026-06-07T12:39:03.708848+00:00"
     },
     {
       "source": "arxiv",
@@ -2046,7 +2046,7 @@
         "cs.CY",
         "physics.soc-ph"
       ],
-      "fetched_at": "2026-06-07T07:25:02.098552+00:00"
+      "fetched_at": "2026-06-07T12:39:03.708930+00:00"
     },
     {
       "source": "arxiv",
@@ -2067,7 +2067,7 @@
       "categories": [
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.098666+00:00"
+      "fetched_at": "2026-06-07T12:39:03.709015+00:00"
     },
     {
       "source": "arxiv",
@@ -2086,7 +2086,7 @@
         "cs.RO",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.098762+00:00"
+      "fetched_at": "2026-06-07T12:39:03.709087+00:00"
     },
     {
       "source": "arxiv",
@@ -2108,7 +2108,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.098884+00:00"
+      "fetched_at": "2026-06-07T12:39:03.709181+00:00"
     },
     {
       "source": "arxiv",
@@ -2139,7 +2139,7 @@
         "cs.MM",
         "eess.AS"
       ],
-      "fetched_at": "2026-06-07T07:25:02.099011+00:00"
+      "fetched_at": "2026-06-07T12:39:03.709279+00:00"
     },
     {
       "source": "arxiv",
@@ -2161,7 +2161,7 @@
       "categories": [
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.099157+00:00"
+      "fetched_at": "2026-06-07T12:39:03.709366+00:00"
     },
     {
       "source": "arxiv",
@@ -2198,7 +2198,7 @@
       "categories": [
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.099348+00:00"
+      "fetched_at": "2026-06-07T12:39:03.709502+00:00"
     },
     {
       "source": "arxiv",
@@ -2219,7 +2219,7 @@
         "cs.CL",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.099454+00:00"
+      "fetched_at": "2026-06-07T12:39:03.709596+00:00"
     },
     {
       "source": "arxiv",
@@ -2244,7 +2244,7 @@
         "cs.CL",
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.099578+00:00"
+      "fetched_at": "2026-06-07T12:39:03.709686+00:00"
     },
     {
       "source": "arxiv",
@@ -2264,7 +2264,7 @@
       "categories": [
         "cs.GT"
       ],
-      "fetched_at": "2026-06-07T07:25:02.099682+00:00"
+      "fetched_at": "2026-06-07T12:39:03.709764+00:00"
     },
     {
       "source": "arxiv",
@@ -2284,7 +2284,7 @@
         "cs.CL",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.099790+00:00"
+      "fetched_at": "2026-06-07T12:39:03.709842+00:00"
     },
     {
       "source": "arxiv",
@@ -2305,7 +2305,7 @@
         "cs.CL",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:02.099895+00:00"
+      "fetched_at": "2026-06-07T12:39:03.709926+00:00"
     },
     {
       "source": "arxiv",
@@ -2324,7 +2324,7 @@
       "categories": [
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.099993+00:00"
+      "fetched_at": "2026-06-07T12:39:03.710003+00:00"
     },
     {
       "source": "arxiv",
@@ -2342,7 +2342,7 @@
       "categories": [
         "cs.LG"
       ],
-      "fetched_at": "2026-06-07T07:25:02.100114+00:00"
+      "fetched_at": "2026-06-07T12:39:03.710074+00:00"
     },
     {
       "source": "arxiv",
@@ -2360,7 +2360,7 @@
         "cs.AI",
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.143497+00:00"
+      "fetched_at": "2026-06-07T12:39:02.301761+00:00"
     },
     {
       "source": "arxiv",
@@ -2380,7 +2380,7 @@
         "econ.TH",
         "math.OC"
       ],
-      "fetched_at": "2026-06-07T07:25:00.143603+00:00"
+      "fetched_at": "2026-06-07T12:39:02.301845+00:00"
     },
     {
       "source": "arxiv",
@@ -2397,7 +2397,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.143700+00:00"
+      "fetched_at": "2026-06-07T12:39:02.301921+00:00"
     },
     {
       "source": "arxiv",
@@ -2420,7 +2420,7 @@
         "cs.CY",
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.143821+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302015+00:00"
     },
     {
       "source": "arxiv",
@@ -2438,7 +2438,7 @@
         "econ.TH",
         "q-fin.TR"
       ],
-      "fetched_at": "2026-06-07T07:25:00.143918+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302089+00:00"
     },
     {
       "source": "arxiv",
@@ -2456,7 +2456,7 @@
         "econ.GN",
         "stat.ML"
       ],
-      "fetched_at": "2026-06-07T07:25:00.144021+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302168+00:00"
     },
     {
       "source": "arxiv",
@@ -2472,7 +2472,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.144128+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302236+00:00"
     },
     {
       "source": "arxiv",
@@ -2492,7 +2492,7 @@
         "econ.TH",
         "q-fin.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.144234+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302315+00:00"
     },
     {
       "source": "arxiv",
@@ -2509,7 +2509,7 @@
         "econ.GN",
         "cs.AI"
       ],
-      "fetched_at": "2026-06-07T07:25:00.144328+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302387+00:00"
     },
     {
       "source": "arxiv",
@@ -2527,7 +2527,7 @@
         "cs.GT",
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.144428+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302464+00:00"
     },
     {
       "source": "arxiv",
@@ -2547,7 +2547,7 @@
         "econ.TH",
         "q-fin.TR"
       ],
-      "fetched_at": "2026-06-07T07:25:00.144529+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302559+00:00"
     },
     {
       "source": "arxiv",
@@ -2567,7 +2567,7 @@
         "cs.GT",
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.144632+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302647+00:00"
     },
     {
       "source": "arxiv",
@@ -2586,7 +2586,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.144735+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302729+00:00"
     },
     {
       "source": "arxiv",
@@ -2602,7 +2602,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.144816+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302794+00:00"
     },
     {
       "source": "arxiv",
@@ -2621,7 +2621,7 @@
         "cs.GT",
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.144912+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302867+00:00"
     },
     {
       "source": "arxiv",
@@ -2637,7 +2637,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.144996+00:00"
+      "fetched_at": "2026-06-07T12:39:02.302932+00:00"
     },
     {
       "source": "arxiv",
@@ -2655,7 +2655,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.145107+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303007+00:00"
     },
     {
       "source": "arxiv",
@@ -2671,7 +2671,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.145202+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303074+00:00"
     },
     {
       "source": "arxiv",
@@ -2691,7 +2691,7 @@
         "cs.CY",
         "cs.GT"
       ],
-      "fetched_at": "2026-06-07T07:25:00.145298+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303146+00:00"
     },
     {
       "source": "arxiv",
@@ -2709,7 +2709,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.145393+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303218+00:00"
     },
     {
       "source": "arxiv",
@@ -2728,7 +2728,7 @@
         "econ.TH",
         "cs.DM"
       ],
-      "fetched_at": "2026-06-07T07:25:00.145487+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303291+00:00"
     },
     {
       "source": "arxiv",
@@ -2745,7 +2745,7 @@
         "cs.GT",
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.145579+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303362+00:00"
     },
     {
       "source": "arxiv",
@@ -2762,7 +2762,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.145663+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303428+00:00"
     },
     {
       "source": "arxiv",
@@ -2779,7 +2779,7 @@
         "econ.TH",
         "cs.GT"
       ],
-      "fetched_at": "2026-06-07T07:25:00.145747+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303495+00:00"
     },
     {
       "source": "arxiv",
@@ -2796,7 +2796,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.145831+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303580+00:00"
     },
     {
       "source": "arxiv",
@@ -2814,7 +2814,7 @@
         "econ.TH",
         "cs.GT"
       ],
-      "fetched_at": "2026-06-07T07:25:00.145929+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303663+00:00"
     },
     {
       "source": "arxiv",
@@ -2836,7 +2836,7 @@
         "cs.LG",
         "physics.soc-ph"
       ],
-      "fetched_at": "2026-06-07T07:25:00.146020+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303737+00:00"
     },
     {
       "source": "arxiv",
@@ -2852,7 +2852,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.146126+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303799+00:00"
     },
     {
       "source": "arxiv",
@@ -2869,7 +2869,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.146227+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303870+00:00"
     },
     {
       "source": "arxiv",
@@ -2886,7 +2886,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.146320+00:00"
+      "fetched_at": "2026-06-07T12:39:02.303942+00:00"
     },
     {
       "source": "arxiv",
@@ -2904,7 +2904,7 @@
         "cs.LG",
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.146435+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304026+00:00"
     },
     {
       "source": "arxiv",
@@ -2921,7 +2921,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.146530+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304098+00:00"
     },
     {
       "source": "arxiv",
@@ -2937,7 +2937,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.146621+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304168+00:00"
     },
     {
       "source": "arxiv",
@@ -2956,7 +2956,7 @@
         "cs.MA",
         "econ.EM"
       ],
-      "fetched_at": "2026-06-07T07:25:00.146711+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304237+00:00"
     },
     {
       "source": "arxiv",
@@ -2978,7 +2978,7 @@
         "cs.GT",
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.146816+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304320+00:00"
     },
     {
       "source": "arxiv",
@@ -2994,7 +2994,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.146902+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304391+00:00"
     },
     {
       "source": "arxiv",
@@ -3011,7 +3011,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.146992+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304466+00:00"
     },
     {
       "source": "arxiv",
@@ -3030,7 +3030,7 @@
         "econ.GN",
         "stat.ML"
       ],
-      "fetched_at": "2026-06-07T07:25:00.147094+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304559+00:00"
     },
     {
       "source": "arxiv",
@@ -3047,7 +3047,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.147201+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304646+00:00"
     },
     {
       "source": "arxiv",
@@ -3064,7 +3064,7 @@
         "q-fin.GN",
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.147287+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304719+00:00"
     },
     {
       "source": "arxiv",
@@ -3085,7 +3085,7 @@
         "econ.TH",
         "q-bio.PE"
       ],
-      "fetched_at": "2026-06-07T07:25:00.147390+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304803+00:00"
     },
     {
       "source": "arxiv",
@@ -3102,7 +3102,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.147473+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304872+00:00"
     },
     {
       "source": "arxiv",
@@ -3118,7 +3118,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.147562+00:00"
+      "fetched_at": "2026-06-07T12:39:02.304942+00:00"
     },
     {
       "source": "arxiv",
@@ -3138,7 +3138,7 @@
         "econ.GN",
         "stat.AP"
       ],
-      "fetched_at": "2026-06-07T07:25:00.147665+00:00"
+      "fetched_at": "2026-06-07T12:39:02.305026+00:00"
     },
     {
       "source": "arxiv",
@@ -3155,7 +3155,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.147756+00:00"
+      "fetched_at": "2026-06-07T12:39:02.305100+00:00"
     },
     {
       "source": "arxiv",
@@ -3172,7 +3172,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.147846+00:00"
+      "fetched_at": "2026-06-07T12:39:02.305173+00:00"
     },
     {
       "source": "arxiv",
@@ -3189,7 +3189,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.147938+00:00"
+      "fetched_at": "2026-06-07T12:39:02.305244+00:00"
     },
     {
       "source": "arxiv",
@@ -3206,7 +3206,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.148031+00:00"
+      "fetched_at": "2026-06-07T12:39:02.305320+00:00"
     },
     {
       "source": "arxiv",
@@ -3229,7 +3229,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.148170+00:00"
+      "fetched_at": "2026-06-07T12:39:02.305418+00:00"
     },
     {
       "source": "arxiv",
@@ -3249,7 +3249,7 @@
         "cs.CY",
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.148269+00:00"
+      "fetched_at": "2026-06-07T12:39:02.305494+00:00"
     },
     {
       "source": "arxiv",
@@ -3267,7 +3267,7 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.148367+00:00"
+      "fetched_at": "2026-06-07T12:39:02.305590+00:00"
     },
     {
       "source": "arxiv",
@@ -3285,7 +3285,7 @@
       "categories": [
         "econ.GN"
       ],
-      "fetched_at": "2026-06-07T07:25:00.148462+00:00"
+      "fetched_at": "2026-06-07T12:39:02.305666+00:00"
     },
     {
       "source": "arxiv",
@@ -3301,987 +3301,987 @@
       "categories": [
         "econ.TH"
       ],
-      "fetched_at": "2026-06-07T07:25:00.148546+00:00"
+      "fetched_at": "2026-06-07T12:39:02.305731+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780817105866&rid=1",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780835948393&rid=1",
       "title": "PART 2/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780817105866&rid=1",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780835948393&rid=1",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "digital markets act gatekeeper"
       ],
-      "fetched_at": "2026-06-07T07:25:08.210815+00:00"
+      "fetched_at": "2026-06-07T12:39:10.676749+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780817105866&rid=2",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780835948393&rid=2",
       "title": "PART 1/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780817105866&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780835948393&rid=2",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "digital markets act gatekeeper"
       ],
-      "fetched_at": "2026-06-07T07:25:08.211623+00:00"
+      "fetched_at": "2026-06-07T12:39:10.677375+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780817105866&rid=3",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780835948393&rid=3",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780817105866&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780835948393&rid=3",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "digital markets act gatekeeper"
       ],
-      "fetched_at": "2026-06-07T07:25:08.212323+00:00"
+      "fetched_at": "2026-06-07T12:39:10.677917+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780817105866&rid=4",
+      "item_type": "working_document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780835948393&rid=4",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Austria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Austria",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780817105866&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780835948393&rid=4",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "digital markets act gatekeeper"
       ],
-      "fetched_at": "2026-06-07T07:25:08.213089+00:00"
+      "fetched_at": "2026-06-07T12:39:10.678505+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0502&qid=1780817105866&rid=5",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0502&qid=1780835948393&rid=5",
       "title": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe’s cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0502&qid=1780817105866&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0502&qid=1780835948393&rid=5",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "digital markets act gatekeeper"
       ],
-      "fetched_at": "2026-06-07T07:25:08.213868+00:00"
+      "fetched_at": "2026-06-07T12:39:10.679118+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780817105866&rid=6",
+      "item_type": "working_document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780835948393&rid=6",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - the Netherlands Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary polices of the Netherlands",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780817105866&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780835948393&rid=6",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "digital markets act gatekeeper"
       ],
-      "fetched_at": "2026-06-07T07:25:08.214637+00:00"
+      "fetched_at": "2026-06-07T12:39:10.679723+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0502&qid=1780817105866&rid=7",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0502&qid=1780835948393&rid=7",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe’s cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0502&qid=1780817105866&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0502&qid=1780835948393&rid=7",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "digital markets act gatekeeper"
       ],
-      "fetched_at": "2026-06-07T07:25:08.215401+00:00"
+      "fetched_at": "2026-06-07T12:39:10.680311+00:00"
     },
     {
       "source": "eurlex",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:62023TJ1078&qid=1780817105866&rid=8",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:62023TJ1078&qid=1780835948393&rid=8",
       "title": "Judgment of the General Court (Eighth Chamber, Extended Composition) of 3 June 2026.Meta Platforms, Inc. v European Commission.Digitalservices – Regulation EU 2022/1925 – Designation ofgatekeepers– Concept of ‘core platform service’ – Online social networking service – Number-independent interpersonal communications service – Online",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:62023TJ1078&qid=1780817105866&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:62023TJ1078&qid=1780835948393&rid=8",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "digital markets act gatekeeper"
       ],
-      "fetched_at": "2026-06-07T07:25:08.216126+00:00"
+      "fetched_at": "2026-06-07T12:39:10.680868+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0203&qid=1780817105866&rid=9",
+      "item_type": "working_document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0203&qid=1780835948393&rid=9",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Czechia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Czechia",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0203&qid=1780817105866&rid=9",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0203&qid=1780835948393&rid=9",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "digital markets act gatekeeper"
       ],
-      "fetched_at": "2026-06-07T07:25:08.216875+00:00"
+      "fetched_at": "2026-06-07T12:39:10.681446+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "directive",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9833_2026_ADD_1&qid=1780817105866&rid=10",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9833_2026_ADD_1&qid=1780835948393&rid=10",
       "title": ", (EC) No 1394/2007, (EU) No 536/2014, (EU) 2019/6, (EU) 2024/795 and (EU) 2024/1938 (European BiotechAct) and Proposal for a Directive of the European Parliament and of the Council amending Directives 2001/18/EC and 2010/53/EU as regards the placing on themarketof genetically modified micro-organisms and the processing of organs",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9833_2026_ADD_1&qid=1780817105866&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9833_2026_ADD_1&qid=1780835948393&rid=10",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "digital markets act gatekeeper"
       ],
-      "fetched_at": "2026-06-07T07:25:08.217565+00:00"
+      "fetched_at": "2026-06-07T12:39:10.681976+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780817108266&rid=1",
+      "item_type": "report",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780835950734&rid=1",
       "title": "Verbatim report of proceedings of 9 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780817108266&rid=1",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780835950734&rid=1",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "competition digital platform abuse dominant"
       ],
-      "fetched_at": "2026-06-07T07:25:10.962494+00:00"
+      "fetched_at": "2026-06-07T12:39:13.132401+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780817108266&rid=2",
+      "item_type": "report",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780835950734&rid=2",
       "title": "Verbatim report of proceedings of 10 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780817108266&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780835950734&rid=2",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "competition digital platform abuse dominant"
       ],
-      "fetched_at": "2026-06-07T07:25:10.963361+00:00"
+      "fetched_at": "2026-06-07T12:39:13.133051+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780817108266&rid=3",
+      "item_type": "report",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780835950734&rid=3",
       "title": "Verbatim report of proceedings of 8 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780817108266&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780835950734&rid=3",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "competition digital platform abuse dominant"
       ],
-      "fetched_at": "2026-06-07T07:25:10.964237+00:00"
+      "fetched_at": "2026-06-07T12:39:13.133663+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780817108266&rid=4",
+      "item_type": "working_document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780835950734&rid=4",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Belgium Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Belgium",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780817108266&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780835950734&rid=4",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "competition digital platform abuse dominant"
       ],
-      "fetched_at": "2026-06-07T07:25:10.965003+00:00"
+      "fetched_at": "2026-06-07T12:39:13.134237+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780817108266&rid=5",
+      "item_type": "working_document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780835950734&rid=5",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Bulgaria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Bulgaria",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780817108266&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780835950734&rid=5",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "competition digital platform abuse dominant"
       ],
-      "fetched_at": "2026-06-07T07:25:10.965769+00:00"
+      "fetched_at": "2026-06-07T12:39:13.134819+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780817108266&rid=6",
+      "item_type": "working_document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780835950734&rid=6",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Austria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Austria",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780817108266&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780835950734&rid=6",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "competition digital platform abuse dominant"
       ],
-      "fetched_at": "2026-06-07T07:25:10.966518+00:00"
+      "fetched_at": "2026-06-07T12:39:13.135397+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780817108266&rid=7",
+      "item_type": "working_document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780835950734&rid=7",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Slovenia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Slovenia",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780817108266&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780835950734&rid=7",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "competition digital platform abuse dominant"
       ],
-      "fetched_at": "2026-06-07T07:25:10.967265+00:00"
+      "fetched_at": "2026-06-07T12:39:13.135980+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780817108266&rid=8",
+      "item_type": "working_document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780835950734&rid=8",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Italy Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Italy",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780817108266&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780835950734&rid=8",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "competition digital platform abuse dominant"
       ],
-      "fetched_at": "2026-06-07T07:25:10.968000+00:00"
+      "fetched_at": "2026-06-07T12:39:13.136559+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780817108266&rid=9",
+      "item_type": "working_document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780835950734&rid=9",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Portugal Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Portugal",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780817108266&rid=9",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780835950734&rid=9",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "competition digital platform abuse dominant"
       ],
-      "fetched_at": "2026-06-07T07:25:10.968749+00:00"
+      "fetched_at": "2026-06-07T12:39:13.137129+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780817108266&rid=10",
+      "item_type": "working_document",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780835950734&rid=10",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - the Netherlands Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary polices of the Netherlands",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780817108266&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780835950734&rid=10",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "competition digital platform abuse dominant"
       ],
-      "fetched_at": "2026-06-07T07:25:10.969493+00:00"
+      "fetched_at": "2026-06-07T12:39:13.137705+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780817111018&rid=1",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780835953191&rid=1",
       "title": "PART 1/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780817111018&rid=1",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780835953191&rid=1",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "DMA DSA enforcement"
       ],
-      "fetched_at": "2026-06-07T07:25:12.970721+00:00"
+      "fetched_at": "2026-06-07T12:39:15.298876+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780817111018&rid=2",
+      "item_type": "report",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780835953191&rid=2",
       "title": "Verbatim report of proceedings of 10 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780817111018&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780835953191&rid=2",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "DMA DSA enforcement"
       ],
-      "fetched_at": "2026-06-07T07:25:12.971550+00:00"
+      "fetched_at": "2026-06-07T12:39:15.299520+00:00"
     },
     {
       "source": "eurlex",
       "item_type": "communication",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0503&qid=1780817111018&rid=3",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0503&qid=1780835953191&rid=3",
       "title": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS on European Tech Sovereignty, accompanied by an EU Open Source Strategy",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0503&qid=1780817111018&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0503&qid=1780835953191&rid=3",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "DMA DSA enforcement"
       ],
-      "fetched_at": "2026-06-07T07:25:12.972311+00:00"
+      "fetched_at": "2026-06-07T12:39:15.300120+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9348_2026_INIT&qid=1780817111018&rid=4",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9348_2026_INIT&qid=1780835953191&rid=4",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9348_2026_INIT&qid=1780817111018&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9348_2026_INIT&qid=1780835953191&rid=4",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "DMA DSA enforcement"
       ],
-      "fetched_at": "2026-06-07T07:25:12.972957+00:00"
+      "fetched_at": "2026-06-07T12:39:15.300647+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_INIT&qid=1780817111018&rid=5",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_INIT&qid=1780835953191&rid=5",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_INIT&qid=1780817111018&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_INIT&qid=1780835953191&rid=5",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "DMA DSA enforcement"
       ],
-      "fetched_at": "2026-06-07T07:25:12.973609+00:00"
+      "fetched_at": "2026-06-07T12:39:15.301150+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_ADD_3&qid=1780817111018&rid=6",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_ADD_3&qid=1780835953191&rid=6",
       "title": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the documents Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009 Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_ADD_3&qid=1780817111018&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_ADD_3&qid=1780835953191&rid=6",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "DMA DSA enforcement"
       ],
-      "fetched_at": "2026-06-07T07:25:12.974264+00:00"
+      "fetched_at": "2026-06-07T12:39:15.301667+00:00"
     },
     {
       "source": "eurlex",
       "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:SEC(2026)300&qid=1780817111018&rid=7",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:SEC(2026)300&qid=1780835953191&rid=7",
       "title": "This document does not exist in English.",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:SEC(2026)300&qid=1780817111018&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:SEC(2026)300&qid=1780835953191&rid=7",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "DMA DSA enforcement"
       ],
-      "fetched_at": "2026-06-07T07:25:12.974895+00:00"
+      "fetched_at": "2026-06-07T12:39:15.302169+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0232&qid=1780817111018&rid=8",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0232&qid=1780835953191&rid=8",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0232&qid=1780817111018&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0232&qid=1780835953191&rid=8",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "DMA DSA enforcement"
       ],
-      "fetched_at": "2026-06-07T07:25:12.975636+00:00"
+      "fetched_at": "2026-06-07T12:39:15.302763+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0231&qid=1780817111018&rid=9",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0231&qid=1780835953191&rid=9",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0231&qid=1780817111018&rid=9",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0231&qid=1780835953191&rid=9",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "DMA DSA enforcement"
       ],
-      "fetched_at": "2026-06-07T07:25:12.976378+00:00"
+      "fetched_at": "2026-06-07T12:39:15.303338+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0300&qid=1780817111018&rid=10",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0300&qid=1780835953191&rid=10",
       "title": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the documents Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009 Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0300&qid=1780817111018&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0300&qid=1780835953191&rid=10",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "DMA DSA enforcement"
       ],
-      "fetched_at": "2026-06-07T07:25:12.977127+00:00"
+      "fetched_at": "2026-06-07T12:39:15.303921+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780817113024&rid=1",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780835955356&rid=1",
       "title": "PART 2/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aREGULATIONOF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780817113024&rid=1",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780835955356&rid=1",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "artificial intelligence competition regulation"
       ],
-      "fetched_at": "2026-06-07T07:25:15.261370+00:00"
+      "fetched_at": "2026-06-07T12:39:17.561741+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_5&qid=1780817113024&rid=2",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_5&qid=1780835955356&rid=2",
       "title": "PART 3/3 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aRegulationof the European Parliament and of the Council on a framework of measures for strengthening Europe's semiconductor ecosystem repealingRegulation(EU) 2023/1782 (Chips Act 2.0)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_5&qid=1780817113024&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_5&qid=1780835955356&rid=2",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "artificial intelligence competition regulation"
       ],
-      "fetched_at": "2026-06-07T07:25:15.262096+00:00"
+      "fetched_at": "2026-06-07T12:39:17.562295+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9834_2026_INIT&qid=1780817113024&rid=3",
+      "item_type": "report",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9834_2026_INIT&qid=1780835955356&rid=3",
       "title": "Omnibus simplification legislative packages - Progress report",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9834_2026_INIT&qid=1780817113024&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9834_2026_INIT&qid=1780835955356&rid=3",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "artificial intelligence competition regulation"
       ],
-      "fetched_at": "2026-06-07T07:25:15.262763+00:00"
+      "fetched_at": "2026-06-07T12:39:17.562811+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_4&qid=1780817113024&rid=4",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_4&qid=1780835955356&rid=4",
       "title": "PART 2/3 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aRegulationof the European Parliament and of the Council on a framework of measures for strengthening Europe's semiconductor ecosystem repealingRegulation(EU) 2023/1782 (Chips Act 2.0)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_4&qid=1780817113024&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_4&qid=1780835955356&rid=4",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "artificial intelligence competition regulation"
       ],
-      "fetched_at": "2026-06-07T07:25:15.263460+00:00"
+      "fetched_at": "2026-06-07T12:39:17.563331+00:00"
     },
     {
       "source": "eurlex",
       "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9801_2026_INIT&qid=1780817113024&rid=5",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9801_2026_INIT&qid=1780835955356&rid=5",
       "title": "Regulationto simplify rules on medical and in vitro diagnostic devices - Progress report",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9801_2026_INIT&qid=1780817113024&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9801_2026_INIT&qid=1780835955356&rid=5",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "artificial intelligence competition regulation"
       ],
-      "fetched_at": "2026-06-07T07:25:15.264130+00:00"
+      "fetched_at": "2026-06-07T12:39:17.563842+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "regulation",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780817113024&rid=6",
+      "item_type": "proposal",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780835955356&rid=6",
       "title": "PART 1/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aREGULATIONOF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780817113024&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780835955356&rid=6",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "artificial intelligence competition regulation"
       ],
-      "fetched_at": "2026-06-07T07:25:15.264785+00:00"
+      "fetched_at": "2026-06-07T12:39:17.564351+00:00"
     },
     {
       "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780817113024&rid=7",
-      "title": "Verbatim report of proceedings of 9 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780817113024&rid=7",
+      "item_type": "report",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780835955356&rid=7",
+      "title": "Verbatim report of proceedings of 10 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780835955356&rid=7",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "artificial intelligence competition regulation"
       ],
-      "fetched_at": "2026-06-07T07:25:15.265574+00:00"
+      "fetched_at": "2026-06-07T12:39:17.564957+00:00"
+    },
+    {
+      "source": "eurlex",
+      "item_type": "report",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780835955356&rid=8",
+      "title": "Verbatim report of proceedings of 9 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780835955356&rid=8",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "artificial intelligence competition regulation"
+      ],
+      "fetched_at": "2026-06-07T12:39:17.565590+00:00"
     },
     {
       "source": "eurlex",
       "item_type": "communication",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:268:FIN&qid=1780817113024&rid=8",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:268:FIN&qid=1780835955356&rid=9",
       "title": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT AND THE COUNCIL OceanEye: An EU ocean observation initiative",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:268:FIN&qid=1780817113024&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:268:FIN&qid=1780835955356&rid=9",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "artificial intelligence competition regulation"
       ],
-      "fetched_at": "2026-06-07T07:25:15.266324+00:00"
-    },
-    {
-      "source": "eurlex",
-      "item_type": "document",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780817113024&rid=9",
-      "title": "Verbatim report of proceedings of 10 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780817113024&rid=9",
-      "date": "",
-      "authors": [],
-      "abstract": "",
-      "categories": [
-        "artificial intelligence competition regulation"
-      ],
-      "fetched_at": "2026-06-07T07:25:15.267114+00:00"
+      "fetched_at": "2026-06-07T12:39:17.566159+00:00"
     },
     {
       "source": "eurlex",
       "item_type": "communication",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780817113024&rid=10",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780835955356&rid=10",
       "title": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN CENTRAL BANK, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS   2026 EU Justice Scoreboard",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780817113024&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780835955356&rid=10",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "artificial intelligence competition regulation"
       ],
-      "fetched_at": "2026-06-07T07:25:15.267849+00:00"
+      "fetched_at": "2026-06-07T12:39:17.566798+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780817115315&rid=1",
-      "title": "Verbatim report of proceedings of 9 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780817115315&rid=1",
-      "date": "",
-      "authors": [],
-      "abstract": "",
-      "categories": [
-        "Competition Judgment"
-      ],
-      "fetched_at": "2026-06-07T07:25:17.893155+00:00"
-    },
-    {
-      "source": "cjeu",
-      "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780817115315&rid=2",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780835957619&rid=1",
       "title": "Verbatim report of proceedings of 10 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780817115315&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780835957619&rid=1",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:17.893969+00:00"
+      "fetched_at": "2026-06-07T12:39:20.144261+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780817115315&rid=3",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780835957619&rid=2",
+      "title": "Verbatim report of proceedings of 9 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780835957619&rid=2",
+      "date": "",
+      "authors": [],
+      "abstract": "",
+      "categories": [
+        "Competition Judgment"
+      ],
+      "fetched_at": "2026-06-07T12:39:20.144914+00:00"
+    },
+    {
+      "source": "cjeu",
+      "item_type": "judgment",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780835957619&rid=3",
       "title": "Verbatim report of proceedings of 8 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780817115315&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780835957619&rid=3",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:17.894760+00:00"
+      "fetched_at": "2026-06-07T12:39:20.145530+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780817115315&rid=4",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780835957619&rid=4",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Belgium Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Belgium",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780817115315&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780835957619&rid=4",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:17.895508+00:00"
+      "fetched_at": "2026-06-07T12:39:20.146112+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780817115315&rid=5",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780835957619&rid=5",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Bulgaria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Bulgaria",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780817115315&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780835957619&rid=5",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:17.896252+00:00"
+      "fetched_at": "2026-06-07T12:39:20.146752+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780817115315&rid=6",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780835957619&rid=6",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Austria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Austria",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780817115315&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780835957619&rid=6",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:17.896985+00:00"
+      "fetched_at": "2026-06-07T12:39:20.147338+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780817115315&rid=7",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780835957619&rid=7",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Slovenia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Slovenia",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780817115315&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780835957619&rid=7",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:17.897716+00:00"
+      "fetched_at": "2026-06-07T12:39:20.147924+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780817115315&rid=8",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780835957619&rid=8",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Italy Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Italy",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780817115315&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780835957619&rid=8",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:17.898449+00:00"
+      "fetched_at": "2026-06-07T12:39:20.148503+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780817115315&rid=9",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780835957619&rid=9",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - the Netherlands Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary polices of the Netherlands",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780817115315&rid=9",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780835957619&rid=9",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:17.899184+00:00"
+      "fetched_at": "2026-06-07T12:39:20.149084+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780817115315&rid=10",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780835957619&rid=10",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Portugal Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Portugal",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780817115315&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780835957619&rid=10",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:17.899914+00:00"
+      "fetched_at": "2026-06-07T12:39:20.149661+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:32026D1204&qid=1780817117948&rid=1",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:32026D1204&qid=1780835960203&rid=1",
       "title": "Council Implementing Decision (EU) 2026/1204 of 28 May 2026 establishing the satisfactory fulfilment of the conditions for the partial payment of the seventh instalment under the Ukraine Plan of the Ukraine Facility and amending Implementing Decision (EU) 2024/1447",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:32026D1204&qid=1780817117948&rid=1",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:32026D1204&qid=1780835960203&rid=1",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:20.252918+00:00"
+      "fetched_at": "2026-06-07T12:39:22.481890+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780817117948&rid=2",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780835960203&rid=2",
       "title": "Verbatim report of proceedings of 9 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780817117948&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780835960203&rid=2",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:20.253753+00:00"
+      "fetched_at": "2026-06-07T12:39:22.482674+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026M12487&qid=1780817117948&rid=3",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026M12487&qid=1780835960203&rid=3",
       "title": "Prior notification of a concentration (Case M.12487 – GM INFRASTRUCTURE / GIM / SAAVI / CIEM) – Candidate case for simplified procedure",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026M12487&qid=1780817117948&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026M12487&qid=1780835960203&rid=3",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:20.254577+00:00"
+      "fetched_at": "2026-06-07T12:39:22.483308+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780817117948&rid=4",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780835960203&rid=4",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780817117948&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780835960203&rid=4",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:20.255233+00:00"
+      "fetched_at": "2026-06-07T12:39:22.483821+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0215&qid=1780817117948&rid=5",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0215&qid=1780835960203&rid=5",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Lithuania Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Lithuania",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0215&qid=1780817117948&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0215&qid=1780835960203&rid=5",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:20.255977+00:00"
+      "fetched_at": "2026-06-07T12:39:22.484401+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0504&qid=1780817117948&rid=6",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0504&qid=1780835960203&rid=6",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on a framework of measures for strengthening the Union’s semiconductor ecosystem, repealing Regulation (EU) 2023/1781 (Chips Act 2.0)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0504&qid=1780817117948&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0504&qid=1780835960203&rid=6",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:20.256725+00:00"
+      "fetched_at": "2026-06-07T12:39:22.485001+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0208&qid=1780817117948&rid=7",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0208&qid=1780835960203&rid=7",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report – Greece Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Greece",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0208&qid=1780817117948&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0208&qid=1780835960203&rid=7",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:20.257406+00:00"
+      "fetched_at": "2026-06-07T12:39:22.485559+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0225&qid=1780817117948&rid=8",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0225&qid=1780835960203&rid=8",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Slovakia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Slovakia",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0225&qid=1780817117948&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0225&qid=1780835960203&rid=8",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:20.258166+00:00"
+      "fetched_at": "2026-06-07T12:39:22.486136+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0216&qid=1780817117948&rid=9",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0216&qid=1780835960203&rid=9",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report – Luxembourg Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Luxembourg",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0216&qid=1780817117948&rid=9",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0216&qid=1780835960203&rid=9",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:20.258908+00:00"
+      "fetched_at": "2026-06-07T12:39:22.486731+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780817117948&rid=10",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780835960203&rid=10",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Italy Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Italy",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780817117948&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780835960203&rid=10",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:20.259694+00:00"
+      "fetched_at": "2026-06-07T12:39:22.487305+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780817120308&rid=1",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780835962542&rid=1",
       "title": "Verbatim report of proceedings of 9 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780817120308&rid=1",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780835962542&rid=1",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:22.366020+00:00"
+      "fetched_at": "2026-06-07T12:39:24.591163+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780817120308&rid=2",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780835962542&rid=2",
       "title": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN CENTRAL BANK, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS   2026 EU Justice Scoreboard",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780817120308&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780835962542&rid=2",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:22.366798+00:00"
+      "fetched_at": "2026-06-07T12:39:24.591761+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02984&qid=1780817120308&rid=3",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02984&qid=1780835962542&rid=3",
       "title": "Verbatim report of proceedings of 11 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02984&qid=1780817120308&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02984&qid=1780835962542&rid=3",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:22.367591+00:00"
+      "fetched_at": "2026-06-07T12:39:24.592359+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0205&qid=1780817120308&rid=4",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0205&qid=1780835962542&rid=4",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Germany Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Germany",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0205&qid=1780817120308&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0205&qid=1780835962542&rid=4",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:22.368351+00:00"
+      "fetched_at": "2026-06-07T12:39:24.592936+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0180&qid=1780817120308&rid=5",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0180&qid=1780835962542&rid=5",
       "title": "REPORT FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS Report on Competition Policy 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0180&qid=1780817120308&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0180&qid=1780835962542&rid=5",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:22.369099+00:00"
+      "fetched_at": "2026-06-07T12:39:24.593502+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0125&qid=1780817120308&rid=6",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0125&qid=1780835962542&rid=6",
       "title": "COMMISSION STAFF WORKING DOCUMENT Accompanying the document REPORT FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS Report on Competition Policy 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0125&qid=1780817120308&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0125&qid=1780835962542&rid=6",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:22.369835+00:00"
+      "fetched_at": "2026-06-07T12:39:24.594083+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026XC02323&qid=1780817120308&rid=7",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026XC02323&qid=1780835962542&rid=7",
       "title": "Communication from the Commission – Guidelines on the application of Article 101 of the Treaty on the Functioning of the European Union totechnologytransfer agreements",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026XC02323&qid=1780817120308&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026XC02323&qid=1780835962542&rid=7",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:22.370659+00:00"
+      "fetched_at": "2026-06-07T12:39:24.594715+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:C(2026)2482&qid=1780817120308&rid=8",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:C(2026)2482&qid=1780835962542&rid=8",
       "title": "COMMUNICATION FROM THE COMMISSION Guidelines on the application of Article 101 of the Treaty on the Functioning of the European Union totechnologytransfer agreements (Text with EEA relevance)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:C(2026)2482&qid=1780817120308&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:C(2026)2482&qid=1780835962542&rid=8",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:22.371395+00:00"
+      "fetched_at": "2026-06-07T12:39:24.595275+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0114&qid=1780817120308&rid=9",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0114&qid=1780835962542&rid=9",
       "title": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the documents Commission Regulation (EU) .../... on the application of Article 101(3) of the Treaty on the Functioning of the European Union to categories oftechnologytransfer agreements and Communication from the Commission Guidelines on the application of Article 101 of the Treaty on the Functioning of the European Union totechnologytransfer agreements",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0114&qid=1780817120308&rid=9",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0114&qid=1780835962542&rid=9",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:22.372176+00:00"
+      "fetched_at": "2026-06-07T12:39:24.595872+00:00"
     },
     {
       "source": "cjeu",
       "item_type": "judgment",
-      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52025AE2299&qid=1780817120308&rid=10",
+      "item_id": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52025AE2299&qid=1780835962542&rid=10",
       "title": "Opinion of the European Economic and Social Committee – Report from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions – Report on Competition Policy 2024 (COM(2025) 181 final)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52025AE2299&qid=1780817120308&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52025AE2299&qid=1780835962542&rid=10",
       "date": "",
       "authors": [],
       "abstract": "",
       "categories": [
         "Competition Judgment"
       ],
-      "fetched_at": "2026-06-07T07:25:22.372969+00:00"
+      "fetched_at": "2026-06-07T12:39:24.596487+00:00"
     }
   ]
 }
