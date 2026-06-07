@@ -616,9 +616,11 @@ def main() -> None:
             )
             sys.exit(1)
 
-        log.info("Analysing %d items …", len(items))
-        for idx, item in enumerate(items, 1):
-            log.debug("  [%d/%d] %s", idx, len(items), item.get("title", "")[:70])
+        MAX_AI_ITEMS = 250
+        ai_items = items[:MAX_AI_ITEMS]
+        log.info("Analysing %d items (capped at %d) …", len(ai_items), MAX_AI_ITEMS)
+        for idx, item in enumerate(ai_items, 1):
+            log.debug("  [%d/%d] %s", idx, len(ai_items), item.get("title", "")[:70])
             item["_analysis"] = _summarize_item(ai_client, item)
 
         # Only send high-relevance items to the synthesis call
