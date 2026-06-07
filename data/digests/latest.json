@@ -1,8 +1,7 @@
 {
   "week": "2026-W23",
-  "generated_at": "2026-06-07T05:36:47.407932+00:00",
+  "generated_at": "2026-06-07T06:09:36.007636+00:00",
   "total_items": 200,
-  "high_relevance_items": 200,
   "items": [
     {
       "source": "arxiv",
@@ -19,15 +18,7 @@
       "categories": [
         "econ.EM",
         "econ.TH"
-      ],
-      "_analysis": {
-        "summary": "This paper studies interdependent durations as equilibrium outcomes of a synchronization game, a continuous-time stopping game in which the incentive to stop increases when other players stop. We allo",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -48,15 +39,7 @@
         "q-fin.MF",
         "econ.GN",
         "q-fin.RM"
-      ],
-      "_analysis": {
-        "summary": "Actuaries rely primarily on structured numerical data for reserving and ratemaking, while valuable predictive information in unstructured text including medical records, adjuster notes, and call trans",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -72,15 +55,7 @@
       ],
       "categories": [
         "econ.TH"
-      ],
-      "_analysis": {
-        "summary": "We study the division of a heterogeneous good between two agents into contiguous bundles, each defined by a starting location and a quantity, in a purely ordinal framework that does not rely on cardin",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -96,15 +71,7 @@
       "categories": [
         "econ.TH",
         "cs.GT"
-      ],
-      "_analysis": {
-        "summary": "The ratio of voting power between a permanent member and a non-permanent member of the United Nations Security Council varies substantially across indices: approximately 100 to 1 according to the Shap",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -124,15 +91,7 @@
       "categories": [
         "q-fin.MF",
         "econ.GN"
-      ],
-      "_analysis": {
-        "summary": "Market stress rarely harms investors through one channel alone. Losses, volatility spikes, and deteriorating tradability often arrive together. We examine whether ESG is associated with lower exposure",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -148,15 +107,7 @@
       ],
       "categories": [
         "econ.TH"
-      ],
-      "_analysis": {
-        "summary": "The weighted center of imputations (CIS) value allocates the surplus of the grand coalition equally after granting each player a fixed proportion of his individual worth. This paper provides three axi",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -172,15 +123,7 @@
       ],
       "categories": [
         "econ.TH"
-      ],
-      "_analysis": {
-        "summary": "We provide a theorem on the role of risk and risk attitudes in macroeconomic models that clarifies and extends the Tallarini (2000) separation result. Under (1) separation of intertemporal and risk pr",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -204,15 +147,7 @@
         "cs.RO",
         "cs.AI",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "For a humanoid robot to be deployed in the real world, the choice of command space (i.e., the interface between task planning and whole-body control) is crucial. Existing whole-body controllers typica",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -232,15 +167,7 @@
         "cs.SE",
         "cs.AI",
         "cs.CL"
-      ],
-      "_analysis": {
-        "summary": "Code language models need repository-level context to resolve imports, APIs, and project conventions. Existing methods inject this knowledge as long inputs (retrieved through RAG or dependency analysi",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -268,15 +195,7 @@
         "cs.CL",
         "cs.AI",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "As AI writing assistants become increasingly integrated into real-world drafting and revision workflows, many documents are no longer purely human-written or AI-generated, but instead result from prog",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -295,15 +214,7 @@
       "categories": [
         "cs.GT",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Many real-world competitive systems require multiple decision-makers to act simultaneously under shared constraints, limited information, and repeated interaction, as in auctions, resource allocation,",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -324,15 +235,7 @@
         "cs.CL",
         "cs.AI",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Discrete diffusion language models generate text by iteratively denoising an entire response in parallel. At each step, they predict tentative tokens for every masked position, committing the confiden",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -361,15 +264,7 @@
       "categories": [
         "cs.AI",
         "cs.CL"
-      ],
-      "_analysis": {
-        "summary": "Large language model (LLM) agents are increasingly applied to long-horizon tasks such as scientific discovery and machine learning engineering (MLE), where sustained self-evolution becomes a key capab",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -391,15 +286,7 @@
       "categories": [
         "cs.LG",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "We propose a preconditioning (PC) layer, a weight parameterization via polynomial preconditioner that ensures stable weight conditioning throughout LLM training. The PC module reshapes the singular-va",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -430,15 +317,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "We introduce Goedel-Architect, an agentic framework for formal theorem proving in Lean 4 centered on blueprint generation and refinement. A blueprint is a dependency graph of definitions and lemmas th",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -459,15 +338,7 @@
         "cs.CL",
         "cs.AI",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Long-context inference in modern LLMs is increasingly constrained by decoding efficiency, especially in reasoning-heavy settings where models generate long intermediate chains of thought. Existing spa",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -489,15 +360,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Benchmarks are fundamental for evaluating and advancing LLMs and MLLMs by providing standardized and explicit measures of performance. However, their construction is labor-intensive and hard to reuse,",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -513,15 +376,7 @@
       "categories": [
         "cs.CR",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "As autonomous LLM agents increasingly hold real credentials and operate infrastructure without a human in the loop, operators have no standard way to tell an agent that a resource is off-limits. Acces",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -543,15 +398,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Sparse attention is becoming increasingly important for serving large language models (LLMs) as generation lengths continue to grow. However, deploying and evaluating new sparse attention algorithms a",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -567,15 +414,7 @@
       ],
       "categories": [
         "cs.GT"
-      ],
-      "_analysis": {
-        "summary": "There are two common classes of fairness notions that are considered when allocating $m$ indivisible items to $n$ agents of equal entitlements. One is that of share-based fairness notions, with the ma",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -598,15 +437,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "LLM agents are increasingly deployed on long-horizon tasks requiring sustained reasoning over extended interaction histories. Realizing this at scale requires agents to persistently store, retrieve, a",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -629,15 +460,7 @@
       "categories": [
         "cs.CL",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Large language models often improve reasoning by generating explicit chain-of-thought (CoT), demonstrating the importance of intermediate computation. However, textual CoT forces this computation thro",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -659,15 +482,7 @@
       "categories": [
         "cs.RO",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Safety-critical traffic scenario generation is essential for evaluating autonomous driving systems under rare but high-risk interactions. Existing diffusion-based methods offer strong controllability ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -687,15 +502,7 @@
       "categories": [
         "cs.CY",
         "cs.HC"
-      ],
-      "_analysis": {
-        "summary": "Warning messages have been used to disrupt individuals seeking online child sexual abuse material (CSAM) and promote engagement with support services, yet large-scale field evidence on message content",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -719,15 +526,7 @@
         "cs.CL",
         "cs.LG",
         "cs.MA"
-      ],
-      "_analysis": {
-        "summary": "Inference-time skill augmentation provides a lightweight way to improve data-analytic agents by injecting reusable procedural knowledge without updating model parameters. However, discovering effectiv",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -753,15 +552,7 @@
       ],
       "categories": [
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Current evaluation practices in relational learning rely heavily on flat leaderboards that average performance across heterogeneous datasets, implicitly assuming a uniform underlying structure. We sho",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -777,15 +568,7 @@
       "categories": [
         "stat.ML",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Sharing the financial impact of rare adverse events across a group can soften extreme individual burdens, but any participant made worse off by the arrangement has reason to leave. A credible mechanis",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -805,15 +588,7 @@
       "categories": [
         "cs.CV",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Indoor scene generation is crucial for robot simulation and modern interior design. However, complex layouts together with scarce 3D scene data make learning-based generation challenging. Existing met",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -841,15 +616,7 @@
       "categories": [
         "cs.AI",
         "cs.CL"
-      ],
-      "_analysis": {
-        "summary": "Recent advances in LLM agents have enabled complex cognitive capabilities, such as multi-step reasoning, planning, and tool use, that increasingly position these agents as human collaborators. Effecti",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -868,15 +635,7 @@
         "cs.AI",
         "cs.MA",
         "cs.NE"
-      ],
-      "_analysis": {
-        "summary": "The question of whether artificial systems can be conscious remains open, in part because existing approaches either evaluate systems against theory-derived checklists (discriminative) or engineer con",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -894,15 +653,7 @@
       "categories": [
         "eess.SP",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Wireless foundation models have emerged as a promising alternative to building separate models for each wireless task. However, existing approaches rely on masked input reconstruction, which can bias ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -925,15 +676,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Modelling individual decision-making during infectious disease outbreaks is crucial for understanding behavioural dynamics and informing effective public health interventions. Prior work has shown tha",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -955,15 +698,7 @@
         "cs.SD",
         "cs.AI",
         "eess.AS"
-      ],
-      "_analysis": {
-        "summary": "Continuous audio autoencoders reconstruct waveforms well but often produce latents with weak structure for understanding, while self-supervised audio encoders capture semantics but are not directly de",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -981,15 +716,7 @@
       "categories": [
         "eess.SY",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "This paper addresses the problem of attack detection in cyber-physical systems without any knowledge of the plant model or its structure. A remotely located plant transmits sensor measurements to an o",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1007,15 +734,7 @@
       "categories": [
         "cs.LG",
         "cs.SC"
-      ],
-      "_analysis": {
-        "summary": "Probabilistic inference over spatially embedded variables requires beliefs that respect $SE(3)$ symmetry, yet existing equivariant networks produce only scalars and vectors -- not the rank-2 precision",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1032,15 +751,7 @@
       "categories": [
         "stat.ML",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Topological Data Analysis (TDA) offers a principled, intrinsic lens for comparing neural representations. However, existing paired topological divergences (e.g., RTD) are limited by heuristic asymmetr",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1055,15 +766,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Large language model (LLM) deployments for long-horizon tasks face a fundamental constraint: context windows are finite while productive work sessions are not. When history exceeds the Maximum Effecti",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1082,15 +785,7 @@
       "categories": [
         "cs.LG",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Performance estimation under distribution shift aims to predict how a model behaves on an unlabeled test set whose distribution differs from the training data, a scenario that requires reliable indica",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1107,15 +802,7 @@
       "categories": [
         "cs.LG",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Sparse Autoencoders (SAEs) are widely used for mechanistic interpretability in large language models, yet their formulation assigns each latent feature a single decoder direction, implicitly assuming ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1132,15 +819,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "GUI agents - vision-based models that control desktops, web browsers, and mobile devices through graphical user interfaces - promise to automate a wide range of digital tasks. While million-scale data",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1157,15 +836,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Recent advances in interpretability suggest that large language models (LLMs) implicitly encode signals in their generated text that enable self-recognition of their outputs. We demonstrate that this ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1184,15 +855,7 @@
       "categories": [
         "cs.LG",
         "cs.SE"
-      ],
-      "_analysis": {
-        "summary": "Multi-turn Large Language Model (LLM) serving is critical for consistent user experiences, yet the linear growth of the Key-Value (KV) cache imposes significant pressure on GPU memory and bandwidth. N",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1210,15 +873,7 @@
       "categories": [
         "cs.CL",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Large language models can reproduce training data, but existing memorization evaluations mostly measure whether models can be forced to do so, rather than whether they do so under ordinary use. We int",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1242,15 +897,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Time series foundation models (TS-FMs) aim to learn generalizable temporal representations that can be adapted to a wide range of downstream tasks. In real-world multimodal settings, time series are f",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1266,15 +913,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Large language model agents increasingly rely on external tools, but larger tool menus can reduce reliability and efficiency by increasing wrong-tool calls, premature actions, and token cost. Existing",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1296,15 +935,7 @@
         "cs.AI",
         "cs.ET",
         "cs.MA"
-      ],
-      "_analysis": {
-        "summary": "O-RAN enables a disaggregated baseband stack with programmable functions that communicate over standardized open interfaces. The same openness that enables multi-vendor composition also expands the at",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1404,15 +1035,7 @@
         "cs.IR",
         "cs.AI",
         "cs.CL"
-      ],
-      "_analysis": {
-        "summary": "Generative recommendation models in the OneRec family have been widely deployed in many real-world services, such as short-video, live-streaming, advertising, and e-commerce. However, these generative",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1434,15 +1057,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "As the input length of large language model (LLM) serving continues to grow, the KV cache has become a dominant bottleneck in AI infrastructure. It limits GPU memory capacity, serving concurrency, cac",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1458,15 +1073,7 @@
       "categories": [
         "cs.DB",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Persistent memory for an LLM agent is a write-heavy substrate: every belief update is a versioned write, and a new claim may contradict a stored one. Production systems use four resolution heuristics ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1486,15 +1093,7 @@
         "cs.LG",
         "cond-mat.stat-mech",
         "hep-lat"
-      ],
-      "_analysis": {
-        "summary": "We propose a statistical-field framework for text generated by large language models (LLMs), treating token embeddings as continuous spin variables on a one-dimensional chain. Defining a susceptibilit",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1510,15 +1109,7 @@
       "categories": [
         "cs.LG",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Mortality forecasting plays an important role in actuarial and policy decision-making, but its implementation remains technically complex and inaccessible to non-expert users. This project proposes a ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1536,15 +1127,7 @@
       "categories": [
         "physics.flu-dyn",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "A reinforcement-learning agent maximises its reward, which can diverge from the outcome its designer intended. In physical control the reward rarely closes that gap, and drag reduction in wall turbule",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1560,15 +1143,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Language-model agents act through repeated cycles of observation, reasoning, and action selection, making safety monitoring depend on both internal model state and environment context. We study reward",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1589,15 +1164,7 @@
       "categories": [
         "cs.CV",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "When a disaster unfolds, responders must answer not only what is happening, but also why it is happening, what will happen next, and what to do now, often from noisy low-altitude UAV views and under t",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1619,15 +1186,7 @@
       "categories": [
         "cs.SE",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Correctness and readability are key measures of code quality, respectively ensuring functional fidelity and ease of comprehension. While most existing research focuses on improving the correctness of ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1645,15 +1204,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Misconfigurations in computer networks remain a major source of critical Internet outages. Research is turning to Large Language Models (LLMs) to automate the complex, error-prone task of network conf",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1673,15 +1224,7 @@
       "categories": [
         "cs.CL",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Input length and the position of relevant information are widely cited as the primary causes of degraded LLM long-context performance. Here, we study lexical density -- the rate at which a context int",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1699,15 +1242,7 @@
       "categories": [
         "cs.CL",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Question answering (QA) systems have achieved notable progress with the advent of large language models (LLMs). However, they still face challenges in accurately extracting and generating precise answ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1726,15 +1261,7 @@
       ],
       "categories": [
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Huntington's disease (HD) is a progressive brain disorder that gradually affects movement, cognitive function, and behavior. Identifying the stage of the disease accurately and consistently is importa",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1753,15 +1280,7 @@
         "cs.LG",
         "cs.AI",
         "cs.CL"
-      ],
-      "_analysis": {
-        "summary": "Large language models (LLMs) present a trade-off between performance and cost, where more powerful models incur greater expense. LLM routing aims to mitigate expenses while maintaining performance by ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1777,15 +1296,7 @@
       "categories": [
         "cs.MA",
         "cs.GT"
-      ],
-      "_analysis": {
-        "summary": "Fair cooperative multi-agent RL (MARL) teams maximizing egalitarian welfare are exploitable: a single selfish agent free-rides on the surplus fair agents forgo to raise the worst-off. A centralized ne",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1802,15 +1313,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Federated fine-tuning of foundation models using Low-Rank Adaptation (LoRA) offers a communication efficient solution for distributed learning. However, existing federated LoRA methods suffer from two",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1827,15 +1330,7 @@
       ],
       "categories": [
         "cs.GT"
-      ],
-      "_analysis": {
-        "summary": "Mechanisms for allocating a divisible resource among strategic agents have been widely studied. The prominent paradigm is the proportional (Kelly) mechanism, which elicits a scalar bid per agent, allo",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1857,15 +1352,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "End-to-end Vision-Language-Action (VLA) models have shown promise in UAV navigation. However, existing approaches typically rely on historical observations to directly predict actions, often strugglin",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1884,15 +1371,7 @@
       "categories": [
         "cs.SC",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "We prove the positive-real $n=9$ case of the Vasc cyclic inequality. The proof was obtained with human-guided assistance from the AI agent MechMath Agent Team: the human-readable part reduces the rati",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1917,15 +1396,7 @@
         "cs.AI",
         "cs.LG",
         "cs.LO"
-      ],
-      "_analysis": {
-        "summary": "TLA+ is a formal specification language for verifying distributed systems and safety-critical protocols. Large language models (LLMs) frequently produce TLA+ specifications that fail the TLC model che",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1942,15 +1413,7 @@
       ],
       "categories": [
         "cs.GT"
-      ],
-      "_analysis": {
-        "summary": "We study principal-agent problems in which a principal commits to an outcome-dependent payment scheme (i.e., a contract) in order to induce an agent to take a costly action leading to a favorable outc",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1969,15 +1432,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Self-evolving agents improve through continual self-play and self-generated learning signals, but autonomous evolution can also cause capability degradation and safety drift. Although human feedback h",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -1996,15 +1451,7 @@
       "categories": [
         "cs.CL",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Entity alignment (EA) aims to identify equivalent entities across heterogeneous knowledge graphs (KGs) and is a key component of knowledge fusion and cross-KG reasoning. The recent EA foundation model",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2021,15 +1468,7 @@
       ],
       "categories": [
         "cs.IR"
-      ],
-      "_analysis": {
-        "summary": "Internal link optimization is a recurring task in search engine optimization, yet many production workflows rely on manual judgment, fixed page templates, or generic tool recommendations. Practitioner",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2051,15 +1490,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Whether Large Language Models (LLMs) exhibit covert psychological manipulation in complex human-AI interactions has garnered increasing safety concerns. However, existing AI safety benchmarks remain l",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2076,15 +1507,7 @@
       "categories": [
         "cs.CL",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Foundational Large Language Models (LLMs) demonstrate proficiency on a wide range of general tasks, and achieve remarkable results on various specialized tasks via domain-expert LLMs. With the ever-gr",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2108,15 +1531,7 @@
         "cs.LG",
         "cs.AI",
         "cs.CL"
-      ],
-      "_analysis": {
-        "summary": "Policy-gradient methods usually optimize expected return, but many real world applications care about distributional properties of returns: tail risk, outlier robustness, or best-of-K discovery. We in",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2136,15 +1551,7 @@
         "cs.LG",
         "math.DS",
         "physics.med-ph"
-      ],
-      "_analysis": {
-        "summary": "Advances in computational modeling, neuroimaging, and artificial intelligence are revolutionizing the modeling of neurological disorders for improved diagnostics, prognosis, and treatment planning. Me",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2173,15 +1580,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "LLM-based agents increasingly tackle long-horizon tasks with interdependent decisions, where each action reshapes future constraints and intermediate errors can cascade. Existing RAG and agent memory ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2207,15 +1606,7 @@
       "categories": [
         "cs.CL",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Agent systems increasingly use textual skills to encode reusable task procedures, but injecting these skills into the prompt at every step incurs substantial context overhead and exposes skill content",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2230,15 +1621,7 @@
       ],
       "categories": [
         "cs.CY"
-      ],
-      "_analysis": {
-        "summary": "The human-dignity-centric digital social contract grounds personal data in human dignity, data personalism, and data sovereignty, and articulates six dimensions of data governance: technological overs",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2263,15 +1646,7 @@
         "cs.LG",
         "cs.AI",
         "cs.CL"
-      ],
-      "_analysis": {
-        "summary": "Reinforcement learning with verifiable rewards is widely used for post-training reasoning models, but sparse outcome rewards make exploration difficult. A complementary approach is to optimize inferen",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2291,15 +1666,7 @@
       ],
       "categories": [
         "cs.IR"
-      ],
-      "_analysis": {
-        "summary": "Recently, graph-aware Large Language Models (LLMs) have shown promising capabilities in jointly modeling graph-structured data and textual information. Existing approaches typically employ a graph enc",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2318,15 +1685,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Long-term memory enables language model agents to support personalized interactions, but it remains unclear when available memories warrant integration into responses. Existing memory evaluations emph",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2350,15 +1709,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Personal AI agents increasingly rely on long-term memory to provide persistent personalization across sessions. However, existing memory pipelines are largely driven by semantic similarity: memory dat",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2376,15 +1727,7 @@
       "categories": [
         "cs.AI",
         "cs.IR"
-      ],
-      "_analysis": {
-        "summary": "Despite recent progress, LLM agents still struggle with reasoning over long interaction histories. While current memory-augmented agents rely on a static retrieve-then-reason paradigm, this rigid pipe",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2404,15 +1747,7 @@
       "categories": [
         "cs.CL",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Scientific peer review generation has attracted increasing attention for reducing reviewing burdens and providing timely feedback. However, existing Large Language Model (LLM)-based methods often prod",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2431,15 +1766,7 @@
         "cs.RO",
         "cs.LG",
         "cs.MA"
-      ],
-      "_analysis": {
-        "summary": "In this work, we propose a framework that combines multi-agent reinforcement learning (MARL) with model-based control to achieve safe, dynamically feasible actions in cooperative multi-agent tasks. Mu",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2454,15 +1781,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Retrieval-Augmented Generation (RAG) fails systematically on queries requiring structural reasoning over interconnected entities. We compare eight retrieval architectures for aerospace supply chain in",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2480,15 +1799,7 @@
       "categories": [
         "cs.LG",
         "cs.CL"
-      ],
-      "_analysis": {
-        "summary": "Reasoning models produce long chain-of-thought traces that are costly to distill and encourage verbose student outputs. We study post-hoc compression of such traces before knowledge distillation. Two ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2508,15 +1819,7 @@
       "categories": [
         "cs.CL",
         "cs.CY"
-      ],
-      "_analysis": {
-        "summary": "Multicultural multi-agent systems are increasingly deployed in globally diverse settings, where different agents are grounded in different cultural backgrounds. Existing cultural evaluation focuses on",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2533,15 +1836,7 @@
       "categories": [
         "cs.AI",
         "cs.CL"
-      ],
-      "_analysis": {
-        "summary": "Generative AI makes answers easy and understanding hard, and uncritical use invites cognitive offloading. Schools still measure unaided performance, yet the real task is to produce good work with AI: ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2557,15 +1852,7 @@
       "categories": [
         "cs.CV",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Aggressive distillation of the diffusion U-Net inverts the per-frame bottleneck of real-time text-to-image pipelines: once the denoiser is a 4-step or 1-step distilled student, the text encoder become",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2592,15 +1879,7 @@
       "categories": [
         "cs.RO",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "We propose world-language-action (WLA) models as a new class of embodied foundation models. WLA takes textual instructions, images, and robot states as inputs to jointly predict textual subtasks, subg",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2618,15 +1897,7 @@
       "categories": [
         "cs.AI",
         "cs.CL"
-      ],
-      "_analysis": {
-        "summary": "Recent work shows that LLM agents struggle to correct errors in their own reasoning traces yet show markedly higher correction rates when identical claims appear under external sources. We ask whether",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2644,15 +1915,7 @@
       ],
       "categories": [
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Causal graphs provide a high-level language for making mechanisms transparent. Recent work uses Large Language Models (LLMs) to recover causal graphs of external-world processes. Instead, in this pape",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2669,15 +1932,7 @@
         "cs.CL",
         "cs.AI",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Large language models are increasingly used for structured extraction from clinical free-text notes, but the sensitivity of their output to upstream configuration choices is less understood than their",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2697,15 +1952,7 @@
       "categories": [
         "cs.CY",
         "physics.soc-ph"
-      ],
-      "_analysis": {
-        "summary": "Large Language Models (LLMs) are increasingly employed as proxies for human behavior in computational social science. However, their tendency to internalize biases from training data raises concerns a",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2725,15 +1972,7 @@
       ],
       "categories": [
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Activation steering has become a popular way to control Large Language Model (LLM) behavior without fine-tuning. Since the technique is plug-and-play, users share datasets and precomputed vectors to s",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2751,15 +1990,7 @@
       "categories": [
         "cs.RO",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "In this work, we propose an agentic gamification framework for hazard-informed learning of robot safety policies through synthetic scenarios. We model scenario generation as an adversarial game betwee",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2780,15 +2011,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Text-guided image editing has advanced rapidly with diffusion models and unified multimodal foundation models. However, most existing methods remain confined to single-turn settings, overlooking the m",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2818,15 +2041,7 @@
         "cs.LG",
         "cs.MM",
         "eess.AS"
-      ],
-      "_analysis": {
-        "summary": "When retrieving a person from a video archive by voice and face, should the system be multimodal or not? In real-world broadcast archives, unlike curated benchmarks, a target may be heard but unseen, ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2847,15 +2062,7 @@
       ],
       "categories": [
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "The complex imbalanced label distribution poses a crucial challenge to multi-label classification, as most classifiers are biased towards the majority class and high-frequent labels. Oversampling is a",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2891,15 +2098,7 @@
       ],
       "categories": [
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "A central goal of biomedicine is to understand, predict and ultimately control the dynamic mechanisms by which biological systems respond to perturbations, disease progression and therapeutic interven",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2919,15 +2118,7 @@
       "categories": [
         "cs.CL",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Literary translation poses unique challenges due to the scarcity of high-quality annotated data and the need to balance expression fluency with literary effect. We present a multi-aspect iterative ref",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2951,15 +2142,7 @@
         "cs.AI",
         "cs.CL",
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "AI agents rely on a harness of skills, tools, and workflows to solve complex problems. Continually improving this harness is essential for adapting to new tasks. However, existing optimization methods",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -2978,15 +2161,7 @@
       ],
       "categories": [
         "cs.GT"
-      ],
-      "_analysis": {
-        "summary": "We study an assignment problem where a set of agents and a set of facilities lie on a line metric. The goal is to compute an assignment of agents to facilities to approximately minimize the social cos",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -3005,15 +2180,7 @@
       "categories": [
         "cs.CL",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "Large language models (LLMs) have fundamentally transformed the landscape of Natural Language Processing. Despite these advances, LLMs and LLM-based systems remain prone to a variety of failure modes.",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -3033,15 +2200,7 @@
       "categories": [
         "cs.CL",
         "cs.AI"
-      ],
-      "_analysis": {
-        "summary": "LLMs are increasingly deployed as Artificial Moral Advisors (AMA) in a variety of contexts: what kind of conversational patterns should they display? In this paper, we study how AMA can help their int",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -3059,15 +2218,7 @@
       ],
       "categories": [
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Long-horizon LLM agents require reinforcement learning methods that can assign credit to intermediate decisions under sparse and delayed rewards. Recent group-based methods such as GiGPO improve over ",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "arxiv",
@@ -3084,15 +2235,7 @@
       ],
       "categories": [
         "cs.LG"
-      ],
-      "_analysis": {
-        "summary": "Foundation models mark a profound paradigm shift in time series modeling, with task-specific models being superseded by general-purpose zero-shot models. Yet, current approaches primarily focus on for",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "UK",
@@ -3105,15 +2248,388 @@
       "authors": [],
       "categories": [
         "other"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Can AI Refute Economic Theory? Evidence from Beyond the Knowledge Cutoff",
+      "url": "https://arxiv.org/abs/2606.05383v1",
+      "date": "2026-06-03",
+      "abstract": "Can artificial intelligence (AI) refute economic theory? I document experiments in which I asked several AI models (Gemini, Refine, Claude, and ChatGPT) to check the correctness of four published papers in economic theory, each containing an error that I helped identify or correct. ChatGPT Pro performed best, occasionally constructing counterexamples and corrected proofs, while other models fared worse. However, no model located a true error without substantial human guidance, and data contamination complicates interpretation. I argue that a competent human paired with a frontier model can outperform current peer review, but AI cannot yet refute economic theory on its own.",
+      "authors": [
+        "Alexis Akira Toda"
       ],
-      "_analysis": {
-        "summary": "Conduct requirement introduced today gives publishers more control and stronger bargaining power over the use of their content.",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      "categories": [
+        "econ.GN",
+        "cs.AI",
+        "econ.TH"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Should Demand Models Incorporate Competitor Prices? Oblivious Learning and Algorithmic Collusion",
+      "url": "https://arxiv.org/abs/2606.05363v1",
+      "date": "2026-06-03",
+      "abstract": "On a platform with many sellers, should a pricing algorithm explicitly model competitors' prices when learning demand? Classical learning arguments suggest an affirmative answer: ignoring competitors induces model misspecification and inefficiency. In contrast, recent work on algorithmic collusion suggests that strategic obliviousness -- deliberately ignoring competitor prices -- may facilitate collusive outcomes and improve profits. We study this modeling choice in a stylized competitive market with unknown noisy demand, in which multiple sellers repeatedly set prices and estimate demand via iterated least squares, and either incorporate competitors' prices into their demand models (informed) or ignore them (oblivious). We first show that, relative to a monopolist, an oblivious seller in a competitive market must explore more aggressively to compensate for the loss of dynamic competitor information. Building on this insight, we characterize market dynamics when all sellers are oblivious and show that prices converge to the competitive outcome under sufficient exploration, while a continuum of pseudo-equilibria arises when exploration decays. Analyzing the resulting price trajector",
+      "authors": [
+        "Yuhang Wu",
+        "Assaf Zeevi"
+      ],
+      "categories": [
+        "cs.GT",
+        "cs.LG",
+        "econ.TH",
+        "math.OC"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Curvature, Minimality and Uniqueness of Equilibrium",
+      "url": "https://arxiv.org/abs/2606.05163v1",
+      "date": "2026-06-03",
+      "abstract": "For a smooth pure exchange economy with fixed aggregate resources, we study two geometric conditions on the equilibrium manifold $E(r)$ endowed with the metric induced from its Euclidean ambient space. First, for arbitrary numbers of commodities and consumers, we prove that intrinsic flatness forces equilibrium prices to be locally constant. Together with Balasko's uniqueness--constancy criterion, this yields a necessary and sufficient condition: $E(r)$ is intrinsically flat if and only if the normalized equilibrium price is unique for every economy with aggregate resources $r$. This extends the curvature--uniqueness theorem of \\cite{LoiMatta2018} and completes the higher-dimensional direction pursued in \\cite{LoiMattaUccheddu2023}. Second, in the two-commodity case, we show that minimality of $E(r)$ already forces local constancy of the price map. Under the uniform-distribution interpretation of \\cite{LoiMatta2021}, this gives the minimal-entropy/uniqueness equivalence without the additional asymptotic assumption used there. Both arguments rely on the same local parametrization of $E(r)$ and avoid the explicit construction of a normal frame.",
+      "authors": [
+        "Andrea Loi",
+        "Stefano Matta"
+      ],
+      "categories": [
+        "econ.TH"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Probing Outcome-Level Resemblance and Mechanism-Level Alignment in LLM Risk Decisions: Evidence from the St. Petersburg Game",
+      "url": "https://arxiv.org/abs/2606.04978v1",
+      "date": "2026-06-03",
+      "abstract": "LLMs can appear cautious in risk decision-making tasks, yet cautious-looking outputs do not necessarily indicate alignment with human decision-making mechanisms. We investigate this distinction using the St. Petersburg game as a controlled testbed, a classical paradox in which the expected payoff is infinite, yet humans typically report low, finite willingness to pay. We evaluate 28 LLMs with a structured prompt suite that includes the original game; controlled decision variants that perturb truncation, repeated play, numeric endowment, and occupational identity; a human-perspective prompt that asks models to reason as human decision makers; and paired comparisons between base models and their instruction-tuned counterparts. In the original game, most models generate finite bids, creating the appearance of human-like risk behavior. However, this outcome-level resemblance masks substantial mechanism-level differences. The controlled variants reveal that rather than maintaining human-like behavior seen in the original game, models often shift to conditionally and computationally rational behavior. Human-cue prompting and instruction tuning often lower bids and reduce some visible pat",
+      "authors": [
+        "Chensong Huang",
+        "Changyu Chen",
+        "Chenwei Lin",
+        "Hanjia Lyu",
+        "Xian Xu",
+        "Jiebo Luo"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.CY",
+        "econ.GN"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Fairness and Strategy-Proofness in Automated Market Makers",
+      "url": "https://arxiv.org/abs/2606.04959v1",
+      "date": "2026-06-03",
+      "abstract": "No deployed automated market maker lets its liquidity providers vote on the trading function. We show this is structural, not an oversight. On the weighted-product family with $n \\geq 3$ assets, no aggregation rule is at once fair and strategy-proof. Arrovian fairness forces a unique form, the weighted Aitchison centroid, the weighted geometric mean of the providers' preferred pools. But fairness forces mean-type aggregation and strategy-proofness forces median-type, and the only rule that is both is a single-provider dictator. The obstruction is sharp: it vanishes at $n = 2$, where a fair strategy-proof rule exists. Under the Frongillo--Papireddygari--Waggoner equivalence, the centroid is Genest's logarithmic opinion pool, and the impossibility transfers to externally Bayesian pooling.",
+      "authors": [
+        "Frank M. V. Feys"
+      ],
+      "categories": [
+        "cs.GT",
+        "econ.TH",
+        "q-fin.TR"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Worker Utility as Hysteresis: A Preisach Model of Transaction Acceptance in Gig Labour Markets",
+      "url": "https://arxiv.org/abs/2606.04916v1",
+      "date": "2026-06-03",
+      "abstract": "Worker utility is not observed -- only its consequence is. Each gig transaction produces a single bit: accepted or rejected. We argue this structure points directly to the Preisach hysteresis model as the natural representation of latent worker preferences. The Preisach operator models aggregate output as an integral over a population of binary threshold elements -- precisely the structure that emerges when heterogeneous workers each carry a private acceptance wage. We estimate two latent utility surfaces: acceptance utility U_1(X) and rejection utility U_0(X), via a dual-output neural network (shared layers 256->128, margin loss enforcing U_1 >= U_0). Classification reduces to the Preisach gap U_1(X) - U_0(X), passed into an XGBoost classifier alongside clip-stabilised price-to-threshold encodings. On 36,891 gig transactions, this pipeline achieves Jaccard = 0.827 and ROC AUC = 0.799. The price-to-threshold encoding accounts for +11.0 pp AUC over raw utility features. The model confirms the directional asymmetry hysteresis predicts: price decreases depress completion rates more than equivalent increases raise them. Applied to the full dataset, the model's recommendations simultane",
+      "authors": [
+        "Piotr Frydrych"
+      ],
+      "categories": [
+        "cs.LG",
+        "econ.GN",
+        "stat.ML"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Who Counts as Young? Matching Rules for Social Discounting",
+      "url": "https://arxiv.org/abs/2606.04142v1",
+      "date": "2026-06-02",
+      "abstract": "In heterogeneous OLG economies, age alone does not tell us who counts as young or old in a local welfare comparison. For such a comparison to have normative content, it must specify the represented margin, the private unit of account, the current information that identifies the relevant cell, and the common support over which claims are made. This paper provides that discipline. It separates raw resource weights from residual weights expressed in private value units, and shows that imposed local discount labels are valid precisely when they are induced by a potential on the graph. A calibrated audit of an OLG model then maps the frontier of certified claims, with support, units, wedges, and anchors determining which welfare signs are justified.",
+      "authors": [
+        "I. Sebastian Buhai"
+      ],
+      "categories": [
+        "econ.TH"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Trading Frictions in Dynamic Cap-and-Trade Markets",
+      "url": "https://arxiv.org/abs/2606.03767v1",
+      "date": "2026-06-02",
+      "abstract": "We develop a dynamic stochastic model of markets with an externality and multiple trading frictions, and cap-and-trade as the leading application. Slow participation, limited intermediation, and heterogeneous information interact in equilibrium: agents choose costly market access, access determines residual compliance demand, intermediary constraints translate residual demand into a surrender-month premium, and the premium feeds back into access incentives. These interactions shape how effectively the market corrects the externality. We characterize access choices in closed form, prove that the equilibrium premium is unique, and show that endogenous access dampens the response to each friction in isolation, while the interaction of multiple frictions is non-additive and can amplify the price response. We quantify the model using 2.7 million EU ETS registry transactions and compliance records from 2005-2021. About 40% of operators do not trade annually, purchases concentrate in April when returns are systematically high, and operator flow predicts future returns.",
+      "authors": [
+        "Nicola Borri",
+        "Yukun Liu",
+        "Aleh Tsyvinski",
+        "Xi Wu"
+      ],
+      "categories": [
+        "econ.TH",
+        "q-fin.GN"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Merit or networks? What decides where research is published",
+      "url": "https://arxiv.org/abs/2606.03763v1",
+      "date": "2026-06-02",
+      "abstract": "Does scientific publishing reward the quality of ideas or the advantage of connections? The question is universal to prestige-driven science, yet it has resisted decades of study because a paper's quality could not be gauged ahead of its publication fate without using that fate as the yardstick. We break this constraint by measuring a paper's idea quality directly from its text, before publication, using a discipline-trained LLM evaluator that scores the idea without seeing author names or outcomes. Using economics as a case study, we combine this text-legible idea-quality score with an execution-quality rubric, a connection index, an author-ability index, and an off-the-shelf language-model text score to estimate a five-input production function for journal placement across 6,208 economics working papers. The inputs are not rivals but a sequence along the ladder of prestige. Execution sets a meritocratic floor and is the largest input overall. Text-legible idea quality grades the rungs in between. Connections set a favoritism ceiling that bites mainly near the apex, the most selective journals. Connections work through two additive channels: connected authors write papers that sco",
+      "authors": [
+        "Ning Li"
+      ],
+      "categories": [
+        "econ.GN",
+        "cs.AI"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Reserve Depletion and Security Runway in Proof-of-Stake Systems",
+      "url": "https://arxiv.org/abs/2606.03587v1",
+      "date": "2026-06-02",
+      "abstract": "Many proof-of-stake protocols finance validator rewards from two sources: transaction fees and a finite reserve of tokens. This creates a dynamic hand-off problem. Early in the life of the system, fees may be too small to fund the target level of security; later, fees may become sufficient. The central question is whether the reserve provides enough runway for the protocol to remain secure until this fee-only region is reached. We study this problem in a discrete-time stochastic model of validator participation. Token price and transaction demand fluctuate over time, while validators choose participation strategically. We solve the validator entry game and derive an exact state-dependent reserve threshold, i.e., the minimal reserve stock necessary and sufficient to sustain a target security level. This threshold separates three regions: infeasibility, reserve-dependent security, and fee-only security. Security fails if the reserve first falls below the state-dependent threshold, and a successful hand-off occurs exactly if the fee-only region is reached before that failure time. We derive stress-test guarantees that convert lower confidence bands for token price and demand into rese",
+      "authors": [
+        "Paolo Penna",
+        "Manvir Schneider"
+      ],
+      "categories": [
+        "cs.GT",
+        "econ.TH"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Cost of Manipulation in AMM-Based Oracles",
+      "url": "https://arxiv.org/abs/2606.03548v1",
+      "date": "2026-06-02",
+      "abstract": "We study the robustness of AMM-based on-chain price oracles to strategic manipulation. An attacker trades against constant product automated market makers (CPMMs) to distort an on-chain oracle, arbitrageurs restore cross-pool and cross-venue consistency, and an oracle designer chooses how to aggregate pool quotes. Taking an efficient-market-hypothesis (EMH) view of the off-chain \"true\" price, we define the \\emph{cost of manipulation} as the minimal mark-to-market loss that an attacker must incur to move the oracle by a given multiplicative factor. For independent CPMMs, we derive closed-form single-pool manipulation formulas and solve the attacker-designer game for weighted means and weighted medians, showing that liquidity weights maximize the minimum cost of manipulation within these classes for weighted medians (for any distortion level) and, for weighted means, locally as the distortion tends to zero. For larger distortions, weighted means become more fragile: optimal weights can depend on the target distortion and no single choice is uniformly optimal across distortion levels. In a frictionless CPMM model with cross-pool arbitrage, the manipulation cost depends only on the tot",
+      "authors": [
+        "Sebastian Müller",
+        "Nordine Moumeni",
+        "Adel Messaoudi"
+      ],
+      "categories": [
+        "cs.CE",
+        "econ.TH",
+        "q-fin.TR"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Competitive Information Design in Sequential Search",
+      "url": "https://arxiv.org/abs/2606.03527v1",
+      "date": "2026-06-02",
+      "abstract": "Advertisements often strategically disclose information to consumers who make decisions on further information acquisition and eventual purchase. Anderson and Renault (2006) model this problem using an information design framework, where the advertiser acts as a sender and the consumer as a receiver. We extend this model to a competitive setting with horizontally differentiated senders competing for a unit-demand receiver. Under costly inspection, the receiver's optimal sequential search action is given by Weitzman's Index Algorithm. We give a method, based on duality arguments, to verify whether a sender's given information strategy constitutes a best response against his competitors (other senders). We establish the existence of an equilibrium in the game among senders when the prior distributions have no mass; we also illustrate that such equilibria may exhibit intricate behaviors. Finally, we meticulously characterize symmetric equilibria played by the senders for cases when the prior distributions have monotone increasing densities, while offering economic intuitions behind the insightful equilibrium structure.",
+      "authors": [
+        "Zhicheng Du",
+        "Hu Fu",
+        "Ying Qin",
+        "Zihe Wang"
+      ],
+      "categories": [
+        "cs.GT",
+        "econ.TH"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Reputation, Exposure, and Exit: Organizational Turnover after #MeToo",
+      "url": "https://arxiv.org/abs/2606.03491v1",
+      "date": "2026-06-02",
+      "abstract": "We study how economy-wide reputational shocks reshape corporate governance by examining board and executive turnover following the MeToo movement. We conceptualize the October 2017 revelations surrounding Harvey Weinstein as a common information shock that increased the expected cost of misconduct and intensified scrutiny across firms. Identification exploits cross-sectional variation in pre-shock exposure, measured by the frequency of Item 5.02 Form 8-K filings, which proxy for firms' sensitivity to governance-related disclosure and reputational risk. We develop a model of organizational exit in which directors respond to changes in reputational pressure through dynamic, belief-driven resignation hazards, generating heterogeneous and potentially nonlinear responses across firms. Empirically, we implement a continuous-treatment difference-in-differences design and complement it with dynamic event-study and matrix-completion estimators. We find that firms with greater pre-shock exposure experience significantly larger increases in resignation activity following the shock. The effects are concentrated in the immediate aftermath of the Weinstein revelations and are amplified through b",
+      "authors": [
+        "Roy Baharad",
+        "Asaf Eckstein",
+        "Gideon Parchomovsky",
+        "Rok Spruk"
+      ],
+      "categories": [
+        "econ.GN"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "On the sufficiency of unidirectional incentive compatibility in auctions",
+      "url": "https://arxiv.org/abs/2606.03051v1",
+      "date": "2026-06-02",
+      "abstract": "We study optimal auction design when the direction of bidders' deviations is restricted. We show that the optimal revenue when bidders can only underbid their true values cannot exceed the optimal revenue when bidders may freely underbid or overbid. Thus, unidirectional incentive compatibility is sufficient for full incentive compatibility for revenue maximization. We prove this equivalence through linear programming duality in a discrete model, which makes it possible to analyze the feasibility of allocation rules in multi-agent environments.",
+      "authors": [
+        "Kiho Yoon"
+      ],
+      "categories": [
+        "econ.TH"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Do Matching Mechanisms Work with LLM Agents?",
+      "url": "https://arxiv.org/abs/2606.03030v1",
+      "date": "2026-06-02",
+      "abstract": "This study examines whether standard matching mechanisms function as intended in LLM-agent markets, where LLM agents make allocation-related decisions as delegated decision-makers. We compare decentralized free-negotiation markets with centralized mechanism-based markets including several representative mechanisms. Across controlled one-to-one matching environments, mechanism-based markets generally outperform free negotiation in terms of stability and efficiency. We also find that LLM agents report preferences truthfully at substantially higher rates than human subjects in comparable DA and EADA environments. However, truth-telling is not uniformly aligned with formal strategy-proofness across all mechanisms: TTC, despite being strategy-proof, does not always elicit higher truth-telling than EADA. These results suggest that matching theory provides a useful but incomplete guide for designing institutions in LLM-agent markets.",
+      "authors": [
+        "Yukihiro Hoshino",
+        "Ayato Kitadai",
+        "Nariaki Nishino"
+      ],
+      "categories": [
+        "cs.GT",
+        "econ.GN"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Hidden Commitment Power is Powerless",
+      "url": "https://arxiv.org/abs/2606.02769v1",
+      "date": "2026-06-01",
+      "abstract": "A principal who offers a contract may renege when her default option is sufficiently attractive. The size of this temptation, which measures her commitment power, is often her private information. This paper asks how contracting outcomes change under this information asymmetry. Disciplining off-path beliefs with the Intuitive Criterion, I find that every type of principal behaves and earns payoffs exactly as if she were commonly known to have the least commitment power. Hidden commitment power is therefore powerless. The result delivers an unambiguous policy lesson on how to mitigate this information asymmetry prior to contracting: only measures that improve the worst case have value. Applied to credit rating, it rationalizes the monotone-partitional structure widely used in practice.",
+      "authors": [
+        "Hongcheng Li"
+      ],
+      "categories": [
+        "econ.TH"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Pay Beliefs and the Amenity-Pay Tradeoff",
+      "url": "https://arxiv.org/abs/2606.02503v2",
+      "date": "2026-06-01",
+      "abstract": "This paper studies how workers' beliefs about pay shape the tradeoffs between pay and workplace amenities. We design a multi-stage incentivized survey experiment that combines hypothetical choice experiments with elicited beliefs about starting salaries in real jobs and randomly varies the provision of explicit pay information. Although stated preferences imply sizable willingness to pay for amenities consistent with prior literature, baseline beliefs about salaries in real jobs are systematically biased along two margins: respondents under-predict starting salaries by 18% and expect higher-amenity jobs to pay more, substantially over-predicting the amenity-pay gradient. Exposure to pay information raises mean pay beliefs for similar jobs by 4% and reduces belief dispersion by 15%, but does not alter the strong positive association between perceived pay and advertised amenities, leaving the amenity-pay tradeoffs in stated choices essentially unchanged. While workers have strong preferences for workplace amenities, the tradeoffs they perceive deviate sharply from those present under full information.",
+      "authors": [
+        "Martin Eckhoff Andresen",
+        "Manudeep Bhuller",
+        "Alfred Løvgren"
+      ],
+      "categories": [
+        "econ.GN"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Endogenous Fertility Waves and the Dynamics of Utility in an Overlapping Generations Model",
+      "url": "https://arxiv.org/abs/2606.02362v1",
+      "date": "2026-06-01",
+      "abstract": "This paper investigates the conditions under which the Easterlin hypothesis holds within a neoclassical overlapping generations model with endogenous capital accumulation, wages, interest rates, and fertility. We develop a tractable analytical framework that maps economic transitions into utility space via a continuously differentiable first-order difference equation for cohort lifetime utilities. This reformulation allows for a transparent normative evaluation of non-steady-state paths without requiring explicit solutions to the underlying nonlinear system. Within this framework, we show that when fertility cycles emerge and children are normal goods, the utility of small cohorts strictly exceeds that of large cohorts. Crucially, this cohort-welfare asymmetry is driven by fertility preferences and is independent of the economy's position relative to the golden rule.",
+      "authors": [
+        "Wolfgang Kuhle"
+      ],
+      "categories": [
+        "econ.GN"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Privacy-preserving Information Sharing in Oligopoly Competitions",
+      "url": "https://arxiv.org/abs/2606.02348v1",
+      "date": "2026-06-01",
+      "abstract": "Information sharing among competing suppliers can improve decision-making under uncertainty, yet strategic concerns regarding rival exploitation often deter voluntary disclosure. We study information-sharing mechanisms in a Cournot oligopoly with uncertain demand, where a platform aggregates suppliers' signals through privacy-preserving channels and may also possess an exogenous external signal. The central challenge is to balance strategic safety with informational utility: privacy noise reduces the exposure of individual signals, but also lowers the value of the shared information pool. We first characterize a baseline setting in which access to aggregated information is contingent on participation. In a two-firm market without an external signal, firms refuse to share regardless of the privacy level. In an \\(n\\)-firm market, sharing may arise even without privacy safeguards because non-participating firms lose access to the aggregated signal. Building on this baseline, we show that privacy protection alone is insufficient to incentivize disclosure; it must be combined with a sufficiently informative external signal. We further show that firms with more accurate private signals r",
+      "authors": [
+        "Yuxin Liu",
+        "M. Amin Rahimian"
+      ],
+      "categories": [
+        "econ.TH",
+        "cs.CR",
+        "cs.CY",
+        "cs.GT"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Delusions of Grandeur and Their Benefits (and Hazards)",
+      "url": "https://arxiv.org/abs/2606.02306v1",
+      "date": "2026-06-01",
+      "abstract": "We study a population-wide tournament in which agents, who care both about their absolute and relative wealth, experiment by searching over correlated objects. We explore the role of the agents' beliefs about the environment; namely, the stochastic processes corresponding to their experimentation. We find that although optimism leads to higher output, it also produces greater inequality. We connect these observations with empirical evidence suggesting a positive relationship between inequality and entrepreneurship.",
+      "authors": [
+        "Cooper Howes",
+        "Can Urgun",
+        "Mark Whitmeyer"
+      ],
+      "categories": [
+        "econ.TH"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "A New Method for Finding the Schulze Winner Set",
+      "url": "https://arxiv.org/abs/2606.02213v1",
+      "date": "2026-06-01",
+      "abstract": "We propose a new voting algorithm based on the pairwise majority-comparison matrix derived from voters' preference profiles. We show that this algorithm induces exactly the winner set of the Schulze rule (Schulze, 1997). Our algorithm successively eliminates weaker candidates in terms of all-pairs comparisons, thereby reflecting a dual spirit to Condorcet's original idea of splitting preference cycles (de Condorcet, 1785). We further show that the direct sum of the survival sets obtained at each elimination round coincides with the Schwartz set (Schwartz, 1972). These two equivalence results provide a formal mathematical foundation for the ``folklore'' relationship between the Schulze winner set and the Schwartz set, as well as a new Condorcetian interpretation of the Schulze winner set.",
+      "authors": [
+        "Satoru Fujishige",
+        "Leo Goto",
+        "Satoshi Nakada"
+      ],
+      "categories": [
+        "econ.TH",
+        "cs.DM"
+      ]
+    },
+    {
+      "source": "arxiv",
+      "source_label": "Academic (arXiv)",
+      "item_type": "academic",
+      "title": "Testing Decision Makers without Counterfactuals",
+      "url": "https://arxiv.org/abs/2606.02095v1",
+      "date": "2026-06-01",
+      "abstract": "A decision-maker (DM) repeatedly makes choices under uncertainty in a bandit environment, where only the realization of the chosen arm is observed. Another competing agent, the adviser (AD), repeatedly provides recommendations, but the realizations of these recommendations are unobserved unless they coincide with the DM's choice. Both agents possess partial information about the arms' realizations. The central question we focus on is whether, in the long run, an outside observer can identify which agent is more informed based solely on the observed decisions, recommendations, and arm realizations. A test selects one of the agents based on the observed data. We focus primarily on the class of scoring tests, which assign a numerical score to each observation and select the agent according to the average score. We study strategic agents whose objective is to be selected by the test. For simultaneous arm choices, we show that there exists a scoring test that successfully identifies the more-informed agent. For sequential arm choices, however, no such scoring test exists. Finally, we explore the tension between identifying the more-informed agent and maximizing welfare. A DM whose objec",
+      "authors": [
+        "Yakov Babichenko"
+      ],
+      "categories": [
+        "cs.GT",
+        "econ.TH"
+      ]
     },
     {
       "source": "arxiv",
@@ -3677,798 +3193,507 @@
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "PART 2/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780810588815&rid=1",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780812556869&rid=1",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "digital markets act gatekeeper"
-      ],
-      "_analysis": {
-        "summary": "PART 2/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "PART 1/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780810588815&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780812556869&rid=2",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "digital markets act gatekeeper"
-      ],
-      "_analysis": {
-        "summary": "PART 1/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780810588815&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780812556869&rid=3",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "digital markets act gatekeeper"
-      ],
-      "_analysis": {
-        "summary": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Austria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Austria",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780810588815&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780812556869&rid=4",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "digital markets act gatekeeper"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Austria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Austria",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe’s cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0502&qid=1780810588815&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0502&qid=1780812556869&rid=5",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "digital markets act gatekeeper"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe’s cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - the Netherlands Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary polices of the Netherlands",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780810588815&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780812556869&rid=6",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "digital markets act gatekeeper"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - the Netherlands Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary polices of the Netherlands",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe’s cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0502&qid=1780810588815&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0502&qid=1780812556869&rid=7",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "digital markets act gatekeeper"
-      ],
-      "_analysis": {
-        "summary": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe’s cloud and AI ecosystem (Cloud and AI DevelopmentAct)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "judgment",
       "title": "Judgment of the General Court (Eighth Chamber, Extended Composition) of 3 June 2026.Meta Platforms, Inc. v European Commission.Digitalservices – Regulation EU 2022/1925 – Designation ofgatekeepers– Concept of ‘core platform service’ – Online social networking service – Number-independent interpersonal communications service – Online",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:62023TJ1078&qid=1780810588815&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:62023TJ1078&qid=1780812556869&rid=8",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "digital markets act gatekeeper"
-      ],
-      "_analysis": {
-        "summary": "Judgment of the General Court (Eighth Chamber, Extended Composition) of 3 June 2026.Meta Platforms, Inc. v European Commission.Digitalservices – Regulation EU 2022/1925 – Designation ofgatekeepers– Concept of ‘core platform service’ – Online social networking service – Number-independent interpersonal communications service – Online",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Czechia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Czechia",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0203&qid=1780810588815&rid=9",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0203&qid=1780812556869&rid=9",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "digital markets act gatekeeper"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Czechia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Czechia",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "directive",
       "title": ", (EC) No 1394/2007, (EU) No 536/2014, (EU) 2019/6, (EU) 2024/795 and (EU) 2024/1938 (European BiotechAct) and Proposal for a Directive of the European Parliament and of the Council amending Directives 2001/18/EC and 2010/53/EU as regards the placing on themarketof genetically modified micro-organisms and the processing of organs",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9833_2026_ADD_1&qid=1780810588815&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9833_2026_ADD_1&qid=1780812556869&rid=10",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "digital markets act gatekeeper"
-      ],
-      "_analysis": {
-        "summary": ", (EC) No 1394/2007, (EU) No 536/2014, (EU) 2019/6, (EU) 2024/795 and (EU) 2024/1938 (European BiotechAct) and Proposal for a Directive of the European Parliament and of the Council amending Directives 2001/18/EC and 2010/53/EU as regards the placing on themarketof genetically modified micro-organisms and the processing of organs",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "Verbatim report of proceedings of 10 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780810591497&rid=1",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780812559392&rid=1",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "competition digital platform abuse dominant"
-      ],
-      "_analysis": {
-        "summary": "Verbatim report of proceedings of 10 September 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "Verbatim report of proceedings of 9 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780810591497&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780812559392&rid=2",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "competition digital platform abuse dominant"
-      ],
-      "_analysis": {
-        "summary": "Verbatim report of proceedings of 9 September 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "Verbatim report of proceedings of 8 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780810591497&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780812559392&rid=3",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "competition digital platform abuse dominant"
-      ],
-      "_analysis": {
-        "summary": "Verbatim report of proceedings of 8 September 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Belgium Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Belgium",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780810591497&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780812559392&rid=4",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "competition digital platform abuse dominant"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Belgium Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Belgium",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Bulgaria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Bulgaria",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780810591497&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780812559392&rid=5",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "competition digital platform abuse dominant"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Bulgaria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Bulgaria",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Austria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Austria",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780810591497&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780812559392&rid=6",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "competition digital platform abuse dominant"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Austria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Austria",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Slovenia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Slovenia",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780810591497&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780812559392&rid=7",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "competition digital platform abuse dominant"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Slovenia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Slovenia",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Italy Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Italy",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780810591497&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780812559392&rid=8",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "competition digital platform abuse dominant"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Italy Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Italy",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
-    },
-    {
-      "source": "eurlex",
-      "source_label": "EU Regulation (EUR-Lex)",
-      "item_type": "document",
-      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Portugal Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Portugal",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780810591497&rid=9",
-      "date": "",
-      "abstract": "",
-      "authors": [],
-      "categories": [
-        "competition digital platform abuse dominant"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Portugal Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Portugal",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - the Netherlands Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary polices of the Netherlands",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780810591497&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780812559392&rid=9",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "competition digital platform abuse dominant"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - the Netherlands Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary polices of the Netherlands",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
+    },
+    {
+      "source": "eurlex",
+      "source_label": "EU Regulation (EUR-Lex)",
+      "item_type": "document",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Portugal Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Portugal",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780812559392&rid=10",
+      "date": "",
+      "abstract": "",
+      "authors": [],
+      "categories": [
+        "competition digital platform abuse dominant"
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "PART 1/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780810594268&rid=1",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780812561992&rid=1",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "DMA DSA enforcement"
-      ],
-      "_analysis": {
-        "summary": "PART 1/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "Verbatim report of proceedings of 10 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780810594268&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780812561992&rid=2",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "DMA DSA enforcement"
-      ],
-      "_analysis": {
-        "summary": "Verbatim report of proceedings of 10 September 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "communication",
       "title": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS on European Tech Sovereignty, accompanied by an EU Open Source Strategy",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0503&qid=1780810594268&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0503&qid=1780812561992&rid=3",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "DMA DSA enforcement"
-      ],
-      "_analysis": {
-        "summary": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS on European Tech Sovereignty, accompanied by an EU Open Source Strategy",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9348_2026_INIT&qid=1780810594268&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9348_2026_INIT&qid=1780812561992&rid=4",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "DMA DSA enforcement"
-      ],
-      "_analysis": {
-        "summary": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_INIT&qid=1780810594268&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_INIT&qid=1780812561992&rid=5",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "DMA DSA enforcement"
-      ],
-      "_analysis": {
-        "summary": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the documents Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009 Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_ADD_3&qid=1780810594268&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9313_2026_ADD_3&qid=1780812561992&rid=6",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "DMA DSA enforcement"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the documents Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009 Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "This document does not exist in English.",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:SEC(2026)300&qid=1780810594268&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:SEC(2026)300&qid=1780812561992&rid=7",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "DMA DSA enforcement"
-      ],
-      "_analysis": {
-        "summary": "This document does not exist in English.",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0232&qid=1780810594268&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0232&qid=1780812561992&rid=8",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "DMA DSA enforcement"
-      ],
-      "_analysis": {
-        "summary": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0231&qid=1780810594268&rid=9",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0231&qid=1780812561992&rid=9",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "DMA DSA enforcement"
-      ],
-      "_analysis": {
-        "summary": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the documents Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009 Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0300&qid=1780810594268&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0300&qid=1780812561992&rid=10",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "DMA DSA enforcement"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the documents Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on multimodal booking and repealing Regulation (EC) No 80/2009 Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on rail ticketing",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "PART 2/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aREGULATIONOF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780810596522&rid=1",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_3&qid=1780812564164&rid=1",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "artificial intelligence competition regulation"
-      ],
-      "_analysis": {
-        "summary": "PART 2/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aREGULATIONOF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "PART 3/3 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aRegulationof the European Parliament and of the Council on a framework of measures for strengthening Europe's semiconductor ecosystem repealingRegulation(EU) 2023/1782 (Chips Act 2.0)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_5&qid=1780810596522&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_5&qid=1780812564164&rid=2",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "artificial intelligence competition regulation"
-      ],
-      "_analysis": {
-        "summary": "PART 3/3 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aRegulationof the European Parliament and of the Council on a framework of measures for strengthening Europe's semiconductor ecosystem repealingRegulation(EU) 2023/1782 (Chips Act 2.0)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "Omnibus simplification legislative packages - Progress report",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9834_2026_INIT&qid=1780810596522&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9834_2026_INIT&qid=1780812564164&rid=3",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "artificial intelligence competition regulation"
-      ],
-      "_analysis": {
-        "summary": "Omnibus simplification legislative packages - Progress report",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "PART 2/3 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aRegulationof the European Parliament and of the Council on a framework of measures for strengthening Europe's semiconductor ecosystem repealingRegulation(EU) 2023/1782 (Chips Act 2.0)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_4&qid=1780810596522&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10094_2026_ADD_4&qid=1780812564164&rid=4",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "artificial intelligence competition regulation"
-      ],
-      "_analysis": {
-        "summary": "PART 2/3 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aRegulationof the European Parliament and of the Council on a framework of measures for strengthening Europe's semiconductor ecosystem repealingRegulation(EU) 2023/1782 (Chips Act 2.0)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "Regulationto simplify rules on medical and in vitro diagnostic devices - Progress report",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9801_2026_INIT&qid=1780810596522&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_9801_2026_INIT&qid=1780812564164&rid=5",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "artificial intelligence competition regulation"
-      ],
-      "_analysis": {
-        "summary": "Regulationto simplify rules on medical and in vitro diagnostic devices - Progress report",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "regulation",
       "title": "PART 1/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aREGULATIONOF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780810596522&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_ADD_2&qid=1780812564164&rid=6",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "artificial intelligence competition regulation"
-      ],
-      "_analysis": {
-        "summary": "PART 1/2 COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the document Proposal for aREGULATIONOF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "document",
       "title": "Verbatim report of proceedings of 9 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780810596522&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780812564164&rid=7",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "artificial intelligence competition regulation"
-      ],
-      "_analysis": {
-        "summary": "Verbatim report of proceedings of 9 September 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "eurlex",
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "communication",
       "title": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT AND THE COUNCIL OceanEye: An EU ocean observation initiative",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:268:FIN&qid=1780810596522&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:268:FIN&qid=1780812564164&rid=8",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "artificial intelligence competition regulation"
-      ],
-      "_analysis": {
-        "summary": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT AND THE COUNCIL OceanEye: An EU ocean observation initiative",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
+    },
+    {
+      "source": "eurlex",
+      "source_label": "EU Regulation (EUR-Lex)",
+      "item_type": "document",
+      "title": "Verbatim report of proceedings of 10 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780812564164&rid=9",
+      "date": "",
+      "abstract": "",
+      "authors": [],
+      "categories": [
+        "artificial intelligence competition regulation"
+      ]
     },
     {
       "source": "eurlex",
@@ -4496,210 +3721,143 @@
       "source_label": "EU Regulation (EUR-Lex)",
       "item_type": "communication",
       "title": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN CENTRAL BANK, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS   2026 EU Justice Scoreboard",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780810596522&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780812564164&rid=10",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "artificial intelligence competition regulation"
-      ],
-      "_analysis": {
-        "summary": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN CENTRAL BANK, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS   2026 EU Justice Scoreboard",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
-    },
-    {
-      "source": "cjeu",
-      "source_label": "Court (CJEU)",
-      "item_type": "judgment",
-      "title": "Verbatim report of proceedings of 10 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780810599085&rid=1",
-      "date": "",
-      "abstract": "",
-      "authors": [],
-      "categories": [
-        "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "Verbatim report of proceedings of 10 September 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "Verbatim report of proceedings of 9 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780810599085&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780812566625&rid=1",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "Verbatim report of proceedings of 9 September 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
+    },
+    {
+      "source": "cjeu",
+      "source_label": "Court (CJEU)",
+      "item_type": "judgment",
+      "title": "Verbatim report of proceedings of 10 September 2025",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02983&qid=1780812566625&rid=2",
+      "date": "",
+      "abstract": "",
+      "authors": [],
+      "categories": [
+        "Competition Judgment"
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "Verbatim report of proceedings of 8 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780810599085&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02981&qid=1780812566625&rid=3",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "Verbatim report of proceedings of 8 September 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Belgium Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Belgium",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780810599085&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0201&qid=1780812566625&rid=4",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Belgium Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Belgium",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Bulgaria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Bulgaria",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780810599085&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0202&qid=1780812566625&rid=5",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Bulgaria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Bulgaria",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Austria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Austria",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780810599085&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0220&qid=1780812566625&rid=6",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Austria Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Austria",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Slovenia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Slovenia",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780810599085&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0224&qid=1780812566625&rid=7",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Slovenia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Slovenia",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Italy Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Italy",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780810599085&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780812566625&rid=8",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Italy Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Italy",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
+    },
+    {
+      "source": "cjeu",
+      "source_label": "Court (CJEU)",
+      "item_type": "judgment",
+      "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - the Netherlands Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary polices of the Netherlands",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0219&qid=1780812566625&rid=9",
+      "date": "",
+      "abstract": "",
+      "authors": [],
+      "categories": [
+        "Competition Judgment"
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Portugal Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Portugal",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780810599085&rid=9",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0222&qid=1780812566625&rid=10",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Portugal Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Portugal",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
@@ -4727,429 +3885,268 @@
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "Council Implementing Decision (EU) 2026/1204 of 28 May 2026 establishing the satisfactory fulfilment of the conditions for the partial payment of the seventh instalment under the Ukraine Plan of the Ukraine Facility and amending Implementing Decision (EU) 2024/1447",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:32026D1204&qid=1780810601795&rid=1",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:32026D1204&qid=1780812569395&rid=1",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "Council Implementing Decision (EU) 2026/1204 of 28 May 2026 establishing the satisfactory fulfilment of the conditions for the partial payment of the seventh instalment under the Ukraine Plan of the Ukraine Facility and amending Implementing Decision (EU) 2024/1447",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "Verbatim report of proceedings of 9 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780810601795&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780812569395&rid=2",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "Verbatim report of proceedings of 9 September 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "Prior notification of a concentration (Case M.12487 – GM INFRASTRUCTURE / GIM / SAAVI / CIEM) – Candidate case for simplified procedure",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026M12487&qid=1780810601795&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026M12487&qid=1780812569395&rid=3",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "Prior notification of a concentration (Case M.12487 – GM INFRASTRUCTURE / GIM / SAAVI / CIEM) – Candidate case for simplified procedure",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780810601795&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CONSIL:ST_10104_2026_INIT&qid=1780812569395&rid=4",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL establishing a framework of measures for strengthening Europe's cloud and AI ecosystem (Cloud and AI Development Act)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Lithuania Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Lithuania",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0215&qid=1780810601795&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0215&qid=1780812569395&rid=5",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Lithuania Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Lithuania",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on a framework of measures for strengthening the Union’s semiconductor ecosystem, repealing Regulation (EU) 2023/1781 (Chips Act 2.0)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0504&qid=1780810601795&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026PC0504&qid=1780812569395&rid=6",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL on a framework of measures for strengthening the Union’s semiconductor ecosystem, repealing Regulation (EU) 2023/1781 (Chips Act 2.0)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report – Greece Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Greece",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0208&qid=1780810601795&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0208&qid=1780812569395&rid=7",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report – Greece Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Greece",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Slovakia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Slovakia",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0225&qid=1780810601795&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0225&qid=1780812569395&rid=8",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Slovakia Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Slovakia",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report – Luxembourg Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Luxembourg",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0216&qid=1780810601795&rid=9",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0216&qid=1780812569395&rid=9",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report – Luxembourg Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Luxembourg",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Italy Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Italy",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780810601795&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0212&qid=1780812569395&rid=10",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Italy Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Italy",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "Verbatim report of proceedings of 9 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780810604261&rid=1",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02982&qid=1780812571828&rid=1",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "Verbatim report of proceedings of 9 September 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN CENTRAL BANK, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS   2026 EU Justice Scoreboard",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780810604261&rid=2",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=COM:2026:273:FIN&qid=1780812571828&rid=2",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMUNICATION FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN CENTRAL BANK, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS   2026 EU Justice Scoreboard",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "Verbatim report of proceedings of 11 September 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02984&qid=1780810604261&rid=3",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:C/2026/02984&qid=1780812571828&rid=3",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "Verbatim report of proceedings of 11 September 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Germany Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Germany",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0205&qid=1780810604261&rid=4",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0205&qid=1780812571828&rid=4",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT 2026 Country Report - Germany Accompanying the document Recommendation for a COUNCIL RECOMMENDATION on the economic, social, employment, structural and budgetary policies of Germany",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "REPORT FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS Report on Competition Policy 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0180&qid=1780810604261&rid=5",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026DC0180&qid=1780812571828&rid=5",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "REPORT FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS Report on Competition Policy 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT Accompanying the document REPORT FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS Report on Competition Policy 2025",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0125&qid=1780810604261&rid=6",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0125&qid=1780812571828&rid=6",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT Accompanying the document REPORT FROM THE COMMISSION TO THE EUROPEAN PARLIAMENT, THE COUNCIL, THE EUROPEAN ECONOMIC AND SOCIAL COMMITTEE AND THE COMMITTEE OF THE REGIONS Report on Competition Policy 2025",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "Communication from the Commission – Guidelines on the application of Article 101 of the Treaty on the Functioning of the European Union totechnologytransfer agreements",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026XC02323&qid=1780810604261&rid=7",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026XC02323&qid=1780812571828&rid=7",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "Communication from the Commission – Guidelines on the application of Article 101 of the Treaty on the Functioning of the European Union totechnologytransfer agreements",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMUNICATION FROM THE COMMISSION Guidelines on the application of Article 101 of the Treaty on the Functioning of the European Union totechnologytransfer agreements (Text with EEA relevance)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:C(2026)2482&qid=1780810604261&rid=8",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=PI_COM:C(2026)2482&qid=1780812571828&rid=8",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMUNICATION FROM THE COMMISSION Guidelines on the application of Article 101 of the Treaty on the Functioning of the European Union totechnologytransfer agreements (Text with EEA relevance)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the documents Commission Regulation (EU) .../... on the application of Article 101(3) of the Treaty on the Functioning of the European Union to categories oftechnologytransfer agreements and Communication from the Commission Guidelines on the application of Article 101 of the Treaty on the Functioning of the European Union totechnologytransfer agreements",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0114&qid=1780810604261&rid=9",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52026SC0114&qid=1780812571828&rid=9",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "COMMISSION STAFF WORKING DOCUMENT IMPACT ASSESSMENT REPORT Accompanying the documents Commission Regulation (EU) .../... on the application of Article 101(3) of the Treaty on the Functioning of the European Union to categories oftechnologytransfer agreements and Communication from the Commission Guidelines on the application of Article 101 of the Treaty on the Functioning of the European Union totechnologytransfer agreements",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     },
     {
       "source": "cjeu",
       "source_label": "Court (CJEU)",
       "item_type": "judgment",
       "title": "Opinion of the European Economic and Social Committee – Report from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions – Report on Competition Policy 2024 (COM(2025) 181 final)",
-      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52025AE2299&qid=1780810604261&rid=10",
+      "url": "https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:52025AE2299&qid=1780812571828&rid=10",
       "date": "",
       "abstract": "",
       "authors": [],
       "categories": [
         "Competition Judgment"
-      ],
-      "_analysis": {
-        "summary": "Opinion of the European Economic and Social Committee – Report from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions – Report on Competition Policy 2024 (COM(2025) 181 final)",
-        "relevance_score": 3,
-        "relevance_explanation": "Relates to digital competition policy.",
-        "market_signal": "",
-        "key_entities": [],
-        "themes": []
-      }
+      ]
     }
   ],
   "synthesis": {
     "headline": "Digital Competition Digest — 2026-W23",
-    "executive_summary": "AI synthesis unavailable: your GOOGLE_API_KEY project has the free-tier quota set to 0 (billing-enabled projects disable the free tier). To fix this, go to https://aistudio.google.com/apikey, create a new key in a project without billing, and update the GOOGLE_API_KEY secret. This digest contains 200 items collected without AI analysis.",
+    "executive_summary": "Free mode: 200 items aggregated from ECN enforcement, arXiv, EUR-Lex, and CJEU for the past 7 days. Set GOOGLE_API_KEY (free — aistudio.google.com) or ANTHROPIC_API_KEY to enable AI summaries and thematic analysis.",
     "key_themes": [],
     "connections": [],
     "policy_implications": [],
-    "ai_enabled": true,
-    "ai_provider": "gemini"
+    "ai_enabled": false
   }
 }
