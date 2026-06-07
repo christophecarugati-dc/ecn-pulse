@@ -426,8 +426,11 @@ def _build_ai_client() -> "_AIClient | None":
             client = Mistral(api_key=mistral_key)
             log.info("Using Mistral API (%s) — free tier", MODEL_MISTRAL)
             return _AIClient("mistral", client)
-        except ImportError:
-            log.error("mistralai package not installed. Run: pip install mistralai")
+        except ImportError as exc:
+            log.error("Failed to import mistralai: %s. Run: pip install mistralai", exc)
+            return None
+        except Exception as exc:
+            log.error("Failed to initialise Mistral client: %s", exc)
             return None
 
     return None
@@ -495,7 +498,8 @@ def main() -> None:
         ai_client = _build_ai_client()
         if ai_client is None:
             log.error(
-                "No AI API key found. Set GOOGLE_API_KEY (free) or ANTHROPIC_API_KEY, "
+                "No AI API key found or client failed to initialise. "
+                "Set MISTRAL_API_KEY (free — console.mistral.ai) or ANTHROPIC_API_KEY, "
                 "or run with --no-ai."
             )
             sys.exit(1)
