@@ -37,10 +37,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: pip
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          echo "=== Checked-out commit: $(git rev-parse HEAD) ==="
+          pip uninstall mistralai -y 2>/dev/null || true
+          pip install --no-cache-dir -r requirements.txt
+          echo "=== Installed packages ==="
+          pip list | grep -iE "requests|anthropic|mistral|beautifulsoup|dateutil"
 
       - name: Fetch academic papers and regulatory documents
         run: |
@@ -64,10 +68,20 @@ jobs:
               --court-data court-cases/data/court_links.json \
               --output-dir data/digests \
               --lookback 7 \
-              --verbose
+              --verbose \
+            || {
+              echo "WARNING: AI digest failed, retrying in no-AI mode"
+              python digest_generator.py \
+                --ecn-data data/ecn_pulse.json \
+                --research-data data/research_items.json \
+                --court-data court-cases/data/court_links.json \
+                --output-dir data/digests \
+                --lookback 7 \
+                --no-ai \
+                --verbose
+            }
           else
             echo "No API key found — running in free/no-AI mode"
-            echo "Set MISTRAL_API_KEY (free at console.mistral.ai) or ANTHROPIC_API_KEY"
             python digest_generator.py \
               --ecn-data data/ecn_pulse.json \
               --research-data data/research_items.json \
