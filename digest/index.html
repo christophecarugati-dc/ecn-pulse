@@ -337,6 +337,13 @@ function render() {
   html += `<div class="card headline-card">
     <div class="headline-text">${esc(syn.headline || d.week + " — Competition Policy Digest")}</div>
     <div class="exec-summary">${esc(syn.executive_summary || "")}</div>
+    <div style="font-size:12px;color:var(--text-muted);margin-top:12px;line-height:1.8">
+      <strong>Sources:</strong>
+      <span class="glossary" data-tip="Academic research papers submitted to arXiv, a free preprint server. These are not peer-reviewed yet but often signal future trends.">📄 Academic papers (arXiv)</span> ·
+      <span class="glossary" data-tip="Official EU legal documents from EUR-Lex: regulations (binding law), directives, Commission decisions, proposals, and staff working documents.">📋 EU documents (EUR-Lex)</span> ·
+      <span class="glossary" data-tip="Judgments and orders from the Court of Justice of the EU (CJEU) and General Court — binding legal rulings on competition cases.">⚖️ Court judgments (CJEU)</span> ·
+      <span class="glossary" data-tip="Press releases from national competition authorities (NCAs) — the antitrust enforcers in each EU member state.">🔎 NCA enforcement actions</span>
+    </div>
     <div class="meta-row">
       <span class="meta-badge"><span class="dot dot-blue"></span>${items.length} items monitored</span>
       ${d.high_relevance_items ? `<span class="meta-badge"><span class="dot dot-orange"></span>${d.high_relevance_items} high relevance</span>` : ""}
@@ -531,12 +538,21 @@ function setFilter(group, btn) {
   activeFilter = group;
   document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
+  const searchInput = document.getElementById("searchInput");
+  applySearch(searchInput ? searchInput.value : "");
+}
+
+function applySearch(query) {
+  const q = query.toLowerCase().trim();
   const cards = document.querySelectorAll(".item-card");
   let visible = 0;
   cards.forEach(card => {
-    const match = group === "all" || card.dataset.group === group;
-    card.classList.toggle("hidden", !match);
-    if (match) visible++;
+    const text = card.textContent.toLowerCase();
+    const matchesFilter = activeFilter === "all" || card.dataset.group === activeFilter;
+    const matchesSearch = !q || text.includes(q);
+    const hidden = !matchesFilter || !matchesSearch;
+    card.classList.toggle("hidden", hidden);
+    if (!hidden) visible++;
   });
   const counter = document.getElementById("itemsCount");
   if (counter) counter.textContent = visible + " items";
