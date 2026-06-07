@@ -413,19 +413,31 @@ def fetch_eurlex(session: requests.Session, lookback_days: int) -> list[Research
 
 
 def _classify_eurlex_type(title: str, url: str) -> str:
-    tl = (title + url).lower()
+    tl = (title + " " + url).lower()
     if "judgment" in tl or "arrêt" in tl:
         return "judgment"
+    if "decision" in tl and "commission" in tl:
+        return "commission_decision"
     if "decision" in tl:
         return "decision"
-    if "regulation" in tl:
+    if "regulation" in tl and "proposal" not in tl:
         return "regulation"
-    if "directive" in tl:
+    if "directive" in tl and "proposal" not in tl:
         return "directive"
+    if "proposal" in tl or "proposition" in tl:
+        return "proposal"
     if "opinion" in tl:
         return "opinion"
     if "communication" in tl or "notice" in tl:
         return "communication"
+    if "working document" in tl or "staff working" in tl or "swd" in tl:
+        return "working_document"
+    if "impact assessment" in tl:
+        return "working_document"
+    if "report" in tl:
+        return "report"
+    if "guidance" in tl or "guidelines" in tl:
+        return "guidelines"
     return "document"
 
 

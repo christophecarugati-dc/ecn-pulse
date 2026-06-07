@@ -225,6 +225,37 @@
       .card { padding: 16px; }
       .themes-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── Glossary tooltips ────────────────────────────────────── */
+    .glossary { position: relative; cursor: help;
+                border-bottom: 1px dashed var(--text-muted); }
+    .glossary::after {
+      content: attr(data-tip);
+      position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%);
+      background: #1a1d25; color: #e8eaf0; font-size: 12px; line-height: 1.5;
+      padding: 6px 10px; border-radius: 6px; width: max-content; max-width: 260px;
+      pointer-events: none; opacity: 0; transition: opacity .15s; z-index: 200;
+      white-space: normal; text-align: left; font-style: normal; font-weight: 400;
+    }
+    .glossary:hover::after { opacity: 1; }
+
+    /* ── Search bar ───────────────────────────────────────────── */
+    .search-wrap { position: relative; flex: 1; max-width: 320px; }
+    .search-input {
+      width: 100%; padding: 5px 10px 5px 30px; border: 1px solid var(--border);
+      border-radius: 20px; background: var(--bg); color: var(--text);
+      font-size: 13px; outline: none;
+    }
+    .search-input:focus { border-color: var(--accent); }
+    .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+                   color: var(--text-muted); font-size: 13px; pointer-events: none; }
+
+    /* ── Document type badge (inside item card) ───────────────── */
+    .doctype-badge {
+      font-size: 10px; color: var(--text-muted); background: var(--bg);
+      border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -402,7 +433,12 @@ function renderItemsSection(items) {
       html += `<button class="filter-btn" onclick="setFilter('${g.key}', this)">${g.icon} ${g.label} <span style="opacity:.6">${cnt}</span></button>`;
     }
   });
-  html += `<span class="items-count" id="itemsCount">${items.length} items</span></div>`;
+  html += `<div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input class="search-input" id="searchInput" placeholder="Search publications…"
+           oninput="applySearch(this.value)">
+  </div>
+  <span class="items-count" id="itemsCount">${items.length} items</span></div>`;
 
   // Items list (numbered for cross-references)
   html += `<div id="itemsList">`;
@@ -449,11 +485,15 @@ function renderItem(it, idx) {
 
   html += `<div class="item-footer">
     ${score ? `<span class="score-badge score-${score}">Relevance ${score}/5</span>` : ""}
+    ${analysis.plain_english_type ? `<span class="doctype-badge">${esc(analysis.plain_english_type)}</span>` : ""}
     ${themes.slice(0, 3).map(t => `<span class="theme-tag">${esc(t)}</span>`).join("")}
     ${entities.slice(0, 3).map(e => `<span class="entity-tag">${esc(e)}</span>`).join("")}
   </div>`;
 
-  if (relevanceExp) {
+  if (analysis.market_signal) {
+    html += `<div class="item-relevance" style="font-style:normal;color:var(--text-muted)">
+      📈 ${esc(analysis.market_signal)}</div>`;
+  } else if (relevanceExp) {
     html += `<div class="item-relevance">${esc(relevanceExp)}</div>`;
   }
 

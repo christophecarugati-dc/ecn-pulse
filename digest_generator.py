@@ -4,11 +4,10 @@ data sources into a structured weekly briefing.
 
 In --no-ai mode (free):    aggregates and structures data with no API calls.
 With ANTHROPIC_API_KEY:    uses Claude Haiku (summaries) + Sonnet (synthesis).
-With GOOGLE_API_KEY:       uses Gemini 2.0 Flash for everything — FREE tier
-                           available at aistudio.google.com, no credit card needed
-                           for typical weekly usage (~30–50 items/week).
+With MISTRAL_API_KEY:      uses Mistral Small for everything — FREE tier
+                           available at console.mistral.ai, no credit card needed.
 
-Priority: ANTHROPIC_API_KEY > GOOGLE_API_KEY > --no-ai
+Priority: ANTHROPIC_API_KEY > MISTRAL_API_KEY > --no-ai
 
 Reads:
   data/ecn_pulse.json              ECN enforcement press releases
@@ -21,7 +20,7 @@ Output:
 
 Usage:
   python digest_generator.py --no-ai
-  GOOGLE_API_KEY=... python digest_generator.py      # free via Gemini
+  MISTRAL_API_KEY=... python digest_generator.py     # free via Mistral
   ANTHROPIC_API_KEY=... python digest_generator.py   # via Claude
   python digest_generator.py --lookback 7 --verbose
 """
@@ -55,9 +54,25 @@ THEME_TAGS = [
 ]
 
 SOURCE_LABELS = {
-    "arxiv": "Academic (arXiv)",
-    "eurlex": "EU Regulation (EUR-Lex)",
-    "cjeu": "Court (CJEU)",
+    "arxiv": "Academic paper",
+    "eurlex": "EU document",
+    "cjeu": "Court judgment",
+    "cjeu_linker": "Court case",
+}
+
+EURLEX_TYPE_LABELS = {
+    "regulation": "EU Regulation",
+    "directive": "EU Directive",
+    "commission_decision": "Commission Decision",
+    "decision": "EU Decision",
+    "judgment": "Court Judgment",
+    "proposal": "Legislative Proposal",
+    "communication": "Commission Communication",
+    "opinion": "Advocate General Opinion",
+    "working_document": "Commission Staff Document",
+    "report": "EU Report",
+    "guidelines": "EU Guidelines",
+    "document": "EU Document",
 }
 
 
@@ -157,7 +172,11 @@ def _collect_items(ecn_path: str, research_path: str, court_path: str, lookback_
         src = it.get("source", "research")
         items.append({
             "source": src,
-            "source_label": SOURCE_LABELS.get(src, src.upper()),
+            "source_label": (
+                EURLEX_TYPE_LABELS.get(it.get("item_type", "document"), "EU Document")
+                if src == "eurlex"
+                else SOURCE_LABELS.get(src, src.upper())
+            ),
             "item_type": it.get("item_type", "document"),
             "title": it.get("title", ""),
             "url": it.get("url", ""),
@@ -290,14 +309,27 @@ def _build_item_prompt(item: dict) -> str:
     item_type = item.get("item_type", "publication")
     return (
         "You are a competition policy expert specialising in digital markets and AI regulation. "
-        f"Analyse this {item_type} from {src} for its relevance to digital competition policy.\n\n"
+        f"Analyse this document (source type: {src}, document type: {item_type}) "
+        "for its relevance to digital competition policy.\n\n"
         f"Title: {title}\n"
         f"{'Content: ' + abstract[:600] if abstract else ''}\n\n"
-        "IMPORTANT: for technology papers (AI agents, LLMs, recommendation systems, etc.), "
+        "CRITICAL RULES:\n"
+        "1. A 'Commission Staff Working Document' or 'Impact Assessment' is a preparatory report, NOT a law or court case.\n"
+        "2. A 'Regulation' or 'Directive' is EU legislation, NOT a court case.\n"
+        "3. A 'Judgment' or 'Order' from a court is case law, NOT legislation.\n"
+        "4. An arXiv paper is an academic preprint, NOT a policy decision.\n"
+        "5. Write the summary in plain English — define any technical terms (e.g. write "
+        "'DMA (the EU's Digital Markets Act, which sets rules for large tech platforms)' "
+        "not just 'DMA').\n\n"
+        "For technology papers (AI agents, LLMs, recommendation systems, etc.), "
         "assess how they signal changes in market structure or competitive dynamics, "
         "even if they do not use the word 'competition' or 'antitrust'.\n\n"
         "Return a JSON object with exactly these keys:\n"
-        '  "summary": 2-3 sentence plain-language summary of the key findings\n'
+        '  "plain_english_type": what this document is in plain English '
+        '(e.g. "Academic research paper", "EU regulatory proposal", "Court judgment", '
+        '"Commission preparatory report", "Enforcement decision")\n'
+        '  "summary": 2-3 sentence plain-language summary of the key findings. '
+        'Define any jargon on first use.\n'
         '  "relevance_score": integer 1-5\n'
         '    5 = directly shapes digital competition policy (enforcement, regulation, market power)\n'
         '    4 = strong market signal (technology disrupting a digital market, revealing competitive dynamics)\n'
@@ -318,9 +350,10 @@ def _build_synthesis_prompt(items: list[dict], week_id: str) -> str:
     lines: list[str] = []
     for i, it in enumerate(items[:60], 1):
         a = it.get("_analysis", {})
+        plain_type = a.get("plain_english_type", it.get("item_type", "?"))
         lines.append(
-            f"{i}. [{it.get('source', '?').upper()}] {it.get('title', '')}\n"
-            f"   Date: {it.get('date', '?')} | Score: {a.get('relevance_score', '?')}/5\n"
+            f"{i}. [{plain_type.upper()}] {it.get('title', '')}\n"
+            f"   Source: {it.get('source_label', '?')} | Date: {it.get('date', '?')} | Score: {a.get('relevance_score', '?')}/5\n"
             f"   Summary: {a.get('summary', '')}\n"
             f"   Market signal: {a.get('market_signal', '')}\n"
             f"   Themes: {', '.join(a.get('themes', []))}\n"
@@ -328,26 +361,37 @@ def _build_synthesis_prompt(items: list[dict], week_id: str) -> str:
         )
     return (
         f"You are a senior competition policy expert specialising in digital markets (week {week_id}).\n"
-        f"You have reviewed {len(items)} recent publications (academic papers, regulatory decisions, "
-        "enforcement actions, court judgments).\n\n"
+        f"You have reviewed {len(items)} recent publications.\n\n"
+        "IMPORTANT DISTINCTIONS — these items come from different sources:\n"
+        "- ACADEMIC PAPERS (arXiv): Research that may take years to influence policy. Mark as 'theory'.\n"
+        "- EU REGULATIONS/DIRECTIVES: Binding law already in force or being passed.\n"
+        "- COMMISSION DECISIONS/PROPOSALS: Active enforcement or proposed rules, not yet binding.\n"
+        "- COMMISSION STAFF DOCUMENTS: Preparatory analysis, not policy itself.\n"
+        "- COURT JUDGMENTS: Binding legal rulings that set precedent.\n"
+        "Never describe a staff document as a law, or an academic paper as an enforcement action.\n\n"
         "Publications:\n" + "\n\n".join(lines) + "\n\n"
-        "Generate a JSON digest with these keys:\n\n"
+        "Generate a JSON digest. Write in plain English, defining jargon on first use "
+        "(e.g. 'DMA (EU Digital Markets Act)' not just 'DMA'). "
+        "Be specific — name companies, cases, and amounts where relevant.\n\n"
         '"headline": punchy 10-15 word newsletter subject line capturing the most important story\n\n'
-        '"executive_summary": 3-4 sentence narrative covering both enforcement developments AND '
-        "emerging market/technology trends that competition practitioners should track.\n\n"
-        '"key_themes": array of up to 5 objects, each with:\n'
-        '  "theme": theme name\n'
-        '  "description": 2-3 sentences on what is happening and why it matters for competition\n'
-        '  "item_indices": array of 1-based item numbers belonging to this theme\n\n'
-        '"connections": array of up to 5 objects describing how publications connect:\n'
-        '  "description": 1-2 sentences (e.g. "This arXiv paper on AI agents in search '
-        'corroborates the Commission\'s theory of harm in the Google DMA investigation")\n'
+        '"executive_summary": 4-5 sentence narrative. Distinguish between: (1) what regulators/courts '
+        "are actually DOING now, (2) what researchers are PREDICTING, and (3) what legislation is PROPOSED. "
+        "Explain why each matters for competition practitioners.\n\n"
+        '"key_themes": array of up to 5 objects:\n'
+        '  "theme": theme name in plain English\n'
+        '  "description": 2-3 sentences. State what is happening, what type of evidence supports it '
+        '(enforcement action / court ruling / academic finding / legislative proposal), and why it matters.\n'
+        '  "item_indices": array of 1-based item numbers\n\n'
+        '"connections": array of up to 5 objects linking publications across source types:\n'
+        '  "description": 1-2 sentences connecting the dots — e.g. "An arXiv paper [#X] predicts '
+        'AI agents will displace search, which aligns with the Commission\'s DMA investigation [#Y]"\n'
         '  "item_indices": array of 2-4 item numbers\n'
         '  "connection_type": one of [academic_supports_regulation, case_follows_theory, '
         "regulatory_gap, conflicting_approaches, enforcement_trend, "
         "academic_challenges_regulation, tech_signals_market_shift]\n\n"
-        '"policy_implications": array of up to 4 objects:\n'
-        '  "implication": 1-2 sentences for practitioners/policymakers\n'
+        '"policy_implications": array of up to 5 objects:\n'
+        '  "implication": 1-2 sentences for practitioners. Be concrete — name the company, rule, '
+        "or market at stake. State whether this is based on actual enforcement, proposed law, or academic research.\n"
         '  "urgency": "immediate" | "medium_term" | "watch"\n\n'
         "Return ONLY valid JSON, no prose."
     )
