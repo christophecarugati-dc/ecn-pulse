@@ -6,18 +6,20 @@
   <title>ECN Pulse — Weekly Digest</title>
   <style>
     :root {
-      --bg: #f8f9fb;
+      --bg: #f1f5f9;
       --surface: #ffffff;
-      --border: #e2e5eb;
-      --text: #1a1d23;
-      --text-muted: #6b7280;
+      --surface-2: #f8fafc;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
       --accent: #2563eb;
       --accent-light: #eff6ff;
       --accent-border: #bfdbfe;
 
-      --score-5: #dc2626; --score-5-bg: #fef2f2;
-      --score-4: #d97706; --score-4-bg: #fffbeb;
-      --score-3: #2563eb; --score-3-bg: #eff6ff;
+      --score-5: #dc2626; --score-5-bg: #fef2f2; --score-5-border: #fecaca;
+      --score-4: #d97706; --score-4-bg: #fffbeb; --score-4-border: #fde68a;
+      --score-3: #2563eb; --score-3-bg: #eff6ff; --score-3-border: #bfdbfe;
       --score-2: #6b7280; --score-2-bg: #f9fafb;
       --score-1: #9ca3af; --score-1-bg: #f9fafb;
 
@@ -27,140 +29,355 @@
       --source-ecn: #b45309;
       --source-other: #374151;
 
-      --conn-academic: #7c3aed;
-      --conn-regulatory: #0369a1;
-      --conn-court: #065f46;
-      --conn-trend: #b45309;
-      --conn-conflict: #dc2626;
-
-      --radius: 10px;
-      --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,.07), 0 2px 4px -1px rgba(0,0,0,.04);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.04);
+      --shadow-lg: 0 10px 30px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.05);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0f1117; --surface: #1a1d25; --border: #2a2f3e;
-        --text: #e8eaf0; --text-muted: #8b92a5;
-        --accent: #3b82f6; --accent-light: #1e3a5f; --accent-border: #2563eb;
+        --bg: #0c1220; --surface: #151c2e; --surface-2: #1a2235;
+        --border: #253047; --text: #e2e8f0; --text-muted: #8b99b5; --text-light: #5c6f8c;
+        --accent: #3b82f6; --accent-light: #1e3558; --accent-border: #2563eb;
+        --score-5-bg: #2d1515; --score-5-border: #5c2626;
+        --score-4-bg: #2a1e08; --score-4-border: #6b4a0f;
+        --score-3-bg: #0f2040; --score-3-border: #1e4080;
       }
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-           background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+      background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6;
+    }
 
-    /* ── Layout ──────────────────────────────────────────────── */
+    /* ── Sticky header ─────────────────────────────────────────── */
     .header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
-      padding: 16px 24px;
-      display: flex; align-items: center; gap: 16px;
-      position: sticky; top: 0; z-index: 100;
+      padding: 14px 24px;
+      display: flex; align-items: center; gap: 14px;
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
     }
-    .header-logo { font-size: 18px; font-weight: 700; color: var(--accent); white-space: nowrap; }
-    .header-sep { color: var(--border); }
-    .header-title { font-size: 15px; color: var(--text-muted); }
+    .header-logo {
+      font-size: 17px; font-weight: 800; color: var(--accent);
+      white-space: nowrap; letter-spacing: -.3px;
+    }
+    .header-sep { color: var(--border); font-size: 18px; }
+    .header-title { font-size: 14px; color: var(--text-muted); }
     .header-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
-
     .week-nav { display: flex; align-items: center; gap: 8px; }
     .week-label { font-size: 13px; font-weight: 600; color: var(--text); }
-    .week-btn { background: none; border: 1px solid var(--border); color: var(--text);
-                padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 12px; }
-    .week-btn:hover { background: var(--accent-light); border-color: var(--accent-border); }
+    .week-btn {
+      background: none; border: 1px solid var(--border); color: var(--text);
+      padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 12px;
+      transition: all .15s;
+    }
+    .week-btn:hover { background: var(--accent-light); border-color: var(--accent-border); color: var(--accent); }
     .week-btn:disabled { opacity: 0.35; cursor: default; }
 
-    .main { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+    /* ── Main layout ───────────────────────────────────────────── */
+    .main { max-width: 1100px; margin: 0 auto; padding: 28px 20px 60px; }
 
-    /* ── Cards ───────────────────────────────────────────────── */
+    /* ── Generic card ──────────────────────────────────────────── */
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 20px 24px;
-      margin-bottom: 16px;
+      padding: 22px 26px;
+      margin-bottom: 18px;
     }
-    .card-title { font-size: 13px; font-weight: 700; text-transform: uppercase;
-                  letter-spacing: .6px; color: var(--text-muted); margin-bottom: 14px; }
+    .card-title {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .7px; color: var(--text-muted); margin-bottom: 16px;
+    }
 
-    /* ── Headline / executive summary ───────────────────────── */
-    .headline-card { border-left: 4px solid var(--accent); }
-    .headline-text { font-size: 20px; font-weight: 700; line-height: 1.35;
-                     color: var(--text); margin-bottom: 12px; }
-    .exec-summary { color: var(--text); line-height: 1.7; }
-    .meta-row { display: flex; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
-    .meta-badge { display: inline-flex; align-items: center; gap: 5px;
-                  font-size: 12px; color: var(--text-muted);
-                  background: var(--bg); border: 1px solid var(--border);
-                  border-radius: 20px; padding: 3px 10px; }
-    .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
-    .dot-green { background: #16a34a; }
-    .dot-orange { background: #d97706; }
+    /* ── Hero card ─────────────────────────────────────────────── */
+    .hero-card {
+      border-left: 4px solid var(--accent);
+      background: linear-gradient(135deg, var(--surface) 0%, var(--accent-light) 100%);
+    }
+    .hero-headline {
+      font-size: 22px; font-weight: 800; line-height: 1.3;
+      color: var(--text); margin-bottom: 14px; letter-spacing: -.3px;
+    }
+    .exec-summary { color: var(--text); line-height: 1.75; font-size: 15px; }
+    .exec-truncated { display: none; }
+    .read-more-btn {
+      background: none; border: none; color: var(--accent);
+      font-size: 13px; cursor: pointer; padding: 0; font-weight: 500;
+    }
+    .read-more-btn:hover { text-decoration: underline; }
+    .stat-chips {
+      display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap;
+    }
+    .stat-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--text-muted);
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 4px 12px;
+      box-shadow: var(--shadow);
+    }
+    .stat-chip .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
     .dot-blue { background: var(--accent); }
-    .ai-badge { background: var(--accent-light); border-color: var(--accent-border);
-                color: var(--accent); font-weight: 500; }
-    .no-ai-badge { background: #fffbeb; border-color: #fde68a; color: #92400e; font-weight: 500; }
+    .dot-orange { background: #d97706; }
+    .dot-green { background: #16a34a; }
+    .ai-badge {
+      background: var(--accent-light); border-color: var(--accent-border);
+      color: var(--accent); font-weight: 600;
+    }
+    .no-ai-badge { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+    @media (prefers-color-scheme: dark) {
+      .no-ai-badge { background: #2a1e08; border-color: #6b4a0f; color: #f6c26e; }
+    }
 
-    /* ── Themes grid ─────────────────────────────────────────── */
-    .themes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
-    .theme-card {
-      background: var(--bg);
+    /* ── Dashboard row ─────────────────────────────────────────── */
+    .dashboard-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .dash-card {
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 20px;
+    }
+    .dash-card-title {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .6px; color: var(--text-muted); margin-bottom: 14px;
+    }
+
+    /* Donut chart */
+    .donut-wrap {
+      display: flex; align-items: center; gap: 16px;
+    }
+    .donut {
+      width: 90px; height: 90px; border-radius: 50%; flex-shrink: 0;
+      position: relative;
+    }
+    .donut-inner {
+      position: absolute; inset: 18px; border-radius: 50%;
+      background: var(--surface);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .donut-total { font-size: 18px; font-weight: 800; color: var(--text); line-height: 1; }
+    .donut-label { font-size: 9px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; }
+    .donut-legend { flex: 1; display: flex; flex-direction: column; gap: 5px; }
+    .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--text-muted); }
+    .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .legend-count { margin-left: auto; font-weight: 600; color: var(--text); font-size: 12px; }
+
+    /* Relevance bar */
+    .rel-bar-wrap { display: flex; flex-direction: column; gap: 8px; }
+    .rel-bar-row { display: flex; align-items: center; gap: 8px; }
+    .rel-bar-label { font-size: 12px; color: var(--text-muted); width: 54px; flex-shrink: 0; }
+    .rel-bar-track { flex: 1; height: 16px; border-radius: 8px; background: var(--bg); overflow: hidden; }
+    .rel-bar-fill { height: 100%; border-radius: 8px; transition: width .4s ease; }
+    .rel-bar-count { font-size: 12px; font-weight: 600; color: var(--text); width: 26px; text-align: right; flex-shrink: 0; }
+
+    /* Themes pills */
+    .themes-pills { display: flex; flex-direction: column; gap: 7px; }
+    .theme-pill {
+      display: flex; align-items: center; gap: 8px;
+      padding: 7px 12px; border-radius: 20px; font-size: 12px;
+      border: 1px solid var(--border); background: var(--surface-2);
+      transition: all .15s;
+    }
+    .theme-pill:hover { border-color: var(--accent-border); background: var(--accent-light); }
+    .theme-pill-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .theme-pill-name { font-weight: 600; color: var(--text); flex: 1; }
+
+    /* ── Top picks section ─────────────────────────────────────── */
+    .section-header {
+      font-size: 16px; font-weight: 700; margin: 28px 0 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-icon { font-size: 16px; }
+    .count-badge {
+      font-size: 12px; font-weight: 500; background: var(--bg);
+      border: 1px solid var(--border); border-radius: 20px;
+      padding: 1px 9px; color: var(--text-muted);
+    }
+
+    .pick-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
       padding: 14px 16px;
-    }
-    .theme-name { font-weight: 600; margin-bottom: 6px; font-size: 14px; }
-    .theme-desc { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
-    .theme-items { margin-top: 8px; display: flex; gap: 4px; flex-wrap: wrap; }
-    .item-ref { font-size: 11px; background: var(--accent-light); color: var(--accent);
-                border: 1px solid var(--accent-border); border-radius: 4px;
-                padding: 1px 6px; cursor: pointer; }
-    .item-ref:hover { background: var(--accent); color: #fff; }
-
-    /* ── Connections ─────────────────────────────────────────── */
-    .connection {
-      border-left: 3px solid var(--conn-academic);
-      padding: 10px 14px;
-      border-radius: 0 8px 8px 0;
-      background: var(--bg);
       margin-bottom: 10px;
+      transition: box-shadow .15s, transform .15s;
     }
-    .connection.case_follows_theory { border-left-color: var(--conn-regulatory); }
-    .connection.enforcement_trend { border-left-color: var(--conn-trend); }
-    .connection.conflicting_approaches { border-left-color: var(--conn-conflict); }
-    .connection.regulatory_gap { border-left-color: var(--conn-court); }
-    .connection-type { font-size: 11px; font-weight: 600; text-transform: uppercase;
-                       letter-spacing: .5px; margin-bottom: 5px; color: var(--text-muted); }
-    .connection-desc { font-size: 13px; line-height: 1.55; }
-    .connection-refs { margin-top: 6px; display: flex; gap: 4px; }
+    .pick-card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .pick-header { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
+    .pick-source-tag {
+      flex-shrink: 0; font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .5px; border-radius: 4px; padding: 2px 7px; margin-top: 2px;
+    }
+    .source-arxiv { background: #f3e8ff; color: var(--source-arxiv); }
+    .source-eurlex { background: #e0f2fe; color: var(--source-eurlex); }
+    .source-cjeu, .source-cjeu_linker { background: #d1fae5; color: var(--source-cjeu); }
+    .source-enforcement { background: #fef9c3; color: var(--source-ecn); }
+    .source-default { background: var(--bg); color: var(--source-other); }
+    @media (prefers-color-scheme: dark) {
+      .source-arxiv { background: #2e1a4a; color: #c084fc; }
+      .source-eurlex { background: #0c2a40; color: #38bdf8; }
+      .source-cjeu, .source-cjeu_linker { background: #0a2318; color: #34d399; }
+      .source-enforcement { background: #2a1a00; color: #fbbf24; }
+    }
+    .pick-title {
+      font-size: 14px; font-weight: 600; line-height: 1.4;
+    }
+    .pick-title a { color: var(--text); text-decoration: none; }
+    .pick-title a:hover { color: var(--accent); text-decoration: underline; }
+    .pick-summary { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px; }
+    .pick-footer { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .score-badge { font-size: 11px; font-weight: 600; border-radius: 4px; padding: 2px 8px; }
+    .score-5 { background: var(--score-5-bg); color: var(--score-5); border: 1px solid var(--score-5-border); }
+    .score-4 { background: var(--score-4-bg); color: var(--score-4); border: 1px solid var(--score-4-border); }
+    .score-3 { background: var(--score-3-bg); color: var(--score-3); border: 1px solid var(--score-3-border); }
+    .score-2, .score-1 { background: var(--score-2-bg); color: var(--score-2); }
+    .market-signal {
+      font-size: 12px; color: var(--text-muted); margin-top: 6px;
+      padding-top: 6px; border-top: 1px solid var(--border);
+      font-style: italic;
+    }
 
-    /* ── Policy implications ─────────────────────────────────── */
+    /* ── Policy implications ───────────────────────────────────── */
     .implication {
       display: flex; gap: 14px; align-items: flex-start;
-      padding: 12px 0; border-bottom: 1px solid var(--border);
+      padding: 13px 0; border-bottom: 1px solid var(--border);
     }
     .implication:last-child { border-bottom: none; }
-    .urgency-badge { flex-shrink: 0; font-size: 11px; font-weight: 600;
-                     border-radius: 4px; padding: 2px 8px; text-transform: uppercase; }
-    .urgency-immediate { background: #fef2f2; color: #dc2626; }
-    .urgency-medium_term { background: #fffbeb; color: #d97706; }
-    .urgency-watch { background: #f0fdf4; color: #16a34a; }
-    .implication-text { font-size: 13px; line-height: 1.6; }
+    .urgency-badge {
+      flex-shrink: 0; font-size: 10px; font-weight: 700;
+      border-radius: 5px; padding: 3px 9px; text-transform: uppercase; letter-spacing: .4px;
+    }
+    .urgency-immediate { background: var(--score-5-bg); color: var(--score-5); border: 1px solid var(--score-5-border); }
+    .urgency-medium_term { background: var(--score-4-bg); color: var(--score-4); border: 1px solid var(--score-4-border); }
+    .urgency-watch { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+    @media (prefers-color-scheme: dark) {
+      .urgency-watch { background: #0a2218; border-color: #166534; }
+    }
+    .implication-text { font-size: 13px; line-height: 1.65; }
 
-    /* ── Filter bar ──────────────────────────────────────────── */
-    .filter-bar { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
-    .filter-btn { background: var(--surface); border: 1px solid var(--border);
-                  color: var(--text-muted); padding: 5px 12px; border-radius: 20px;
-                  cursor: pointer; font-size: 12px; font-weight: 500; transition: all .15s; }
-    .filter-btn.active { color: var(--accent); background: var(--accent-light);
-                         border-color: var(--accent-border); }
+    /* ── Ask the digest ────────────────────────────────────────── */
+    .qa-section { margin-bottom: 18px; }
+    .qa-input-wrap {
+      display: flex; gap: 10px; margin-bottom: 12px;
+    }
+    .qa-input {
+      flex: 1; padding: 12px 16px;
+      border: 2px solid var(--border); border-radius: var(--radius);
+      background: var(--surface); color: var(--text);
+      font-size: 14px; outline: none; transition: border-color .15s;
+    }
+    .qa-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,.1); }
+    .qa-input::placeholder { color: var(--text-light); }
+    .qa-submit {
+      padding: 12px 20px; background: var(--accent); color: #fff;
+      border: none; border-radius: var(--radius); cursor: pointer;
+      font-size: 13px; font-weight: 600; white-space: nowrap; transition: background .15s;
+    }
+    .qa-submit:hover { background: #1d4ed8; }
+    .quick-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .quick-chip {
+      font-size: 12px; padding: 6px 13px;
+      border: 1px solid var(--accent-border); border-radius: 20px;
+      background: var(--accent-light); color: var(--accent);
+      cursor: pointer; transition: all .15s; font-weight: 500;
+    }
+    .quick-chip:hover { background: var(--accent); color: #fff; }
+    .qa-answer {
+      background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      display: none;
+    }
+    .qa-answer.visible { display: block; }
+    .qa-answer-q { font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+    .qa-answer-a { font-size: 14px; line-height: 1.7; color: var(--text); }
+    .qa-items { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+    .qa-item-link {
+      font-size: 13px; color: var(--accent); text-decoration: none;
+      padding: 6px 10px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; display: block;
+    }
+    .qa-item-link:hover { border-color: var(--accent-border); }
+
+    /* FAQ accordion */
+    .faq-toggle-wrap { margin-top: 12px; }
+    .faq-toggle {
+      background: none; border: 1px solid var(--border); color: var(--text-muted);
+      padding: 8px 14px; border-radius: var(--radius-sm);
+      cursor: pointer; font-size: 13px; transition: all .15s; width: 100%; text-align: left;
+    }
+    .faq-toggle:hover { border-color: var(--accent-border); color: var(--accent); }
+    .faq-list { display: none; margin-top: 12px; }
+    .faq-list.open { display: block; }
+    .faq-item {
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      margin-bottom: 8px; overflow: hidden;
+    }
+    .faq-q {
+      padding: 12px 16px; font-size: 13px; font-weight: 600; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--surface-2);
+      transition: background .15s;
+    }
+    .faq-q:hover { background: var(--accent-light); color: var(--accent); }
+    .faq-q-arrow { font-size: 11px; color: var(--text-muted); transition: transform .2s; }
+    .faq-q.open .faq-q-arrow { transform: rotate(180deg); }
+    .faq-a { padding: 12px 16px; font-size: 13px; line-height: 1.7; display: none; }
+    .faq-a.open { display: block; }
+
+    /* ── Full digest toggle ────────────────────────────────────── */
+    .toggle-section { margin-bottom: 18px; }
+    .expand-all-btn {
+      width: 100%; padding: 14px;
+      background: var(--surface); border: 2px dashed var(--border);
+      border-radius: var(--radius); color: var(--text-muted);
+      font-size: 14px; font-weight: 600; cursor: pointer; transition: all .15s;
+    }
+    .expand-all-btn:hover { border-color: var(--accent-border); color: var(--accent); background: var(--accent-light); }
+
+    .full-digest { display: none; }
+    .full-digest.open { display: block; }
+
+    /* Filter bar */
+    .filter-bar { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
+    .filter-btn {
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text-muted); padding: 5px 13px; border-radius: 20px;
+      cursor: pointer; font-size: 12px; font-weight: 500; transition: all .15s;
+    }
+    .filter-btn.active { color: var(--accent); background: var(--accent-light); border-color: var(--accent-border); }
     .filter-btn:hover:not(.active) { border-color: var(--text-muted); color: var(--text); }
     .items-count { margin-left: auto; font-size: 12px; color: var(--text-muted); }
+    .search-wrap { position: relative; flex: 1; max-width: 300px; }
+    .search-input {
+      width: 100%; padding: 5px 10px 5px 30px; border: 1px solid var(--border);
+      border-radius: 20px; background: var(--bg); color: var(--text);
+      font-size: 13px; outline: none; transition: border-color .15s;
+    }
+    .search-input:focus { border-color: var(--accent); }
+    .search-icon {
+      position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+      color: var(--text-muted); font-size: 13px; pointer-events: none;
+    }
 
-    /* ── Item cards ──────────────────────────────────────────── */
+    /* Full digest item cards */
     .item-card {
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: var(--radius-sm);
       background: var(--surface);
       padding: 14px 16px;
       margin-bottom: 10px;
@@ -173,88 +390,37 @@
       flex-shrink: 0; font-size: 10px; font-weight: 700; text-transform: uppercase;
       letter-spacing: .5px; border-radius: 4px; padding: 2px 7px; margin-top: 2px;
     }
-    .source-arxiv { background: #f3e8ff; color: var(--source-arxiv); }
-    .source-eurlex { background: #e0f2fe; color: var(--source-eurlex); }
-    .source-cjeu, .source-cjeu_linker { background: #d1fae5; color: var(--source-cjeu); }
-    .source-ecn { background: #fef9c3; color: var(--source-ecn); }
-    .source-default { background: var(--bg); color: var(--source-other); }
     .item-title { font-size: 14px; font-weight: 600; line-height: 1.4; }
     .item-title a { color: var(--text); text-decoration: none; }
     .item-title a:hover { color: var(--accent); text-decoration: underline; }
     .item-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
     .item-summary { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px; }
     .item-footer { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-    .score-badge { font-size: 11px; font-weight: 600; border-radius: 4px; padding: 1px 7px; }
-    .score-5 { background: var(--score-5-bg); color: var(--score-5); }
-    .score-4 { background: var(--score-4-bg); color: var(--score-4); }
-    .score-3 { background: var(--score-3-bg); color: var(--score-3); }
-    .score-2, .score-1 { background: var(--score-2-bg); color: var(--score-2); }
-    .theme-tag { font-size: 11px; background: var(--bg); border: 1px solid var(--border);
-                 color: var(--text-muted); border-radius: 4px; padding: 1px 6px; }
-    .entity-tag { font-size: 11px; background: var(--accent-light); color: var(--accent);
-                  border: 1px solid var(--accent-border); border-radius: 4px; padding: 1px 6px; }
-    .item-relevance { font-size: 12px; color: var(--text-muted); font-style: italic;
-                      margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border); }
-
-    /* ── Abstract expand ─────────────────────────────────────── */
-    .expand-btn { background: none; border: none; color: var(--accent);
-                  font-size: 12px; cursor: pointer; padding: 0; }
-    .item-abstract { font-size: 13px; color: var(--text-muted); line-height: 1.6;
-                     margin-top: 6px; display: none; }
+    .theme-tag { font-size: 11px; background: var(--bg); border: 1px solid var(--border); color: var(--text-muted); border-radius: 4px; padding: 1px 6px; }
+    .entity-tag { font-size: 11px; background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent-border); border-radius: 4px; padding: 1px 6px; }
+    .item-relevance { font-size: 12px; color: var(--text-muted); margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border); }
+    .expand-btn { background: none; border: none; color: var(--accent); font-size: 12px; cursor: pointer; padding: 0; }
+    .item-abstract { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-top: 6px; display: none; }
     .item-abstract.visible { display: block; }
+    .doctype-badge { font-size: 10px; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-style: italic; }
 
-    /* ── Sections ────────────────────────────────────────────── */
-    .section-header {
-      font-size: 16px; font-weight: 700; margin: 28px 0 14px;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .section-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .count-badge { font-size: 12px; font-weight: 500; background: var(--bg);
-                   border: 1px solid var(--border); border-radius: 20px;
-                   padding: 1px 8px; color: var(--text-muted); }
-
-    /* ── Loading / empty states ──────────────────────────────── */
+    /* ── Loading / error ───────────────────────────────────────── */
     .loading { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 15px; }
     .empty { text-align: center; padding: 30px; color: var(--text-muted); font-size: 13px; }
 
-    /* ── Responsive ──────────────────────────────────────────── */
+    /* ── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .dashboard-row { grid-template-columns: 1fr; }
+      .qa-input-wrap { flex-direction: column; }
+      .qa-submit { width: 100%; }
+    }
     @media (max-width: 640px) {
-      .header { padding: 12px 16px; flex-wrap: wrap; }
+      .header { padding: 12px 14px; flex-wrap: wrap; }
       .header-right { width: 100%; justify-content: flex-end; }
-      .main { padding: 16px 12px; }
+      .main { padding: 16px 12px 40px; }
       .card { padding: 16px; }
-      .themes-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── Glossary tooltips ────────────────────────────────────── */
-    .glossary { position: relative; cursor: help;
-                border-bottom: 1px dashed var(--text-muted); }
-    .glossary::after {
-      content: attr(data-tip);
-      position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%);
-      background: #1a1d25; color: #e8eaf0; font-size: 12px; line-height: 1.5;
-      padding: 6px 10px; border-radius: 6px; width: max-content; max-width: 260px;
-      pointer-events: none; opacity: 0; transition: opacity .15s; z-index: 200;
-      white-space: normal; text-align: left; font-style: normal; font-weight: 400;
-    }
-    .glossary:hover::after { opacity: 1; }
-
-    /* ── Search bar ───────────────────────────────────────────── */
-    .search-wrap { position: relative; flex: 1; max-width: 320px; }
-    .search-input {
-      width: 100%; padding: 5px 10px 5px 30px; border: 1px solid var(--border);
-      border-radius: 20px; background: var(--bg); color: var(--text);
-      font-size: 13px; outline: none;
-    }
-    .search-input:focus { border-color: var(--accent); }
-    .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
-                   color: var(--text-muted); font-size: 13px; pointer-events: none; }
-
-    /* ── Document type badge (inside item card) ───────────────── */
-    .doctype-badge {
-      font-size: 10px; color: var(--text-muted); background: var(--bg);
-      border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px;
-      font-style: italic;
+      .hero-headline { font-size: 18px; }
+      .stat-chips { gap: 6px; }
     }
   </style>
 </head>
@@ -270,9 +436,7 @@
       <span class="week-label" id="weekLabel">Loading…</span>
       <button class="week-btn" id="nextWeek" onclick="changeWeek(+1)" disabled>Next ›</button>
     </div>
-    <a href="../" style="font-size:12px; color: var(--text-muted); text-decoration:none;">
-      ← Enforcement feed
-    </a>
+    <a href="../" style="font-size:12px;color:var(--text-muted);text-decoration:none;">← Enforcement feed</a>
   </div>
 </header>
 
@@ -290,7 +454,6 @@ let activeFilter = "all";
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 async function init() {
-  // Load manifest of available weeks, then latest digest
   await loadDigest(DATA_BASE + "latest.json");
 }
 
@@ -307,7 +470,194 @@ async function loadDigest(url) {
 }
 
 function changeWeek(delta) {
-  // placeholder: with multiple weeks stored, navigate between them
+  // placeholder for multi-week navigation
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function esc(str) {
+  if (str == null) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function formatDate(iso) {
+  if (!iso) return "—";
+  try {
+    return new Date(iso).toLocaleString("en-GB", {
+      day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit"
+    });
+  } catch { return iso.slice(0, 10); }
+}
+
+function normaliseSource(src) {
+  if (!src) return "default";
+  const s = src.toLowerCase();
+  if (s === "arxiv") return "academic";
+  if (s === "eurlex") return "regulatory";
+  if (s === "cjeu" || s === "cjeu_linker") return "court";
+  if (/^[a-z]{2}$/i.test(s) || s === "eu" || s === "ecn") return "enforcement";
+  return "default";
+}
+
+function countByGroup(items, group) {
+  return items.filter(it => normaliseSource(it.source) === group).length;
+}
+
+// ── Filter + Search ───────────────────────────────────────────────────────────
+function setFilter(group, btn) {
+  activeFilter = group;
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  const searchInput = document.getElementById("searchInput");
+  applySearch(searchInput ? searchInput.value : "");
+}
+
+function applySearch(query) {
+  const q = query.toLowerCase().trim();
+  const cards = document.querySelectorAll("#fullItemsList .item-card");
+  let visible = 0;
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const matchesFilter = activeFilter === "all" || card.dataset.group === activeFilter;
+    const matchesSearch = !q || text.includes(q);
+    const hidden = !matchesFilter || !matchesSearch;
+    card.classList.toggle("hidden", hidden);
+    if (!hidden) visible++;
+  });
+  const counter = document.getElementById("itemsCount");
+  if (counter) counter.textContent = visible + " items";
+}
+
+function scrollToItem(idx) {
+  // First expand the full digest if collapsed
+  const fd = document.getElementById("fullDigest");
+  if (fd && !fd.classList.contains("open")) {
+    fd.classList.add("open");
+    const btn = document.getElementById("expandAllBtn");
+    if (btn) btn.textContent = "Hide full digest ▲";
+  }
+  const el = document.getElementById("item-" + idx);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    el.style.outline = "2px solid var(--accent)";
+    setTimeout(() => { el.style.outline = ""; }, 1800);
+    el.classList.remove("hidden");
+  }
+}
+
+function expandAbstract(idx) {
+  const full = document.getElementById("full-" + idx);
+  const short = document.getElementById("short-" + idx);
+  if (full) full.classList.add("visible");
+  if (short) short.style.display = "none";
+}
+
+function toggleFullDigest() {
+  const fd = document.getElementById("fullDigest");
+  const btn = document.getElementById("expandAllBtn");
+  if (!fd) return;
+  const isOpen = fd.classList.toggle("open");
+  btn.textContent = isOpen
+    ? "Hide full digest ▲"
+    : `Show all ${currentDigest ? (currentDigest.items || []).length : ""} items ▾`;
+}
+
+// ── Q&A ───────────────────────────────────────────────────────────────────────
+function handleQuestion(query) {
+  const q = query.trim();
+  if (!q) return;
+
+  const faq = (currentDigest && currentDigest.faq) || [];
+  const items = (currentDigest && currentDigest.items) || [];
+
+  // Try FAQ match: keyword overlap
+  const qWords = q.toLowerCase().split(/\W+/).filter(w => w.length > 2);
+  let bestMatch = null, bestScore = 0;
+  faq.forEach(f => {
+    const fWords = (f.question || "").toLowerCase().split(/\W+/).filter(w => w.length > 2);
+    const fAnswer = (f.answer || "").toLowerCase().split(/\W+/).filter(w => w.length > 2);
+    const combined = [...fWords, ...fAnswer];
+    let score = 0;
+    qWords.forEach(w => { if (combined.includes(w)) score++; });
+    if (score > bestScore && score > 2) { bestScore = score; bestMatch = f; }
+  });
+
+  const answerBox = document.getElementById("qaAnswer");
+  if (!answerBox) return;
+
+  if (bestMatch) {
+    answerBox.innerHTML = `
+      <div class="qa-answer-q">Q: ${esc(bestMatch.question)}</div>
+      <div class="qa-answer-a">${esc(bestMatch.answer)}</div>`;
+    answerBox.classList.add("visible");
+    return;
+  }
+
+  // Fallback: search items for keyword matches
+  const matched = items.filter(it => {
+    const text = ((it.title || "") + " " + ((it._analysis || {}).summary || "")).toLowerCase();
+    return qWords.some(w => text.includes(w));
+  }).sort((a, b) => {
+    const sa = (b._analysis || {}).relevance_score || 0;
+    const sb = (a._analysis || {}).relevance_score || 0;
+    return sa - sb;
+  }).slice(0, 3);
+
+  if (matched.length) {
+    let html = `<div class="qa-answer-q">Results for: "${esc(q)}"</div>`;
+    html += `<div class="qa-answer-a">Here are the most relevant items from this week's digest:</div>`;
+    html += `<div class="qa-items">`;
+    matched.forEach(it => {
+      const score = (it._analysis || {}).relevance_score;
+      const scoreTxt = score ? ` · Relevance ${score}/5` : "";
+      html += `<a class="qa-item-link" href="${esc(it.url || "#")}" target="_blank" rel="noopener">
+        <strong>${esc(it.title)}</strong>
+        <span style="font-size:11px;color:var(--text-light);margin-left:6px">${esc(it.date || "")}${scoreTxt}</span>
+      </a>`;
+    });
+    html += `</div>`;
+    answerBox.innerHTML = html;
+    answerBox.classList.add("visible");
+  } else {
+    answerBox.innerHTML = `<div class="qa-answer-a">No results found for "<strong>${esc(q)}</strong>". Try different keywords or browse the full digest below.</div>`;
+    answerBox.classList.add("visible");
+  }
+}
+
+function toggleFaq() {
+  const list = document.getElementById("faqList");
+  const btn = document.getElementById("faqToggleBtn");
+  if (!list) return;
+  const isOpen = list.classList.toggle("open");
+  btn.textContent = isOpen ? "▲ Hide pre-answered questions" : "▾ See all pre-answered questions";
+}
+
+function toggleFaqItem(idx) {
+  const a = document.getElementById("faqA" + idx);
+  const q = document.getElementById("faqQ" + idx);
+  if (!a) return;
+  const isOpen = a.classList.toggle("open");
+  q.classList.toggle("open", isOpen);
+}
+
+// ── Charts ────────────────────────────────────────────────────────────────────
+function buildDonut(academic, regulatory, court, enforcement, total) {
+  // Build a CSS conic-gradient donut
+  const colors = ["#7c3aed", "#0369a1", "#065f46", "#b45309"];
+  const counts = [academic, regulatory, court, enforcement];
+  let segments = [], cumulative = 0;
+  counts.forEach((c, i) => {
+    if (c === 0) return;
+    const pct = (c / total) * 100;
+    segments.push(`${colors[i]} ${cumulative}% ${cumulative + pct}%`);
+    cumulative += pct;
+  });
+  // Fill remainder
+  if (cumulative < 100) segments.push(`var(--border) ${cumulative}% 100%`);
+  return `conic-gradient(${segments.join(", ")})`;
 }
 
 // ── Render ────────────────────────────────────────────────────────────────────
@@ -316,150 +666,262 @@ function render() {
   const d = currentDigest;
   const syn = d.synthesis || {};
   const items = d.items || [];
+  const faq = d.faq || [];
 
   document.getElementById("weekLabel").textContent = d.week || "—";
 
-  const isSample = d.is_sample;
   const aiEnabled = syn.ai_enabled;
 
-  let html = "";
+  // Count by source group
+  const countAcademic   = countByGroup(items, "academic");
+  const countRegulatory = countByGroup(items, "regulatory");
+  const countCourt      = countByGroup(items, "court");
+  const countEnforce    = countByGroup(items, "enforcement");
+  const totalItems      = items.length;
 
-  // Sample banner
-  if (isSample) {
-    html += `<div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;
-      padding:10px 16px;margin-bottom:16px;font-size:13px;color:#92400e;">
-      <strong>Demo mode:</strong> This digest was pre-generated to show you what the tool looks like.
-      Once the GitHub Actions workflow runs on Monday, it will be replaced with real data.
-    </div>`;
-  }
-
-  // Headline + executive summary
-  html += `<div class="card headline-card">
-    <div class="headline-text">${esc(syn.headline || d.week + " — Competition Policy Digest")}</div>
-    <div class="exec-summary">${esc(syn.executive_summary || "")}</div>
-    <div style="font-size:12px;color:var(--text-muted);margin-top:12px;line-height:1.8">
-      <strong>Sources:</strong>
-      <span class="glossary" data-tip="Academic research papers submitted to arXiv, a free preprint server. These are not peer-reviewed yet but often signal future trends.">📄 Academic papers (arXiv)</span> ·
-      <span class="glossary" data-tip="Official EU legal documents from EUR-Lex: regulations (binding law), directives, Commission decisions, proposals, and staff working documents.">📋 EU documents (EUR-Lex)</span> ·
-      <span class="glossary" data-tip="Judgments and orders from the Court of Justice of the EU (CJEU) and General Court — binding legal rulings on competition cases.">⚖️ Court judgments (CJEU)</span> ·
-      <span class="glossary" data-tip="Press releases from national competition authorities (NCAs) — the antitrust enforcers in each EU member state.">🔎 NCA enforcement actions</span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-badge"><span class="dot dot-blue"></span>${items.length} items monitored</span>
-      ${d.high_relevance_items ? `<span class="meta-badge"><span class="dot dot-orange"></span>${d.high_relevance_items} high relevance</span>` : ""}
-      <span class="meta-badge"><span class="dot dot-green"></span>${formatDate(d.generated_at)}</span>
-      ${aiEnabled
-        ? `<span class="meta-badge ai-badge">✦ AI analysis enabled</span>`
-        : `<span class="meta-badge no-ai-badge">⚠ AI analysis disabled</span>`}
-    </div>
-  </div>`;
+  // Relevance distribution
+  const scoreCounts = {5: 0, 4: 0, 3: 0, 2: 0, 1: 0};
+  items.forEach(it => {
+    const s = (it._analysis || {}).relevance_score;
+    if (s && scoreCounts[s] !== undefined) scoreCounts[s]++;
+  });
+  const maxScore = Math.max(...Object.values(scoreCounts), 1);
 
   // Key themes
   const themes = syn.key_themes || [];
-  if (themes.length) {
-    html += `<div class="card">
-      <div class="card-title">Key themes this week</div>
-      <div class="themes-grid">`;
-    themes.forEach(t => {
-      const refs = (t.item_indices || []).map(i =>
-        `<span class="item-ref" onclick="scrollToItem(${i})">#${i}</span>`
-      ).join("");
-      html += `<div class="theme-card">
-        <div class="theme-name">${esc(t.theme)}</div>
-        <div class="theme-desc">${esc(t.description)}</div>
-        ${refs ? `<div class="theme-items">${refs}</div>` : ""}
-      </div>`;
-    });
-    html += `</div></div>`;
+
+  // Top picks: score 5, pad to 5 items with score 4 if needed
+  let topPicks = items.filter(it => (it._analysis || {}).relevance_score === 5);
+  if (topPicks.length < 3) {
+    const score4 = items.filter(it => (it._analysis || {}).relevance_score === 4);
+    topPicks = [...topPicks, ...score4].slice(0, 5);
   }
 
-  // Connections
-  const connections = syn.connections || [];
-  if (connections.length) {
-    html += `<div class="card">
-      <div class="card-title">Cross-publication connections</div>`;
-    connections.forEach(c => {
-      const typeLabel = (c.connection_type || "").replace(/_/g, " ");
-      const refs = (c.item_indices || []).map(i =>
-        `<span class="item-ref" onclick="scrollToItem(${i})">#${i}</span>`
-      ).join("");
-      html += `<div class="connection ${esc(c.connection_type || "")}">
-        <div class="connection-type">${esc(typeLabel)}</div>
-        <div class="connection-desc">${esc(c.description)}</div>
-        ${refs ? `<div class="connection-refs">${refs}</div>` : ""}
-      </div>`;
-    });
-    html += `</div>`;
+  // Executive summary truncation
+  const execFull = syn.executive_summary || "";
+  const sentences = execFull.split(/(?<=[.!?])\s+/);
+  const execShort = sentences.slice(0, 3).join(" ");
+  const execRest  = sentences.slice(3).join(" ");
+  const needsTrunc = execRest.length > 10;
+
+  let html = "";
+
+  // ── Sample banner ──
+  if (d.is_sample) {
+    html += `<div style="background:var(--score-4-bg);border:1px solid var(--score-4-border);
+      border-radius:var(--radius-sm);padding:10px 16px;margin-bottom:16px;font-size:13px;color:#92400e;">
+      <strong>Demo mode:</strong> This digest was pre-generated. Once the workflow runs, it will be replaced with real data.
+    </div>`;
   }
 
-  // Policy implications
+  // ── Hero card ──
+  html += `<div class="card hero-card">
+    <div class="hero-headline">${esc(syn.headline || d.week + " — Competition Policy Digest")}</div>
+    <div class="exec-summary" id="execSummary">
+      <span id="execShort">${esc(execShort)}</span>
+      ${needsTrunc ? `<span id="execRest" class="exec-truncated">
+        ${esc(execRest)}
+      </span>
+      <button class="read-more-btn" id="readMoreBtn" onclick="toggleExec()"> Read more ▾</button>` : ""}
+    </div>
+    <div class="stat-chips">
+      <span class="stat-chip"><span class="dot dot-blue"></span>${totalItems} items monitored</span>
+      ${d.high_relevance_items ? `<span class="stat-chip"><span class="dot dot-orange"></span>${d.high_relevance_items} high relevance</span>` : ""}
+      <span class="stat-chip"><span class="dot dot-green"></span>${formatDate(d.generated_at)}</span>
+      ${aiEnabled
+        ? `<span class="stat-chip ai-badge">✦ AI analysis (${esc(syn.ai_provider || "AI")})</span>`
+        : `<span class="stat-chip no-ai-badge">⚠ No AI analysis</span>`}
+    </div>
+  </div>`;
+
+  // ── Dashboard row ──
+  const donutGradient = buildDonut(countAcademic, countRegulatory, countCourt, countEnforce, totalItems || 1);
+
+  const themeColors = ["#2563eb","#7c3aed","#065f46","#d97706","#dc2626"];
+
+  html += `<div class="dashboard-row">
+
+    <!-- By the numbers -->
+    <div class="dash-card">
+      <div class="dash-card-title">By the numbers</div>
+      <div class="donut-wrap">
+        <div class="donut" id="donutChart" style="background:${donutGradient}">
+          <div class="donut-inner">
+            <div class="donut-total">${totalItems}</div>
+            <div class="donut-label">items</div>
+          </div>
+        </div>
+        <div class="donut-legend">
+          ${countAcademic   ? `<div class="legend-item"><span class="legend-dot" style="background:#7c3aed"></span>Academic<span class="legend-count">${countAcademic}</span></div>` : ""}
+          ${countRegulatory ? `<div class="legend-item"><span class="legend-dot" style="background:#0369a1"></span>EU Docs<span class="legend-count">${countRegulatory}</span></div>` : ""}
+          ${countCourt      ? `<div class="legend-item"><span class="legend-dot" style="background:#065f46"></span>Court<span class="legend-count">${countCourt}</span></div>` : ""}
+          ${countEnforce    ? `<div class="legend-item"><span class="legend-dot" style="background:#b45309"></span>NCA<span class="legend-count">${countEnforce}</span></div>` : ""}
+        </div>
+      </div>
+    </div>
+
+    <!-- Relevance distribution -->
+    <div class="dash-card">
+      <div class="dash-card-title">Relevance distribution</div>
+      <div class="rel-bar-wrap">
+        <div class="rel-bar-row">
+          <div class="rel-bar-label">Score 5 ⭑</div>
+          <div class="rel-bar-track"><div class="rel-bar-fill" style="width:${(scoreCounts[5]/maxScore*100).toFixed(1)}%;background:var(--score-5)"></div></div>
+          <div class="rel-bar-count">${scoreCounts[5]}</div>
+        </div>
+        <div class="rel-bar-row">
+          <div class="rel-bar-label">Score 4</div>
+          <div class="rel-bar-track"><div class="rel-bar-fill" style="width:${(scoreCounts[4]/maxScore*100).toFixed(1)}%;background:var(--score-4)"></div></div>
+          <div class="rel-bar-count">${scoreCounts[4]}</div>
+        </div>
+        <div class="rel-bar-row">
+          <div class="rel-bar-label">Score 3</div>
+          <div class="rel-bar-track"><div class="rel-bar-fill" style="width:${(scoreCounts[3]/maxScore*100).toFixed(1)}%;background:var(--score-3)"></div></div>
+          <div class="rel-bar-count">${scoreCounts[3]}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top themes -->
+    <div class="dash-card">
+      <div class="dash-card-title">Top themes</div>
+      <div class="themes-pills">
+        ${themes.slice(0, 5).map((t, i) => `
+          <div class="theme-pill">
+            <span class="theme-pill-dot" style="background:${themeColors[i % themeColors.length]}"></span>
+            <span class="theme-pill-name">${esc(t.theme || t)}</span>
+          </div>`).join("") || `<div style="font-size:13px;color:var(--text-muted)">No themes available</div>`}
+      </div>
+    </div>
+  </div>`;
+
+  // ── Top picks ──
+  html += `<div class="section-header">
+    <span class="section-icon">🔥</span>
+    Top picks this week
+    <span class="count-badge">${topPicks.length}</span>
+  </div>`;
+
+  if (topPicks.length === 0) {
+    html += `<div class="empty">No high-relevance items this week.</div>`;
+  } else {
+    topPicks.forEach(it => {
+      html += renderPickCard(it);
+    });
+  }
+
+  // ── Policy implications ──
   const implications = syn.policy_implications || [];
   if (implications.length) {
-    html += `<div class="card">
+    html += `<div class="card" style="margin-top:8px">
       <div class="card-title">Policy implications for practitioners</div>`;
     implications.forEach(imp => {
+      const urgency = imp.urgency || "watch";
       html += `<div class="implication">
-        <span class="urgency-badge urgency-${esc(imp.urgency || 'watch')}">${esc(imp.urgency || 'watch').replace('_', ' ')}</span>
+        <span class="urgency-badge urgency-${esc(urgency)}">${esc(urgency.replace("_"," "))}</span>
         <span class="implication-text">${esc(imp.implication)}</span>
       </div>`;
     });
     html += `</div>`;
   }
 
-  // Items section
-  html += renderItemsSection(items);
+  // ── Ask the digest ──
+  const quickChips = faq.slice(0, 3).map(f => f.question).filter(Boolean);
+  html += `<div class="section-header" style="margin-top:28px">
+    <span class="section-icon">💬</span>
+    Ask the digest
+  </div>
+  <div class="card qa-section">
+    <div class="qa-input-wrap">
+      <input class="qa-input" id="qaInput" type="text"
+        placeholder="Ask anything — e.g. 'What happened with Apple?' or 'What does DMA mean?'"
+        onkeydown="if(event.key==='Enter')handleQuestion(this.value)">
+      <button class="qa-submit" onclick="handleQuestion(document.getElementById('qaInput').value)">Ask</button>
+    </div>
+    ${quickChips.length ? `<div class="quick-chips">
+      ${quickChips.map(q => `<button class="quick-chip" onclick="document.getElementById('qaInput').value=${JSON.stringify(q)};handleQuestion(${JSON.stringify(q)})">${esc(q)}</button>`).join("")}
+    </div>` : ""}
+    <div class="qa-answer" id="qaAnswer"></div>
+    ${faq.length ? `<div class="faq-toggle-wrap">
+      <button class="faq-toggle" id="faqToggleBtn" onclick="toggleFaq()">▾ See all pre-answered questions</button>
+      <div class="faq-list" id="faqList">
+        ${faq.map((f, i) => `
+          <div class="faq-item">
+            <div class="faq-q" id="faqQ${i}" onclick="toggleFaqItem(${i})">
+              ${esc(f.question)}
+              <span class="faq-q-arrow">▼</span>
+            </div>
+            <div class="faq-a" id="faqA${i}">${esc(f.answer)}</div>
+          </div>`).join("")}
+      </div>
+    </div>` : ""}
+  </div>`;
+
+  // ── Full digest (collapsed) ──
+  html += `<div class="toggle-section" style="margin-top:28px">
+    <button class="expand-all-btn" id="expandAllBtn" onclick="toggleFullDigest()">
+      Show all ${totalItems} items ▾
+    </button>
+  </div>
+  <div class="full-digest" id="fullDigest">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+      ${countAcademic   ? `<button class="filter-btn" onclick="setFilter('academic', this)">📄 Academic <span style="opacity:.6">${countAcademic}</span></button>` : ""}
+      ${countRegulatory ? `<button class="filter-btn" onclick="setFilter('regulatory', this)">📋 EU Docs <span style="opacity:.6">${countRegulatory}</span></button>` : ""}
+      ${countCourt      ? `<button class="filter-btn" onclick="setFilter('court', this)">⚖️ Court <span style="opacity:.6">${countCourt}</span></button>` : ""}
+      ${countEnforce    ? `<button class="filter-btn" onclick="setFilter('enforcement', this)">🔎 NCA <span style="opacity:.6">${countEnforce}</span></button>` : ""}
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input class="search-input" id="searchInput" placeholder="Search…" oninput="applySearch(this.value)">
+      </div>
+      <span class="items-count" id="itemsCount">${totalItems} items</span>
+    </div>
+    <div id="fullItemsList">
+      ${items.map((it, idx) => renderItemFull(it, idx + 1)).join("")}
+    </div>
+  </div>`;
 
   document.getElementById("main").innerHTML = html;
 }
 
-function renderItemsSection(items) {
-  if (!items.length) return `<div class="empty">No items found for this period.</div>`;
-
-  const sourceCounts = {};
-  items.forEach(it => {
-    const src = normaliseSource(it.source);
-    sourceCounts[src] = (sourceCounts[src] || 0) + 1;
-  });
-
-  const sourceGroups = [
-    { key: "academic", label: "Academic Research", color: "#7c3aed", icon: "📄" },
-    { key: "regulatory", label: "EU Regulation & Policy", color: "#0369a1", icon: "📋" },
-    { key: "court", label: "Court Decisions", color: "#065f46", icon: "⚖️" },
-    { key: "enforcement", label: "NCA Enforcement", color: "#b45309", icon: "🔎" },
-  ];
-
-  // Filter bar
-  let html = `<div class="section-header" style="margin-top:24px">
-    Publications <span class="count-badge">${items.length}</span>
-  </div>
-  <div class="filter-bar">
-    <button class="filter-btn active" onclick="setFilter('all', this)">All</button>`;
-  sourceGroups.forEach(g => {
-    const cnt = countByGroup(items, g.key);
-    if (cnt > 0) {
-      html += `<button class="filter-btn" onclick="setFilter('${g.key}', this)">${g.icon} ${g.label} <span style="opacity:.6">${cnt}</span></button>`;
-    }
-  });
-  html += `<div class="search-wrap">
-    <span class="search-icon">🔍</span>
-    <input class="search-input" id="searchInput" placeholder="Search publications…"
-           oninput="applySearch(this.value)">
-  </div>
-  <span class="items-count" id="itemsCount">${items.length} items</span></div>`;
-
-  // Items list (numbered for cross-references)
-  html += `<div id="itemsList">`;
-  items.forEach((it, idx) => {
-    html += renderItem(it, idx + 1);
-  });
-  html += `</div>`;
-  return html;
-}
-
-function renderItem(it, idx) {
+function renderPickCard(it) {
   const analysis = it._analysis || {};
   const src = normaliseSource(it.source);
-  const srcClass = `source-${src}`;
+  const srcLabel = it.source_label || it.source || "";
+  const score = analysis.relevance_score;
+  const summary = analysis.summary || "";
+  const signal = analysis.market_signal || "";
+
+  // Pick card source class
+  const srcCssMap = {
+    academic: "source-arxiv",
+    regulatory: "source-eurlex",
+    court: "source-cjeu",
+    enforcement: "source-enforcement",
+  };
+  const srcClass = srcCssMap[src] || "source-default";
+
+  return `<div class="pick-card">
+    <div class="pick-header">
+      <span class="pick-source-tag ${srcClass}">${esc(srcLabel)}</span>
+      <div class="pick-title">
+        ${it.url
+          ? `<a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>`
+          : esc(it.title)}
+      </div>
+    </div>
+    ${summary ? `<div class="pick-summary">${esc(summary)}</div>` : ""}
+    <div class="pick-footer">
+      ${score ? `<span class="score-badge score-${score}">Relevance ${score}/5</span>` : ""}
+      ${it.date ? `<span style="font-size:12px;color:var(--text-muted)">${esc(it.date)}</span>` : ""}
+    </div>
+    ${signal ? `<div class="market-signal">📈 ${esc(signal)}</div>` : ""}
+  </div>`;
+}
+
+function renderItemFull(it, idx) {
+  const analysis = it._analysis || {};
+  const src = normaliseSource(it.source);
   const srcLabel = it.source_label || it.source || "";
   const score = analysis.relevance_score;
   const themes = analysis.themes || [];
@@ -468,9 +930,16 @@ function renderItem(it, idx) {
   const relevanceExp = analysis.relevance_explanation || "";
   const abstract = it.abstract || "";
   const authors = (it.authors || []).slice(0, 3).join(", ");
-  const dataGroup = src;
 
-  let html = `<div class="item-card" id="item-${idx}" data-group="${dataGroup}">
+  const srcCssMap = {
+    academic: "source-arxiv",
+    regulatory: "source-eurlex",
+    court: "source-cjeu",
+    enforcement: "source-enforcement",
+  };
+  const srcClass = srcCssMap[src] || "source-default";
+
+  let html = `<div class="item-card" id="item-${idx}" data-group="${src}">
     <div class="item-header">
       <span class="source-tag ${srcClass}">${esc(srcLabel)}</span>
       <div class="item-title">
@@ -482,8 +951,7 @@ function renderItem(it, idx) {
     </div>
     <div class="item-meta">
       ${it.date ? `<span>${it.date}</span>` : ""}
-      ${authors ? ` · <span>${esc(authors)}${(it.authors || []).length > 3 ? " et al." : ""}</span>` : ""}
-      ${it.item_type ? ` · <span style="text-transform:capitalize">${esc(it.item_type)}</span>` : ""}
+      ${authors ? ` · <span>${esc(authors)}${(it.authors||[]).length > 3 ? " et al." : ""}</span>` : ""}
     </div>`;
 
   if (summary) {
@@ -498,8 +966,7 @@ function renderItem(it, idx) {
   </div>`;
 
   if (analysis.market_signal) {
-    html += `<div class="item-relevance" style="font-style:normal;color:var(--text-muted)">
-      📈 ${esc(analysis.market_signal)}</div>`;
+    html += `<div class="item-relevance">📈 ${esc(analysis.market_signal)}</div>`;
   } else if (relevanceExp) {
     html += `<div class="item-relevance">${esc(relevanceExp)}</div>`;
   }
@@ -518,80 +985,13 @@ function renderItem(it, idx) {
   return html;
 }
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
-function normaliseSource(src) {
-  if (!src) return "default";
-  const s = src.toLowerCase();
-  if (s === "arxiv") return "academic";
-  if (s === "eurlex") return "regulatory";
-  if (s === "cjeu" || s === "cjeu_linker") return "court";
-  // ECN authority codes are 2-char uppercase
-  if (/^[a-z]{2}$/i.test(s) || s === "eu" || s === "ecn") return "enforcement";
-  return "default";
-}
-
-function countByGroup(items, group) {
-  return items.filter(it => normaliseSource(it.source) === group).length;
-}
-
-function setFilter(group, btn) {
-  activeFilter = group;
-  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-  const searchInput = document.getElementById("searchInput");
-  applySearch(searchInput ? searchInput.value : "");
-}
-
-function applySearch(query) {
-  const q = query.toLowerCase().trim();
-  const cards = document.querySelectorAll(".item-card");
-  let visible = 0;
-  cards.forEach(card => {
-    const text = card.textContent.toLowerCase();
-    const matchesFilter = activeFilter === "all" || card.dataset.group === activeFilter;
-    const matchesSearch = !q || text.includes(q);
-    const hidden = !matchesFilter || !matchesSearch;
-    card.classList.toggle("hidden", hidden);
-    if (!hidden) visible++;
-  });
-  const counter = document.getElementById("itemsCount");
-  if (counter) counter.textContent = visible + " items";
-}
-
-function scrollToItem(idx) {
-  const el = document.getElementById("item-" + idx);
-  if (el) {
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-    el.style.outline = "2px solid var(--accent)";
-    setTimeout(() => { el.style.outline = ""; }, 1800);
-    // Show if hidden by filter
-    el.classList.remove("hidden");
-  }
-}
-
-function expandAbstract(idx) {
-  const full = document.getElementById("full-" + idx);
-  const short = document.getElementById("short-" + idx);
-  if (full) full.classList.add("visible");
-  if (short) short.style.display = "none";
-}
-
-function esc(str) {
-  if (str == null) return "";
-  return String(str)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
-function formatDate(iso) {
-  if (!iso) return "—";
-  try {
-    return new Date(iso).toLocaleString("en-GB", {
-      day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit"
-    });
-  } catch { return iso.slice(0, 10); }
+function toggleExec() {
+  const rest = document.getElementById("execRest");
+  const btn  = document.getElementById("readMoreBtn");
+  if (!rest) return;
+  const isHidden = rest.style.display !== "inline";
+  rest.style.display = isHidden ? "inline" : "none";
+  btn.textContent = isHidden ? " Read less ▴" : " Read more ▾";
 }
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
