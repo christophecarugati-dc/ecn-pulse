@@ -420,6 +420,68 @@ def _summarize_item(client: _AIClient, item: dict) -> dict:
         return _fallback
 
 
+def _generate_faq(client: _AIClient, items: list[dict], synthesis: dict, week_id: str) -> list[dict]:
+    """Generate 6 pre-answered Q&A pairs from high-relevance digest items."""
+    if client._quota_zero:
+        return []
+
+    lines: list[str] = []
+    for i, it in enumerate(items[:40], 1):
+        a = it.get("_analysis", {})
+        lines.append(
+            f"{i}. {it.get('title', '')}\n"
+            f"   Source: {it.get('source_label', '?')} | Score: {a.get('relevance_score', '?')}/5\n"
+            f"   Summary: {a.get('summary', '')}\n"
+            f"   Market signal: {a.get('market_signal', '')}\n"
+            f"   Entities: {', '.join(a.get('key_entities', []))}"
+        )
+
+    # Pick a jargon term from synthesis themes or common terms in entities
+    jargon_candidates: list[str] = []
+    for theme in (synthesis.get("key_themes") or []):
+        jargon_candidates.append(theme.get("theme", ""))
+    for it in items[:20]:
+        jargon_candidates.extend(it.get("_analysis", {}).get("key_entities", []))
+
+    jargon_term = "DMA"
+    known_jargon = ["DMA", "DSA", "gatekeeper", "self-preferencing", "interoperability",
+                    "FRAND", "tying", "bundling", "foreclosure", "market power",
+                    "dominant position", "abuse of dominance", "vertical restraints"]
+    for term in known_jargon:
+        for candidate in jargon_candidates:
+            if term.lower() in candidate.lower():
+                jargon_term = term
+                break
+        else:
+            continue
+        break
+
+    prompt = (
+        f"You are a competition policy expert. Week: {week_id}. "
+        f"Below are {len(items)} high-relevance items from this week's digest.\n\n"
+        + "\n\n".join(lines) + "\n\n"
+        "Answer exactly these 6 questions in plain English (define any jargon on first use):\n"
+        '1. "What are the 2-3 most important developments this week?"\n'
+        '2. "Which companies or markets are most at risk from regulatory action?"\n'
+        '3. "What should competition lawyers and economists do right now?"\n'
+        '4. "What new AI or technology trends could change competition in digital markets?"\n'
+        '5. "What legislation or regulation is being proposed or enforced this week?"\n'
+        f'6. "What does {jargon_term} mean?" — explain in plain English for a non-specialist.\n\n'
+        'Return a JSON array: [{"question": "...", "answer": "..."}]\n'
+        "Each answer should be 3-5 sentences, plain English, concrete (name companies/cases/amounts). "
+        "Return ONLY valid JSON, no prose."
+    )
+
+    try:
+        text = client.complete_synthesis(prompt, max_tokens=2000)
+        result = _parse_json_response(text)
+        assert isinstance(result, list)
+        return result
+    except Exception as exc:
+        log.error("FAQ generation error: %s", exc)
+        return []
+
+
 def _synthesize(client: _AIClient, items: list[dict], week_id: str) -> dict:
     if client._quota_zero:
         return {
@@ -562,6 +624,13 @@ def main() -> None:
         synthesis["ai_enabled"] = True
         synthesis["ai_provider"] = ai_client.provider
 
+        faq: list[dict] = []
+        if not ai_client._quota_zero:
+            log.info("Generating FAQ …")
+            faq_items = [it for it in items if it.get("_analysis", {}).get("relevance_score", 0) >= 4]
+            faq = _generate_faq(ai_client, faq_items, synthesis, week)
+            log.info("FAQ pairs generated: %d", len(faq))
+
         digest = {
             "week": week,
             "generated_at": now.isoformat(),
@@ -569,6 +638,7 @@ def main() -> None:
             "high_relevance_items": len(high),
             "items": items,
             "synthesis": synthesis,
+            "faq": faq,
         }
 
     week_file = os.path.join(args.output_dir, f"{week.replace('/', '-')}.json")
