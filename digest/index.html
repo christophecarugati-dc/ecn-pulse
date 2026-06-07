@@ -518,6 +518,22 @@ function esc(str) {
     .replace(/"/g, "&quot;");
 }
 
+// Replace [#N] inline citation markers with superscript links anchored to the sources chips below.
+function linkCitations(text, sources) {
+  if (!text || !sources || !sources.length) return esc(text);
+  const byRef = {};
+  sources.forEach(s => { if (s.ref) byRef[s.ref] = s; });
+  return esc(text).replace(/\[#(\d+)\]/g, (match, num) => {
+    const n = parseInt(num, 10);
+    const s = byRef[n];
+    if (!s) return `<sup style="color:var(--text-light)">[${n}]</sup>`;
+    const label = s.url
+      ? `<a href="${esc(s.url)}" target="_blank" rel="noopener" title="${esc(s.title)}" style="color:var(--accent);text-decoration:none;font-weight:600">[${n}]</a>`
+      : `<span title="${esc(s.title)}" style="color:var(--text-muted)">[${n}]</span>`;
+    return `<sup style="font-size:10px">${label}</sup>`;
+  });
+}
+
 function formatDate(iso) {
   if (!iso) return "—";
   try {
@@ -888,6 +904,7 @@ function render() {
 
   // Executive summary truncation
   const execFull = syn.executive_summary || "";
+  const execSources = syn.executive_summary_sources || [];
   const sentences = execFull.split(/(?<=[.!?])\s+/);
   const execShort = sentences.slice(0, 3).join(" ");
   const execRest  = sentences.slice(3).join(" ");
@@ -907,12 +924,19 @@ function render() {
   html += `<div class="card hero-card">
     <div class="hero-headline">${esc(syn.headline || d.week + " — Competition Policy Digest")}</div>
     <div class="exec-summary" id="execSummary">
-      <span id="execShort">${esc(execShort)}</span>
+      <span id="execShort">${linkCitations(execShort, execSources)}</span>
       ${needsTrunc ? `<span id="execRest" class="exec-truncated">
-        ${esc(execRest)}
+        ${linkCitations(execRest, execSources)}
       </span>
       <button class="read-more-btn" id="readMoreBtn" onclick="toggleExec()"> Read more ▾</button>` : ""}
     </div>
+    ${execSources.length ? `<div style="margin:8px 0 12px;display:flex;flex-wrap:wrap;gap:5px;align-items:center">
+      <span style="font-size:11px;color:var(--text-light);font-weight:600;margin-right:2px">Cited:</span>
+      ${execSources.map(s => s.url
+        ? `<a href="${esc(s.url)}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--accent);background:var(--accent-light);border:1px solid var(--accent-border);border-radius:20px;padding:2px 9px;text-decoration:none;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(s.title)}"><sup style="font-size:9px;opacity:.7">[${s.ref}]</sup><span style="opacity:.6;font-size:10px">${esc(s.source_label)}</span> ${esc(s.title.slice(0,50))}${s.title.length > 50 ? '…' : ''}</a>`
+        : `<span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--text-muted);background:var(--surface-2);border:1px solid var(--border);border-radius:20px;padding:2px 9px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(s.title)}"><sup style="font-size:9px;opacity:.7">[${s.ref}]</sup><span style="opacity:.6;font-size:10px">${esc(s.source_label)}</span> ${esc(s.title.slice(0,50))}${s.title.length > 50 ? '…' : ''}</span>`
+      ).join('')}
+    </div>` : ''}
     <div class="stat-chips">
       <span class="stat-chip"><span class="dot dot-blue"></span>${totalItems} items monitored</span>
       ${d.high_relevance_items ? `<span class="stat-chip"><span class="dot dot-orange"></span>${d.high_relevance_items} high relevance</span>` : ""}
@@ -1023,8 +1047,14 @@ function render() {
                   : ''}
               </div>
               ${t.description
-                ? `<p style="margin:0;font-size:13px;color:var(--text-muted);line-height:1.7">${esc(t.description)}</p>`
+                ? `<p style="margin:0;font-size:13px;color:var(--text-muted);line-height:1.7">${linkCitations(t.description, t.sources || [])}</p>`
                 : '<p style="margin:0;font-size:12px;color:var(--text-light);font-style:italic">No description — requires AI analysis.</p>'}
+              ${(t.sources || []).length ? `<div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:5px">
+                ${(t.sources || []).map(s => s.url
+                  ? `<a href="${esc(s.url)}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--accent);background:var(--accent-light);border:1px solid var(--accent-border);border-radius:20px;padding:2px 9px;text-decoration:none;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(s.title)}"><span style="opacity:.6;font-size:10px">${esc(s.source_label)}</span> ${esc(s.title.slice(0,45))}${s.title.length > 45 ? '…' : ''}</a>`
+                  : `<span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--text-muted);background:var(--surface-2);border:1px solid var(--border);border-radius:20px;padding:2px 9px;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(s.title)}"><span style="opacity:.6;font-size:10px">${esc(s.source_label)}</span> ${esc(s.title.slice(0,45))}${s.title.length > 45 ? '…' : ''}</span>`
+                ).join('')}
+              </div>` : ''}
             </div>
           </div>`).join('')}
       </div>

@@ -31,6 +31,7 @@ import argparse
 import json
 import logging
 import os
+import re
 import sys
 import time
 from datetime import datetime, timedelta, timezone
@@ -390,11 +391,13 @@ def _build_synthesis_prompt(items: list[dict], week_id: str) -> str:
         '"headline": punchy 10-15 word newsletter subject line capturing the most important story\n\n'
         '"executive_summary": 4-5 sentence narrative. Distinguish between: (1) what regulators/courts '
         "are actually DOING now, (2) what researchers are PREDICTING, and (3) what legislation is PROPOSED. "
-        "Explain why each matters for competition practitioners.\n\n"
+        "Explain why each matters for competition practitioners. "
+        "Cite 2-3 key sources inline using their item number in brackets, e.g. [#3] or [#12].\n\n"
         '"key_themes": array of up to 5 objects:\n'
         '  "theme": theme name in plain English\n'
         '  "description": 2-3 sentences. State what is happening, what type of evidence supports it '
-        '(enforcement action / court ruling / academic finding / legislative proposal), and why it matters.\n'
+        "(enforcement action / court ruling / academic finding / legislative proposal), and why it matters. "
+        "Cite supporting items inline, e.g. 'A study by [#4] finds...' or 'The Commission decision [#7]...'.\n"
         '  "item_indices": array of 1-based item numbers\n\n'
         '"connections": array of up to 5 objects linking publications across source types:\n'
         '  "description": 1-2 sentences connecting the dots — e.g. "An arXiv paper [#X] predicts '
@@ -496,6 +499,22 @@ def _generate_faq(client: _AIClient, items: list[dict], synthesis: dict, week_id
         return []
 
 
+def _resolve_sources(indices: list, items: list[dict]) -> list[dict]:
+    """Convert 1-based synthesis item numbers to lightweight source objects."""
+    out = []
+    for idx in indices[:6]:
+        if isinstance(idx, int) and 1 <= idx <= len(items):
+            it = items[idx - 1]
+            out.append({
+                "ref": idx,
+                "title": it.get("title", "")[:90],
+                "url": it.get("url", ""),
+                "source_label": it.get("source_label", ""),
+                "date": it.get("date", ""),
+            })
+    return out
+
+
 def _synthesize(client: _AIClient, items: list[dict], week_id: str) -> dict:
     if client._quota_zero:
         return {
@@ -513,6 +532,17 @@ def _synthesize(client: _AIClient, items: list[dict], week_id: str) -> dict:
         text = client.complete_synthesis(_build_synthesis_prompt(items, week_id), max_tokens=2000)
         result = _parse_json_response(text)
         assert isinstance(result, dict)
+        # Resolve 1-based item numbers → stable source objects so the dashboard
+        # can render proper citations without replicating server-side filtering logic.
+        prompt_items = items[:60]
+        for theme in result.get("key_themes", []):
+            theme["sources"] = _resolve_sources(theme.get("item_indices", []), prompt_items)
+        for conn in result.get("connections", []):
+            conn["sources"] = _resolve_sources(conn.get("item_indices", []), prompt_items)
+        # Extract [#N] inline citations from executive_summary and resolve them
+        exec_text = result.get("executive_summary", "")
+        exec_indices = [int(m) for m in re.findall(r'\[#(\d+)\]', exec_text)]
+        result["executive_summary_sources"] = _resolve_sources(exec_indices, prompt_items)
         return result
     except Exception as exc:
         log.error("Synthesis error: %s", exc)
