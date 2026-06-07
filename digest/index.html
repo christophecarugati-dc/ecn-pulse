@@ -990,11 +990,14 @@ function render() {
     <!-- Top themes -->
     <div class="dash-card">
       <div class="dash-card-title">Top themes</div>
-      <div class="themes-pills">
+      <div style="display:flex;flex-direction:column;gap:11px">
         ${themes.slice(0, 5).map((t, i) => `
-          <div class="theme-pill">
-            <span class="theme-pill-dot" style="background:${themeColors[i % themeColors.length]}"></span>
-            <span class="theme-pill-name">${esc(t.theme || t)}</span>
+          <div style="display:flex;gap:9px;align-items:flex-start">
+            <span style="width:8px;height:8px;border-radius:50%;background:${themeColors[i % themeColors.length]};flex-shrink:0;margin-top:4px;display:inline-block"></span>
+            <div style="min-width:0">
+              <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px">${esc(t.theme || t)}</div>
+              ${t.description ? `<div style="font-size:11px;color:var(--text-muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${esc(t.description)}</div>` : ''}
+            </div>
           </div>`).join("") || `<div style="font-size:13px;color:var(--text-muted)">No themes available</div>`}
       </div>
     </div>
@@ -1008,13 +1011,21 @@ function render() {
         Node size reflects item count. Dashed lines show cross-theme connections identified by AI analysis.
       </div>
       ${buildThemeNetwork(themes, syn.connections || [])}
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border)">
+      <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:18px">
         ${themes.slice(0, 5).map((t, i) => `
-          <div style="display:flex;align-items:center;gap:5px">
-            <span style="width:9px;height:9px;border-radius:50%;background:${themeColors[i % themeColors.length]};flex-shrink:0;display:inline-block"></span>
-            <span style="font-size:12px;color:var(--text-muted)">${esc(t.theme || '')}
-              ${(t.item_indices || []).length ? `<strong style="color:var(--text);margin-left:3px">(${(t.item_indices || []).length})</strong>` : ''}
-            </span>
+          <div style="display:flex;gap:13px;align-items:flex-start">
+            <span style="width:10px;height:10px;border-radius:50%;background:${themeColors[i % themeColors.length]};flex-shrink:0;margin-top:4px;display:inline-block"></span>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+                <span style="font-size:14px;font-weight:700;color:var(--text)">${esc(t.theme || '')}</span>
+                ${(t.item_indices || []).length
+                  ? `<span style="font-size:11px;font-weight:600;color:${themeColors[i % themeColors.length]}">${(t.item_indices || []).length} item${(t.item_indices || []).length !== 1 ? 's' : ''}</span>`
+                  : ''}
+              </div>
+              ${t.description
+                ? `<p style="margin:0;font-size:13px;color:var(--text-muted);line-height:1.7">${esc(t.description)}</p>`
+                : '<p style="margin:0;font-size:12px;color:var(--text-light);font-style:italic">No description — requires AI analysis.</p>'}
+            </div>
           </div>`).join('')}
       </div>
     </div>`;
