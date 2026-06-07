@@ -236,44 +236,50 @@ def _collect_items(ecn_path: str, research_path: str, court_path: str, lookback_
 class _AIClient:
     """Thin wrapper so the rest of the code is provider-agnostic."""
 
-    # Gemini free tier: 15 requests/minute → 4-second minimum gap between calls.
-    _GEMINI_MIN_INTERVAL = 4.0
-
     def __init__(self, provider: str, client: Any):
-        self.provider = provider   # "anthropic" | "gemini"
-        self._client = client
-        self._quota_zero = False   # True when free-tier quota is hard-capped at 0
+        self.provider = provider   # "anthropic" | "mistral"
+        self._client = client      # anthropic.Anthropic instance, or str API key for mistral
+        self._quota_zero = False
         self._last_call: float = 0.0
 
-    def _rate_limit(self) -> None:
-        """Enforce minimum interval between Gemini calls."""
-        if self.provider != "gemini":
-            return
-        gap = self._GEMINI_MIN_INTERVAL - (time.time() - self._last_call)
-        if gap > 0:
-            time.sleep(gap)
-        self._last_call = time.time()
-
-    def _call_mistral(self, prompt: str) -> str:
+    def _call_mistral(self, prompt: str, max_tokens: int = 1024) -> str:
+        """Call Mistral via direct HTTP — no SDK required."""
         if self._quota_zero:
             raise RuntimeError("Mistral quota exhausted — skipping")
-        self._rate_limit()
+        import requests as _req
         try:
-            resp = self._client.chat.complete(
-                model=MODEL_MISTRAL,
-                messages=[{"role": "user", "content": prompt}],
+            resp = _req.post(
+                "https://api.mistral.ai/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {self._client}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": MODEL_MISTRAL,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": max_tokens,
+                },
+                timeout=60,
             )
-            return resp.choices[0].message.content.strip()
+            if resp.status_code == 429:
+                if not self._quota_zero:
+                    self._quota_zero = True
+                    log.error(
+                        "Mistral API rate limit reached. "
+                        "Check usage at https://console.mistral.ai. "
+                        "Remaining items will be processed without AI."
+                    )
+                raise RuntimeError("Mistral 429 rate limit")
+            resp.raise_for_status()
+            return resp.json()["choices"][0]["message"]["content"].strip()
+        except RuntimeError:
+            raise
         except Exception as exc:
             err = str(exc)
             if "429" in err or "quota" in err.lower() or "rate" in err.lower():
                 if not self._quota_zero:
                     self._quota_zero = True
-                    log.error(
-                        "Mistral API quota or rate limit reached. "
-                        "Check your usage at https://console.mistral.ai. "
-                        "Remaining items will be processed without AI."
-                    )
+                    log.error("Mistral quota/rate limit: %s", exc)
             raise
 
     def complete(self, prompt: str, max_tokens: int = 1024) -> str:
@@ -285,7 +291,7 @@ class _AIClient:
             )
             return resp.content[0].text.strip()
         else:  # mistral
-            return self._call_mistral(prompt)
+            return self._call_mistral(prompt, max_tokens)
 
     def complete_synthesis(self, prompt: str, max_tokens: int = 2000) -> str:
         if self.provider == "anthropic":
@@ -295,8 +301,8 @@ class _AIClient:
                 messages=[{"role": "user", "content": prompt}],
             )
             return resp.content[0].text.strip()
-        else:  # mistral uses same model for both
-            return self._call_mistral(prompt)
+        else:  # mistral
+            return self._call_mistral(prompt, max_tokens)
 
 
 def _parse_json_response(text: str) -> dict | list:
@@ -535,17 +541,9 @@ def _build_ai_client() -> "_AIClient | None":
 
     mistral_key = os.environ.get("MISTRAL_API_KEY")
     if mistral_key:
-        try:
-            from mistralai import Mistral
-            client = Mistral(api_key=mistral_key)
-            log.info("Using Mistral API (%s) — free tier", MODEL_MISTRAL)
-            return _AIClient("mistral", client)
-        except ImportError as exc:
-            log.error("Failed to import mistralai: %s. Run: pip install mistralai", exc)
-            return None
-        except Exception as exc:
-            log.error("Failed to initialise Mistral client: %s", exc)
-            return None
+        # No SDK needed — uses direct HTTP via requests (already a dependency)
+        log.info("Using Mistral API (%s) — free tier (direct HTTP)", MODEL_MISTRAL)
+        return _AIClient("mistral", mistral_key)
 
     return None
 
