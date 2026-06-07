@@ -55,9 +55,16 @@ THEME_TAGS = [
 
 SOURCE_LABELS = {
     "arxiv": "Academic paper",
+    "nber": "NBER Working Paper",
+    "ssrn": "SSRN Paper",
     "eurlex": "EU document",
     "cjeu": "Court judgment",
     "cjeu_linker": "Court case",
+    "dgcomp": "DG COMP Case",
+    "dma_acquisitions": "DMA Acquisition",
+    "bruegel": "Bruegel",
+    "cerre": "CERRE",
+    "cpi": "CPI Antitrust",
 }
 
 EURLEX_TYPE_LABELS = {

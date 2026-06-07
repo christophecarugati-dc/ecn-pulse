@@ -63,6 +63,8 @@ DIGITAL_COMPETITION_KEYWORDS = [
     "data economy", "platform economy", "GDPR", "data protection", "tech giant",
     "online platform", "search engine", "app store", "cloud computing",
     "marketplace", "price algorithm", "recommendation system",
+    "acquisition", "concentration", "notification", "DMA Article 14",
+    "gatekeeper acquisition", "Article 14",
 ]
 
 # ── arXiv search configuration ────────────────────────────────────────────────
@@ -638,13 +640,457 @@ def fetch_cjeu(session: requests.Session, lookback_days: int) -> list[ResearchIt
     return items
 
 
+# ── NBER ──────────────────────────────────────────────────────────────────────
+
+def fetch_nber(session: requests.Session, lookback_days: int) -> list[ResearchItem]:
+    """NBER working papers filtered by competition/digital keywords."""
+    try:
+        resp = _get(session, "https://www.nber.org/rss/new_working_papers.xml")
+        resp.raise_for_status()
+    except Exception as exc:
+        log.warning("NBER RSS fetch failed: %s", exc)
+        return []
+
+    entries = _parse_atom_or_rss(resp.text)
+    items: list[ResearchItem] = []
+
+    for e in entries:
+        title = e["title"].strip()
+        url = e["url"].strip()
+        date = e["date"]
+        summary = e["summary"].strip()
+
+        if not _has_competition_keyword(f"{title} {summary}"):
+            continue
+        if not _is_recent(date, lookback_days):
+            continue
+
+        # Extract numeric NBER paper ID from URL (last numeric segment)
+        numeric = re.findall(r'\d+', url.rstrip("/").split("/")[-1])
+        item_id = numeric[0] if numeric else url
+
+        items.append(ResearchItem(
+            source="nber",
+            item_type="working_paper",
+            item_id=item_id,
+            title=title,
+            url=url,
+            date=date,
+            abstract=summary[:1200],
+        ))
+
+    log.info("NBER: %d items", len(items))
+    return items
+
+
+# ── SSRN ──────────────────────────────────────────────────────────────────────
+
+def fetch_ssrn(session: requests.Session, lookback_days: int) -> list[ResearchItem]:
+    """SSRN competition papers via search results page."""
+    try:
+        resp = _get(
+            session,
+            "https://papers.ssrn.com/sol3/results.cfm",
+            params={
+                "text_field": "digital competition platform antitrust DMA",
+                "form_name": "searchBasic",
+                "Network": "no",
+                "SortOrder": "ab_approval_date",
+                "start": "0",
+                "max": "20",
+            },
+        )
+        resp.raise_for_status()
+
+        soup = BeautifulSoup(resp.text, "html.parser")
+        items: list[ResearchItem] = []
+
+        result_divs = soup.select("div.result-item") or soup.select("div[class*='result']")
+
+        for div in result_divs:
+            try:
+                # Title / URL
+                link = div.select_one("a[href*='/abstract/']") or div.select_one(".abstract-title a")
+                if not link:
+                    continue
+                title = link.get_text(strip=True)
+                href = link.get("href", "")
+                if not href:
+                    continue
+                url = href if href.startswith("http") else f"https://papers.ssrn.com{href}"
+
+                # Date
+                date_el = div.select_one("[class*='date']")
+                date_str = _parse_date(date_el.get_text()) if date_el else ""
+
+                # Abstract
+                abstract_el = div.select_one("[class*='abstract']") or div.select_one("p")
+                abstract = abstract_el.get_text(strip=True)[:1200] if abstract_el else ""
+
+                # Authors
+                author_els = div.select("[class*='author']")
+                authors = [a.get_text(strip=True) for a in author_els if a.get_text(strip=True)]
+
+                combined = f"{title} {abstract}"
+                if not _has_competition_keyword(combined):
+                    continue
+                if not _is_recent(date_str, lookback_days):
+                    continue
+
+                # Extract SSRN abstract ID from URL
+                id_match = re.search(r'/abstract/(\d+)', url)
+                item_id = id_match.group(1) if id_match else url
+
+                items.append(ResearchItem(
+                    source="ssrn",
+                    item_type="working_paper",
+                    item_id=item_id,
+                    title=title,
+                    url=url,
+                    date=date_str,
+                    authors=authors,
+                    abstract=abstract,
+                ))
+            except Exception as exc:
+                log.debug("SSRN result parse error: %s", exc)
+
+        log.info("SSRN: %d items", len(items))
+        return items
+
+    except Exception as exc:
+        log.warning("SSRN fetch/parse failed: %s", exc)
+        return []
+
+
+# ── Think tanks ───────────────────────────────────────────────────────────────
+
+THINK_TANK_FEEDS = [
+    ("bruegel", "https://www.bruegel.org/rss/publications"),
+    ("cerre",   "https://cerre.eu/feed/"),
+    ("cpi",     "https://www.competitionpolicyinternational.com/feed/"),
+]
+
+
+def fetch_think_tanks(session: requests.Session, lookback_days: int) -> list[ResearchItem]:
+    """Think tank publications from Bruegel, CERRE, and CPI RSS feeds."""
+    items: list[ResearchItem] = []
+
+    for name, feed_url in THINK_TANK_FEEDS:
+        try:
+            resp = _get(session, feed_url)
+            resp.raise_for_status()
+            entries = _parse_atom_or_rss(resp.text)
+
+            for e in entries:
+                title = e["title"].strip()
+                url = e["url"].strip()
+                date = e["date"]
+                summary = e["summary"].strip()
+
+                if not _has_competition_keyword(f"{title} {summary}"):
+                    continue
+                if not _is_recent(date, lookback_days):
+                    continue
+
+                items.append(ResearchItem(
+                    source=name,
+                    item_type="policy_paper",
+                    item_id=url,
+                    title=title,
+                    url=url,
+                    date=date,
+                    abstract=summary[:1200],
+                ))
+        except Exception as exc:
+            log.warning("Think tank feed '%s' (%s) failed: %s", name, feed_url, exc)
+
+    log.info("Think tanks: %d items total", len(items))
+    return items
+
+
+# ── DG COMP ───────────────────────────────────────────────────────────────────
+
+_DGCOMP_DIGITAL_TERMS = [
+    "google", "apple", "amazon", "meta", "microsoft", "tiktok",
+    "dma", "digital", "platform", "app store", "search", "ai", "cloud",
+]
+
+
+def _is_digital_case(text: str) -> bool:
+    tl = text.lower()
+    return any(term in tl for term in _DGCOMP_DIGITAL_TERMS)
+
+
+def fetch_dgcomp(session: requests.Session, lookback_days: int) -> list[ResearchItem]:
+    """DG COMP competition enforcement cases (open, digital/tech-related)."""
+    items: list[ResearchItem] = []
+
+    try:
+        resp = _get(
+            session,
+            "https://competition-cases.ec.europa.eu/api/cases",
+            params={
+                "_limit": "50",
+                "_sortBy": "caseOpenDate:desc",
+                "lng": "en",
+                "status": "OPEN",
+            },
+            headers={"Accept": "application/json"},
+        )
+        resp.raise_for_status()
+        data = resp.json()
+
+        # Accept either a list directly or a dict with a list value
+        cases = data if isinstance(data, list) else (
+            data.get("cases") or data.get("results") or data.get("data") or []
+        )
+
+        for case in cases:
+            try:
+                case_num = (
+                    case.get("caseNum") or case.get("caseNumber") or
+                    case.get("case_number") or case.get("id") or ""
+                )
+                case_name = (
+                    case.get("caseName") or case.get("name") or
+                    case.get("case_name") or ""
+                )
+                opened = (
+                    case.get("openedDate") or case.get("caseOpenDate") or
+                    case.get("open_date") or ""
+                )
+                status = case.get("status", "")
+                case_type = case.get("type") or case.get("caseType") or ""
+                policy_area = case.get("policyArea") or case.get("policy_area") or ""
+
+                combined = f"{case_num} {case_name} {case_type} {policy_area}"
+                if not _is_digital_case(combined):
+                    continue
+
+                date_str = _parse_date(str(opened)) if opened else ""
+                if not _is_recent(date_str, lookback_days):
+                    continue
+
+                url = f"https://competition-cases.ec.europa.eu/cases/{case_num}"
+                abstract = f"Type: {case_type}. Status: {status}."
+                if policy_area:
+                    abstract += f" Policy area: {policy_area}."
+
+                items.append(ResearchItem(
+                    source="dgcomp",
+                    item_type="enforcement_case",
+                    item_id=str(case_num),
+                    title=f"{case_num} — {case_name}".strip(" —"),
+                    url=url,
+                    date=date_str,
+                    abstract=abstract.strip(),
+                ))
+            except Exception as exc:
+                log.debug("DG COMP case parse error: %s", exc)
+
+    except Exception as exc:
+        log.warning("DG COMP API failed (%s), falling back to HTML scrape", exc)
+
+        # HTML fallback
+        try:
+            resp = _get(
+                session,
+                "https://competition-cases.ec.europa.eu/cases",
+                params={"lng": "EN", "status": "OPEN", "type": "ALL"},
+                headers={"Accept": "text/html"},
+            )
+            resp.raise_for_status()
+            soup = BeautifulSoup(resp.text, "html.parser")
+
+            for row in soup.select("tr, [class*='result-item'], [class*='case-item']"):
+                try:
+                    link = row.select_one("a")
+                    if not link:
+                        continue
+                    title = link.get_text(strip=True)
+                    href = link.get("href", "")
+                    url = href if href.startswith("http") else urljoin(
+                        "https://competition-cases.ec.europa.eu", href
+                    )
+                    text = row.get_text(" ", strip=True)
+                    if not _is_digital_case(text):
+                        continue
+                    date_match = re.search(r'\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}/\d{4}', text)
+                    date_str = _parse_date(date_match.group(0)) if date_match else ""
+                    if not _is_recent(date_str, lookback_days):
+                        continue
+                    case_num_match = re.search(r'AT\.\d+|COMP/\w+/\d+', text)
+                    item_id = case_num_match.group(0) if case_num_match else url
+                    items.append(ResearchItem(
+                        source="dgcomp",
+                        item_type="enforcement_case",
+                        item_id=item_id,
+                        title=title,
+                        url=url,
+                        date=date_str,
+                        abstract=text[:600],
+                    ))
+                except Exception as exc:
+                    log.debug("DG COMP HTML row parse error: %s", exc)
+        except Exception as exc2:
+            log.warning("DG COMP HTML fallback also failed: %s", exc2)
+
+    log.info("DG COMP: %d items", len(items))
+    return items
+
+
+# ── DMA Acquisitions ──────────────────────────────────────────────────────────
+
+_DMA_ACQ_TYPES = {"concentration", "acquisition", "notification", "art_14", "14"}
+
+
+def _is_dma_acquisition(case: dict) -> bool:
+    """Return True if this DMA case looks like an Article 14 acquisition notification."""
+    case_type = str(
+        case.get("caseType") or case.get("type") or case.get("case_type") or ""
+    ).lower()
+    return any(t in case_type for t in _DMA_ACQ_TYPES)
+
+
+def fetch_dma_acquisitions(session: requests.Session, lookback_days: int) -> list[ResearchItem]:
+    """DMA Article 14 gatekeeper acquisition notifications — all available, no lookback filter."""
+    items: list[ResearchItem] = []
+
+    try:
+        resp = _get(
+            session,
+            "https://digital-markets-act-cases.ec.europa.eu/api/cases",
+            params={"_limit": "100", "_sortBy": "openedDate:desc"},
+            headers={"Accept": "application/json"},
+        )
+        resp.raise_for_status()
+        data = resp.json()
+
+        cases = data if isinstance(data, list) else (
+            data.get("cases") or data.get("results") or data.get("data") or []
+        )
+
+        for case in cases:
+            try:
+                if not _is_dma_acquisition(case):
+                    continue
+
+                case_id = (
+                    case.get("caseId") or case.get("id") or
+                    case.get("caseNum") or case.get("caseNumber") or ""
+                )
+                case_name = (
+                    case.get("caseName") or case.get("name") or
+                    case.get("case_name") or ""
+                )
+                gatekeeper = (
+                    case.get("gatekeeper") or case.get("gatekeeperName") or
+                    case.get("notifyingParty") or ""
+                )
+                target = (
+                    case.get("target") or case.get("targetName") or
+                    case.get("acquiredCompany") or case.get("subject") or ""
+                )
+                opened = (
+                    case.get("openedDate") or case.get("notificationDate") or
+                    case.get("open_date") or ""
+                )
+                status = case.get("status") or case.get("caseStatus") or ""
+                case_type = case.get("caseType") or case.get("type") or ""
+
+                date_str = _parse_date(str(opened)) if opened else ""
+                # NOTE: no lookback filter for DMA acquisitions — include all
+
+                url = f"https://digital-markets-act-cases.ec.europa.eu/cases/{case_id}"
+
+                display_name = gatekeeper or case_name
+                display_target = target or case_name
+                title = (
+                    f"{display_name} — DMA acquisition notification: {display_target}"
+                    if display_name and display_target and display_name != display_target
+                    else f"DMA acquisition notification: {case_name or case_id}"
+                )
+
+                abstract_parts = [f"Case: {case_id}."]
+                if gatekeeper:
+                    abstract_parts.append(f"Gatekeeper: {gatekeeper}.")
+                if target:
+                    abstract_parts.append(f"Target: {target}.")
+                if opened:
+                    abstract_parts.append(f"Notification date: {date_str or opened}.")
+                if status:
+                    abstract_parts.append(f"Status: {status}.")
+                if case_type:
+                    abstract_parts.append(f"Type: {case_type}.")
+
+                items.append(ResearchItem(
+                    source="dma_acquisitions",
+                    item_type="acquisition_notification",
+                    item_id=str(case_id),
+                    title=title,
+                    url=url,
+                    date=date_str,
+                    abstract=" ".join(abstract_parts),
+                ))
+            except Exception as exc:
+                log.debug("DMA acquisition case parse error: %s", exc)
+
+    except Exception as exc:
+        log.warning("DMA acquisitions API failed (%s), trying HTML fallback", exc)
+
+        # HTML fallback
+        try:
+            resp = _get(
+                session,
+                "https://digital-markets-act-cases.ec.europa.eu/cases",
+                headers={"Accept": "text/html"},
+            )
+            resp.raise_for_status()
+            soup = BeautifulSoup(resp.text, "html.parser")
+
+            for row in soup.select("tr, [class*='result-item'], [class*='case-item']"):
+                try:
+                    link = row.select_one("a")
+                    if not link:
+                        continue
+                    title = link.get_text(strip=True)
+                    href = link.get("href", "")
+                    url = href if href.startswith("http") else urljoin(
+                        "https://digital-markets-act-cases.ec.europa.eu", href
+                    )
+                    text = row.get_text(" ", strip=True).lower()
+                    if not any(t in text for t in _DMA_ACQ_TYPES):
+                        continue
+                    date_match = re.search(r'\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}/\d{4}', text)
+                    date_str = _parse_date(date_match.group(0)) if date_match else ""
+                    items.append(ResearchItem(
+                        source="dma_acquisitions",
+                        item_type="acquisition_notification",
+                        item_id=url,
+                        title=f"DMA acquisition notification: {title}",
+                        url=url,
+                        date=date_str,
+                        abstract=row.get_text(" ", strip=True)[:600],
+                    ))
+                except Exception as exc:
+                    log.debug("DMA acquisitions HTML row parse error: %s", exc)
+        except Exception as exc2:
+            log.warning("DMA acquisitions HTML fallback also failed: %s", exc2)
+
+    log.info("DMA acquisitions: %d items", len(items))
+    return items
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Research monitor for digital competition policy")
     ap.add_argument("--output", default="data/research_items.json")
     ap.add_argument("--lookback", type=int, default=DEFAULT_LOOKBACK_DAYS)
-    ap.add_argument("--only", help="Comma-separated sources to run: arxiv,eurlex,cjeu")
+    ap.add_argument(
+        "--only",
+        help="Comma-separated sources to run: arxiv,eurlex,cjeu,nber,ssrn,thinktanks,dgcomp,dma",
+    )
     ap.add_argument("--verbose", action="store_true")
     args = ap.parse_args()
 
@@ -654,7 +1100,9 @@ def main() -> None:
         stream=sys.stderr,
     )
 
-    sources = {s.strip().lower() for s in args.only.split(",")} if args.only else {"arxiv", "eurlex", "cjeu"}
+    sources = {s.strip().lower() for s in args.only.split(",")} if args.only else {
+        "arxiv", "eurlex", "cjeu", "nber", "ssrn", "thinktanks", "dgcomp", "dma"
+    }
     session = requests.Session()
 
     all_items: list[ResearchItem] = []
@@ -670,6 +1118,26 @@ def main() -> None:
     if "cjeu" in sources:
         log.info("── CJEU ───────────────────────────────────────────────")
         all_items.extend(fetch_cjeu(session, args.lookback))
+
+    if "nber" in sources:
+        log.info("── NBER ───────────────────────────────────────────────")
+        all_items.extend(fetch_nber(session, args.lookback))
+
+    if "ssrn" in sources:
+        log.info("── SSRN ───────────────────────────────────────────────")
+        all_items.extend(fetch_ssrn(session, args.lookback))
+
+    if "thinktanks" in sources:
+        log.info("── Think tanks ────────────────────────────────────────")
+        all_items.extend(fetch_think_tanks(session, args.lookback))
+
+    if "dgcomp" in sources:
+        log.info("── DG COMP ────────────────────────────────────────────")
+        all_items.extend(fetch_dgcomp(session, args.lookback))
+
+    if "dma" in sources:
+        log.info("── DMA acquisitions ───────────────────────────────────")
+        all_items.extend(fetch_dma_acquisitions(session, args.lookback))
 
     # Deduplicate by URL
     seen: set[str] = set()
