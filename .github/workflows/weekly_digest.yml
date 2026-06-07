@@ -4,7 +4,9 @@ name: Weekly Digest
 # documents (EUR-Lex, CJEU), then generates the weekly digest.
 #
 # Required secrets (Settings → Secrets and variables → Actions):
-#   ANTHROPIC_API_KEY   — Anthropic API key. Omit to run in free/no-AI mode.
+#   ANTHROPIC_API_KEY   — Anthropic API key (paid). Takes priority if set.
+#   MISTRAL_API_KEY     — Mistral API key (free tier at console.mistral.ai).
+#                         Omit both to run in free/no-AI mode.
 #
 # Optional secrets (email notification — all four required together):
 #   SMTP_HOST           — e.g. smtp.gmail.com
@@ -51,11 +53,11 @@ jobs:
       - name: Generate weekly digest
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
         run: |
           mkdir -p data/digests
-          if [ -n "$ANTHROPIC_API_KEY" ] || [ -n "$GOOGLE_API_KEY" ]; then
-            echo "AI analysis enabled (provider: ${ANTHROPIC_API_KEY:+Claude}${GOOGLE_API_KEY:+Gemini})"
+          if [ -n "$ANTHROPIC_API_KEY" ] || [ -n "$MISTRAL_API_KEY" ]; then
+            echo "AI analysis enabled (provider: ${ANTHROPIC_API_KEY:+Claude}${MISTRAL_API_KEY:+Mistral})"
             python digest_generator.py \
               --ecn-data data/ecn_pulse.json \
               --research-data data/research_items.json \
@@ -65,7 +67,7 @@ jobs:
               --verbose
           else
             echo "No API key found — running in free/no-AI mode"
-            echo "Set GOOGLE_API_KEY (free at aistudio.google.com) or ANTHROPIC_API_KEY"
+            echo "Set MISTRAL_API_KEY (free at console.mistral.ai) or ANTHROPIC_API_KEY"
             python digest_generator.py \
               --ecn-data data/ecn_pulse.json \
               --research-data data/research_items.json \

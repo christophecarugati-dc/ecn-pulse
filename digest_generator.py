@@ -43,8 +43,8 @@ log = logging.getLogger("digest-generator")
 MODEL_CLAUDE_SUMMARY   = "claude-haiku-4-5-20251001"
 MODEL_CLAUDE_SYNTHESIS = "claude-sonnet-4-6"
 
-# Google Gemini models (free tier available)
-MODEL_GEMINI = "gemini-2.0-flash"
+# Mistral models (free tier available at console.mistral.ai)
+MODEL_MISTRAL = "mistral-small-latest"
 
 THEME_TAGS = [
     "antitrust enforcement", "merger control", "DMA/DSA", "AI regulation",
@@ -227,25 +227,24 @@ class _AIClient:
             time.sleep(gap)
         self._last_call = time.time()
 
-    def _call_gemini(self, prompt: str) -> str:
+    def _call_mistral(self, prompt: str) -> str:
         if self._quota_zero:
-            raise RuntimeError("Gemini quota exhausted — skipping")
+            raise RuntimeError("Mistral quota exhausted — skipping")
         self._rate_limit()
         try:
-            # New google-genai SDK: client.models.generate_content(model=..., contents=...)
-            resp = self._client.models.generate_content(
-                model=MODEL_GEMINI,
-                contents=prompt,
+            resp = self._client.chat.complete(
+                model=MODEL_MISTRAL,
+                messages=[{"role": "user", "content": prompt}],
             )
-            return resp.text.strip()
+            return resp.choices[0].message.content.strip()
         except Exception as exc:
             err = str(exc)
-            if "limit: 0" in err or "limit:0" in err or "RESOURCE_EXHAUSTED" in err:
+            if "429" in err or "quota" in err.lower() or "rate" in err.lower():
                 if not self._quota_zero:
                     self._quota_zero = True
                     log.error(
-                        "Gemini quota exhausted. If you are on the free tier, "
-                        "check your daily limit at https://aistudio.google.com/apikey. "
+                        "Mistral API quota or rate limit reached. "
+                        "Check your usage at https://console.mistral.ai. "
                         "Remaining items will be processed without AI."
                     )
             raise
@@ -258,8 +257,8 @@ class _AIClient:
                 messages=[{"role": "user", "content": prompt}],
             )
             return resp.content[0].text.strip()
-        else:  # gemini
-            return self._call_gemini(prompt)
+        else:  # mistral
+            return self._call_mistral(prompt)
 
     def complete_synthesis(self, prompt: str, max_tokens: int = 2000) -> str:
         if self.provider == "anthropic":
@@ -269,8 +268,8 @@ class _AIClient:
                 messages=[{"role": "user", "content": prompt}],
             )
             return resp.content[0].text.strip()
-        else:  # gemini uses same model for both
-            return self._call_gemini(prompt)
+        else:  # mistral uses same model for both
+            return self._call_mistral(prompt)
 
 
 def _parse_json_response(text: str) -> dict | list:
@@ -382,9 +381,9 @@ def _synthesize(client: _AIClient, items: list[dict], week_id: str) -> dict:
         return {
             "headline": f"Digital Competition Digest — {week_id}",
             "executive_summary": (
-                f"AI synthesis unavailable: Gemini API quota was exhausted after processing "
-                f"some items. The digest contains {len(items)} items. "
-                f"Check your daily quota at https://aistudio.google.com/apikey."
+                f"AI synthesis unavailable: the API quota was exhausted. "
+                f"The digest contains {len(items)} items without AI analysis. "
+                f"Check your usage at https://console.mistral.ai."
             ),
             "key_themes": [],
             "connections": [],
@@ -409,7 +408,6 @@ def _synthesize(client: _AIClient, items: list[dict], week_id: str) -> dict:
 def _build_ai_client() -> "_AIClient | None":
     """Detect available API key and return the right client, or None."""
     anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
-    google_key = os.environ.get("GOOGLE_API_KEY")
 
     if anthropic_key:
         try:
@@ -421,14 +419,15 @@ def _build_ai_client() -> "_AIClient | None":
             log.error("anthropic package not installed. Run: pip install anthropic")
             return None
 
-    if google_key:
+    mistral_key = os.environ.get("MISTRAL_API_KEY")
+    if mistral_key:
         try:
-            from google import genai as google_genai
-            client = google_genai.Client(api_key=google_key)
-            log.info("Using Google Gemini API (%s) — free tier", MODEL_GEMINI)
-            return _AIClient("gemini", client)
+            from mistralai import Mistral
+            client = Mistral(api_key=mistral_key)
+            log.info("Using Mistral API (%s) — free tier", MODEL_MISTRAL)
+            return _AIClient("mistral", client)
         except ImportError:
-            log.error("google-genai package not installed. Run: pip install google-genai")
+            log.error("mistralai package not installed. Run: pip install mistralai")
             return None
 
     return None
