@@ -171,12 +171,13 @@ def _collect_items(ecn_path: str, research_path: str, court_path: str, lookback_
             "categories": [it.get("category", "")],
         })
 
-    # Research items (arXiv + EUR-Lex + CJEU)
+    # Research items (arXiv + EUR-Lex + CJEU + NBER + SSRN + think tanks + DG COMP + DMA)
     research = _load(research_path)
     for it in research.get("items", []):
-        if not _is_recent(it.get("date", ""), lookback_days):
-            continue
         src = it.get("source", "research")
+        # DMA acquisition notifications are a continuous register — never filter by lookback
+        if src != "dma_acquisitions" and not _is_recent(it.get("date", ""), lookback_days):
+            continue
         items.append({
             "source": src,
             "source_label": (

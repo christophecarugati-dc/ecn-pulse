@@ -404,6 +404,41 @@
     .item-abstract.visible { display: block; }
     .doctype-badge { font-size: 10px; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-style: italic; }
 
+    /* ── DMA acquisitions table ────────────────────────────────── */
+    .dma-table-wrap { overflow-x: auto; }
+    .dma-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .dma-table th {
+      text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .5px; color: var(--text-muted); padding: 0 10px 8px;
+      border-bottom: 2px solid var(--border); cursor: pointer; white-space: nowrap;
+      user-select: none;
+    }
+    .dma-table th:hover { color: var(--accent); }
+    .dma-table th .sort-arrow { margin-left: 4px; opacity: .4; font-size: 10px; }
+    .dma-table th.sorted .sort-arrow { opacity: 1; color: var(--accent); }
+    .dma-table td { padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .dma-table tr:last-child td { border-bottom: none; }
+    .dma-table tr:hover td { background: var(--surface-2); }
+    .dma-gatekeeper { font-weight: 600; color: var(--text); }
+    .dma-target { color: var(--text-muted); }
+    .dma-status {
+      display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .4px; border-radius: 4px; padding: 2px 7px; white-space: nowrap;
+    }
+    .dma-status-open { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .dma-status-closed { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
+    .dma-status-pending { background: var(--score-4-bg); color: #92400e; border: 1px solid var(--score-4-border); }
+    @media (prefers-color-scheme: dark) {
+      .dma-status-open { background: #0a2218; border-color: #166534; }
+    }
+    .dma-search {
+      width: 100%; padding: 7px 12px; border: 1px solid var(--border);
+      border-radius: var(--radius-sm); background: var(--bg); color: var(--text);
+      font-size: 13px; outline: none; margin-bottom: 12px; transition: border-color .15s;
+    }
+    .dma-search:focus { border-color: var(--accent); }
+    .dma-count { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; }
+
     /* ── Loading / error ───────────────────────────────────────── */
     .loading { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 15px; }
     .empty { text-align: center; padding: 30px; color: var(--text-muted); font-size: 13px; }
@@ -723,6 +758,80 @@ function buildThemeNetwork(themes, connections) {
   return `<svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block;max-height:224px;overflow:visible" xmlns="http://www.w3.org/2000/svg">${out}${footer}</svg>`;
 }
 
+// ── DMA acquisitions table ────────────────────────────────────────────────────
+let _dmaSort = { col: "date", asc: false };
+
+function _parseDmaItem(it) {
+  const title = it.title || '';
+  const abstract = it.abstract || '';
+  const dashIdx = title.indexOf(' — DMA acquisition');
+  const gatekeeper = dashIdx > 0 ? title.slice(0, dashIdx).trim() : '';
+  const targetMatch = title.match(/DMA acquisition notification:\s*(.+)/i);
+  const target = targetMatch ? targetMatch[1].trim() : (dashIdx > 0 ? '' : title);
+  const statusMatch = abstract.match(/Status:\s*([^.]+)/i);
+  const status = statusMatch ? statusMatch[1].trim() : '';
+  const caseMatch = abstract.match(/Case:\s*([^.]+)/i);
+  const caseId = caseMatch ? caseMatch[1].trim() : (it.item_id || '');
+  return { gatekeeper, target, status, caseId, date: it.date || '', url: it.url || '' };
+}
+
+function renderDmaTable(items) {
+  const dmaItems = items.filter(it => it.source === 'dma_acquisitions');
+  if (dmaItems.length === 0) {
+    return `<div class="empty">No DMA acquisition notifications in data yet.<br>
+      <span style="font-size:12px">They will appear after the next workflow run or when <code>research_monitor.py</code> is run manually.</span></div>`;
+  }
+  const rows = dmaItems.map(_parseDmaItem);
+  // Sort
+  rows.sort((a, b) => {
+    let va = a[_dmaSort.col] || '', vb = b[_dmaSort.col] || '';
+    const cmp = va < vb ? -1 : va > vb ? 1 : 0;
+    return _dmaSort.asc ? cmp : -cmp;
+  });
+  const th = (col, label) => {
+    const sorted = _dmaSort.col === col;
+    const arrow = sorted ? (_dmaSort.asc ? '▲' : '▼') : '▲';
+    return `<th class="${sorted ? 'sorted' : ''}" onclick="sortDma('${col}')">${label}<span class="sort-arrow">${arrow}</span></th>`;
+  };
+  const statusClass = s => {
+    const sl = (s || '').toLowerCase();
+    if (sl.includes('open') || sl.includes('pending') || sl.includes('ongoing')) return 'dma-status-open';
+    if (sl.includes('close') || sl.includes('withdrawn') || sl.includes('complete')) return 'dma-status-closed';
+    return 'dma-status-pending';
+  };
+  const trs = rows.map(r => `<tr>
+    <td><span class="dma-gatekeeper">${esc(r.gatekeeper || r.caseId)}</span></td>
+    <td class="dma-target">${esc(r.target || '—')}</td>
+    <td>${r.date || '—'}</td>
+    <td><span class="dma-status ${statusClass(r.status)}">${esc(r.status || 'Unknown')}</span></td>
+    <td><a href="${esc(r.url)}" target="_blank" rel="noopener" style="color:var(--accent);font-size:12px">${esc(r.caseId) || 'View'}</a></td>
+  </tr>`).join('');
+  return `<div class="dma-count">${dmaItems.length} notifications on record</div>
+    <input class="dma-search" id="dmaSearch" placeholder="Filter by gatekeeper, target, or status…" oninput="filterDmaTable(this.value)">
+    <div class="dma-table-wrap">
+      <table class="dma-table" id="dmaTable">
+        <thead><tr>${th('gatekeeper','Gatekeeper')}${th('target','Target')}${th('date','Notified')}${th('status','Status')}<th>Case</th></tr></thead>
+        <tbody>${trs}</tbody>
+      </table>
+    </div>`;
+}
+
+function sortDma(col) {
+  if (_dmaSort.col === col) _dmaSort.asc = !_dmaSort.asc;
+  else { _dmaSort.col = col; _dmaSort.asc = col === 'gatekeeper' || col === 'target'; }
+  // Re-render just the DMA section
+  const box = document.getElementById('dmaTableBox');
+  if (box && currentDigest) box.innerHTML = renderDmaTable(currentDigest.items || []);
+}
+
+function filterDmaTable(q) {
+  const trs = document.querySelectorAll('#dmaTable tbody tr');
+  const ql = q.toLowerCase().trim();
+  trs.forEach(tr => {
+    tr.style.display = (!ql || tr.textContent.toLowerCase().includes(ql)) ? '' : 'none';
+  });
+}
+
 // ── Charts ────────────────────────────────────────────────────────────────────
 function buildDonut(academic, regulatory, court, enforcement, total) {
   // Build a CSS conic-gradient donut
@@ -812,6 +921,22 @@ function render() {
         ? `<span class="stat-chip ai-badge">✦ AI analysis (${esc(syn.ai_provider || "AI")})</span>`
         : `<span class="stat-chip no-ai-badge">⚠ No AI analysis</span>`}
     </div>
+  </div>`;
+
+  // ── DMA gatekeeper acquisitions ──
+  const dmaCount = items.filter(it => it.source === 'dma_acquisitions').length;
+  html += `<div class="card" style="margin-bottom:18px;border-left:4px solid #b45309">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+      <div>
+        <div class="card-title" style="margin-bottom:2px">DMA Gatekeeper Acquisitions — Article 14 register</div>
+        <div style="font-size:12px;color:var(--text-muted)">
+          All acquisition notifications filed by designated gatekeepers under the Digital Markets Act (Art. 14 DMA).
+          Continuously updated — not filtered by this week's lookback window.
+        </div>
+      </div>
+      ${dmaCount ? `<span style="font-size:12px;font-weight:700;color:#b45309;background:#fef9c3;border:1px solid #fde68a;border-radius:20px;padding:3px 12px">${dmaCount} notifications</span>` : ''}
+    </div>
+    <div id="dmaTableBox">${renderDmaTable(items)}</div>
   </div>`;
 
   // ── Dashboard row ──
