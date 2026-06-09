@@ -58,6 +58,7 @@ SOURCE_LABELS = {
     "arxiv": "Academic paper",
     "nber": "NBER Working Paper",
     "ssrn": "SSRN Paper",
+    "scholarly": "Semantic Scholar",
     "eurlex": "EU document",
     "cjeu": "Court judgment",
     "cjeu_linker": "Court case",
