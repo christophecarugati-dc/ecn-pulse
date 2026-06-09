@@ -673,8 +673,14 @@ def fetch_nber(session: requests.Session, lookback_days: int) -> list[ResearchIt
             log.debug("NBER candidate %s failed: %s", candidate, exc)
 
     if not xml_text:
-        log.warning("NBER RSS fetch failed: all candidate URLs exhausted")
-        return []
+        log.warning("NBER RSS fetch failed: all candidate URLs exhausted, falling back to OpenAlex")
+        return _fetch_openalex(
+            session,
+            query="digital competition antitrust platform DMA regulation",
+            lookback_days=lookback_days,
+            source_filter="nber",
+            max_results=30,
+        )
 
     entries = _parse_atom_or_rss(xml_text)
     items: list[ResearchItem] = []
@@ -708,79 +714,139 @@ def fetch_nber(session: requests.Session, lookback_days: int) -> list[ResearchIt
     return items
 
 
-# ── Semantic Scholar (SSRN + Google Scholar equivalent) ───────────────────────
+# ── OpenAlex (SSRN + Google Scholar equivalent) ───────────────────────────────
 
-def _fetch_semantic_scholar(
+def _reconstruct_abstract(inverted_index: dict | None) -> str:
+    """Reconstruct text from OpenAlex inverted index {word: [positions]}."""
+    if not inverted_index:
+        return ""
+    tokens: list[tuple[int, str]] = []
+    for word, positions in inverted_index.items():
+        for pos in (positions or []):
+            tokens.append((pos, word))
+    tokens.sort()
+    return " ".join(w for _, w in tokens)
+
+
+def _fetch_openalex(
     session: requests.Session,
     query: str,
     lookback_days: int,
-    ssrn_only: bool = False,
+    source_filter: str | None = None,
     max_results: int = 50,
 ) -> list[ResearchItem]:
-    """Fetch competition papers from Semantic Scholar API (free, no key needed).
+    """Fetch competition papers from OpenAlex API (free, 10 req/s, no key needed).
 
-    Used for both SSRN papers (ssrn_only=True) and as a Google Scholar
-    equivalent (ssrn_only=False, skips papers already covered by arXiv).
+    source_filter: "ssrn" | "nber" | None
+      - "ssrn"    → only papers hosted on SSRN
+      - "nber"    → only papers affiliated with NBER
+      - None      → all scholarly papers, skipping arXiv and SSRN (already covered)
     """
+    from_date = (
+        datetime.now(timezone.utc) - timedelta(days=lookback_days)
+    ).strftime("%Y-%m-%d")
+
     try:
         resp = _get(
             session,
-            "https://api.semanticscholar.org/graph/v1/paper/search",
+            "https://api.openalex.org/works",
             params={
-                "query": query,
-                "fields": "title,abstract,year,publicationDate,authors,externalIds",
-                "limit": min(max_results, 100),
+                "search": query,
+                "filter": f"from_publication_date:{from_date}",
+                "sort": "publication_date:desc",
+                "per-page": str(min(max_results, 200)),
+                "select": (
+                    "id,title,abstract_inverted_index,publication_date,"
+                    "authorships,primary_location,locations,doi"
+                ),
+                "mailto": "ecn-pulse@digital-competition.com",
             },
         )
         resp.raise_for_status()
         data = resp.json()
 
         items: list[ResearchItem] = []
-        for paper in data.get("data", []):
+        for work in data.get("results", []):
             try:
-                ext = paper.get("externalIds") or {}
-                ssrn_id = ext.get("SSRN")
-                arxiv_id = ext.get("ArXiv")
-                doi = ext.get("DOI") or ""
+                title = work.get("title") or ""
+                abstract = _reconstruct_abstract(work.get("abstract_inverted_index"))
 
-                if ssrn_only and not ssrn_id:
-                    continue
-                if not ssrn_only and arxiv_id:
-                    continue  # already covered by fetch_arxiv
-
-                title = paper.get("title") or ""
-                abstract = paper.get("abstract") or ""
                 if not _has_competition_keyword(f"{title} {abstract}"):
                     continue
 
-                pub_date = paper.get("publicationDate") or ""
-                if not pub_date:
-                    year = paper.get("year")
-                    pub_date = f"{year}-07-01" if year else ""
-
+                pub_date = work.get("publication_date") or ""
                 if not _is_recent(pub_date, lookback_days):
                     continue
 
-                authors = [a["name"] for a in (paper.get("authors") or []) if a.get("name")]
-                paper_id = paper.get("paperId") or ""
+                # Classify location
+                primary_loc = work.get("primary_location") or {}
+                all_locs = work.get("locations") or [primary_loc]
+                primary_src_name = (
+                    (primary_loc.get("source") or {}).get("host_organization_name") or ""
+                ).lower()
 
-                if ssrn_id:
+                is_ssrn = "ssrn" in primary_src_name or "social science research network" in primary_src_name
+                ssrn_url = primary_loc.get("landing_page_url") or "" if is_ssrn else ""
+                if not ssrn_url:
+                    for loc in all_locs:
+                        lu = (loc.get("landing_page_url") or "").lower()
+                        if "ssrn" in lu:
+                            ssrn_url = loc.get("landing_page_url") or ""
+                            is_ssrn = True
+                            break
+
+                is_arxiv = any(
+                    "arxiv" in (loc.get("landing_page_url") or "").lower()
+                    for loc in all_locs
+                )
+
+                # Apply source filter
+                if source_filter == "ssrn" and not is_ssrn:
+                    continue
+                if source_filter is None and (is_arxiv or is_ssrn):
+                    continue  # skip papers already covered by fetch_arxiv / fetch_ssrn
+                if source_filter == "nber":
+                    has_nber = any(
+                        "national bureau of economic research" in
+                        (inst.get("display_name") or "").lower()
+                        for auth in (work.get("authorships") or [])
+                        for inst in (auth.get("institutions") or [])
+                    )
+                    if not has_nber:
+                        continue
+
+                # Build URL and item_id
+                doi = (work.get("doi") or "").replace("https://doi.org/", "")
+                openalex_id = (work.get("id") or "").split("/")[-1]
+                landing = primary_loc.get("landing_page_url") or ""
+
+                if is_ssrn or source_filter == "ssrn":
                     source = "ssrn"
-                    item_id = str(ssrn_id)
-                    url = f"https://papers.ssrn.com/abstract={ssrn_id}"
-                elif doi:
-                    source = "scholarly"
-                    item_id = doi
-                    url = f"https://doi.org/{doi}"
+                    url = ssrn_url or landing or (f"https://doi.org/{doi}" if doi else "")
+                    m = re.search(r'/abstract=?(\d+)', url)
+                    item_id = m.group(1) if m else (doi or openalex_id)
+                elif source_filter == "nber":
+                    source = "nber"
+                    url = landing or (f"https://doi.org/{doi}" if doi else "")
+                    item_id = doi or openalex_id
                 else:
                     source = "scholarly"
-                    item_id = paper_id
-                    url = f"https://www.semanticscholar.org/paper/{paper_id}"
+                    url = landing or (f"https://doi.org/{doi}" if doi else "")
+                    item_id = doi or openalex_id
+
+                if not url:
+                    continue
+
+                authors = [
+                    (auth.get("author") or {}).get("display_name") or ""
+                    for auth in (work.get("authorships") or [])
+                ][:5]
+                authors = [a for a in authors if a]
 
                 items.append(ResearchItem(
                     source=source,
                     item_type="working_paper",
-                    item_id=item_id,
+                    item_id=str(item_id),
                     title=title,
                     url=url,
                     date=pub_date,
@@ -788,38 +854,37 @@ def _fetch_semantic_scholar(
                     abstract=abstract[:1200],
                 ))
             except Exception as exc:
-                log.debug("Semantic Scholar paper parse error: %s", exc)
+                log.debug("OpenAlex work parse error: %s", exc)
 
-        label = "ssrn" if ssrn_only else "scholarly"
-        log.info("Semantic Scholar (%s): %d items", label, len(items))
+        log.info("OpenAlex (%s): %d items", source_filter or "scholarly", len(items))
         return items
 
     except Exception as exc:
-        log.warning("Semantic Scholar fetch failed: %s", exc)
+        log.warning("OpenAlex fetch failed (%s): %s", source_filter or "scholarly", exc)
         return []
 
 
 def fetch_ssrn(session: requests.Session, lookback_days: int) -> list[ResearchItem]:
-    """SSRN working papers via Semantic Scholar API (SSRN blocks direct scraping)."""
-    return _fetch_semantic_scholar(
+    """SSRN working papers via OpenAlex API (SSRN blocks direct scraping)."""
+    return _fetch_openalex(
         session,
         query="digital competition antitrust platform DMA regulation merger cartel market power",
         lookback_days=lookback_days,
-        ssrn_only=True,
+        source_filter="ssrn",
         max_results=50,
     )
 
 
 def fetch_scholarly(session: requests.Session, lookback_days: int) -> list[ResearchItem]:
-    """Broad academic competition papers via Semantic Scholar (Google Scholar equivalent)."""
-    return _fetch_semantic_scholar(
+    """Broad academic competition papers via OpenAlex (Google Scholar equivalent)."""
+    return _fetch_openalex(
         session,
         query=(
             "digital competition antitrust platform economics DMA regulation "
             "merger market power gatekeeper algorithm pricing"
         ),
         lookback_days=lookback_days,
-        ssrn_only=False,
+        source_filter=None,
         max_results=50,
     )
 
