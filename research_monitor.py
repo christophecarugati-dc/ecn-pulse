@@ -950,6 +950,95 @@ def fetch_think_tanks(session: requests.Session, lookback_days: int) -> list[Res
     return items
 
 
+# ── EC portal helpers ────────────────────────────────────────────────────────
+
+def _prewarm_ec_portal(session: requests.Session, url: str) -> str:
+    """GET an EC Angular portal page to obtain session cookies. Returns XSRF token if found."""
+    try:
+        _get(session, url, headers={
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Upgrade-Insecure-Requests": "1",
+        })
+        for cookie_name in ("XSRF-TOKEN", "XSRF-TOKEN-EC", "csrftoken", "_csrf"):
+            val = session.cookies.get(cookie_name)
+            if val:
+                return val
+    except Exception as exc:
+        log.debug("EC portal pre-warm failed for %s: %s", url, exc)
+    return ""
+
+
+def _eurlex_search_for_source(
+    session: requests.Session,
+    queries: list[str],
+    source: str,
+    item_type: str,
+    lookback_days: int,
+    filter_fn=None,
+    seen: set | None = None,
+) -> list[ResearchItem]:
+    """Search EUR-Lex HTML and return items tagged with the given source / item_type."""
+    items: list[ResearchItem] = []
+    _seen = seen if seen is not None else set()
+
+    for query in queries:
+        try:
+            resp = _get(
+                session,
+                "https://eur-lex.europa.eu/search.html",
+                params={"scope": "EURLEX", "text": query, "type": "advanced", "lang": "en"},
+            )
+            resp.raise_for_status()
+            soup = BeautifulSoup(resp.text, "html.parser")
+            for result in soup.select(
+                ".SearchResult, [class*='result-item'], "
+                "[class*='document-result'], li.result, .result"
+            ):
+                try:
+                    link = result.select_one(
+                        "a[href*='legal-content'], a[href*='eur-lex.europa.eu'], a[href]"
+                    )
+                    if not link:
+                        continue
+                    title = link.get_text(strip=True)
+                    if not title:
+                        continue
+                    href = link.get("href", "")
+                    url = href if href.startswith("http") else urljoin(
+                        "https://eur-lex.europa.eu", href
+                    )
+                    if url in _seen:
+                        continue
+                    text = result.get_text(" ", strip=True)
+                    if filter_fn and not filter_fn(f"{title} {text}"):
+                        continue
+                    date_match = re.search(
+                        r'\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}/\d{4}', text
+                    )
+                    date_str = _parse_date(date_match.group(0)) if date_match else ""
+                    if not _is_recent(date_str, lookback_days):
+                        continue
+                    _seen.add(url)
+                    celex = re.search(r'[A-Z]\d{4}[A-Z]\d+', url)
+                    item_id = celex.group(0) if celex else url
+                    items.append(ResearchItem(
+                        source=source,
+                        item_type=item_type,
+                        item_id=item_id,
+                        title=title,
+                        url=url,
+                        date=date_str,
+                        abstract=text[:600],
+                    ))
+                except Exception as exc:
+                    log.debug("EUR-Lex %s result parse error: %s", source, exc)
+        except Exception as exc:
+            log.debug("EUR-Lex %s search '%s' failed: %s", source, query, exc)
+
+    return items
+
+
 # ── DG COMP ───────────────────────────────────────────────────────────────────
 
 _DGCOMP_DIGITAL_TERMS = [
@@ -967,21 +1056,29 @@ def fetch_dgcomp(session: requests.Session, lookback_days: int) -> list[Research
     """DG COMP competition enforcement cases (open, digital/tech-related)."""
     items: list[ResearchItem] = []
 
+    _PORTAL = "https://competition-cases.ec.europa.eu"
+    xsrf = _prewarm_ec_portal(session, f"{_PORTAL}/cases")
+    api_headers: dict[str, str] = {
+        "Accept": "application/json",
+        "Accept-Language": "en-US,en;q=0.9",
+        "X-Requested-With": "XMLHttpRequest",
+        "Referer": f"{_PORTAL}/cases",
+        "Origin": _PORTAL,
+    }
+    if xsrf:
+        api_headers["X-XSRF-TOKEN"] = xsrf
+
     try:
         resp = _get(
             session,
-            "https://competition-cases.ec.europa.eu/api/cases",
+            f"{_PORTAL}/api/cases",
             params={
                 "_limit": "50",
                 "_sortBy": "caseOpenDate:desc",
                 "lng": "en",
                 "status": "OPEN",
             },
-            headers={
-                "Accept": "application/json",
-                "Accept-Language": "en",
-                "X-Requested-With": "XMLHttpRequest",
-            },
+            headers=api_headers,
         )
         resp.raise_for_status()
         data = resp.json()
@@ -1136,6 +1233,25 @@ def fetch_dgcomp(session: requests.Session, lookback_days: int) -> list[Research
         except Exception as exc2:
             log.warning("DG COMP HTML fallback also failed: %s", exc2)
 
+    # EUR-Lex fallback: competition decisions and procedures published in OJ
+    if not items:
+        log.info("DG COMP: all portal/portal-fallback paths empty, trying EUR-Lex")
+        eurlex_items = _eurlex_search_for_source(
+            session,
+            queries=[
+                "Commission antitrust digital platform abuse dominant decision",
+                "DG COMP competition digital enforcement AT.40 procedure",
+                "merger control digital acquisition clearance Commission",
+            ],
+            source="dgcomp",
+            item_type="enforcement_case",
+            lookback_days=lookback_days,
+            filter_fn=_is_digital_case,
+        )
+        items.extend(eurlex_items)
+        if eurlex_items:
+            log.info("DG COMP (EUR-Lex fallback): %d items", len(eurlex_items))
+
     log.info("DG COMP: %d items", len(items))
     return items
 
@@ -1167,11 +1283,23 @@ def fetch_dma_acquisitions(session: requests.Session, lookback_days: int) -> lis
     """DMA Article 14 gatekeeper acquisition notifications — all available, no lookback filter."""
     items: list[ResearchItem] = []
 
+    _DMA_PORTAL = "https://digital-markets-act-cases.ec.europa.eu"
+    xsrf = _prewarm_ec_portal(session, f"{_DMA_PORTAL}/acquisitions")
+    dma_api_headers: dict[str, str] = {
+        "Accept": "application/json",
+        "Accept-Language": "en-US,en;q=0.9",
+        "X-Requested-With": "XMLHttpRequest",
+        "Referer": f"{_DMA_PORTAL}/acquisitions",
+        "Origin": _DMA_PORTAL,
+    }
+    if xsrf:
+        dma_api_headers["X-XSRF-TOKEN"] = xsrf
+
     # Try API endpoints in order of specificity
     data: list | None = None
     for api_url, api_params in _DMA_ACQ_API_CANDIDATES:
         try:
-            resp = _get(session, api_url, params=api_params, headers={"Accept": "application/json"})
+            resp = _get(session, api_url, params=api_params, headers=dma_api_headers)
             resp.raise_for_status()
             raw = resp.json()
             cases_candidate = raw if isinstance(raw, list) else (
@@ -1286,6 +1414,25 @@ def fetch_dma_acquisitions(session: requests.Session, lookback_days: int) -> lis
                     log.debug("DMA acquisitions HTML row parse error: %s", exc)
         except Exception as exc2:
             log.warning("DMA acquisitions HTML fallback also failed: %s", exc2)
+
+    # EUR-Lex fallback: OJ C-series notices for DMA Art 14 acquisition notifications
+    if not items:
+        log.info("DMA acquisitions: all portal paths empty, trying EUR-Lex")
+        eurlex_items = _eurlex_search_for_source(
+            session,
+            queries=[
+                "Article 14 Digital Markets Act acquisition notification gatekeeper",
+                "concentration notification Digital Markets Act DMA gatekeeper",
+                "DMA Article 14 acquisition notification concentration",
+            ],
+            source="dma_acquisitions",
+            item_type="acquisition_notification",
+            # DMA came into force March 2024; use 2-year window to capture all notifications
+            lookback_days=max(lookback_days, 730),
+        )
+        items.extend(eurlex_items)
+        if eurlex_items:
+            log.info("DMA acquisitions (EUR-Lex fallback): %d items", len(eurlex_items))
 
     log.info("DMA acquisitions: %d items", len(items))
     return items
