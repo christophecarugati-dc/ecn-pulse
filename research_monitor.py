@@ -295,21 +295,14 @@ def fetch_arxiv(session: requests.Session, lookback_days: int) -> list[ResearchI
 
 # ── EUR-Lex ───────────────────────────────────────────────────────────────────
 
-# EUR-Lex feeds: try each base URL; the tools/rss.do endpoint returns 404 on
-# the current site — fall back to the OJ daily Atom feed (CELEX identifier feed)
-# and the ELI / official-journal RSS if available.
+# EUR-Lex feeds: tools/rss.do returns 404 on the current site; kept as candidates
+# so they automatically pick up again if EUR-Lex restores them.
+# The main results come from _scrape_eurlex_search (HTML, confirmed accessible).
 EURLEX_FEEDS: list[tuple[str, dict]] = [
-    # OJ C-series recent additions (competition notices, DMA, DSA)
-    ("https://eur-lex.europa.eu/oj/daily-view/C-series/default.html?ojDate=",
-     {}),  # HTML only – handled via _scrape_eurlex_search; kept for documentation
-    # Fallback RSS candidates (site has been restructuring these URLs)
     ("https://eur-lex.europa.eu/tools/rss.do",
      {"type": "recently-added", "facet_lang": "EN"}),
     ("https://eur-lex.europa.eu/tools/rss.do",
      {"type": "latest-oj", "facet_lang": "EN"}),
-    # Alternative Atom format
-    ("https://eur-lex.europa.eu/RSSONE.do",
-     {"moreMaxIsAllowed": "false", "where": "", "db": "ALL", "feedFormat": "RSS", "facet_lang": "EN"}),
 ]
 
 ATOM_NS = "http://www.w3.org/2005/Atom"
@@ -486,10 +479,17 @@ def _scrape_eurlex_search(
             log.debug("EUR-Lex search '%s' error: %s", query, exc)
             continue
 
+        if resp.status_code != 200:
+            log.warning("EUR-Lex search '%s' returned HTTP %d (skipping)", query, resp.status_code)
+            continue
+
         soup = BeautifulSoup(resp.text, "html.parser")
+        raw_results = soup.select(".SearchResult, .searchResult, [class*='result-item']")
+        log.debug("EUR-Lex search '%s': %d raw result elements (HTTP %d, %d bytes)",
+                  query, len(raw_results), resp.status_code, len(resp.content))
 
         # EUR-Lex search result selectors (may change with site redesigns)
-        for result in soup.select(".SearchResult, .searchResult, [class*='result-item']"):
+        for result in raw_results:
             try:
                 link = result.select_one("a[href*='legal-content'], a[href*='eur-lex.europa.eu']")
                 if not link:
@@ -1062,6 +1062,80 @@ def _eurlex_search_for_source(
     return items
 
 
+# ── EU Commission presscorner ─────────────────────────────────────────────────
+
+def _fetch_presscorner(
+    session: requests.Session,
+    keywords: str,
+    lookback_days: int,
+    source: str,
+    item_type: str,
+    page_size: int = 20,
+) -> list[ResearchItem]:
+    """Fetch EU Commission press releases via the presscorner JSON API.
+
+    The presscorner API is a public JSON endpoint that does not require
+    authentication and is accessible from GitHub Actions IPs.
+    """
+    items: list[ResearchItem] = []
+    try:
+        resp = _get(
+            session,
+            "https://ec.europa.eu/commission/presscorner/api/documents",
+            params={
+                "text": keywords,
+                "lang": "en",
+                "pageSize": str(page_size),
+                "page": "1",
+            },
+            headers={"Accept": "application/json"},
+        )
+        resp.raise_for_status()
+        data = resp.json()
+
+        docs = data if isinstance(data, list) else (
+            data.get("documents") or data.get("results") or data.get("items") or []
+        )
+        for doc in docs:
+            try:
+                title = doc.get("title") or doc.get("headline") or ""
+                if not title:
+                    continue
+                body = doc.get("body") or doc.get("summary") or doc.get("abstract") or ""
+                if not _has_competition_keyword(f"{title} {body}"):
+                    continue
+
+                date_raw = (doc.get("releaseDate") or doc.get("date") or
+                            doc.get("publicationDate") or "")
+                date_str = _parse_date(str(date_raw)) if date_raw else ""
+                if not _is_recent(date_str, lookback_days):
+                    continue
+
+                ref = doc.get("reference") or doc.get("id") or doc.get("docId") or ""
+                doc_url = (doc.get("url") or doc.get("link") or
+                           (f"https://ec.europa.eu/commission/presscorner/detail/en/{ref}"
+                            if ref else ""))
+                if not doc_url:
+                    continue
+
+                items.append(ResearchItem(
+                    source=source,
+                    item_type=item_type,
+                    item_id=str(ref) or doc_url,
+                    title=title,
+                    url=doc_url,
+                    date=date_str,
+                    abstract=str(body)[:800],
+                ))
+            except Exception as exc:
+                log.debug("Presscorner doc parse error (%s): %s", source, exc)
+
+        log.info("Presscorner (%s/%s): %d items", source, keywords[:30], len(items))
+    except Exception as exc:
+        log.warning("Presscorner fetch failed (%s): %s", source, exc)
+    return items
+
+
 # ── DG COMP ───────────────────────────────────────────────────────────────────
 
 _DGCOMP_DIGITAL_TERMS = [
@@ -1163,11 +1237,11 @@ def fetch_dgcomp(session: requests.Session, lookback_days: int) -> list[Research
                 session,
                 "https://data.europa.eu/api/hub/search/datasets",
                 params={
-                    "filter": "catalogue:comp",
-                    "query": "EU Competition antitrust digital merger",
+                    "query": "competition antitrust digital platform DG COMP",
                     "sort": "modified+desc",
                     "limit": "20",
                     "page": "1",
+                    "facets[publisher][]": "European Commission",
                 },
                 headers={"Accept": "application/json"},
             )
@@ -1256,10 +1330,23 @@ def fetch_dgcomp(session: requests.Session, lookback_days: int) -> list[Research
         except Exception as exc2:
             log.warning("DG COMP HTML fallback also failed: %s", exc2)
 
-    # EUR-Lex fallback: competition decisions and procedures published in OJ.
-    # Use 30-day minimum since formal Commission decisions take time to publish.
+    # Presscorner fallback: EU Commission press releases for competition enforcement.
+    # This JSON API is reliably accessible from GitHub Actions IPs.
     if not items:
-        log.info("DG COMP: all portal/portal-fallback paths empty, trying EUR-Lex")
+        log.info("DG COMP: trying EU Commission presscorner API")
+        presscorner_items = _fetch_presscorner(
+            session,
+            keywords="competition antitrust digital platform DMA enforcement merger",
+            lookback_days=lookback_days,
+            source="dgcomp",
+            item_type="enforcement_case",
+            page_size=30,
+        )
+        items.extend(presscorner_items)
+
+    # EUR-Lex fallback: competition decisions published in OJ (30-day min lookback).
+    if not items:
+        log.info("DG COMP: trying EUR-Lex search fallback")
         eurlex_items = _eurlex_search_for_source(
             session,
             queries=[
@@ -1438,9 +1525,22 @@ def fetch_dma_acquisitions(session: requests.Session, lookback_days: int) -> lis
         except Exception as exc2:
             log.warning("DMA acquisitions HTML fallback also failed: %s", exc2)
 
+    # Presscorner fallback: DMA acquisition-related press releases
+    if not items:
+        log.info("DMA acquisitions: trying EU Commission presscorner API")
+        presscorner_items = _fetch_presscorner(
+            session,
+            keywords="Digital Markets Act acquisition notification gatekeeper Article 14",
+            lookback_days=max(lookback_days, 730),
+            source="dma_acquisitions",
+            item_type="acquisition_notification",
+            page_size=20,
+        )
+        items.extend(presscorner_items)
+
     # EUR-Lex fallback: OJ C-series notices for DMA Art 14 acquisition notifications
     if not items:
-        log.info("DMA acquisitions: all portal paths empty, trying EUR-Lex")
+        log.info("DMA acquisitions: trying EUR-Lex search fallback")
         eurlex_items = _eurlex_search_for_source(
             session,
             queries=[
@@ -1450,7 +1550,6 @@ def fetch_dma_acquisitions(session: requests.Session, lookback_days: int) -> lis
             ],
             source="dma_acquisitions",
             item_type="acquisition_notification",
-            # DMA came into force March 2024; use 2-year window to capture all notifications
             lookback_days=max(lookback_days, 730),
         )
         items.extend(eurlex_items)
