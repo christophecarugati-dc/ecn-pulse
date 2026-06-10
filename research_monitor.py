@@ -295,12 +295,21 @@ def fetch_arxiv(session: requests.Session, lookback_days: int) -> list[ResearchI
 
 # ── EUR-Lex ───────────────────────────────────────────────────────────────────
 
-EURLEX_FEED_URL = "https://eur-lex.europa.eu/tools/rss.do"
-EURLEX_FEED_PARAMS = [
-    # Recently added documents (broad — filtered locally by keyword)
-    {"type": "recently-added", "facet_lang": "EN"},
-    # Recent Official Journal C-series (competition decisions often appear here)
-    {"type": "latest-oj", "facet_lang": "EN"},
+# EUR-Lex feeds: try each base URL; the tools/rss.do endpoint returns 404 on
+# the current site — fall back to the OJ daily Atom feed (CELEX identifier feed)
+# and the ELI / official-journal RSS if available.
+EURLEX_FEEDS: list[tuple[str, dict]] = [
+    # OJ C-series recent additions (competition notices, DMA, DSA)
+    ("https://eur-lex.europa.eu/oj/daily-view/C-series/default.html?ojDate=",
+     {}),  # HTML only – handled via _scrape_eurlex_search; kept for documentation
+    # Fallback RSS candidates (site has been restructuring these URLs)
+    ("https://eur-lex.europa.eu/tools/rss.do",
+     {"type": "recently-added", "facet_lang": "EN"}),
+    ("https://eur-lex.europa.eu/tools/rss.do",
+     {"type": "latest-oj", "facet_lang": "EN"}),
+    # Alternative Atom format
+    ("https://eur-lex.europa.eu/RSSONE.do",
+     {"moreMaxIsAllowed": "false", "where": "", "db": "ALL", "feedFormat": "RSS", "facet_lang": "EN"}),
 ]
 
 ATOM_NS = "http://www.w3.org/2005/Atom"
@@ -357,16 +366,21 @@ def fetch_eurlex(session: requests.Session, lookback_days: int) -> list[Research
     items: list[ResearchItem] = []
     seen: set[str] = set()
 
-    for params in EURLEX_FEED_PARAMS:
+    for feed_url, params in EURLEX_FEEDS:
+        if not params:  # HTML-only placeholder entry
+            continue
         try:
-            resp = _get(session, EURLEX_FEED_URL, params=params,
+            resp = _get(session, feed_url, params=params,
                         headers={"Accept": "application/rss+xml, application/atom+xml, */*"})
             resp.raise_for_status()
         except Exception as exc:
-            log.warning("EUR-Lex feed (%s) error: %s", params, exc)
+            log.debug("EUR-Lex feed (%s %s) error: %s", feed_url, params, exc)
             continue
 
         entries = _parse_atom_or_rss(resp.text)
+        if not entries:
+            log.debug("EUR-Lex feed (%s): 0 entries parsed", feed_url)
+            continue
         kept = 0
         for e in entries:
             url = e["url"].strip()
@@ -385,13 +399,9 @@ def fetch_eurlex(session: requests.Session, lookback_days: int) -> list[Research
             if not _is_recent(date, lookback_days):
                 continue
 
-            # Classify document type from title / URL
             item_type = _classify_eurlex_type(title, url)
-
-            # CELEX identifier for stable IDs
             celex = re.search(r'[A-Z]\d{4}[A-Z]\d+', url)
             item_id = celex.group(0) if celex else url
-
             summary_text = BeautifulSoup(e["summary"], "html.parser").get_text(" ", strip=True)
 
             items.append(ResearchItem(
@@ -405,7 +415,7 @@ def fetch_eurlex(session: requests.Session, lookback_days: int) -> list[Research
             ))
             kept += 1
 
-        log.info("EUR-Lex feed %s: %d relevant items", params.get("type"), kept)
+        log.info("EUR-Lex feed (%s): %d relevant items", params.get("type", feed_url), kept)
 
     # Also scrape EUR-Lex search for DMA/DSA/competition decisions (HTML)
     items.extend(_scrape_eurlex_search(session, lookback_days, seen))
@@ -765,6 +775,8 @@ def _fetch_openalex(
         resp.raise_for_status()
         data = resp.json()
 
+        raw_count = len(data.get("results", []))
+        log.debug("OpenAlex raw results: %d (source_filter=%s)", raw_count, source_filter)
         items: list[ResearchItem] = []
         for work in data.get("results", []):
             try:
@@ -978,7 +990,11 @@ def _eurlex_search_for_source(
     filter_fn=None,
     seen: set | None = None,
 ) -> list[ResearchItem]:
-    """Search EUR-Lex HTML and return items tagged with the given source / item_type."""
+    """Search EUR-Lex HTML and return items tagged with the given source / item_type.
+
+    Uses the same request parameters and CSS selectors as the working
+    _scrape_eurlex_search so the two code paths behave consistently.
+    """
     items: list[ResearchItem] = []
     _seen = seen if seen is not None else set()
 
@@ -987,54 +1003,61 @@ def _eurlex_search_for_source(
             resp = _get(
                 session,
                 "https://eur-lex.europa.eu/search.html",
-                params={"scope": "EURLEX", "text": query, "type": "advanced", "lang": "en"},
+                params={
+                    "scope": "EURLEX",
+                    "text": query,
+                    "lang": "en",
+                    "type": "quick",
+                    "sortOne": "DATETIME_SORT",
+                    "sortOneOrder": "desc",
+                },
+                headers={"Accept": "text/html"},
             )
             resp.raise_for_status()
-            soup = BeautifulSoup(resp.text, "html.parser")
-            for result in soup.select(
-                ".SearchResult, [class*='result-item'], "
-                "[class*='document-result'], li.result, .result"
-            ):
-                try:
-                    link = result.select_one(
-                        "a[href*='legal-content'], a[href*='eur-lex.europa.eu'], a[href]"
-                    )
-                    if not link:
-                        continue
-                    title = link.get_text(strip=True)
-                    if not title:
-                        continue
-                    href = link.get("href", "")
-                    url = href if href.startswith("http") else urljoin(
-                        "https://eur-lex.europa.eu", href
-                    )
-                    if url in _seen:
-                        continue
-                    text = result.get_text(" ", strip=True)
-                    if filter_fn and not filter_fn(f"{title} {text}"):
-                        continue
-                    date_match = re.search(
-                        r'\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}/\d{4}', text
-                    )
-                    date_str = _parse_date(date_match.group(0)) if date_match else ""
-                    if not _is_recent(date_str, lookback_days):
-                        continue
-                    _seen.add(url)
-                    celex = re.search(r'[A-Z]\d{4}[A-Z]\d+', url)
-                    item_id = celex.group(0) if celex else url
-                    items.append(ResearchItem(
-                        source=source,
-                        item_type=item_type,
-                        item_id=item_id,
-                        title=title,
-                        url=url,
-                        date=date_str,
-                        abstract=text[:600],
-                    ))
-                except Exception as exc:
-                    log.debug("EUR-Lex %s result parse error: %s", source, exc)
         except Exception as exc:
             log.debug("EUR-Lex %s search '%s' failed: %s", source, query, exc)
+            continue
+
+        soup = BeautifulSoup(resp.text, "html.parser")
+        for result in soup.select(".SearchResult, .searchResult, [class*='result-item']"):
+            try:
+                link = result.select_one(
+                    "a[href*='legal-content'], a[href*='eur-lex.europa.eu']"
+                )
+                if not link:
+                    continue
+                title = link.get_text(strip=True)
+                if not title:
+                    continue
+                href = link.get("href", "")
+                url = href if href.startswith("http") else urljoin(
+                    "https://eur-lex.europa.eu", href
+                )
+                if url in _seen:
+                    continue
+                text = result.get_text(" ", strip=True)
+                if filter_fn and not filter_fn(f"{title} {text}"):
+                    continue
+                date_el = result.select_one("[class*='date'], time")
+                date_str = _parse_date(date_el.get_text()) if date_el else ""
+                if not _is_recent(date_str, lookback_days):
+                    continue
+                _seen.add(url)
+                celex = re.search(r'[A-Z]\d{4}[A-Z]\d+', url)
+                item_id = celex.group(0) if celex else url
+                desc_el = result.select_one("[class*='description'], [class*='snippet']")
+                abstract = desc_el.get_text(strip=True)[:600] if desc_el else text[:600]
+                items.append(ResearchItem(
+                    source=source,
+                    item_type=item_type,
+                    item_id=item_id,
+                    title=title,
+                    url=url,
+                    date=date_str,
+                    abstract=abstract,
+                ))
+            except Exception as exc:
+                log.debug("EUR-Lex %s result parse error: %s", source, exc)
 
     return items
 
@@ -1233,20 +1256,20 @@ def fetch_dgcomp(session: requests.Session, lookback_days: int) -> list[Research
         except Exception as exc2:
             log.warning("DG COMP HTML fallback also failed: %s", exc2)
 
-    # EUR-Lex fallback: competition decisions and procedures published in OJ
+    # EUR-Lex fallback: competition decisions and procedures published in OJ.
+    # Use 30-day minimum since formal Commission decisions take time to publish.
     if not items:
         log.info("DG COMP: all portal/portal-fallback paths empty, trying EUR-Lex")
         eurlex_items = _eurlex_search_for_source(
             session,
             queries=[
-                "Commission antitrust digital platform abuse dominant decision",
-                "DG COMP competition digital enforcement AT.40 procedure",
-                "merger control digital acquisition clearance Commission",
+                "Commission antitrust digital platform decision",
+                "competition enforcement digital gatekeeper AT.40",
+                "merger digital acquisition Commission clearance",
             ],
             source="dgcomp",
             item_type="enforcement_case",
-            lookback_days=lookback_days,
-            filter_fn=_is_digital_case,
+            lookback_days=max(lookback_days, 30),
         )
         items.extend(eurlex_items)
         if eurlex_items:
