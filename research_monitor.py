@@ -1191,24 +1191,35 @@ def _fetch_presscorner(
         except Exception as exc:
             log.debug("Presscorner JSON API failed (%s): %s", params, exc)
 
-    # --- attempt 2: RSS feed
+    # --- attempt 2: plain RSS feed (no keyword params — filter client-side)
+    # Including keyword params in the RSS URL silently returns 0 entries.
     if not data:
-        try:
-            resp = _get(
-                session,
-                "https://ec.europa.eu/commission/presscorner/home/en",
-                params={"keywords": keywords, "pageSize": str(page_size), "format": "rss"},
-                headers={"Accept": "application/rss+xml, text/xml, */*"},
-            )
-            if resp.status_code == 200:
+        kw_terms = {k.lower() for k in keywords.replace(",", " ").split() if len(k) > 3}
+        for rss_params in [
+            {"format": "rss", "topic": "COMP"},   # competition-specific topic
+            {"format": "rss"},                      # all recent press releases
+        ]:
+            try:
+                resp = _get(
+                    session,
+                    "https://ec.europa.eu/commission/presscorner/home/en",
+                    params=rss_params,
+                    headers={"Accept": "application/rss+xml, text/xml, */*"},
+                )
+                if resp.status_code != 200 or len(resp.content) < 200:
+                    log.debug("Presscorner RSS %s → HTTP %d (%d bytes)",
+                              rss_params, resp.status_code, len(resp.content))
+                    continue
                 entries = _parse_atom_or_rss(resp.text)
+                if not entries:
+                    continue
                 for e in entries:
                     title = e.get("title", "").strip()
                     url = e.get("url", "").strip()
                     if not title or not url:
                         continue
-                    combined = f"{title} {e.get('summary', '')}"
-                    if not _has_competition_keyword(combined):
+                    combined = f"{title} {e.get('summary', '')}".lower()
+                    if not any(kw in combined for kw in kw_terms) and not _has_competition_keyword(combined):
                         continue
                     date_str = e.get("date", "")
                     if not _is_recent(date_str, lookback_days):
@@ -1227,10 +1238,9 @@ def _fetch_presscorner(
                 if items:
                     log.info("Presscorner RSS (%s): %d items", source, len(items))
                     return items
-            else:
-                log.debug("Presscorner RSS → HTTP %d", resp.status_code)
-        except Exception as exc:
-            log.debug("Presscorner RSS failed (%s): %s", source, exc)
+                log.debug("Presscorner RSS %s: 0 matching items from %d entries", rss_params, len(entries))
+            except Exception as exc:
+                log.debug("Presscorner RSS %s failed: %s", rss_params, exc)
 
     for doc in data:
         try:
@@ -1373,7 +1383,6 @@ def fetch_dgcomp(session: requests.Session, lookback_days: int) -> list[Research
                     "sort": "modified+desc",
                     "limit": "20",
                     "page": "1",
-                    "facets[publisher][]": "European Commission",
                 },
                 headers={"Accept": "application/json"},
             )
