@@ -413,7 +413,80 @@ def fetch_eurlex(session: requests.Session, lookback_days: int) -> list[Research
     # Also scrape EUR-Lex search for DMA/DSA/competition decisions (HTML)
     items.extend(_scrape_eurlex_search(session, lookback_days, seen))
 
+    # If HTML search returned nothing (e.g. EUR-Lex returning 202), try CELLAR SPARQL
+    if not items:
+        items.extend(_eurlex_sparql_fallback(session, lookback_days, seen))
+
     log.info("EUR-Lex total: %d items", len(items))
+    return items
+
+
+def _eurlex_sparql_fallback(
+    session: requests.Session, lookback_days: int, seen: set[str]
+) -> list[ResearchItem]:
+    """Query the EU Publications Office CELLAR SPARQL endpoint for recent competition docs.
+
+    Used when EUR-Lex HTML search is unavailable (e.g. returning 202).
+    """
+    from_date = (datetime.now(timezone.utc) - timedelta(days=lookback_days)).strftime("%Y-%m-%d")
+    sparql = f"""
+PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT ?work ?title ?date WHERE {{
+  ?work cdm:work_date_document ?date ;
+        cdm:work_has_expression ?expr .
+  ?expr cdm:expression_title ?title .
+  FILTER(?date >= xsd:date("{from_date}"))
+  FILTER(REGEX(LCASE(STR(?title)),
+    "competition|antitrust|digital market|gatekeeper|dma|dsa|merger control|platform"))
+}}
+ORDER BY DESC(?date)
+LIMIT 40
+"""
+    items: list[ResearchItem] = []
+    try:
+        resp = _get(
+            session,
+            "https://publications.europa.eu/webapi/rdf/sparql",
+            params={"query": sparql, "format": "application/sparql-results+json"},
+            headers={"Accept": "application/sparql-results+json"},
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        bindings = data.get("results", {}).get("bindings", [])
+        log.info("CELLAR SPARQL: %d raw bindings", len(bindings))
+        for b in bindings:
+            try:
+                work_uri = b.get("work", {}).get("value", "")
+                title = b.get("title", {}).get("value", "")
+                date_str = _parse_date(b.get("date", {}).get("value", ""))
+                if not title or not work_uri:
+                    continue
+                # Convert CELLAR URI to EUR-Lex URL if possible
+                celex_m = re.search(r'/celex/([^/]+)$', work_uri)
+                if celex_m:
+                    celex = celex_m.group(1)
+                    url = f"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:{celex}"
+                    item_id = celex
+                else:
+                    url = work_uri
+                    item_id = work_uri
+                if url in seen:
+                    continue
+                seen.add(url)
+                items.append(ResearchItem(
+                    source="eurlex",
+                    item_type=_classify_eurlex_type(title, url),
+                    item_id=item_id,
+                    title=title,
+                    url=url,
+                    date=date_str,
+                    abstract="",
+                ))
+            except Exception as exc:
+                log.debug("CELLAR SPARQL binding parse error: %s", exc)
+    except Exception as exc:
+        log.warning("CELLAR SPARQL fallback failed: %s", exc)
     return items
 
 
@@ -454,41 +527,69 @@ _EURLEX_SEARCH_QUERIES = [
 ]
 
 
+def _eurlex_get_search_resp(
+    session: requests.Session,
+    params: dict,
+    max_retries: int = 2,
+) -> requests.Response | None:
+    """GET EUR-Lex search.html, following 202 meta-refresh if present (max_retries times)."""
+    url = "https://eur-lex.europa.eu/search.html"
+    for attempt in range(max_retries + 1):
+        try:
+            resp = _get(session, url, params=params, headers={"Accept": "text/html"})
+            resp.raise_for_status()
+        except Exception as exc:
+            log.debug("EUR-Lex search attempt %d error: %s", attempt, exc)
+            return None
+
+        if resp.status_code == 200:
+            return resp
+
+        if resp.status_code == 202 and attempt < max_retries:
+            # Async search accepted — check for meta-refresh redirect or retry
+            soup = BeautifulSoup(resp.text, "html.parser")
+            refresh = soup.find("meta", attrs={"http-equiv": re.compile(r"^refresh$", re.I)})
+            if refresh:
+                content = refresh.get("content", "")
+                m = re.search(r'url=(.+)', content, re.I)
+                if m:
+                    redirect = m.group(1).strip()
+                    if not redirect.startswith("http"):
+                        redirect = urljoin("https://eur-lex.europa.eu", redirect)
+                    url = redirect
+                    params = {}
+            import time as _time
+            _time.sleep(2)
+            continue
+
+        log.warning("EUR-Lex search returned HTTP %d on attempt %d", resp.status_code, attempt)
+        return None
+
+    log.warning("EUR-Lex search still returning non-200 after %d retries", max_retries)
+    return None
+
+
 def _scrape_eurlex_search(
     session: requests.Session, lookback_days: int, seen: set[str]
 ) -> list[ResearchItem]:
     items: list[ResearchItem] = []
 
     for query in _EURLEX_SEARCH_QUERIES:
-        try:
-            resp = _get(
-                session,
-                "https://eur-lex.europa.eu/search.html",
-                params={
-                    "scope": "EURLEX",
-                    "text": query,
-                    "lang": "en",
-                    "type": "quick",
-                    "sortOne": "DATETIME_SORT",
-                    "sortOneOrder": "desc",
-                },
-                headers={"Accept": "text/html"},
-            )
-            resp.raise_for_status()
-        except Exception as exc:
-            log.debug("EUR-Lex search '%s' error: %s", query, exc)
-            continue
-
-        if resp.status_code != 200:
-            log.warning("EUR-Lex search '%s' returned HTTP %d (skipping)", query, resp.status_code)
+        resp = _eurlex_get_search_resp(session, {
+            "scope": "EURLEX",
+            "text": query,
+            "lang": "en",
+            "type": "quick",
+            "sortOne": "DATETIME_SORT",
+            "sortOneOrder": "desc",
+        })
+        if resp is None:
             continue
 
         soup = BeautifulSoup(resp.text, "html.parser")
         raw_results = soup.select(".SearchResult, .searchResult, [class*='result-item']")
-        log.debug("EUR-Lex search '%s': %d raw result elements (HTTP %d, %d bytes)",
-                  query, len(raw_results), resp.status_code, len(resp.content))
+        log.debug("EUR-Lex '%s': %d raw results (%d bytes)", query, len(raw_results), len(resp.content))
 
-        # EUR-Lex search result selectors (may change with site redesigns)
         for result in raw_results:
             try:
                 link = result.select_one("a[href*='legal-content'], a[href*='eur-lex.europa.eu']")
@@ -543,24 +644,16 @@ def fetch_cjeu(session: requests.Session, lookback_days: int) -> list[ResearchIt
     ]
 
     for query in competition_queries:
-        try:
-            resp = _get(
-                session,
-                "https://eur-lex.europa.eu/search.html",
-                params={
-                    "scope": "EURLEX",
-                    "text": query,
-                    "lang": "en",
-                    "type": "quick",
-                    "facet_subtype": "JUDGMENT",
-                    "sortOne": "DATETIME_SORT",
-                    "sortOneOrder": "desc",
-                },
-                headers={"Accept": "text/html"},
-            )
-            resp.raise_for_status()
-        except Exception as exc:
-            log.debug("CJEU search '%s' error: %s", query, exc)
+        resp = _eurlex_get_search_resp(session, {
+            "scope": "EURLEX",
+            "text": query,
+            "lang": "en",
+            "type": "quick",
+            "facet_subtype": "JUDGMENT",
+            "sortOne": "DATETIME_SORT",
+            "sortOneOrder": "desc",
+        })
+        if resp is None:
             continue
 
         soup = BeautifulSoup(resp.text, "html.parser")
@@ -776,7 +869,7 @@ def _fetch_openalex(
         data = resp.json()
 
         raw_count = len(data.get("results", []))
-        log.debug("OpenAlex raw results: %d (source_filter=%s)", raw_count, source_filter)
+        log.info("OpenAlex raw results: %d (source_filter=%s, then keyword-filtered)", raw_count, source_filter)
         items: list[ResearchItem] = []
         for work in data.get("results", []):
             try:
@@ -999,23 +1092,16 @@ def _eurlex_search_for_source(
     _seen = seen if seen is not None else set()
 
     for query in queries:
-        try:
-            resp = _get(
-                session,
-                "https://eur-lex.europa.eu/search.html",
-                params={
-                    "scope": "EURLEX",
-                    "text": query,
-                    "lang": "en",
-                    "type": "quick",
-                    "sortOne": "DATETIME_SORT",
-                    "sortOneOrder": "desc",
-                },
-                headers={"Accept": "text/html"},
-            )
-            resp.raise_for_status()
-        except Exception as exc:
-            log.debug("EUR-Lex %s search '%s' failed: %s", source, query, exc)
+        resp = _eurlex_get_search_resp(session, {
+            "scope": "EURLEX",
+            "text": query,
+            "lang": "en",
+            "type": "quick",
+            "sortOne": "DATETIME_SORT",
+            "sortOneOrder": "desc",
+        })
+        if resp is None:
+            log.debug("EUR-Lex %s search '%s': no response", source, query)
             continue
 
         soup = BeautifulSoup(resp.text, "html.parser")
@@ -1072,67 +1158,113 @@ def _fetch_presscorner(
     item_type: str,
     page_size: int = 20,
 ) -> list[ResearchItem]:
-    """Fetch EU Commission press releases via the presscorner JSON API.
+    """Fetch EU Commission press releases via presscorner.
 
-    The presscorner API is a public JSON endpoint that does not require
-    authentication and is accessible from GitHub Actions IPs.
+    Tries the JSON API first (multiple parameter variants), then falls back
+    to the RSS feed exposed by the presscorner search page.
     """
     items: list[ResearchItem] = []
-    try:
-        resp = _get(
-            session,
-            "https://ec.europa.eu/commission/presscorner/api/documents",
-            params={
-                "text": keywords,
-                "lang": "en",
-                "pageSize": str(page_size),
-                "page": "1",
-            },
-            headers={"Accept": "application/json"},
-        )
-        resp.raise_for_status()
-        data = resp.json()
 
-        docs = data if isinstance(data, list) else (
-            data.get("documents") or data.get("results") or data.get("items") or []
-        )
-        for doc in docs:
-            try:
-                title = doc.get("title") or doc.get("headline") or ""
-                if not title:
-                    continue
-                body = doc.get("body") or doc.get("summary") or doc.get("abstract") or ""
-                if not _has_competition_keyword(f"{title} {body}"):
-                    continue
+    # --- attempt 1: JSON API (try common parameter variants)
+    data: list = []
+    for params in [
+        {"keywords": keywords, "pageSize": str(page_size)},
+        {"keywords": keywords, "pageSize": str(page_size), "lang": "en"},
+        {"keywords": keywords, "limit": str(page_size)},
+    ]:
+        try:
+            resp = _get(
+                session,
+                "https://ec.europa.eu/commission/presscorner/api/documents",
+                params=params,
+                headers={"Accept": "application/json"},
+            )
+            if resp.status_code == 200:
+                raw = resp.json()
+                data = raw if isinstance(raw, list) else (
+                    raw.get("documents") or raw.get("results") or raw.get("items") or []
+                )
+                if data:
+                    break
+            else:
+                log.debug("Presscorner JSON API params %s → HTTP %d", params, resp.status_code)
+        except Exception as exc:
+            log.debug("Presscorner JSON API failed (%s): %s", params, exc)
 
-                date_raw = (doc.get("releaseDate") or doc.get("date") or
-                            doc.get("publicationDate") or "")
-                date_str = _parse_date(str(date_raw)) if date_raw else ""
-                if not _is_recent(date_str, lookback_days):
-                    continue
+    # --- attempt 2: RSS feed
+    if not data:
+        try:
+            resp = _get(
+                session,
+                "https://ec.europa.eu/commission/presscorner/home/en",
+                params={"keywords": keywords, "pageSize": str(page_size), "format": "rss"},
+                headers={"Accept": "application/rss+xml, text/xml, */*"},
+            )
+            if resp.status_code == 200:
+                entries = _parse_atom_or_rss(resp.text)
+                for e in entries:
+                    title = e.get("title", "").strip()
+                    url = e.get("url", "").strip()
+                    if not title or not url:
+                        continue
+                    combined = f"{title} {e.get('summary', '')}"
+                    if not _has_competition_keyword(combined):
+                        continue
+                    date_str = e.get("date", "")
+                    if not _is_recent(date_str, lookback_days):
+                        continue
+                    ref = re.search(r'/detail/en/([^/?]+)', url)
+                    items.append(ResearchItem(
+                        source=source,
+                        item_type=item_type,
+                        item_id=ref.group(1) if ref else url,
+                        title=title,
+                        url=url,
+                        date=date_str,
+                        abstract=BeautifulSoup(e.get("summary", ""), "html.parser")
+                                 .get_text(" ", strip=True)[:800],
+                    ))
+                if items:
+                    log.info("Presscorner RSS (%s): %d items", source, len(items))
+                    return items
+            else:
+                log.debug("Presscorner RSS → HTTP %d", resp.status_code)
+        except Exception as exc:
+            log.debug("Presscorner RSS failed (%s): %s", source, exc)
 
-                ref = doc.get("reference") or doc.get("id") or doc.get("docId") or ""
-                doc_url = (doc.get("url") or doc.get("link") or
-                           (f"https://ec.europa.eu/commission/presscorner/detail/en/{ref}"
-                            if ref else ""))
-                if not doc_url:
-                    continue
+    for doc in data:
+        try:
+            title = doc.get("title") or doc.get("headline") or ""
+            if not title:
+                continue
+            body = doc.get("body") or doc.get("summary") or doc.get("abstract") or ""
+            if not _has_competition_keyword(f"{title} {body}"):
+                continue
+            date_raw = doc.get("releaseDate") or doc.get("date") or doc.get("publicationDate") or ""
+            date_str = _parse_date(str(date_raw)) if date_raw else ""
+            if not _is_recent(date_str, lookback_days):
+                continue
+            ref = doc.get("reference") or doc.get("id") or doc.get("docId") or ""
+            doc_url = (doc.get("url") or doc.get("link") or
+                       (f"https://ec.europa.eu/commission/presscorner/detail/en/{ref}" if ref else ""))
+            if not doc_url:
+                continue
+            items.append(ResearchItem(
+                source=source,
+                item_type=item_type,
+                item_id=str(ref) or doc_url,
+                title=title,
+                url=doc_url,
+                date=date_str,
+                abstract=str(body)[:800],
+            ))
+        except Exception as exc:
+            log.debug("Presscorner doc parse error (%s): %s", source, exc)
 
-                items.append(ResearchItem(
-                    source=source,
-                    item_type=item_type,
-                    item_id=str(ref) or doc_url,
-                    title=title,
-                    url=doc_url,
-                    date=date_str,
-                    abstract=str(body)[:800],
-                ))
-            except Exception as exc:
-                log.debug("Presscorner doc parse error (%s): %s", source, exc)
-
-        log.info("Presscorner (%s/%s): %d items", source, keywords[:30], len(items))
-    except Exception as exc:
-        log.warning("Presscorner fetch failed (%s): %s", source, exc)
+    if items:
+        log.info("Presscorner JSON (%s): %d items", source, len(items))
+    else:
+        log.warning("Presscorner (%s): 0 items — JSON API and RSS both failed", source)
     return items
 
 
