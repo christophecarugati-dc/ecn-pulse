@@ -1,0 +1,123 @@
+{
+  "week": "2026-W44",
+  "generated_at": "2026-10-26T12:07:52.515694+00:00",
+  "total_items": 5,
+  "high_relevance_items": 5,
+  "items": [
+    {
+      "source": "scholarly",
+      "source_label": "Semantic Scholar",
+      "item_type": "working_paper",
+      "title": "A Right to Delegate to AI: The Regulatory Safety Halo and the Acceleration of Agentic Consumer Markets",
+      "url": "https://doi.org/10.1017/err.2026.10166",
+      "date": "2026-10-22",
+      "abstract": "Abstract The European Law Institute’s Guiding Principles and Model Rules on Digital Assistants for Consumer Contracts (DACC) propose a right for consumers to use digital assistants in business-to-consumer relations. The DACC’s definition encompasses consumer AI agents (CAIAs), which use AI-generated outputs to determine transactionally relevant matters left open by consumers and initiate or perform transactional actions. The article examines two concerns. First, recognition and safeguards may create a regulatory safety halo, causing consumers to overestimate CAIAs’ technical reliability and the effectiveness of remedies for unwanted outcomes. Second, recognition may accelerate agentic markets, disproportionately benefit incumbents in adjacent digital markets, and foster concentration, to which the DMA and EU competition law provide only partial responses. Legislation should therefore first establish essential rules governing delegation, responsibility and market contestability. Technical implementation may be entrusted to European standardisation bodies, but the Commission’s request should define tasks precisely and maximise transparency and balanced stakeholder participation to mi",
+      "authors": [
+        "Caroline Cauffman"
+      ],
+      "categories": [],
+      "_analysis": {
+        "summary": "Abstract The European Law Institute’s Guiding Principles and Model Rules on Digital Assistants for Consumer Contracts (DACC) propose a right for consumers to use digital assistants in business-to-cons",
+        "relevance_score": 3,
+        "relevance_explanation": "Relates to digital competition policy.",
+        "market_signal": "",
+        "key_entities": [],
+        "themes": []
+      }
+    },
+    {
+      "source": "scholarly",
+      "source_label": "Semantic Scholar",
+      "item_type": "working_paper",
+      "title": "Reviving the trade and competition nexus in digital platform governance",
+      "url": "https://doi.org/10.1093/jiel/jgag033",
+      "date": "2026-10-21",
+      "abstract": "Abstract Data-driven advantages facilitate practices that consolidate market power and enable large digital platforms to determine competitive conditions in digital trade. Recent digital competition cases provide useful examples for rethinking the relationship between competition policy and digital trade law in the digital economy. The first part of this article illustrates how domestic competition regimes can have substantial cross-border effects on data flows and digital trade. It argues that domestic measures addressing platform practices such as self-preferencing, bundling, or data-driven discrimination may alter market access conditions for foreign digital service suppliers or redirect data flows across borders. The second part identifies the notable disconnect that persists between competition policy and digital trade law. Although provisions in existing digital trade chapters gradually intersect with competition regulation, such engagement remains peripheral rather than substantive. In addition, modern free trade agreements reflect a structural separation between digital trade liberalization and competition policy. This separation is increasingly difficult to sustain in the ",
+      "authors": [
+        "Shin-yi Peng"
+      ],
+      "categories": [],
+      "_analysis": {
+        "summary": "Abstract Data-driven advantages facilitate practices that consolidate market power and enable large digital platforms to determine competitive conditions in digital trade. Recent digital competition c",
+        "relevance_score": 3,
+        "relevance_explanation": "Relates to digital competition policy.",
+        "market_signal": "",
+        "key_entities": [],
+        "themes": []
+      }
+    },
+    {
+      "source": "UK",
+      "source_label": "Competition and Markets Authority",
+      "item_type": "other",
+      "title": "CMA outlines proposals to unlock contactless technology on Apple iPhone",
+      "url": "https://www.gov.uk/government/news/cma-outlines-proposals-to-unlock-contactless-technology-on-apple-iphone",
+      "date": "2026-10-20",
+      "abstract": "Opening up iPhone contactless technology could boost innovation, lower costs and help UK fintechs grow.",
+      "authors": [],
+      "categories": [
+        "other"
+      ],
+      "_analysis": {
+        "summary": "Opening up iPhone contactless technology could boost innovation, lower costs and help UK fintechs grow.",
+        "relevance_score": 3,
+        "relevance_explanation": "Relates to digital competition policy.",
+        "market_signal": "",
+        "key_entities": [],
+        "themes": []
+      }
+    },
+    {
+      "source": "PL",
+      "source_label": "Urząd Ochrony Konkurencji i Konsumentów (UOKiK)",
+      "item_type": "other",
+      "title": "Apple changes its practices following intervention by the President of UOKiK",
+      "url": "https://uokik.gov.pl/en/apple-changes-its-practices-following-intervention-by-the-president-of-uokik",
+      "date": null,
+      "abstract": "",
+      "authors": [],
+      "categories": [
+        "other"
+      ],
+      "_analysis": {
+        "summary": "Apple changes its practices following intervention by the President of UOKiK",
+        "relevance_score": 3,
+        "relevance_explanation": "Relates to digital competition policy.",
+        "market_signal": "",
+        "key_entities": [],
+        "themes": []
+      }
+    },
+    {
+      "source": "PL",
+      "source_label": "Urząd Ochrony Konkurencji i Konsumentów (UOKiK)",
+      "item_type": "other",
+      "title": "The President of UOKiK raises objections against Google",
+      "url": "https://uokik.gov.pl/en/the-president-of-uokik-raises-objections-against-google",
+      "date": null,
+      "abstract": "",
+      "authors": [],
+      "categories": [
+        "other"
+      ],
+      "_analysis": {
+        "summary": "The President of UOKiK raises objections against Google",
+        "relevance_score": 3,
+        "relevance_explanation": "Relates to digital competition policy.",
+        "market_signal": "",
+        "key_entities": [],
+        "themes": []
+      }
+    }
+  ],
+  "synthesis": {
+    "headline": "Digital Competition Digest — 2026-W44",
+    "executive_summary": "AI synthesis unavailable: the API quota was exhausted. The digest contains 5 items without AI analysis. Check your usage at https://console.mistral.ai.",
+    "key_themes": [],
+    "connections": [],
+    "policy_implications": [],
+    "ai_enabled": true,
+    "ai_provider": "mistral"
+  },
+  "faq": []
+}
