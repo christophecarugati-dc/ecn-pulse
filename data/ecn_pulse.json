@@ -1,8 +1,164 @@
 {
-  "generated_at": "2026-11-26T14:23:15+00:00",
-  "total_items": 101,
-  "total_errors": 22,
+  "generated_at": "2026-11-27T14:18:13+00:00",
+  "total_items": 91,
+  "total_errors": 23,
   "items": [
+    {
+      "authority_code": "EU",
+      "authority_name": "European Commission · DG COMP",
+      "country": "EU",
+      "title": "Commission unconditionally approves Deutsche Börse's acquisition of Allfunds",
+      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2592",
+      "date": "2026-11-27",
+      "snippet": "The European Commission has unconditionally approved, under the EU Merger Regulation, the proposed acquisition by Deutsche Börse of Allfunds. The Commission concluded that the transaction would raise no competition concerns in the European Economic Area (‘EEA').",
+      "category": "merger",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:10:26+00:00"
+    },
+    {
+      "authority_code": "LT",
+      "authority_name": "Konkurencijos taryba",
+      "country": "LT",
+      "title": "DUOTAS LEIDIMAS KALKIŲ IR MINERALŲ GAVYBOS ĮMONIŲ SANDORIUI",
+      "url": "https://kt.gov.lt/lt/naujienos/duotas-leidimas-kalkiu-ir-mineralu-gavybos-imoniu-sandoriui",
+      "date": "2026-11-27",
+      "snippet": "Konkurencijos taryba leido Jungtinės Karalystės įmonių grupei „SigmaRoc“ netiesiogiai per bendrovę „ST investicija“ įsigyti 100 proc. įmonės „Dolomitas“ akcijų ir perimti vienvaldę jos kontrolę.",
+      "category": "other",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:13:39+00:00"
+    },
+    {
+      "authority_code": "LT",
+      "authority_name": "Konkurencijos taryba",
+      "country": "LT",
+      "title": "KONKURENCIJOS TARYBA KARTU SU PARTNERIAIS BAIGĖ ĮGYVENDINTI ES DVYNIŲ PROJEKTĄ MOLDOVOJE",
+      "url": "https://kt.gov.lt/lt/naujienos/konkurencijos-taryba-kartu-su-partneriais-baige-igyvendinti-es-dvyniu-projekta-moldovoje",
+      "date": "2026-11-27",
+      "snippet": "Kišiniove vakar surengta tarptautinė konferencija oficialiai užbaigė Europos Sąjungos (ES) finansuojamą Dvynių projektą, skirtą stiprinti Moldovos Respublikos konkurencijos tarybos institucinius gebėjimus vykdant konkurencijos ir valstybės pagalbos...",
+      "category": "other",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:13:39+00:00"
+    },
+    {
+      "authority_code": "ES",
+      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
+      "country": "ES",
+      "title": "Acuerdo del Secretario del Consejo por delegación",
+      "url": "https://www.cnmc.es/node/423452",
+      "date": "2026-11-27",
+      "snippet": "Acuerdo del Secretario del Consejo por delegación api etiquetas Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Sucesos con plazo según metadato para alegaciones desde Acuse recibo Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos de Resolución y Acuerdo del Consejo para informes en la Web Sucesos de Acuerdos del Secretario del Consejo por delegación Sucesos de Acuerdo del Secretario del Consejo por delegación Expediente RECURSO DE REPOSICIÓN Y SUBSIDIARIAMENTE DE ALZADA - HBI Ficheros S",
+      "category": "other",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:18:03+00:00"
+    },
+    {
+      "authority_code": "ES",
+      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
+      "country": "ES",
+      "title": "Los márgenes de los carburantes en Canarias, Ceuta y Melilla",
+      "url": "https://www.cnmc.es/node/423448",
+      "date": "2026-11-27",
+      "snippet": "Los márgenes de los carburantes en Canarias, Ceuta y Melilla mgallego Enlaces Los márgenes de los carburantes en Canarias, Ceuta y Melilla Ambito Energía",
+      "category": "other",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:18:03+00:00"
+    },
+    {
+      "authority_code": "ES",
+      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
+      "country": "ES",
+      "title": "Informe del Consejo",
+      "url": "https://www.cnmc.es/node/423437",
+      "date": "2026-11-27",
+      "snippet": "Informe del Consejo api etiquetas Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Sucesos que son Informes del Consejo Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos que contengan voto particular Expediente PETICIÓN DE INFORME DE LA GENERALITAT DE CATALUNYA SOBRE DISCREPANCIA PLANTEADA POR UN PROMOTOR FRENTE A EDISTRIBUCION REDES DIGITALES S.L.U. Ficheros S_20261127_10_6959088.pdf Metadatos Ámbito Web: Energía (425816) Asunto para la web: Informe solicitado por la Generalitat de Catal",
+      "category": "other",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:18:03+00:00"
+    },
+    {
+      "authority_code": "ES",
+      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
+      "country": "ES",
+      "title": "Informe del Consejo",
+      "url": "https://www.cnmc.es/node/423434",
+      "date": "2026-11-27",
+      "snippet": "Informe del Consejo api etiquetas Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Sucesos que son Informes del Consejo Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos que contengan voto particular Expediente PETICIÓN DE INFORME DE LA GENERALITAT DE CATALUNYA SOBRE CONFLICTO INTERPUESTO POR UN PROMOTOR FRENTE A EDISTRIBUCION REDES DIGITALES S.L.U. Ficheros S_20261127_10_6959043.pdf Metadatos Ámbito Web: Energía (425816) Asunto para la web: Informe solicitado por la Generalitat de Catalu",
+      "category": "other",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:18:03+00:00"
+    },
+    {
+      "authority_code": "ES",
+      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
+      "country": "ES",
+      "title": "Acuerdo del Consejo",
+      "url": "https://www.cnmc.es/node/423420",
+      "date": "2026-11-27",
+      "snippet": "Acuerdo del Consejo api etiquetas Sucesos que permiten adjuntar documentos genéricos Sucesos que amplían plazo Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Sucesos que admiten a trámite o incoan expediente Sucesos con plazo según metadato para alegaciones desde Acuse recibo Sucesos que permiten incorporar documentación de otro expediente Sucesos que son Acuerdos del Consejo Acuerdos del Consejo que han de publicarse en la Web Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos de Resolución y Acuerdo del Consejo para informes en la Web ",
+      "category": "other",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:18:03+00:00"
+    },
+    {
+      "authority_code": "ES",
+      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
+      "country": "ES",
+      "title": "Resolución del Consejo",
+      "url": "https://www.cnmc.es/node/423419",
+      "date": "2026-11-27",
+      "snippet": "Resolución del Consejo api etiquetas Sucesos que implican una resolución por parte del Consejo Sucesos que implican una resolución de cualquier tipo Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Resoluciones Sucesos con plazo de 3 días para solicitar aclaración desde Acuse recibo Sucesos que permiten meter un Resumen para la Web Sucesos que deben publicarse Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos de Resolución y Acuerdo del Consejo para informes en la Web Sucesos que contenga",
+      "category": "other",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:18:03+00:00"
+    },
+    {
+      "authority_code": "ES",
+      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
+      "country": "ES",
+      "title": "Resolución del Consejo",
+      "url": "https://www.cnmc.es/node/423417",
+      "date": "2026-11-27",
+      "snippet": "Resolución del Consejo api etiquetas Sucesos que implican una resolución por parte del Consejo Sucesos que implican una resolución de cualquier tipo Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Resoluciones Sucesos con plazo de 3 días para solicitar aclaración desde Acuse recibo Sucesos que permiten meter un Resumen para la Web Sucesos que deben publicarse Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos de Resolución y Acuerdo del Consejo para informes en la Web Sucesos que contenga",
+      "category": "other",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:18:03+00:00"
+    },
+    {
+      "authority_code": "ES",
+      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
+      "country": "ES",
+      "title": "Resolución del Consejo",
+      "url": "https://www.cnmc.es/node/423415",
+      "date": "2026-11-27",
+      "snippet": "Resolución del Consejo api etiquetas Sucesos que implican una resolución por parte del Consejo Sucesos que implican una resolución de cualquier tipo Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Resoluciones Sucesos con plazo de 3 días para solicitar aclaración desde Acuse recibo Sucesos que permiten meter un Resumen para la Web Sucesos que deben publicarse Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos de Resolución y Acuerdo del Consejo para informes en la Web Sucesos que contenga",
+      "category": "other",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:18:03+00:00"
+    },
+    {
+      "authority_code": "ES",
+      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
+      "country": "ES",
+      "title": "Resolución del Consejo",
+      "url": "https://www.cnmc.es/node/423413",
+      "date": "2026-11-27",
+      "snippet": "Resolución del Consejo api etiquetas Sucesos que implican una resolución por parte del Consejo Sucesos que implican una resolución de cualquier tipo Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Resoluciones Sucesos con plazo de 3 días para solicitar aclaración desde Acuse recibo Sucesos que permiten meter un Resumen para la Web Sucesos que deben publicarse Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos de Resolución y Acuerdo del Consejo para informes en la Web Sucesos que contenga",
+      "category": "other",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:18:03+00:00"
+    },
+    {
+      "authority_code": "ES",
+      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
+      "country": "ES",
+      "title": "Resolución del Consejo",
+      "url": "https://www.cnmc.es/node/423411",
+      "date": "2026-11-27",
+      "snippet": "Resolución del Consejo api etiquetas Sucesos que implican una resolución por parte del Consejo Sucesos que implican una resolución de cualquier tipo Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Resoluciones Sucesos con plazo de 3 días para solicitar aclaración desde Acuse recibo Sucesos que permiten meter un Resumen para la Web Sucesos que deben publicarse Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos de Resolución y Acuerdo del Consejo para informes en la Web Sucesos que contenga",
+      "category": "other",
+      "language": "en",
+      "source_fetched_at": "2026-11-27T14:18:03+00:00"
+    },
     {
       "authority_code": "UK",
       "authority_name": "Competition and Markets Authority",
@@ -13,7 +169,7 @@
       "snippet": "The CMA has today published interim findings in its market study into the UK’s £8 billion private dentistry market.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:32+00:00"
+      "source_fetched_at": "2026-11-27T14:10:36+00:00"
     },
     {
       "authority_code": "MT",
@@ -25,55 +181,7 @@
       "snippet": "The Malta Competition and Consumer Affairs Authority (MCCAA) announced the winners of the eleventh edition of Premju Servizz bi Tbissima...",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:55+00:00"
-    },
-    {
-      "authority_code": "ES",
-      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
-      "country": "ES",
-      "title": "Resolución del Consejo",
-      "url": "https://www.cnmc.es/node/423370",
-      "date": "2026-11-26",
-      "snippet": "Resolución del Consejo api etiquetas Sucesos que implican una resolución por parte del Consejo Sucesos que implican una resolución de cualquier tipo Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Resoluciones Sucesos con plazo de 3 días para solicitar aclaración desde Acuse recibo Sucesos que permiten meter un Resumen para la Web Sucesos que deben publicarse Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos de Resolución y Acuerdo del Consejo para informes en la Web Sucesos que contenga",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:04+00:00"
-    },
-    {
-      "authority_code": "ES",
-      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
-      "country": "ES",
-      "title": "Prórroga (GECA)",
-      "url": "https://www.cnmc.es/node/423366",
-      "date": "2026-11-26",
-      "snippet": "Prórroga (GECA) api etiquetas Sucesos que permiten adjuntar documentos genéricos Sucesos que implican prórroga Sucesos marcan tipo Prorroga Sucesos que marcan fecha de formalización de cada contrato Todos los sucesos del ámbito de contratación Expediente CUARTA PRÓRROGA DEL CONTRATO NÚMERO 220154 CONTROL DE OBLIGACIONES DE ACCESIBILIDAD fecha_suceso Lun, 23/11/2026 - 12:12",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:04+00:00"
-    },
-    {
-      "authority_code": "ES",
-      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
-      "country": "ES",
-      "title": "Prórroga (INSIGHTS & CONSULTING KANTAR, S.L. (anteriormente, TNS INVESTIGACIÓN DE MERCADOS Y OPINIÓN, S.L.))",
-      "url": "https://www.cnmc.es/node/423363",
-      "date": "2026-11-26",
-      "snippet": "Prórroga (INSIGHTS &amp; CONSULTING KANTAR, S.L. (anteriormente, TNS INVESTIGACIÓN DE MERCADOS Y OPINIÓN, S.L.)) api etiquetas Sucesos que permiten adjuntar documentos genéricos Sucesos que implican prórroga Sucesos marcan tipo Prorroga Sucesos que marcan fecha de formalización de cada contrato Todos los sucesos del ámbito de contratación Expediente SEGUNDA PRÓRROGA SERVICIO DE INVESTIGACIÓN DE MERCADO A CONSUMIDORES DEL ÁMBITO RESIDENCIAL fecha_suceso Jue, 08/10/2026 - 14:05",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:04+00:00"
-    },
-    {
-      "authority_code": "ES",
-      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
-      "country": "ES",
-      "title": "Informe del Consejo",
-      "url": "https://www.cnmc.es/node/423359",
-      "date": "2026-11-26",
-      "snippet": "Informe del Consejo api etiquetas Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Sucesos que son Informes del Consejo Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos que contengan voto particular Expediente BOLETÍN INFORMATIVO DE LA DISTRIBUCIÓN DE CARBURANTES EN ESTACIONES DE SERVICIO. AÑO 2026. -MENSUAL- Ficheros S_20261126_10_6951484.pdf Metadatos Periodo: SEPTIEMBRE 2026 (6940869) Asunto para la web: Boletín informativo de la distribución de carburantes en estaciones de servicio. ",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:04+00:00"
+      "source_fetched_at": "2026-11-27T14:13:56+00:00"
     },
     {
       "authority_code": "EU",
@@ -85,7 +193,7 @@
       "snippet": "The European Commission has prolonged the Middle East Crisis Temporary State aid Framework (METSAF) by six months until 30 June 2027.",
       "category": "state_aid",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:22+00:00"
+      "source_fetched_at": "2026-11-27T14:10:26+00:00"
     },
     {
       "authority_code": "EU",
@@ -97,7 +205,7 @@
       "snippet": "The Commission has fined Firmenich, Givaudan and International Flavors & Fragrances (IFF), the three largest worldwide fragrance producers, a total of €471.9 million for participating in an international cartel in the fragrance sector, in breach of EU competition rules.",
       "category": "cartel",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:22+00:00"
+      "source_fetched_at": "2026-11-27T14:10:26+00:00"
     },
     {
       "authority_code": "EU",
@@ -109,7 +217,7 @@
       "snippet": "The Commission issued today its second opinion regarding the compatibility of a sustainability agreement with competition rules for the agricultural sector.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:22+00:00"
+      "source_fetched_at": "2026-11-27T14:10:26+00:00"
     },
     {
       "authority_code": "UK",
@@ -121,7 +229,7 @@
       "snippet": "3 fragrance suppliers broke competition law by coordinating their approach to pricing strategies and commercial negotiations.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:32+00:00"
+      "source_fetched_at": "2026-11-27T14:10:36+00:00"
     },
     {
       "authority_code": "UK",
@@ -133,7 +241,7 @@
       "snippet": "The CMA believes remedies offered could resolve its concerns over AkzoNobel’s acquisition of Axalta Coatings.",
       "category": "merger",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:32+00:00"
+      "source_fetched_at": "2026-11-27T14:10:36+00:00"
     },
     {
       "authority_code": "UK",
@@ -145,7 +253,7 @@
       "snippet": "Proposals offered by McCormick could address concerns over its acquisition of Unilever’s food business in the UK.",
       "category": "merger",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:32+00:00"
+      "source_fetched_at": "2026-11-27T14:10:36+00:00"
     },
     {
       "authority_code": "LT",
@@ -157,7 +265,7 @@
       "snippet": "Konkurencijos taryba pagrįstai nustatė, kad odos priežiūros priemones gaminanti bendrovė „Oda LT“ ir šešios produkcijos platintojos tarpusavyje derino galutines kainas vartotojams, bei už šį konkurenciją ribojantį susitarimą skyrė tinkamo dydžio...",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:38+00:00"
+      "source_fetched_at": "2026-11-27T14:13:39+00:00"
     },
     {
       "authority_code": "LT",
@@ -169,79 +277,7 @@
       "snippet": "Konkurencijos taryba darbuotojams yra ne tik vieta, kurioje įgyvendinami profesiniai tikslai, bet ir erdvė mokytis, stiprinti savo gebėjimus bei tobulėti kartu su kolegomis. Tai atskleidė Vilniaus universiteto mokslininkų atliktas kasmetinis gerovės...",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:38+00:00"
-    },
-    {
-      "authority_code": "ES",
-      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
-      "country": "ES",
-      "title": "¿Ha mejorado Internet en tu pueblo? La CNMC actualiza cómo medirlo",
-      "url": "https://www.cnmc.es/node/423389",
-      "date": "2026-11-25",
-      "snippet": "¿Ha mejorado Internet en tu pueblo? La CNMC actualiza cómo medirlo mgallego Enlaces ¿Ha mejorado Internet en tu pueblo? La CNMC actualiza cómo medirlo Ambito Telecomunicaciones",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:04+00:00"
-    },
-    {
-      "authority_code": "ES",
-      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
-      "country": "ES",
-      "title": "Resolución del Consejo",
-      "url": "https://www.cnmc.es/node/423387",
-      "date": "2026-11-25",
-      "snippet": "Resolución del Consejo api etiquetas Sucesos que implican una resolución por parte del Consejo Sucesos que implican una resolución de cualquier tipo Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Resoluciones Sucesos con plazo de 3 días para solicitar aclaración desde Acuse recibo Sucesos que permiten meter un Resumen para la Web Sucesos que deben publicarse Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos de Resolución y Acuerdo del Consejo para informes en la Web Sucesos que contenga",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:04+00:00"
-    },
-    {
-      "authority_code": "ES",
-      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
-      "country": "ES",
-      "title": "Panel de Hogares CNMC: Instagram acelera mientras TikTok pierde impulso",
-      "url": "https://www.cnmc.es/node/423379",
-      "date": "2026-11-25",
-      "snippet": "Panel de Hogares CNMC: Instagram acelera mientras TikTok pierde impulso mgallego Enlaces Panel de Hogares CNMC: Instagram acelera mientras TikTok pierde impulso Ambito Servicios Digitales",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:04+00:00"
-    },
-    {
-      "authority_code": "ES",
-      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
-      "country": "ES",
-      "title": "Resolución del Consejo",
-      "url": "https://www.cnmc.es/node/423356",
-      "date": "2026-11-25",
-      "snippet": "Resolución del Consejo api etiquetas Sucesos que implican una resolución por parte del Consejo Sucesos que implican una resolución de cualquier tipo Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Resoluciones Sucesos con plazo de 3 días para solicitar aclaración desde Acuse recibo Sucesos que permiten meter un Resumen para la Web Sucesos que deben publicarse Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos de Resolución y Acuerdo del Consejo para informes en la Web Sucesos que contenga",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:04+00:00"
-    },
-    {
-      "authority_code": "ES",
-      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
-      "country": "ES",
-      "title": "Acuerdo",
-      "url": "https://www.cnmc.es/node/423353",
-      "date": "2026-11-25",
-      "snippet": "Acuerdo api etiquetas Sucesos que permiten adjuntar documentos genéricos Sucesos que amplían plazo Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Sucesos que admiten a trámite o incoan expediente Sucesos con plazo según metadato para alegaciones desde Acuse recibo Sucesos que permiten incorporar documentación de otro expediente Sucesos que podrían ser Acuerdos del Consejo Acuerdos del Consejo que han de publicarse en la Web Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos que son Acuerdos genéricos Expediente DENUNCIA IRYO OUIGO DR 202",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:04+00:00"
-    },
-    {
-      "authority_code": "ES",
-      "authority_name": "Comisión Nacional de los Mercados y la Competencia (CNMC)",
-      "country": "ES",
-      "title": "Resolución del Consejo",
-      "url": "https://www.cnmc.es/node/423352",
-      "date": "2026-11-25",
-      "snippet": "Resolución del Consejo api etiquetas Sucesos que implican una resolución por parte del Consejo Sucesos que implican una resolución de cualquier tipo Sucesos que permiten adjuntar documentos genéricos Sucesos en los que hay que controlar los Acuses de Recibo -notificaciones- Resoluciones Sucesos con plazo de 3 días para solicitar aclaración desde Acuse recibo Sucesos que permiten meter un Resumen para la Web Sucesos que deben publicarse Sucesos que si se publican en la web se considerarán acuerdo o decisión Sucesos de Resolución y Acuerdo del Consejo para informes en la Web Sucesos que contenga",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:04+00:00"
+      "source_fetched_at": "2026-11-27T14:13:39+00:00"
     },
     {
       "authority_code": "LT",
@@ -253,7 +289,7 @@
       "snippet": "Konkurencijos taryba, būdama Suteiktos valstybės pagalbos ir nereikšmingos ( de minimis ) pagalbos registro valdytoja ir tvarkytoja, baigė vykdyti su registru susijusias veiklas projekte „Duomenų valdymo modelio sukūrimas“, kurį su partneriais...",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:38+00:00"
+      "source_fetched_at": "2026-11-27T14:13:39+00:00"
     },
     {
       "authority_code": "MT",
@@ -265,7 +301,7 @@
       "snippet": "The Malta Competition and Consumer Affairs Authority (MCCAA) and the Occupational Health and Safety Authority (OHSA) have strengthened their collaboration...",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:55+00:00"
+      "source_fetched_at": "2026-11-27T14:13:56+00:00"
     },
     {
       "authority_code": "MT",
@@ -277,7 +313,7 @@
       "snippet": "In terms of regulation 5(4) of the Control of Concentrations Regulations, 2002 published in Legal Notice 294 of 2002, the...",
       "category": "merger",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:55+00:00"
+      "source_fetched_at": "2026-11-27T14:13:56+00:00"
     },
     {
       "authority_code": "EU",
@@ -289,7 +325,7 @@
       "snippet": "The European Commission has approved, under EU State aid rules, a €1 billion Slovenian measure to cover exceptional costs related to the closure of the Premogovnik Velenje coal mine. The aid will help Slovenia phase out coal by 2033 in line with its binding commitment under national law.",
       "category": "state_aid",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:22+00:00"
+      "source_fetched_at": "2026-11-27T14:10:26+00:00"
     },
     {
       "authority_code": "EU",
@@ -301,7 +337,7 @@
       "snippet": "The European Commission has opened a formal antitrust investigation to assess whether Coca-Cola Europacific Partners (‘CCEP') has breached EU competition rules",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:22+00:00"
+      "source_fetched_at": "2026-11-27T14:10:26+00:00"
     },
     {
       "authority_code": "PT",
@@ -313,7 +349,7 @@
       "snippet": "Em 18 de novembro de 2026, o Conselho de Administração da Autoridade da Concorrência, no uso da competência que lhe é conferida pela alínea d) do n.º 1 do artigo 19.º dos Estatutos, aprovados pelo Decreto-Lei n.º 125/2014, de 18 de agosto, delibera adotar uma decisão de não oposição à operação de concentração, nos termos da alínea b) do n.º 1 do artigo 50.º da Lei da Concorrência, uma vez que a mesma não é suscetível de criar entraves significativos à concorrência efetiva no mercado nacional ou numa parte substancial deste.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:19:21+00:00"
+      "source_fetched_at": "2026-11-27T14:14:24+00:00"
     },
     {
       "authority_code": "PT",
@@ -325,7 +361,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:19:21+00:00"
+      "source_fetched_at": "2026-11-27T14:14:24+00:00"
     },
     {
       "authority_code": "LT",
@@ -337,7 +373,7 @@
       "snippet": "Konkurencijos taryba leido bendrovei „Circle K Lietuva“ įsigyti įmonei „Emsi“ priklausančią degalinę Vilniaus rajone ir perimti jos vienvaldę kontrolę bei šioje degalinėje prekiauti degalais, maisto ir kitais produktais.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:38+00:00"
+      "source_fetched_at": "2026-11-27T14:13:39+00:00"
     },
     {
       "authority_code": "MT",
@@ -349,7 +385,7 @@
       "snippet": "The Office for Competition approves the merger between Quazar and Moore. The decision can be found here.",
       "category": "merger",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:55+00:00"
+      "source_fetched_at": "2026-11-27T14:13:56+00:00"
     },
     {
       "authority_code": "UK",
@@ -361,7 +397,7 @@
       "snippet": "Actions set out by the Competition and Markets Authority (CMA) on business software and cloud services.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:32+00:00"
+      "source_fetched_at": "2026-11-27T14:10:36+00:00"
     },
     {
       "authority_code": "UK",
@@ -373,7 +409,7 @@
       "snippet": "Investigation considers how mandatory costs were presented to UK fans on 3 viagogo websites.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:32+00:00"
+      "source_fetched_at": "2026-11-27T14:10:36+00:00"
     },
     {
       "authority_code": "LT",
@@ -385,7 +421,7 @@
       "snippet": "Konkurencijos taryba leido bendrovei „Civinity“ įgyti daugiau nei 50 proc. viešosios įstaigos „KK Statyba“ balsų ir perimti jos bei netiesiogiai per ją – įmonės „JBR“ ir Vilniaus sporto namų vienvaldę kontrolę.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:38+00:00"
+      "source_fetched_at": "2026-11-27T14:13:39+00:00"
     },
     {
       "authority_code": "LT",
@@ -397,7 +433,7 @@
       "snippet": "Kaip pasirengti nuo naujų metų įsigaliosiantiems ES valstybės pagalbos taisyklių pokyčiams ir kaip procesą organizuoti kuo sklandžiau, diskutuota Konkurencijos tarybos atstovių susitikime su Valstybės pagalbos koordinatorių tinklo nariais.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:38+00:00"
+      "source_fetched_at": "2026-11-27T14:13:39+00:00"
     },
     {
       "authority_code": "UK",
@@ -409,7 +445,7 @@
       "snippet": "CMA launches 3 new investigations over concerns that customers were not shown the total price upfront when purchasing holidays or gym memberships.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:32+00:00"
+      "source_fetched_at": "2026-11-27T14:10:36+00:00"
     },
     {
       "authority_code": "EU",
@@ -421,7 +457,7 @@
       "snippet": "The European Commission has approved, under EU State aid rules, Germany's amended schemes to compensate energy-intensive companies for indirect emission costs under the EU Emission Trading System (EU ETS) and for temporary electricity price relief under CISAF and METSAF",
       "category": "state_aid",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:22+00:00"
+      "source_fetched_at": "2026-11-27T14:10:26+00:00"
     },
     {
       "authority_code": "EU",
@@ -433,7 +469,7 @@
       "snippet": "The European Commission has approved, under EU State aid rules, a €9.5 billion Dutch scheme to support renewable electricity production from two offshore wind farms in the North Sea.",
       "category": "state_aid",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:22+00:00"
+      "source_fetched_at": "2026-11-27T14:10:26+00:00"
     },
     {
       "authority_code": "EU",
@@ -445,7 +481,7 @@
       "snippet": "The European Commission has unconditionally approved, under the EU Merger Regulation, the proposed acquisition by UniCredit of Commerzbank. The Commission concluded that the transaction would raise no competition concerns in the European Economic Area (‘EEA').",
       "category": "merger",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:22+00:00"
+      "source_fetched_at": "2026-11-27T14:10:26+00:00"
     },
     {
       "authority_code": "MT",
@@ -457,7 +493,7 @@
       "snippet": "The Office for Competition approves the acquisition of Portek International Pte. Ltd by EMIF II Holding VIII Cooperatief W.A. The...",
       "category": "merger",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:55+00:00"
+      "source_fetched_at": "2026-11-27T14:13:56+00:00"
     },
     {
       "authority_code": "EU",
@@ -469,19 +505,7 @@
       "snippet": "The European Commission has approved, under EU State aid rules, two €143 million German measures to support infrastructure works in the port of Hamburg. The measures concern two distinct infrastructure projects, one at the Salzgitter quay and one at the Steinwerder quay.",
       "category": "state_aid",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:22+00:00"
-    },
-    {
-      "authority_code": "EU",
-      "authority_name": "European Commission · DG COMP",
-      "country": "EU",
-      "title": "Commission sends Supplementary Statement of Objections to PPC over predatory pricing in the Greek wholesale electricity market",
-      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2422",
-      "date": "2026-11-13",
-      "snippet": "The European Commission has sent a Supplementary Statement of Objections to the Greek electricity provider Public Power Corporation S.A. ('PPC').",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:22+00:00"
+      "source_fetched_at": "2026-11-27T14:10:26+00:00"
     },
     {
       "authority_code": "LT",
@@ -493,7 +517,7 @@
       "snippet": "Šiandien vykusiame Konkurencijos tarybos ir Lietuvos advokatūros Konkurencijos teisės komiteto narių susitikime diskutuota įvairiais įmonių susijungimo priežiūros klausimais. Daugiausia dėmesio skirta pranešimo apie planuojamą sandorį pateikimo ir...",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:38+00:00"
+      "source_fetched_at": "2026-11-27T14:13:39+00:00"
     },
     {
       "authority_code": "LT",
@@ -505,7 +529,7 @@
       "snippet": "Konkurencijos taryba pateikė apeliacinį skundą Lietuvos vyriausiajam administraciniam teismui (LVAT) dėl Regionų administracinio teismo spalio 15 d. sprendimo, susijusio su bendrovės „Emsi“ keturių degalinių kontrolės perėmimu.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:38+00:00"
+      "source_fetched_at": "2026-11-27T14:13:39+00:00"
     },
     {
       "authority_code": "MT",
@@ -517,7 +541,7 @@
       "snippet": "The MCCAA signs new Collective Agreement delivering substantial improvements in salaries, employee benefits and professional development opportunities The Malta Competition...",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:55+00:00"
+      "source_fetched_at": "2026-11-27T14:13:56+00:00"
     },
     {
       "authority_code": "MT",
@@ -529,7 +553,7 @@
       "snippet": "The Office for Competition approves the acquisition of sole control of the assets of Falzon’s Bathrooms &#38; Ceramics Limited by...",
       "category": "merger",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:55+00:00"
+      "source_fetched_at": "2026-11-27T14:13:56+00:00"
     },
     {
       "authority_code": "PT",
@@ -541,7 +565,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:19:21+00:00"
+      "source_fetched_at": "2026-11-27T14:14:24+00:00"
     },
     {
       "authority_code": "PT",
@@ -553,7 +577,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:19:21+00:00"
+      "source_fetched_at": "2026-11-27T14:14:24+00:00"
     },
     {
       "authority_code": "PT",
@@ -565,7 +589,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:19:21+00:00"
+      "source_fetched_at": "2026-11-27T14:14:24+00:00"
     },
     {
       "authority_code": "PT",
@@ -577,19 +601,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:19:21+00:00"
-    },
-    {
-      "authority_code": "LT",
-      "authority_name": "Konkurencijos taryba",
-      "country": "LT",
-      "title": "INSTITUCIJOS TELKIA EKSPERTINĘ PATIRTĮ SKAIDRESNIAM IR ATSAKINGESNIAM VIEŠŲJŲ IŠTEKLIŲ VALDYMUI GYNYBOS IR KITUOSE SEKTORIUOSE",
-      "url": "https://kt.gov.lt/lt/naujienos/institucijos-telkia-ekspertine-patirti-skaidresniam-ir-atsakingesniam-viesuju-istekliu-valdymui-gynybos-ir-kituose-sektoriuose",
-      "date": "2026-11-10",
-      "snippet": "Efektyvus valstybės lėšų naudojimas gynybos ir kituose sektoriuose, veiksminga pažeidimų prevencija viešuosiuose pirkimuose ir atsakingas viešųjų išteklių valdymas neatsiejamas nuo nuoseklaus institucijų bendradarbiavimo bei keitimosi informacija....",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:38+00:00"
+      "source_fetched_at": "2026-11-27T14:14:24+00:00"
     },
     {
       "authority_code": "PT",
@@ -601,7 +613,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:19:21+00:00"
+      "source_fetched_at": "2026-11-27T14:14:24+00:00"
     },
     {
       "authority_code": "PT",
@@ -613,19 +625,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:19:21+00:00"
-    },
-    {
-      "authority_code": "LT",
-      "authority_name": "Konkurencijos taryba",
-      "country": "LT",
-      "title": "DUOTAS LEIDIMAS ŽEMĖS ŪKIO TECHNIKA IR GYVULININKYSTĖS ĮRANGA PREKIAUJANČIŲ ĮMONIŲ SANDORIUI",
-      "url": "https://kt.gov.lt/lt/naujienos/duotas-leidimas-zemes-ukio-technika-ir-gyvulininkystes-iranga-prekiaujanciu-imoniu-sandoriui",
-      "date": "2026-11-05",
-      "snippet": "Bendrovė „MVA grupė“ galės įsigyti 100 proc. investicijų valdymo ir konsultavimo įmonės „Intechim“ akcijų ir netiesiogiai per ją perimti vienvaldę bendrovės „Žemtiekimas“ kontrolę. Tam leidimą davė Konkurencijos taryba.",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:38+00:00"
+      "source_fetched_at": "2026-11-27T14:14:24+00:00"
     },
     {
       "authority_code": "UK",
@@ -637,7 +637,7 @@
       "snippet": "Decision focuses on whether remedies remain appropriate and continue to deliver benefits.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:32+00:00"
+      "source_fetched_at": "2026-11-27T14:10:36+00:00"
     },
     {
       "authority_code": "MT",
@@ -649,7 +649,7 @@
       "snippet": "In terms of regulation 5(4) of the Control of Concentrations Regulations, 2002 published in Legal Notice 294 of 2002, the...",
       "category": "merger",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:55+00:00"
+      "source_fetched_at": "2026-11-27T14:13:56+00:00"
     },
     {
       "authority_code": "MT",
@@ -661,7 +661,7 @@
       "snippet": "User Guidelines – Repair of Goods *Click to Download* The proposed provisions transpose Directive (EU) 2024/1799 of the European Parliament...",
       "category": "policy",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:55+00:00"
+      "source_fetched_at": "2026-11-27T14:13:56+00:00"
     },
     {
       "authority_code": "UK",
@@ -673,7 +673,7 @@
       "snippet": "Investigation will examine concerns that Meta’s terms and conditions unfairly harm news publishers and other content businesses.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:32+00:00"
+      "source_fetched_at": "2026-11-27T14:10:36+00:00"
     },
     {
       "authority_code": "MT",
@@ -685,7 +685,7 @@
       "snippet": "In terms of regulation 5(4) of the Control of Concentrations Regulations, 2002 published in Legal Notice 294 of 2002, the...",
       "category": "merger",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:18:55+00:00"
+      "source_fetched_at": "2026-11-27T14:13:56+00:00"
     },
     {
       "authority_code": "PT",
@@ -697,7 +697,7 @@
       "snippet": "Em 8 de outubro de 2026, o Conselho de Administração da Autoridade da Concorrência, no uso da competência que lhe é conferida pela alínea d) do n.º 1 do artigo 19.º dos Estatutos, aprovados pelo Decreto-Lei n.º 125/2014, de 18 de agosto, delibera adotar uma decisão de não oposição à operação notificada, nos termos da alínea b) do n.º 1 do artigo 50.º da Lei da Concorrência, uma vez que a mesma não é suscetível de criar entraves significativos à concorrência efetiva no mercado nacional ou numa parte substancial deste.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:19:21+00:00"
+      "source_fetched_at": "2026-11-27T14:14:24+00:00"
     },
     {
       "authority_code": "PT",
@@ -709,7 +709,7 @@
       "snippet": "Em 28 de outubro de 2026, o Conselho de Administração da Autoridade da Concorrência, no uso da competência que lhe é conferida pela alínea d) do n.º 1 do artigo 19.º dos Estatutos, aprovados pelo Decreto-Lei n.º 125/2014, de 18 de agosto, delibera adotar uma decisão de não oposição à operação de concentração, nos termos da alínea b) do n.º 1 do artigo 50.º da Lei da Concorrência, uma vez que a mesma não é suscetível de criar entraves significativos à concorrência efetiva no mercado nacional ou numa parte substancial deste.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:19:21+00:00"
+      "source_fetched_at": "2026-11-27T14:14:24+00:00"
     },
     {
       "authority_code": "UK",
@@ -721,7 +721,7 @@
       "snippet": "CMA confirms Aldi and Lidl will be covered by the same land agreement rules as the UK’s other large supermarkets to ensure customers get the best choice of where to shop.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:14:32+00:00"
+      "source_fetched_at": "2026-11-27T14:10:36+00:00"
     },
     {
       "authority_code": "FR",
@@ -733,127 +733,7 @@
       "snippet": "Le concours de l'Autorité Direction de l’organisation du Concours concours@autoritedelaconcurrence.fr",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:16:56+00:00"
-    },
-    {
-      "authority_code": "BRGL",
-      "authority_name": "Bruegel",
-      "country": "BRGL",
-      "title": "Session 5b: The path to Ukraine’s membership of the EU: conversation with Ambassador-designate Kachka",
-      "url": "https://www.bruegel.org/node/12486",
-      "date": "2026-08-19",
-      "snippet": "Session 5b: The path to Ukraine’s membership of the EU: conversation with Ambassador-designate Kachka Anastasiia Zaitseva Wed, 08/19/2026 - 11:43",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:09+00:00"
-    },
-    {
-      "authority_code": "BRGL",
-      "authority_name": "Bruegel",
-      "country": "BRGL",
-      "title": "Session 2a: Can the EU's better regulation agenda deliver competitiveness?",
-      "url": "https://www.bruegel.org/node/12451",
-      "date": "2026-07-23",
-      "snippet": "Session 2a: Can the EU's better regulation agenda deliver competitiveness? Chiara Montanaro Thu, 07/23/2026 - 11:23",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:09+00:00"
-    },
-    {
-      "authority_code": "BRGL",
-      "authority_name": "Bruegel",
-      "country": "BRGL",
-      "title": "Lunch",
-      "url": "https://www.bruegel.org/node/12382",
-      "date": "2026-07-03",
-      "snippet": "Lunch Anastasiia Zaitseva Fri, 07/03/2026 - 11:24",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:09+00:00"
-    },
-    {
-      "authority_code": "BRGL",
-      "authority_name": "Bruegel",
-      "country": "BRGL",
-      "title": "Session 1b: Global monetary issues",
-      "url": "https://www.bruegel.org/node/12381",
-      "date": "2026-07-03",
-      "snippet": "Session 1b: Global monetary issues Anastasiia Zaitseva Fri, 07/03/2026 - 11:23",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:09+00:00"
-    },
-    {
-      "authority_code": "BRGL",
-      "authority_name": "Bruegel",
-      "country": "BRGL",
-      "title": "Session 2b: What would make the European Economy secure in 2030?",
-      "url": "https://www.bruegel.org/node/12380",
-      "date": "2026-07-03",
-      "snippet": "Session 2b: What would make the European Economy secure in 2030? Anastasiia Zaitseva Fri, 07/03/2026 - 11:22",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:09+00:00"
-    },
-    {
-      "authority_code": "BRGL",
-      "authority_name": "Bruegel",
-      "country": "BRGL",
-      "title": "Coffee break",
-      "url": "https://www.bruegel.org/node/12379",
-      "date": "2026-07-03",
-      "snippet": "Coffee break Anastasiia Zaitseva Fri, 07/03/2026 - 11:21",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:09+00:00"
-    },
-    {
-      "authority_code": "BRGL",
-      "authority_name": "Bruegel",
-      "country": "BRGL",
-      "title": "Session 1a: Europe's digital sovereignty: lessons from China's AI quest",
-      "url": "https://www.bruegel.org/node/12377",
-      "date": "2026-07-03",
-      "snippet": "Session 1a: Europe's digital sovereignty: lessons from China's AI quest Anastasiia Zaitseva Fri, 07/03/2026 - 11:19",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:09+00:00"
-    },
-    {
-      "authority_code": "BRGL",
-      "authority_name": "Bruegel",
-      "country": "BRGL",
-      "title": "Session 6b: Can Europe become more “Schumpeterian” and how?",
-      "url": "https://www.bruegel.org/node/12376",
-      "date": "2026-07-03",
-      "snippet": "Session 6b: Can Europe become more “Schumpeterian” and how? Anastasiia Zaitseva Fri, 07/03/2026 - 11:15",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:09+00:00"
-    },
-    {
-      "authority_code": "BRGL",
-      "authority_name": "Bruegel",
-      "country": "BRGL",
-      "title": "Session 6a: European trade policy beyond FTAs: what is feasible without the US and China?",
-      "url": "https://www.bruegel.org/node/12375",
-      "date": "2026-07-03",
-      "snippet": "Session 6a: European trade policy beyond FTAs: what is feasible without the US and China? Anastasiia Zaitseva Fri, 07/03/2026 - 11:14",
-      "category": "policy",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:09+00:00"
-    },
-    {
-      "authority_code": "BRGL",
-      "authority_name": "Bruegel",
-      "country": "BRGL",
-      "title": "Coffee break",
-      "url": "https://www.bruegel.org/node/12374",
-      "date": "2026-07-03",
-      "snippet": "Coffee break Anastasiia Zaitseva Fri, 07/03/2026 - 11:13",
-      "category": "other",
-      "language": "en",
-      "source_fetched_at": "2026-11-26T14:23:09+00:00"
+      "source_fetched_at": "2026-11-27T14:12:16+00:00"
     },
     {
       "authority_code": "FR",
@@ -865,7 +745,7 @@
       "snippet": "Renseignements relatifs au demandeur de clémence Entreprise (nom, adresse postale) * Email * Représentant mandaté aux fins de la présentation de la demande Renseignements relatifs aux pratiques concernées Participants (nom, adresse) * Produits en cause (nature et usage) * Territoires affectés * Nature des pratiques concernées * Durée des pratiques concernées * Le ou les Etats membres où les preuves des pratiques concernées sont susceptibles de se trouver * Autres informations utiles Information sur l'existence d'éventuelles autres demandes de clémence Nom des autorités de concurrence auprès de",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:16:56+00:00"
+      "source_fetched_at": "2026-11-27T14:12:16+00:00"
     },
     {
       "authority_code": "FR",
@@ -877,7 +757,7 @@
       "snippet": "Renseignements relatifs au demandeur de clémence Entreprise (nom, adresse postale) * Email * Représentant mandaté aux fins de la présentation de la demande Renseignements relatifs aux pratiques concernées Participants (nom, adresse) * Produits en cause (nature et usage) * Territoires affectés * Nature des pratiques concernées * Durée des pratiques concernées * Le ou les Etats membres où les preuves des pratiques concernées sont susceptibles de se trouver * Autres informations utiles Information sur l'existence d'éventuelles autres demandes de clémence Nom des autorités de concurrence auprès de",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:16:56+00:00"
+      "source_fetched_at": "2026-11-27T14:12:16+00:00"
     },
     {
       "authority_code": "SK",
@@ -889,7 +769,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:22:47+00:00"
+      "source_fetched_at": "2026-11-27T14:17:50+00:00"
     },
     {
       "authority_code": "SK",
@@ -901,7 +781,7 @@
       "snippet": "",
       "category": "antitrust",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:22:47+00:00"
+      "source_fetched_at": "2026-11-27T14:17:50+00:00"
     },
     {
       "authority_code": "SK",
@@ -913,7 +793,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:22:47+00:00"
+      "source_fetched_at": "2026-11-27T14:17:50+00:00"
     },
     {
       "authority_code": "SK",
@@ -925,7 +805,7 @@
       "snippet": "",
       "category": "cartel",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:22:47+00:00"
+      "source_fetched_at": "2026-11-27T14:17:50+00:00"
     },
     {
       "authority_code": "SK",
@@ -937,7 +817,7 @@
       "snippet": "",
       "category": "cartel",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:22:47+00:00"
+      "source_fetched_at": "2026-11-27T14:17:50+00:00"
     },
     {
       "authority_code": "SK",
@@ -949,7 +829,7 @@
       "snippet": "",
       "category": "merger",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:22:47+00:00"
+      "source_fetched_at": "2026-11-27T14:17:50+00:00"
     },
     {
       "authority_code": "SK",
@@ -961,7 +841,7 @@
       "snippet": "",
       "category": "cartel",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:22:47+00:00"
+      "source_fetched_at": "2026-11-27T14:17:50+00:00"
     },
     {
       "authority_code": "FR",
@@ -973,7 +853,7 @@
       "snippet": "Txaran Echegu Rapporteur à l'Autorité txaran.echegu@autoritedelaconcurrence.fr",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:16:56+00:00"
+      "source_fetched_at": "2026-11-27T14:12:16+00:00"
     },
     {
       "authority_code": "FR",
@@ -985,7 +865,7 @@
       "snippet": "Valentin Baudin Rapporteur à l'Autorité valentin.baudin@autoritedelaconcurrence.fr",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:16:56+00:00"
+      "source_fetched_at": "2026-11-27T14:12:16+00:00"
     },
     {
       "authority_code": "SK",
@@ -997,7 +877,7 @@
       "snippet": "",
       "category": "antitrust",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:22:47+00:00"
+      "source_fetched_at": "2026-11-27T14:17:50+00:00"
     },
     {
       "authority_code": "SK",
@@ -1009,7 +889,7 @@
       "snippet": "",
       "category": "cartel",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:22:47+00:00"
+      "source_fetched_at": "2026-11-27T14:17:50+00:00"
     },
     {
       "authority_code": "FR",
@@ -1021,7 +901,7 @@
       "snippet": "Nicola Crawford Communications Officer +33155040151 nicola.crawford@autoritedelaconcurrence.fr",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:16:56+00:00"
+      "source_fetched_at": "2026-11-27T14:12:16+00:00"
     },
     {
       "authority_code": "SK",
@@ -1033,7 +913,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:22:47+00:00"
+      "source_fetched_at": "2026-11-27T14:17:50+00:00"
     },
     {
       "authority_code": "FR",
@@ -1045,7 +925,7 @@
       "snippet": "21-A-07 10 mai 2021 Secteur: Transports Consulter l'avis 789.25 Ko Résumé La SA SNCF Voyageurs et la SAS Fret SNCF sont soumises aux obligations de séparation comptable prévues aux articles L. 2123-1-1 et L. 2144-1 du code des transports. SNCF Voyageurs est en outre soumise à des obligations de séparation comptable spécifiques au titre de ses activités conventionnées de transport ferroviaire de voyageurs prévues à l’article L. 2144-2 du code des transports. En 2017, afin de préciser le cadre juridique applicable aux obligations en matière de séparation comptable, l’ARAFER, à laquelle a succédé",
       "category": "merger",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:16:56+00:00"
+      "source_fetched_at": "2026-11-27T14:12:16+00:00"
     },
     {
       "authority_code": "FR",
@@ -1057,7 +937,7 @@
       "snippet": "",
       "category": "merger",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:16:56+00:00"
+      "source_fetched_at": "2026-11-27T14:12:16+00:00"
     },
     {
       "authority_code": "FR",
@@ -1069,7 +949,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:16:56+00:00"
+      "source_fetched_at": "2026-11-27T14:12:16+00:00"
     },
     {
       "authority_code": "FR",
@@ -1081,7 +961,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:16:56+00:00"
+      "source_fetched_at": "2026-11-27T14:12:16+00:00"
     },
     {
       "authority_code": "GR",
@@ -1093,7 +973,7 @@
       "snippet": "Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senseritdefiniebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latineequidem dolores. Quo no falli viris intellegam, ut fugit veritus placeratper. Ius id vidit volumus mandamus, vide veritus democritum te nec, ei eosdebet libris consulatu.",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:17:10+00:00"
+      "source_fetched_at": "2026-11-27T14:12:28+00:00"
     },
     {
       "authority_code": "BG",
@@ -1105,7 +985,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:15:19+00:00"
+      "source_fetched_at": "2026-11-27T14:11:07+00:00"
     },
     {
       "authority_code": "BG",
@@ -1117,7 +997,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:15:19+00:00"
+      "source_fetched_at": "2026-11-27T14:11:07+00:00"
     },
     {
       "authority_code": "BG",
@@ -1129,7 +1009,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:15:19+00:00"
+      "source_fetched_at": "2026-11-27T14:11:07+00:00"
     },
     {
       "authority_code": "BG",
@@ -1141,7 +1021,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:15:19+00:00"
+      "source_fetched_at": "2026-11-27T14:11:07+00:00"
     },
     {
       "authority_code": "BG",
@@ -1153,7 +1033,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:15:19+00:00"
+      "source_fetched_at": "2026-11-27T14:11:07+00:00"
     },
     {
       "authority_code": "BG",
@@ -1165,7 +1045,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:15:19+00:00"
+      "source_fetched_at": "2026-11-27T14:11:07+00:00"
     },
     {
       "authority_code": "BG",
@@ -1177,7 +1057,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:15:19+00:00"
+      "source_fetched_at": "2026-11-27T14:11:07+00:00"
     },
     {
       "authority_code": "BG",
@@ -1189,7 +1069,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:15:19+00:00"
+      "source_fetched_at": "2026-11-27T14:11:07+00:00"
     },
     {
       "authority_code": "BG",
@@ -1201,7 +1081,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:15:19+00:00"
+      "source_fetched_at": "2026-11-27T14:11:07+00:00"
     },
     {
       "authority_code": "BG",
@@ -1213,7 +1093,7 @@
       "snippet": "",
       "category": "other",
       "language": "en",
-      "source_fetched_at": "2026-11-26T14:15:19+00:00"
+      "source_fetched_at": "2026-11-27T14:11:07+00:00"
     }
   ],
   "errors": [
@@ -1296,6 +1176,10 @@
     {
       "authority_code": "SE",
       "error": "HTTP 403: 403 Client Error: Forbidden for url: https://www.konkurrensverket.se/en/news/"
+    },
+    {
+      "authority_code": "BRGL",
+      "error": "HTTP 403: 403 Client Error: Forbidden for url: https://www.bruegel.org/rss.xml"
     },
     {
       "authority_code": "CEPR",
